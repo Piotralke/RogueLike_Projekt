@@ -56,7 +56,7 @@ class generate_map : public room
             if (rooms_counter >= max_rooms)
                 return false;
 
-            if (rand() % 2 > 0 && i != 5 && j != 5)
+            if (rand() % 101 > 80 && i != 5 || rand() % 101 > 80 && j != 5)
                 return false;
 
             RoomQueue_i.push(i);
@@ -108,16 +108,19 @@ class generate_map : public room
                         placedSpecial = true;
                         room* Boss_room = new room;
                     Boss_room:grid[DeadEnd_i.top()][DeadEnd_j.top()];
+                        grid[DeadEnd_i.top()][DeadEnd_j.top()] = 2;
                         DeadEnd_i.pop();
                         DeadEnd_j.pop();
 
                         room* Shop = new room;
                     Shop:grid[DeadEnd_i.top()][DeadEnd_j.top()];
+                        grid[DeadEnd_i.top()][DeadEnd_j.top()] = 3;
                         DeadEnd_i.pop();
                         DeadEnd_j.pop();
 
                         room* Item_Room = new room;
                     Item_Room:grid[DeadEnd_i.top()][DeadEnd_j.top()];
+                        grid[DeadEnd_i.top()][DeadEnd_j.top()] = 4;
                         DeadEnd_i.pop();
                         DeadEnd_j.pop();
 
