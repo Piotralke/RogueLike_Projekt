@@ -12,8 +12,6 @@ class object
         int x, y;
         int obj_type;
         // tekstura(?)
-    
-
 };
 
 class hero
@@ -61,54 +59,56 @@ public:
         return room_doors;
 
     }
-    void pick_room_layout(int room_doors)
+    bool pick_room_layout(int room_doors)
     {
+        sf::Texture background;
         switch (room_doors)
         {
         case 0b0001:    //L
-            //wybieranie pokoju z danej puli    
+            background.loadFromFile("grafiki/background_0001o.png",sf::IntRect(0,0,700,400));
             break;                              
         case 0b0010:    //P
-            //wybieranie pokoju z danej puli
+            background.loadFromFile("grafiki/background_0010o.png", sf::IntRect(0, 0, 700, 400));
             break;
         case 0b0011:    //LP
-            //wybieranie pokoju z danej puli
+            background.loadFromFile("grafiki/background_0011o.png", sf::IntRect(0, 0, 700, 400));
             break;
         case 0b0100:    //D
-            //wybieranie pokoju z danej puli
+            background.loadFromFile("grafiki/background_0001o.png", sf::IntRect(0, 0, 700, 400));
             break;
         case 0b0101:    //LD
-            //wybieranie pokoju z danej puli
+            background.loadFromFile("grafiki/background_0101o.png", sf::IntRect(0, 0, 700, 400));
             break;
         case 0b0110:    //PD
-            //wybieranie pokoju z danej puli
+            background.loadFromFile("grafiki/background_0110o.png", sf::IntRect(0, 0, 700, 400));
             break;
         case 0b0111:    //PLD
-            //wybieranie pokoju z danej puli
+            background.loadFromFile("grafiki/background_0111o.png", sf::IntRect(0, 0, 700, 400));
             break;
         case 0b1000:    //G
-            //wybieranie pokoju z danej puli
+            background.loadFromFile("grafiki/background_1000o.png", sf::IntRect(0, 0, 700, 400));
             break;
         case 0b1001:    //GL
-            //wybieranie pokoju z danej puli
+            background.loadFromFile("grafiki/background_1001o.png", sf::IntRect(0, 0, 700, 400));
             break;
         case 0b1010:    //GP
-            //wybieranie pokoju z danej puli
+            background.loadFromFile("grafiki/background_1010o.png", sf::IntRect(0, 0, 700, 400));
             break;
         case 0b1011:    //GPL
-            //wybieranie pokoju z danej puli
+            background.loadFromFile("grafiki/background_1011o.png", sf::IntRect(0, 0, 700, 400));
             break;
         case 0b1100:    //GD
-            //wybieranie pokoju z danej puli
+            background.loadFromFile("grafiki/background_1100o.png", sf::IntRect(0, 0, 700, 400));
             break;
         case 0b1101:    //GDL
-            //wybieranie pokoju z danej puli
+            background.loadFromFile("grafiki/background_1101o.png", sf::IntRect(0, 0, 700, 400));
             break;
         case 0b1110:    //GDP
-            //wybieranie pokoju z danej puli
+            background.loadFromFile("grafiki/background_1110o.png", sf::IntRect(0, 0, 700, 400));
             break;
         case 0b1111:    //GDLP - wszystkie 4 drzwi
-            //wybieranie pokoju z danej puli
+            if (!background.loadFromFile("grafiki/background_1111o.png"))
+                return EXIT_FAILURE;
             break;
         }
     }
@@ -237,14 +237,17 @@ class generate_map : public room
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(700, 700), "RogueLike!");
+    sf::RenderWindow window(sf::VideoMode(1000, 700), "RogueLike!");
 
     generate_map* level = new generate_map;
     level->init_grid();
     level->max_level_counter(1);
     level->visit(5, 5);
     level->generate_layout();
-
+    //level->pick_room_layout(0b1111);
+    sf::Texture background;
+    if (!background.loadFromFile("background_1111o.jpg"))
+        return EXIT_FAILURE;
     level->wypisz();
 
     while (window.isOpen())
@@ -257,7 +260,6 @@ int main()
         }
 
         window.clear();
-
         window.display();
     }
 
