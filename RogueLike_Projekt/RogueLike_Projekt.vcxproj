@@ -82,8 +82,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\SFML\SFML-2.5.1\include;C:\SFML\SFML-2.5.1\include\SFML;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\SFML\SFML-2.5.1\lib;C:\SFML\SFML-2.5.1\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\SFML-2.5.1\include;C:\SFML-2.5.1\include\SFML;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\SFML-2.5.1\lib;C:\SFML-2.5.1\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>

@@ -246,7 +246,7 @@ int main()
     level->generate_layout();
     //level->pick_room_layout(0b1111);
     sf::Texture background;
-    if (!background.loadFromFile("background_1111o.jpg"))
+    if (!background.loadFromFile("bg_1111o.jpg"))
         return EXIT_FAILURE;
     level->wypisz();
 
