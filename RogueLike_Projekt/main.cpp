@@ -12,6 +12,7 @@ class object
         int x, y;
         int obj_type;
         // tekstura(?)
+
 };
 
 class hero
@@ -59,7 +60,7 @@ public:
         return room_doors;
 
     }
-    bool pick_room_layout(int room_doors)
+    bool pick_room_layout(int room_doors, sf::Sprite *sprite)
     {
         sf::Texture background;
         switch (room_doors)
@@ -107,7 +108,7 @@ public:
             background.loadFromFile("grafiki/background_1110o.png", sf::IntRect(0, 0, 700, 400));
             break;
         case 0b1111:    //GDLP - wszystkie 4 drzwi
-            if (!background.loadFromFile("grafiki/background_1111o.png"))
+            if (!background.loadFromFile("grafiki/background_1111o.png", sf::IntRect(0, 0, 700, 400)))
                 return EXIT_FAILURE;
             break;
         }
@@ -238,28 +239,26 @@ class generate_map : public room
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(1000, 700), "RogueLike!");
-
+    sf::Sprite sprite;
     generate_map* level = new generate_map;
     level->init_grid();
     level->max_level_counter(1);
     level->visit(5, 5);
     level->generate_layout();
-    //level->pick_room_layout(0b1111);
-    sf::Texture background;
-    if (!background.loadFromFile("bg_1111o.jpg"))
-        return EXIT_FAILURE;
+    level->pick_room_layout(0b1111,&sprite);
     level->wypisz();
 
     while (window.isOpen())
     {
         sf::Event event;
         while (window.pollEvent(event))
-        {
+        { 
             if (event.type == sf::Event::Closed)
                 window.close();
         }
 
         window.clear();
+        window.draw(sprite);
         window.display();
     }
 
