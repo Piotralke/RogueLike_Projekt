@@ -6,11 +6,112 @@
 
 #define SIZE 11
 
+class object
+{
+    private:
+        int x, y;
+        int obj_type;
+        // tekstura(?)
+    
+
+};
+
+class hero
+{
+    protected:
+        int x, y;
+        int health;
+        float damage;
+        float speed;
+        float fire_rate;
+        //float shot_speed; (?)
+        float range;
+        void shot(float vec_x, float vec_y) //albo jakis jeden argument, jasli strzelanie byloby tylko pod katem prostym
+        {
+            // strzelenie w kierunku w ktorym patrzymy od pozycji gracza
+        }
+        void move(int x_dir, int y_dir)
+        {
+            //modyfikacja pozycji gracza w zaleznosci od kierunku poruszania sie
+        }
+};
+
+class monster : public hero
+{
+    int type;
+};
+
 class room 
 {
     protected:
         int grid[SIZE][SIZE];
         int room_type;
+public:
+    int check_doors(int i, int j)
+    {
+        int room_doors = 0b0000;
+        if (grid[i - 1][j])     
+            room_doors += 0b0001;   //lewe drzwi
+        if (grid[i + 1][j])    
+            room_doors += 0b0010;    //prawe drzwi
+        if (grid[i][j + 1])     
+            room_doors += 0b0100;   //dolne drzwi
+        if (grid[i][j - 1])      
+            room_doors += 0b1000;   //gorne drzwi
+        return room_doors;
+
+    }
+    void pick_room_layout(int room_doors)
+    {
+        switch (room_doors)
+        {
+        case 0b0001:    //L
+            //wybieranie pokoju z danej puli    
+            break;                              
+        case 0b0010:    //P
+            //wybieranie pokoju z danej puli
+            break;
+        case 0b0011:    //LP
+            //wybieranie pokoju z danej puli
+            break;
+        case 0b0100:    //D
+            //wybieranie pokoju z danej puli
+            break;
+        case 0b0101:    //LD
+            //wybieranie pokoju z danej puli
+            break;
+        case 0b0110:    //PD
+            //wybieranie pokoju z danej puli
+            break;
+        case 0b0111:    //PLD
+            //wybieranie pokoju z danej puli
+            break;
+        case 0b1000:    //G
+            //wybieranie pokoju z danej puli
+            break;
+        case 0b1001:    //GL
+            //wybieranie pokoju z danej puli
+            break;
+        case 0b1010:    //GP
+            //wybieranie pokoju z danej puli
+            break;
+        case 0b1011:    //GPL
+            //wybieranie pokoju z danej puli
+            break;
+        case 0b1100:    //GD
+            //wybieranie pokoju z danej puli
+            break;
+        case 0b1101:    //GDL
+            //wybieranie pokoju z danej puli
+            break;
+        case 0b1110:    //GDP
+            //wybieranie pokoju z danej puli
+            break;
+        case 0b1111:    //GDLP - wszystkie 4 drzwi
+            //wybieranie pokoju z danej puli
+            break;
+        }
+    }
 };
 
 class generate_map : public room
@@ -136,7 +237,7 @@ class generate_map : public room
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(1000, 1000), "RogueLike!");
+    sf::RenderWindow window(sf::VideoMode(700, 700), "RogueLike!");
 
     generate_map* level = new generate_map;
     level->init_grid();
