@@ -15,6 +15,45 @@ class object
 
 };
 
+struct Frame {
+    sf::IntRect rect;
+    double duration; // in seconds
+};
+
+class Animation {
+    std::vector<Frame> frames;
+    double totalLength;
+    double totalProgress;
+    sf::Sprite* target;
+public:
+    Animation(sf::Sprite& target) {
+        this->target = &target;
+        totalProgress = 0.0;
+    }
+
+    void addFrame(const Frame& frame) {
+        frames.push_back(std::move(frame));
+        totalLength += frame.duration;
+    }
+
+    void update(double elapsed) {
+        // increase the total progress of the animation
+        totalProgress += elapsed;
+
+        // use this progress as a counter. Final frame at progress <= 0
+        double progress = totalProgress;
+        for (auto frame : frames) {
+            progress -= frame.duration;
+
+            // When progress is <= 0 or we are on the last frame in the list, stop
+            if (progress <= 0.0 || &frame == &frames.back())
+            {
+                target->setTextureRect((frame).rect);
+                break; // we found our frame
+            }
+        }
+    }
+};
 class hero
 {
     protected:
@@ -35,7 +74,7 @@ class hero
         {
             texture.loadFromFile("grafiki/hero_sprite.png");
             sprite = sf::Sprite(texture);
-            sprite.setTextureRect({ 16,0,16,28 });
+            sprite.setTextureRect({ 0,0,16,28 });
         }
         void draw(sf::RenderTarget& rt)
         {
@@ -71,6 +110,7 @@ class room
         
         int grid[SIZE][SIZE];
         int room_type;
+
 public:
     sf::Texture background_t;
     sf::Sprite background_s;
@@ -277,6 +317,15 @@ int main()
     level->pick_room_layout(0b1111);
     level->wypisz();
 
+    sf::Sprite dupa;
+    sf::Texture dupa_t;
+    dupa_t.loadFromFile("grafiki/hero_run_right.png");
+    dupa.setTexture(dupa_t);
+
+    Animation animation(dupa);
+    animation.addFrame({sf::IntRect(0,0,16,28),0.1});
+
+
     while (window.isOpen())
     {
         sf::Event event;
@@ -307,8 +356,10 @@ int main()
         player.Update(1.0f / 60.0f);
 
         window.clear();
-        window.draw(level->background_s);
-        player.draw(window);
+        animation.update(10);
+        window.draw(dupa);
+        //window.draw(level->background_s);
+       // player.draw(window);
         window.display();
     }
 
