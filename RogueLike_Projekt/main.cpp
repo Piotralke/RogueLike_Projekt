@@ -18,13 +18,38 @@ class object
 class hero
 {
     protected:
-        int x, y;
-        int health;
+        sf::Vector2f pos;
+        sf::Vector2f vel = {0.0f,0.0f};
+        sf::Texture texture;
+        sf::Sprite sprite;
+        float speed = 20.0f;
+        float health;
         float damage;
-        float speed;
+        
         float fire_rate;
         //float shot_speed; (?)
         float range;
+    public:
+        hero(const sf::Vector2f& pos):
+            pos(pos)
+        {
+            texture.loadFromFile("grafiki/hero_sprite.png");
+            sprite = sf::Sprite(texture);
+            sprite.setTextureRect({ 16,0,16,28 });
+        }
+        void draw(sf::RenderTarget& rt)
+        {
+            rt.draw(sprite);
+        }
+        void SetDirection(sf::Vector2f& dir)
+        {
+            vel = dir * speed;
+        }
+        void Update(float dt)
+        {
+            pos += vel * dt;
+            sprite.setPosition(pos);
+        }
         void shot(float vec_x, float vec_y) //albo jakis jeden argument, jasli strzelanie byloby tylko pod katem prostym
         {
             // strzelenie w kierunku w ktorym patrzymy od pozycji gracza
@@ -43,9 +68,12 @@ class monster : public hero
 class room 
 {
     protected:
+        
         int grid[SIZE][SIZE];
         int room_type;
 public:
+    sf::Texture background_t;
+    sf::Sprite background_s;
     int check_doors(int i, int j)
     {
         int room_doors = 0b0000;
@@ -60,58 +88,58 @@ public:
         return room_doors;
 
     }
-    bool pick_room_layout(int room_doors, sf::Sprite *sprite)
+    bool pick_room_layout(int room_doors)
     {
-        sf::Texture background;
         switch (room_doors)
         {
         case 0b0001:    //L
-            background.loadFromFile("grafiki/background_0001o.png",sf::IntRect(0,0,700,400));
+            background_t.loadFromFile("grafiki/background_0001o.png",sf::IntRect(0,0,700,400));
             break;                              
         case 0b0010:    //P
-            background.loadFromFile("grafiki/background_0010o.png", sf::IntRect(0, 0, 700, 400));
+            background_t.loadFromFile("grafiki/background_0010o.png", sf::IntRect(0, 0, 700, 400));
             break;
         case 0b0011:    //LP
-            background.loadFromFile("grafiki/background_0011o.png", sf::IntRect(0, 0, 700, 400));
+            background_t.loadFromFile("grafiki/background_0011o.png", sf::IntRect(0, 0, 700, 400));
             break;
         case 0b0100:    //D
-            background.loadFromFile("grafiki/background_0001o.png", sf::IntRect(0, 0, 700, 400));
+            background_t.loadFromFile("grafiki/background_0001o.png", sf::IntRect(0, 0, 700, 400));
             break;
         case 0b0101:    //LD
-            background.loadFromFile("grafiki/background_0101o.png", sf::IntRect(0, 0, 700, 400));
+            background_t.loadFromFile("grafiki/background_0101o.png", sf::IntRect(0, 0, 700, 400));
             break;
         case 0b0110:    //PD
-            background.loadFromFile("grafiki/background_0110o.png", sf::IntRect(0, 0, 700, 400));
+            background_t.loadFromFile("grafiki/background_0110o.png", sf::IntRect(0, 0, 700, 400));
             break;
         case 0b0111:    //PLD
-            background.loadFromFile("grafiki/background_0111o.png", sf::IntRect(0, 0, 700, 400));
+            background_t.loadFromFile("grafiki/background_0111o.png", sf::IntRect(0, 0, 700, 400));
             break;
         case 0b1000:    //G
-            background.loadFromFile("grafiki/background_1000o.png", sf::IntRect(0, 0, 700, 400));
+            background_t.loadFromFile("grafiki/background_1000o.png", sf::IntRect(0, 0, 700, 400));
             break;
         case 0b1001:    //GL
-            background.loadFromFile("grafiki/background_1001o.png", sf::IntRect(0, 0, 700, 400));
+            background_t.loadFromFile("grafiki/background_1001o.png", sf::IntRect(0, 0, 700, 400));
             break;
         case 0b1010:    //GP
-            background.loadFromFile("grafiki/background_1010o.png", sf::IntRect(0, 0, 700, 400));
+            background_t.loadFromFile("grafiki/background_1010o.png", sf::IntRect(0, 0, 700, 400));
             break;
         case 0b1011:    //GPL
-            background.loadFromFile("grafiki/background_1011o.png", sf::IntRect(0, 0, 700, 400));
+            background_t.loadFromFile("grafiki/background_1011o.png", sf::IntRect(0, 0, 700, 400));
             break;
         case 0b1100:    //GD
-            background.loadFromFile("grafiki/background_1100o.png", sf::IntRect(0, 0, 700, 400));
+            background_t.loadFromFile("grafiki/background_1100o.png", sf::IntRect(0, 0, 700, 400));
             break;
         case 0b1101:    //GDL
-            background.loadFromFile("grafiki/background_1101o.png", sf::IntRect(0, 0, 700, 400));
+            background_t.loadFromFile("grafiki/background_1101o.png", sf::IntRect(0, 0, 700, 400));
             break;
         case 0b1110:    //GDP
-            background.loadFromFile("grafiki/background_1110o.png", sf::IntRect(0, 0, 700, 400));
+            background_t.loadFromFile("grafiki/background_1110o.png", sf::IntRect(0, 0, 700, 400));
             break;
         case 0b1111:    //GDLP - wszystkie 4 drzwi
-            if (!background.loadFromFile("grafiki/background_1111o.png", sf::IntRect(0, 0, 700, 400)))
+            if (!background_t.loadFromFile("grafiki/background_1111o.png", sf::IntRect(0, 0, 700, 400)))
                 return EXIT_FAILURE;
             break;
         }
+        background_s.setTexture(background_t);
     }
 };
 
@@ -241,11 +269,12 @@ int main()
     sf::RenderWindow window(sf::VideoMode(1000, 700), "RogueLike!");
     sf::Sprite sprite;
     generate_map* level = new generate_map;
+    hero player({ 100.0f,100.0f });
     level->init_grid();
     level->max_level_counter(1);
     level->visit(5, 5);
     level->generate_layout();
-    level->pick_room_layout(0b1111,&sprite);
+    level->pick_room_layout(0b1111);
     level->wypisz();
 
     while (window.isOpen())
@@ -257,8 +286,29 @@ int main()
                 window.close();
         }
 
+        sf::Vector2f dir = { 0.0f,0.0f };
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+        {
+            dir.y -= 1.0f;
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+        {
+            dir.y += 1.0f;
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+        {
+            dir.x -= 1.0f;
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+        {
+            dir.x += 1.0f;
+        }
+        player.SetDirection(dir);
+        player.Update(1.0f / 60.0f);
+
         window.clear();
-        window.draw(sprite);
+        window.draw(level->background_s);
+        player.draw(window);
         window.display();
     }
 
