@@ -92,20 +92,9 @@ class hero
             body.setPosition(100.0f, 100.0f);
             body.setTexture(texture);
         }
-        /*hero(const sf::Vector2f& pos):
-            pos(pos)
-        {
-            texture.loadFromFile("grafiki/hero_sprite.png");
-            sprite = sf::Sprite(texture);
-            sprite.setTextureRect({ 0,0,16,28 });
-        }*/
         void Draw(sf::RenderWindow& window)
         {
             window.draw(body);
-        }
-        void SetDirection(sf::Vector2f& dir)
-        {
-            vel = dir * speed;
         }
         void Update(float deltaTime)
         {
@@ -139,6 +128,8 @@ class hero
                 else
                     faceRight = false;
             }
+            if (movement.y != 0.0f)
+                row = 1;
 
             animation.Update(row, deltaTime, faceRight);
             body.setTextureRect(animation.uvRect);
