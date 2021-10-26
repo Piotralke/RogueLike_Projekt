@@ -32,7 +32,7 @@ class Animation {
             uvRect.width = texture->getSize().x / float(imageCount.x);
             uvRect.height = texture->getSize().y / float(imageCount.y);
         }
-        void Update(int row, float deltaTime)
+        void Update(int row, float deltaTime, bool faceRight)
         {
             currentImage.y = row;
             totalTime += deltaTime;
@@ -46,8 +46,20 @@ class Animation {
                     currentImage.x = 0;
                 }
             }
-            uvRect.left = currentImage.x * uvRect.width;
+            
             uvRect.top = currentImage.y * uvRect.height;
+
+            if (faceRight)
+            {
+                uvRect.left = currentImage.x * uvRect.width;
+                uvRect.width = abs(uvRect.width);
+            }
+            else
+            {
+                uvRect.left = (currentImage.x + 1) * abs(uvRect.width);
+                uvRect.width = -abs(uvRect.width);
+            }
+                
         }
 
 };
@@ -61,30 +73,78 @@ class hero
         float speed = 20.0f;
         float health;
         float damage;
-        
+        sf::RectangleShape body;
+        Animation animation;
+        bool faceRight;
+        unsigned int row;
         float fire_rate;
         //float shot_speed; (?)
         float range;
     public:
-        hero(const sf::Vector2f& pos):
+        hero(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed):
+            animation(texture,imageCount,switchTime)
+        {
+            this->speed = speed;
+            row = 0;
+            faceRight = true;
+
+            body.setSize(sf::Vector2f(16.0f, 28.0f));
+            body.setPosition(100.0f, 100.0f);
+            body.setTexture(texture);
+        }
+        /*hero(const sf::Vector2f& pos):
             pos(pos)
         {
             texture.loadFromFile("grafiki/hero_sprite.png");
             sprite = sf::Sprite(texture);
             sprite.setTextureRect({ 0,0,16,28 });
-        }
-        void draw(sf::RenderTarget& rt)
+        }*/
+        void Draw(sf::RenderWindow& window)
         {
-            rt.draw(sprite);
+            window.draw(body);
         }
         void SetDirection(sf::Vector2f& dir)
         {
             vel = dir * speed;
         }
-        void Update(float dt)
+        void Update(float deltaTime)
         {
-            pos += vel * dt;
-            sprite.setPosition(pos);
+            sf::Vector2f movement(0.0f, 0.0f);
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+            {
+                movement.y -= speed * deltaTime;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+            {
+                movement.y += speed * deltaTime;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+            {
+                movement.x -= speed * deltaTime;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+            {
+                movement.x += speed * deltaTime;
+            }
+
+            if (movement.x == 0.0f)
+            {
+                row = 0;
+            }
+            else
+            {
+                row = 1;
+                if (movement.x > 0.0f)
+                    faceRight = true;
+                else
+                    faceRight = false;
+            }
+
+            animation.Update(row, deltaTime, faceRight);
+            body.setTextureRect(animation.uvRect);
+            body.move(movement);
+
+
         }
         void shot(float vec_x, float vec_y) //albo jakis jeden argument, jasli strzelanie byloby tylko pod katem prostym
         {
@@ -306,23 +366,15 @@ int main()
     sf::RenderWindow window(sf::VideoMode(1000, 700), "RogueLike!");
     sf::Sprite sprite;
     generate_map* level = new generate_map;
-    hero player({ 100.0f,100.0f });
+    sf::Texture playerTexture;
+    playerTexture.loadFromFile("grafiki/hero_animation.png");
+    hero player(&playerTexture, sf::Vector2u(4, 2), 0.3f, 60.0f);
     level->init_grid();
     level->max_level_counter(1);
     level->visit(5, 5);
     level->generate_layout();
     level->pick_room_layout(0b1111);
     level->wypisz();
-
-    sf::Font font;
-    font.loadFromFile("AlexandriaFLF.ttf");
-
-    sf::Sprite dupa;
-    sf::Texture dupa_t;
-    dupa_t.loadFromFile("grafiki/hero_run_right.png");
-    dupa.setTexture(dupa_t);
-
-    Animation animation(&dupa_t, sf::Vector2u(4,1), 0.3f);
 
     float deltaTime = 0.0f;
     sf::Clock clock;
@@ -338,30 +390,11 @@ int main()
                 window.close();
         }
 
-        sf::Vector2f dir = { 0.0f,0.0f };
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-        {
-            dir.y -= 1.0f;
-        }
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-        {
-            dir.y += 1.0f;
-        }
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-        {
-            dir.x -= 1.0f;
-        }
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-        {
-            dir.x += 1.0f;
-        }
-        player.SetDirection(dir);
-        player.Update(1.0f / 60.0f);
+        player.Update(deltaTime);
 
         window.clear();
-        animation.Update(0, deltaTime);
         window.draw(level->background_s);
-        player.draw(window);
+        player.Draw(window);
         window.display();
     }
 
