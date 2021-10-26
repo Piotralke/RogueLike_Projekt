@@ -12,47 +12,44 @@ class object
         int x, y;
         int obj_type;
         // tekstura(?)
-
-};
-
-struct Frame {
-    sf::IntRect rect;
-    double duration; // in seconds
 };
 
 class Animation {
-    std::vector<Frame> frames;
-    double totalLength;
-    double totalProgress;
-    sf::Sprite* target;
-public:
-    Animation(sf::Sprite& target) {
-        this->target = &target;
-        totalProgress = 0.0;
-    }
+    private:
+        sf::Vector2u imageCount;
+        sf::Vector2u currentImage;
+        float totalTime;
+        float switchTime;
+    public:
+        sf::IntRect uvRect;
+        Animation(sf::Texture* texture, sf::Vector2u imageCount, float switchTime)
+        {
+            this->imageCount = imageCount;
+            this->switchTime = switchTime;
+            totalTime = 0.0f;
+            currentImage.x = 0;
 
-    void addFrame(const Frame& frame) {
-        frames.push_back(std::move(frame));
-        totalLength += frame.duration;
-    }
-
-    void update(double elapsed) {
-        // increase the total progress of the animation
-        totalProgress += elapsed;
-
-        // use this progress as a counter. Final frame at progress <= 0
-        double progress = totalProgress;
-        for (auto frame : frames) {
-            progress -= frame.duration;
-
-            // When progress is <= 0 or we are on the last frame in the list, stop
-            if (progress <= 0.0 || &frame == &frames.back())
-            {
-                target->setTextureRect((frame).rect);
-                break; // we found our frame
-            }
+            uvRect.width = texture->getSize().x / float(imageCount.x);
+            uvRect.height = texture->getSize().y / float(imageCount.y);
         }
-    }
+        void Update(int row, float deltaTime)
+        {
+            currentImage.y = row;
+            totalTime += deltaTime;
+
+            if (totalTime >= switchTime)
+            {
+                totalTime -= switchTime;
+                currentImage.x++;
+                if (currentImage.x >= imageCount.x)
+                {
+                    currentImage.x = 0;
+                }
+            }
+            uvRect.left = currentImage.x * uvRect.width;
+            uvRect.top = currentImage.y * uvRect.height;
+        }
+
 };
 class hero
 {
@@ -317,17 +314,23 @@ int main()
     level->pick_room_layout(0b1111);
     level->wypisz();
 
+    sf::Font font;
+    font.loadFromFile("AlexandriaFLF.ttf");
+
     sf::Sprite dupa;
     sf::Texture dupa_t;
     dupa_t.loadFromFile("grafiki/hero_run_right.png");
     dupa.setTexture(dupa_t);
 
-    Animation animation(dupa);
-    animation.addFrame({sf::IntRect(0,0,16,28),0.1});
+    Animation animation(&dupa_t, sf::Vector2u(4,1), 0.3f);
 
+    float deltaTime = 0.0f;
+    sf::Clock clock;
 
     while (window.isOpen())
     {
+        deltaTime = clock.restart().asSeconds();
+
         sf::Event event;
         while (window.pollEvent(event))
         { 
@@ -356,10 +359,9 @@ int main()
         player.Update(1.0f / 60.0f);
 
         window.clear();
-        animation.update(10);
-        window.draw(dupa);
-        //window.draw(level->background_s);
-       // player.draw(window);
+        animation.Update(0, deltaTime);
+        window.draw(level->background_s);
+        player.draw(window);
         window.display();
     }
 
