@@ -355,11 +355,10 @@ class generate_map : public room
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(1000, 700), "RogueLike!");
-    sf::Sprite sprite;
     generate_map* level = new generate_map;
     sf::Texture playerTexture;
     playerTexture.loadFromFile("grafiki/hero_animation.png");
-    hero player(&playerTexture, sf::Vector2u(4, 2), 0.3f, 60.0f);
+    hero player(&playerTexture, sf::Vector2u(4, 2), 0.1f, 100.0f);
     level->init_grid();
     level->max_level_counter(1);
     level->visit(5, 5);
