@@ -358,7 +358,7 @@ class generate_map : public room
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(700, 400), "RogueLike!");
-    sf::View view(sf::Vector2f(0.0f, 0.0f), sf::Vector2f(420.0f, 270.0f));
+  //  sf::View view(sf::Vector2f(0.0f, 0.0f), sf::Vector2f(420.0f, 270.0f));
     generate_map* level = new generate_map;
     sf::Texture playerTexture;
     playerTexture.loadFromFile("grafiki/hero_animation.png");
@@ -385,10 +385,10 @@ int main()
         }
 
         player.Update(deltaTime);
-        view.setCenter(player.GetPosition());
+       // view.setCenter(player.GetPosition());
 
         window.clear();
-        window.setView(view);
+       // window.setView(view);
         window.draw(level->background_s);
         player.Draw(window);
         window.display();
