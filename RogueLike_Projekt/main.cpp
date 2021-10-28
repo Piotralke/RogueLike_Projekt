@@ -89,6 +89,7 @@ class hero
             faceRight = true;
 
             body.setSize(sf::Vector2f(16.0f, 28.0f));
+            body.setOrigin(body.getSize() / 2.0f);
             body.setPosition(100.0f, 100.0f);
             body.setTexture(texture);
         }
@@ -134,8 +135,10 @@ class hero
             animation.Update(row, deltaTime, faceRight);
             body.setTextureRect(animation.uvRect);
             body.move(movement);
-
-
+        }
+        sf::Vector2f GetPosition()
+        {
+            return body.getPosition();
         }
         void shot(float vec_x, float vec_y) //albo jakis jeden argument, jasli strzelanie byloby tylko pod katem prostym
         {
@@ -354,7 +357,8 @@ class generate_map : public room
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(1000, 700), "RogueLike!");
+    sf::RenderWindow window(sf::VideoMode(700, 400), "RogueLike!");
+    sf::View view(sf::Vector2f(0.0f, 0.0f), sf::Vector2f(420.0f, 270.0f));
     generate_map* level = new generate_map;
     sf::Texture playerTexture;
     playerTexture.loadFromFile("grafiki/hero_animation.png");
@@ -381,8 +385,10 @@ int main()
         }
 
         player.Update(deltaTime);
+        view.setCenter(player.GetPosition());
 
         window.clear();
+        window.setView(view);
         window.draw(level->background_s);
         player.Draw(window);
         window.display();
