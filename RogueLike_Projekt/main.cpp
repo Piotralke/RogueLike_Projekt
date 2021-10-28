@@ -66,10 +66,6 @@ class Animation {
 class hero
 {
     protected:
-        sf::Vector2f pos;
-        sf::Vector2f vel = {0.0f,0.0f};
-        sf::Texture texture;
-        sf::Sprite sprite;
         float speed = 20.0f;
         float health;
         float damage;
