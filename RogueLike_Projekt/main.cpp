@@ -3,7 +3,8 @@
 #include <queue>
 #include <stack>
 #include <iostream>
-
+#include "Animation.h"
+#include "Hero.h"
 #define SIZE 11
 
 class object
@@ -12,138 +13,6 @@ class object
         int x, y;
         int obj_type;
         // tekstura(?)
-};
-
-class Animation {
-    private:
-        sf::Vector2u imageCount;
-        sf::Vector2u currentImage;
-        float totalTime;
-        float switchTime;
-    public:
-        sf::IntRect uvRect;
-        Animation(sf::Texture* texture, sf::Vector2u imageCount, float switchTime)
-        {
-            this->imageCount = imageCount;
-            this->switchTime = switchTime;
-            totalTime = 0.0f;
-            currentImage.x = 0;
-
-            uvRect.width = texture->getSize().x / float(imageCount.x);
-            uvRect.height = texture->getSize().y / float(imageCount.y);
-        }
-        void Update(int row, float deltaTime, bool faceRight)
-        {
-            currentImage.y = row;
-            totalTime += deltaTime;
-
-            if (totalTime >= switchTime)
-            {
-                totalTime -= switchTime;
-                currentImage.x++;
-                if (currentImage.x >= imageCount.x)
-                {
-                    currentImage.x = 0;
-                }
-            }
-            
-            uvRect.top = currentImage.y * uvRect.height;
-
-            if (faceRight)
-            {
-                uvRect.left = currentImage.x * uvRect.width;
-                uvRect.width = abs(uvRect.width);
-            }
-            else
-            {
-                uvRect.left = (currentImage.x + 1) * abs(uvRect.width);
-                uvRect.width = -abs(uvRect.width);
-            }
-                
-        }
-
-};
-class hero
-{
-    protected:
-        float speed = 20.0f;
-        float health;
-        float damage;
-        sf::RectangleShape body;
-        Animation animation;
-        bool faceRight;
-        unsigned int row;
-        float fire_rate;
-        //float shot_speed; (?)
-        float range;
-    public:
-        hero(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed):
-            animation(texture,imageCount,switchTime)
-        {
-            this->speed = speed;
-            row = 0;
-            faceRight = true;
-
-            body.setSize(sf::Vector2f(16.0f, 28.0f));
-            body.setOrigin(body.getSize() / 2.0f);
-            body.setPosition(100.0f, 100.0f);
-            body.setTexture(texture);
-        }
-        void Draw(sf::RenderWindow& window)
-        {
-            window.draw(body);
-        }
-        void Update(float deltaTime)
-        {
-            sf::Vector2f movement(0.0f, 0.0f);
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-            {
-                movement.y -= speed * deltaTime;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-            {
-                movement.y += speed * deltaTime;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-            {
-                movement.x -= speed * deltaTime;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-            {
-                movement.x += speed * deltaTime;
-            }
-
-            if (movement.x == 0.0f)
-            {
-                row = 0;
-            }
-            else
-            {
-                row = 1;
-                if (movement.x > 0.0f)
-                    faceRight = true;
-                else
-                    faceRight = false;
-            }
-            if (movement.y != 0.0f)
-                row = 1;
-
-            animation.Update(row, deltaTime, faceRight);
-            body.setTextureRect(animation.uvRect);
-            body.move(movement);
-        }
-        sf::Vector2f GetPosition()
-        {
-            return body.getPosition();
-        }
-        void shot(float vec_x, float vec_y) //albo jakis jeden argument, jasli strzelanie byloby tylko pod katem prostym
-        {
-            // strzelenie w kierunku w ktorym patrzymy od pozycji gracza
-        }
-        void move(int x_dir, int y_dir)
-        {
-            //modyfikacja pozycji gracza w zaleznosci od kierunku poruszania sie
-        }
 };
 
 class monster : public hero
@@ -175,8 +44,9 @@ public:
         return room_doors;
 
     }
-    bool pick_room_layout(int room_doors)
+    bool pick_room_layout(int i, int j)
     {
+        int room_doors = check_doors(i, j);
         switch (room_doors)
         {
         case 0b0001:    //L
@@ -353,7 +223,7 @@ class generate_map : public room
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(700, 400), "RogueLike!");
+    sf::RenderWindow window(sf::VideoMode(700, 400), "RogueLike!", sf::Style::Default);
   //  sf::View view(sf::Vector2f(0.0f, 0.0f), sf::Vector2f(420.0f, 270.0f));
     generate_map* level = new generate_map;
     sf::Texture playerTexture;
@@ -363,7 +233,6 @@ int main()
     level->max_level_counter(1);
     level->visit(5, 5);
     level->generate_layout();
-    level->pick_room_layout(0b1111);
     level->wypisz();
 
     float deltaTime = 0.0f;
@@ -382,7 +251,7 @@ int main()
 
         player.Update(deltaTime);
        // view.setCenter(player.GetPosition());
-
+        level->pick_room_layout(player.x, player.y);
         window.clear();
        // window.setView(view);
         window.draw(level->background_s);
