@@ -1,10 +1,12 @@
 #include <SFML/Graphics.hpp>
-#include <stdlib.h>
+//#include <stdlib.h>
 #include <queue>
 #include <stack>
 #include <iostream>
+//#include <time.h>
 #include "Animation.h"
 #include "Hero.h"
+
 #define SIZE 11
 
 class object
@@ -33,14 +35,14 @@ public:
     int check_doors(int i, int j)
     {
         int room_doors = 0b0000;
-        if (grid[i - 1][j])     
-            room_doors += 0b0001;   //lewe drzwi
-        if (grid[i + 1][j])    
-            room_doors += 0b0010;    //prawe drzwi
-        if (grid[i][j + 1])     
-            room_doors += 0b0100;   //dolne drzwi
-        if (grid[i][j - 1])      
-            room_doors += 0b1000;   //gorne drzwi
+        if (grid[i][j - 1]==1)     
+            room_doors ^= 0b0001;   //lewe drzwi
+        if (grid[i][j + 1]==1)    
+            room_doors ^= 0b0010;    //prawe drzwi
+        if (grid[i + 1][j]==1)     
+            room_doors ^= 0b0100;   //dolne drzwi
+        if (grid[i - 1][j]==1)      
+            room_doors ^= 0b1000;   //gorne drzwi
         return room_doors;
 
     }
@@ -59,7 +61,7 @@ public:
             background_t.loadFromFile("grafiki/background_0011o.png", sf::IntRect(0, 0, 700, 400));
             break;
         case 0b0100:    //D
-            background_t.loadFromFile("grafiki/background_0001o.png", sf::IntRect(0, 0, 700, 400));
+            background_t.loadFromFile("grafiki/background_0100o.png", sf::IntRect(0, 0, 700, 400));
             break;
         case 0b0101:    //LD
             background_t.loadFromFile("grafiki/background_0101o.png", sf::IntRect(0, 0, 700, 400));
@@ -143,8 +145,12 @@ class generate_map : public room
             if (rooms_counter >= max_rooms)
                 return false;
 
-            if (rand() % 101 > 80 && i != 5 || rand() % 101 > 80 && j != 5)
-                return false;
+            int random = std::rand() % 2;
+            if (i != 5 && j == 5 || i == 5 && j != 5)
+            {
+                if (random > 0 && i != 5 || random > 0 && j != 5)
+                    return false;
+            }
 
             RoomQueue_i.push(i);
             RoomQueue_j.push(j);
@@ -165,13 +171,14 @@ class generate_map : public room
         }
         bool generate_layout()
         {
-            while (rooms_counter < max_rooms || rooms_counter >min_rooms)
+            int i, j;
+            while (rooms_counter < max_rooms && !(rooms_counter >min_rooms))
             {
                 if (RoomQueue_i.size() > 0 && RoomQueue_j.size() > 0)
                 {
-                    int i = RoomQueue_i.front();
+                    i = RoomQueue_i.front();
                     RoomQueue_i.pop();
-                    int j = RoomQueue_j.front();
+                    j = RoomQueue_j.front();
                     RoomQueue_j.pop();
                     bool created = false;
                     if (i > 0)
@@ -186,6 +193,11 @@ class generate_map : public room
                     {
                         DeadEnd_i.push(i);
                         DeadEnd_j.push(j);
+                    }
+                    if (RoomQueue_i.empty())
+                    {
+                        RoomQueue_i.push(i);
+                        RoomQueue_j.push(j);
                     }
                 }
                 else if (!placedSpecial)
@@ -224,17 +236,16 @@ class generate_map : public room
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(700, 400), "RogueLike!", sf::Style::Default);
-  //  sf::View view(sf::Vector2f(0.0f, 0.0f), sf::Vector2f(420.0f, 270.0f));
     generate_map* level = new generate_map;
     sf::Texture playerTexture;
     playerTexture.loadFromFile("grafiki/hero_animation.png");
     hero player(&playerTexture, sf::Vector2u(4, 2), 0.1f, 100.0f);
+    srand(time(NULL));
     level->init_grid();
     level->max_level_counter(1);
     level->visit(5, 5);
     level->generate_layout();
     level->wypisz();
-
     float deltaTime = 0.0f;
     sf::Clock clock;
 

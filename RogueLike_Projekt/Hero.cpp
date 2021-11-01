@@ -1,4 +1,5 @@
 #include "Hero.h"
+#include <iostream>
 
 hero::hero(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed) :
     animation(texture, imageCount, switchTime)
@@ -54,13 +55,33 @@ void hero::Update(float deltaTime)
         row = 1;
 
     if (body.getPosition().x < 32)
-        x--;
-    else if (body.getPosition().x > 668)
-        x++;
-    else if (body.getPosition().y < 32)
+    {
         y--;
-    else if (body.getPosition().y > 368)
+        body.setPosition({ 660, body.getPosition().y });
+        std::cout << y << std::endl;
+    }
+        
+    else if (body.getPosition().x > 668)
+    {
         y++;
+        body.setPosition({ 40, body.getPosition().y });
+        std::cout << y << std::endl;
+    }
+        
+    else if (body.getPosition().y < 32)
+    {
+        x--;
+        body.setPosition({ body.getPosition().x, 360 });
+        std::cout << x << std::endl;
+    }
+        
+    else if (body.getPosition().y > 368)
+    {
+        x++;
+        body.setPosition({ body.getPosition().x, 40 });
+        std::cout << x << std::endl;
+    }
+       
 
 
 
