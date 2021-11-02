@@ -8,7 +8,7 @@ hero::hero(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, floa
     row = 0;
     faceRight = true;
 
-    body.setSize(sf::Vector2f(16.0f, 28.0f));
+    body.setSize(sf::Vector2f(16.0f, 20.0f));
     body.setOrigin(body.getSize() / 2.0f);
     body.setPosition(100.0f, 100.0f);
     body.setTexture(texture);

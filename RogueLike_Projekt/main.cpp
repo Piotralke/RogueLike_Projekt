@@ -242,7 +242,7 @@ int main()
     playerTexture.loadFromFile("grafiki/hero_animation.png");
     hero player(&playerTexture, sf::Vector2u(4, 2), 0.1f, 100.0f);
     sf::RectangleShape kamien;
-    kamien.setSize({20,20});
+    kamien.setSize({30,30});
     kamien.setOrigin(kamien.getSize() / 2.0f);
     kamien.setPosition(300.0f, 200.0f);
     kamien.setFillColor(sf::Color());
