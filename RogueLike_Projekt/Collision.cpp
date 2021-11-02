@@ -14,11 +14,6 @@ bool Collision::check_Collision(sf::RectangleShape& ob1, sf::RectangleShape& ob2
 		}
 		for (int i = 0; i < poly1->getPointCount(); i++)
 		{
-			
-			//std::cout << "height" << poly1->getGlobalBounds().height << std::endl;
-			//std::cout << "width" << poly1->getGlobalBounds().width << std::endl;
-			//std::cout << "left" << poly1->getGlobalBounds().left << std::endl;
-			//std::cout << "top" << poly1->getGlobalBounds().top << std::endl;
 			sf::Vector2f line_ob1s = poly1->getPosition();
 			sf::Vector2f line_ob1e;
 			switch (i)
@@ -67,19 +62,16 @@ bool Collision::check_Collision(sf::RectangleShape& ob1, sf::RectangleShape& ob2
 				float t1 = ((line_ob2s.y - line_ob2e.y) * (line_ob1s.x - line_ob2s.x) + (line_ob2e.x - line_ob2s.x) * (line_ob1s.y - line_ob2s.y)) / h;
 				float t2 = ((line_ob1s.y - line_ob1e.y) * (line_ob1s.x - line_ob2s.x) + (line_ob1e.x - line_ob1s.x) * (line_ob1s.y - line_ob2s.y)) / h;
 
-				//std::cout << "h:" << h << std::endl;
-				//std::cout << "t1:" << t1 << std::endl;
-				//std::cout << "t2:" << t2 << std::endl;
-
 
 				if (t1 >= 0.0f && t1 < 1.0f && t2 >= 0.0f && t2 < 1.0f)
 				{
 					displacement.x += (1.0f - t1) * (line_ob1e.x - line_ob1s.x);
 					displacement.y += (1.0f - t1) * (line_ob1e.y - line_ob1s.y);
-					//return true;
+					ob1.setPosition({ (ob1.getPosition().x + (displacement.x * (shape == 0 ? -1 : +1))), (ob1.getPosition().y + (displacement.y * (shape == 0 ? -1 : +1))) });
+					return true;
 				}
 			}
-			ob1.setPosition({ (ob1.getPosition().x + (displacement.x * (shape == 0 ? -1 : +1))), (ob1.getPosition().y + (displacement.y * (shape == 0 ? -1 : +1))) });
+			
 		}
 	}
 	return false;

@@ -28,6 +28,8 @@ class room
     protected:
         int grid[SIZE][SIZE];
         int room_type;
+        sf::Texture doors_t;
+        sf::Sprite doors_s;
 
 public:
     sf::Texture background_t;
@@ -46,60 +48,68 @@ public:
         return room_doors;
 
     }
-    bool pick_room_layout(int i, int j)
+    void Draw(sf::RenderWindow& window, sf::RectangleShape& door)
     {
-        int room_doors = check_doors(i, j);
-        switch (room_doors)
-        {
-        case 0b0001:    //L
-            background_t.loadFromFile("grafiki/background_0001o.png",sf::IntRect(0,0,700,400));
-            break;                              
-        case 0b0010:    //P
-            background_t.loadFromFile("grafiki/background_0010o.png", sf::IntRect(0, 0, 700, 400));
-            break;
-        case 0b0011:    //LP
-            background_t.loadFromFile("grafiki/background_0011o.png", sf::IntRect(0, 0, 700, 400));
-            break;
-        case 0b0100:    //D
-            background_t.loadFromFile("grafiki/background_0100o.png", sf::IntRect(0, 0, 700, 400));
-            break;
-        case 0b0101:    //LD
-            background_t.loadFromFile("grafiki/background_0101o.png", sf::IntRect(0, 0, 700, 400));
-            break;
-        case 0b0110:    //PD
-            background_t.loadFromFile("grafiki/background_0110o.png", sf::IntRect(0, 0, 700, 400));
-            break;
-        case 0b0111:    //PLD
-            background_t.loadFromFile("grafiki/background_0111o.png", sf::IntRect(0, 0, 700, 400));
-            break;
-        case 0b1000:    //G
-            background_t.loadFromFile("grafiki/background_1000o.png", sf::IntRect(0, 0, 700, 400));
-            break;
-        case 0b1001:    //GL
-            background_t.loadFromFile("grafiki/background_1001o.png", sf::IntRect(0, 0, 700, 400));
-            break;
-        case 0b1010:    //GP
-            background_t.loadFromFile("grafiki/background_1010o.png", sf::IntRect(0, 0, 700, 400));
-            break;
-        case 0b1011:    //GPL
-            background_t.loadFromFile("grafiki/background_1011o.png", sf::IntRect(0, 0, 700, 400));
-            break;
-        case 0b1100:    //GD
-            background_t.loadFromFile("grafiki/background_1100o.png", sf::IntRect(0, 0, 700, 400));
-            break;
-        case 0b1101:    //GDL
-            background_t.loadFromFile("grafiki/background_1101o.png", sf::IntRect(0, 0, 700, 400));
-            break;
-        case 0b1110:    //GDP
-            background_t.loadFromFile("grafiki/background_1110o.png", sf::IntRect(0, 0, 700, 400));
-            break;
-        case 0b1111:    //GDLP - wszystkie 4 drzwi
-            if (!background_t.loadFromFile("grafiki/background_1111o.png", sf::IntRect(0, 0, 700, 400)))
-                return EXIT_FAILURE;
-            break;
-        }
-        background_s.setTexture(background_t);
+        window.draw(door);
     }
+    void pick_room_layout(hero& player,Collision kolizja,sf::RenderWindow& window,int i, int j)
+    {
+        doors_t.loadFromFile("grafiki/doors_o.png");
+        sf::RectangleShape doors;
+        doors.setSize({ 32, 32 });
+        doors.setOrigin(doors.getSize() / 2.0f);
+        int room_doors = check_doors(i, j);
+        if (room_doors & 0b0001)
+        {
+            doors.setPosition(16,200);
+            doors.setTexture(&doors_t);
+            doors.setRotation(-90.0f);
+            Draw(window, doors);
+            if (kolizja.check_Collision(player.body, doors))
+            {
+                player.y--;
+                player.body.setPosition({ 655, player.body.getPosition().y });
+            }
+
+        }
+        if (room_doors & 0b0010)
+        {
+            doors.setPosition(684, 200);
+            doors.setTexture(&doors_t);
+            doors.setRotation(90.0f);
+            Draw(window, doors);
+            if (kolizja.check_Collision(player.body, doors))
+            {
+                player.y++;
+                player.body.setPosition({ 45, player.body.getPosition().y });
+            }
+        }
+        if (room_doors & 0b0100)
+        {
+            doors.setPosition(350, 384);
+            doors.setTexture(&doors_t);
+            doors.setRotation(180.0f);
+            Draw(window, doors);
+            if (kolizja.check_Collision(player.body, doors))
+            {
+                player.x++;
+                player.body.setPosition({ player.body.getPosition().x, 45 });
+            }
+        }
+        if (room_doors & 0b1000)
+        {
+            doors.setPosition(350, 16);
+            doors.setTexture(&doors_t);
+            doors.setRotation(0.0f);
+            Draw(window, doors);
+            if (kolizja.check_Collision(player.body, doors))
+            {
+                player.x--;
+                player.body.setPosition({ player.body.getPosition().x, 355 });
+            }
+        }
+    }
+
 };
 
 class generate_map : public room
@@ -116,6 +126,11 @@ class generate_map : public room
         bool placedSpecial = false;
 
     public:
+        generate_map()
+        {
+            background_t.loadFromFile("grafiki/background.png", sf::IntRect(0, 0, 700, 400));
+            background_s.setTexture(background_t);
+        }
         void init_grid()
         {
             for (int i = 0; i < SIZE; i++)
@@ -231,11 +246,29 @@ class generate_map : public room
         }
 };
 
-
-
 int main()
 {
     Collision kolizja;
+    sf::RectangleShape room_collider_top;
+    sf::RectangleShape room_collider_left;
+    sf::RectangleShape room_collider_right;
+    sf::RectangleShape room_collider_down;
+    room_collider_top.setSize({642,29});
+    room_collider_top.setOrigin(room_collider_top.getSize() / 2.0f);
+    room_collider_top.setPosition(350, 16);
+
+    room_collider_left.setSize({ 29,400 });
+    room_collider_left.setOrigin(room_collider_left.getSize() / 2.0f);
+    room_collider_left.setPosition(16, 200);
+
+    room_collider_right.setSize({ 29,400 });
+    room_collider_right.setOrigin(room_collider_right.getSize() / 2.0f);
+    room_collider_right.setPosition(684, 200);
+
+    room_collider_down.setSize({ 642,29 });
+    room_collider_down.setOrigin(room_collider_down.getSize() / 2.0f);
+    room_collider_down.setPosition(350, 384);
+
     sf::RenderWindow window(sf::VideoMode(700, 400), "RogueLike!", sf::Style::Default);
     generate_map* level = new generate_map;
     sf::Texture playerTexture;
@@ -265,15 +298,18 @@ int main()
             if (event.type == sf::Event::Closed)
                 window.close();
         }
-
         player.Update(deltaTime);
-        if (kolizja.check_Collision(player.body, kamien))
-            std::cout << "KOLIZJA" << std::endl;
+        kolizja.check_Collision(player.body, kamien);
+        kolizja.check_Collision(player.body, room_collider_top);
+        kolizja.check_Collision(player.body, room_collider_left);
+        kolizja.check_Collision(player.body, room_collider_right);
+        kolizja.check_Collision(player.body, room_collider_down);
        // view.setCenter(player.GetPosition());
-        level->pick_room_layout(player.x, player.y);
+        
         window.clear();
        // window.setView(view);
         window.draw(level->background_s);
+        level->pick_room_layout(player,kolizja,window, player.x, player.y);
         window.draw(kamien);
         player.Draw(window);
         window.display();
