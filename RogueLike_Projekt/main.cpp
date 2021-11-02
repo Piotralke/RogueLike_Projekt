@@ -6,6 +6,7 @@
 //#include <time.h>
 #include "Animation.h"
 #include "Hero.h"
+#include "Collision.h"
 
 #define SIZE 11
 
@@ -25,7 +26,6 @@ class monster : public hero
 class room 
 {
     protected:
-        
         int grid[SIZE][SIZE];
         int room_type;
 
@@ -235,11 +235,17 @@ class generate_map : public room
 
 int main()
 {
+    Collision kolizja;
     sf::RenderWindow window(sf::VideoMode(700, 400), "RogueLike!", sf::Style::Default);
     generate_map* level = new generate_map;
     sf::Texture playerTexture;
     playerTexture.loadFromFile("grafiki/hero_animation.png");
     hero player(&playerTexture, sf::Vector2u(4, 2), 0.1f, 100.0f);
+    sf::RectangleShape kamien;
+    kamien.setSize({20,20});
+    kamien.setOrigin(kamien.getSize() / 2.0f);
+    kamien.setPosition(300.0f, 200.0f);
+    kamien.setFillColor(sf::Color());
     srand(time(NULL));
     level->init_grid();
     level->max_level_counter(1);
@@ -251,21 +257,24 @@ int main()
 
     while (window.isOpen())
     {
-        deltaTime = clock.restart().asSeconds();
+        deltaTime = clock.restart().asSeconds(); 
 
         sf::Event event;
-        while (window.pollEvent(event))
+        while (window.pollEvent(event)) 
         { 
             if (event.type == sf::Event::Closed)
                 window.close();
         }
 
         player.Update(deltaTime);
+        if (kolizja.check_Collision(player.body, kamien))
+            std::cout << "KOLIZJA" << std::endl;
        // view.setCenter(player.GetPosition());
         level->pick_room_layout(player.x, player.y);
         window.clear();
        // window.setView(view);
         window.draw(level->background_s);
+        window.draw(kamien);
         player.Draw(window);
         window.display();
     }

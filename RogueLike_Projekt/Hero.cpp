@@ -54,7 +54,7 @@ void hero::Update(float deltaTime)
     if (movement.y != 0.0f)
         row = 1;
 
-    if (body.getPosition().x < 32)
+    /*if (body.getPosition().x < 32)
     {
         y--;
         body.setPosition({ 660, body.getPosition().y });
@@ -80,7 +80,7 @@ void hero::Update(float deltaTime)
         x++;
         body.setPosition({ body.getPosition().x, 40 });
         std::cout << x << std::endl;
-    }
+    }*/
        
 
 

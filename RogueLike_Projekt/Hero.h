@@ -8,7 +8,6 @@ protected:
     float speed = 20.0f;
     float health;
     float damage;
-    sf::RectangleShape body;
     Animation animation;
     bool faceRight;
     unsigned int row;
@@ -17,6 +16,7 @@ protected:
     float range;
 public:
     int x = 5, y = 5;
+    sf::RectangleShape body;
     hero(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed);
     void Draw(sf::RenderWindow& window);
     void Update(float deltaTime);
