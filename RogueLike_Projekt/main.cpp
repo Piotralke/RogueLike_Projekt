@@ -259,7 +259,7 @@ int main()
 
     room_collider_left.setSize({ 29,400 });
     room_collider_left.setOrigin(room_collider_left.getSize() / 2.0f);
-    room_collider_left.setPosition(16, 200);
+    room_collider_left.setPosition(16, 200); 
 
     room_collider_right.setSize({ 29,400 });
     room_collider_right.setOrigin(room_collider_right.getSize() / 2.0f);
@@ -275,9 +275,9 @@ int main()
     playerTexture.loadFromFile("grafiki/hero_animation.png");
     hero player(&playerTexture, sf::Vector2u(4, 2), 0.1f, 100.0f);
     sf::RectangleShape kamien;
-    kamien.setSize({30,30});
+    kamien.setSize({2,2});
     kamien.setOrigin(kamien.getSize() / 2.0f);
-    kamien.setPosition(300.0f, 200.0f);
+    kamien.setPosition(30.0f, 370.0f);
     kamien.setFillColor(sf::Color());
     srand(time(NULL));
     level->init_grid();
@@ -310,7 +310,7 @@ int main()
        // window.setView(view);
         window.draw(level->background_s);
         level->pick_room_layout(player,kolizja,window, player.x, player.y);
-        window.draw(kamien);
+        //window.draw(kamien);
         player.Draw(window);
         window.display();
     }
