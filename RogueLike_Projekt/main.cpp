@@ -8,6 +8,7 @@
 #include "Hero.h"
 #include "Collision.h"
 #include "Bullet.h"
+#include "Monster.h"
 
 #define SIZE 11
 
@@ -17,11 +18,6 @@ class object
         int x, y;
         int obj_type;
         // tekstura(?)
-};
-
-class monster : public hero
-{
-    int type;
 };
 
 class room 
@@ -277,7 +273,10 @@ int main()
     generate_map* level = new generate_map;
     sf::Texture playerTexture;
     playerTexture.loadFromFile("grafiki/hero_animation.png");
-    hero player(&playerTexture, sf::Vector2u(4, 2), 0.1f, 100.0f, 0.5f);
+    hero player(&playerTexture, sf::Vector2u(4, 2), 0.1f, 100.0f, 0.5f, 200.0f, 100.0f);
+    sf::Texture wizardTexture;
+    wizardTexture.loadFromFile("grafiki/wizard_animation.png");
+    monster wizard(&wizardTexture, sf::Vector2u(4,1),0.1f,0.0f,0.2f,150.0f,30.0f,1,true);
     sf::RectangleShape kamien;
     kamien.setSize({2,2});
     kamien.setOrigin(kamien.getSize() / 2.0f);
@@ -304,6 +303,7 @@ int main()
                 window.close();
         }
         player.Update(deltaTime,bulletVec,fire_delay_clock,&arrow_texture);
+        wizard.animation.Update(1,deltaTime,true);
         for (int i = 0; i < bulletVec.size(); i++)
         {
             bulletVec.at(i).fire(deltaTime);
@@ -347,6 +347,7 @@ int main()
         for (int i = 0; i < bulletVec.size(); i++)
             bulletVec.at(i).Draw(window);
         //window.draw(kamien);
+        wizard.Draw(window);
         player.Draw(window);
         window.display();
     }

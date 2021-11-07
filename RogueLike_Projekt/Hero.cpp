@@ -1,10 +1,12 @@
 #include "Hero.h"
 
-hero::hero(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed, float fire_rate) :
+hero::hero(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed, float fire_rate, float shot_speed, float health) :
     animation(texture, imageCount, switchTime)
 {
     this->speed = speed;
     this->fire_rate = fire_rate;
+    this->shot_speed = shot_speed;
+    this->health = health;
     row = 0;
     faceRight = true;
 
@@ -42,7 +44,7 @@ void hero::Update(float deltaTime, std::vector<Bullet> &bulletVec, sf::Clock &fi
     {
         if (fire_delay_clock.getElapsedTime().asSeconds() >= fire_rate)
         {
-            Bullet newBullet({ 7,19 }, body.getPosition(), 200.0f, 1.0f, 1, arrow, 0.0f);
+            Bullet newBullet({ 7,19 }, body.getPosition(), shot_speed, 1.0f, 1, arrow, 0.0f);
             bulletVec.push_back(newBullet);
             fire_delay_clock.restart();
         }
@@ -52,7 +54,7 @@ void hero::Update(float deltaTime, std::vector<Bullet> &bulletVec, sf::Clock &fi
     {
         if (fire_delay_clock.getElapsedTime().asSeconds() >= fire_rate)
         {
-            Bullet newBullet({ 7,19 }, body.getPosition(), 200.0f, 1.0f, 2, arrow, 180.0f);
+            Bullet newBullet({ 7,19 }, body.getPosition(), shot_speed, 1.0f, 2, arrow, 180.0f);
             bulletVec.push_back(newBullet);
             fire_delay_clock.restart();
         }
@@ -62,7 +64,7 @@ void hero::Update(float deltaTime, std::vector<Bullet> &bulletVec, sf::Clock &fi
     {
         if (fire_delay_clock.getElapsedTime().asSeconds() >= fire_rate)
         {
-            Bullet newBullet({ 7,19 }, body.getPosition(), 200.0f, 1.0f, 3, arrow, -90.0f);
+            Bullet newBullet({ 7,19 }, body.getPosition(), shot_speed, 1.0f, 3, arrow, -90.0f);
             bulletVec.push_back(newBullet);
             fire_delay_clock.restart();
         }
@@ -72,7 +74,7 @@ void hero::Update(float deltaTime, std::vector<Bullet> &bulletVec, sf::Clock &fi
     {
         if (fire_delay_clock.getElapsedTime().asSeconds() >= fire_rate)
         {
-            Bullet newBullet({ 7,19 }, body.getPosition(), 200.0f, 1.0f, 4, arrow, 90.0f);
+            Bullet newBullet({ 7,19 }, body.getPosition(), shot_speed, 1.0f, 4, arrow, 90.0f);
             bulletVec.push_back(newBullet);
             fire_delay_clock.restart();
         }

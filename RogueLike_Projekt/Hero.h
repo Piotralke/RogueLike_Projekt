@@ -17,7 +17,7 @@ protected:
 public:
     int x = 5, y = 5;
     sf::RectangleShape body;
-    hero(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed, float fire_rate);
+    hero(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed, float fire_rate, float shot_speed, float health);
     void Draw(sf::RenderWindow& window);
     void Update(float deltaTime, std::vector<Bullet> &bulletVec, sf::Clock &fire_delay_clock, sf::Texture *arrow);
     sf::Vector2f GetPosition();
