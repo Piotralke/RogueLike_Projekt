@@ -7,6 +7,7 @@
 #include "Animation.h"
 #include "Hero.h"
 #include "Collision.h"
+#include "Bullet.h"
 
 #define SIZE 11
 
@@ -269,16 +270,20 @@ int main()
     room_collider_down.setOrigin(room_collider_down.getSize() / 2.0f);
     room_collider_down.setPosition(350, 384);
 
+    sf::Texture arrow_texture;
+    arrow_texture.loadFromFile("grafiki/arrow.png");
+
     sf::RenderWindow window(sf::VideoMode(700, 400), "RogueLike!", sf::Style::Default);
     generate_map* level = new generate_map;
     sf::Texture playerTexture;
     playerTexture.loadFromFile("grafiki/hero_animation.png");
-    hero player(&playerTexture, sf::Vector2u(4, 2), 0.1f, 100.0f);
+    hero player(&playerTexture, sf::Vector2u(4, 2), 0.1f, 100.0f, 0.5f);
     sf::RectangleShape kamien;
     kamien.setSize({2,2});
     kamien.setOrigin(kamien.getSize() / 2.0f);
     kamien.setPosition(30.0f, 370.0f);
     kamien.setFillColor(sf::Color());
+    std::vector<Bullet> bulletVec;
     srand(time(NULL));
     level->init_grid();
     level->max_level_counter(1);
@@ -287,18 +292,47 @@ int main()
     level->wypisz();
     float deltaTime = 0.0f;
     sf::Clock clock;
-
+    sf::Clock fire_delay_clock;
     while (window.isOpen())
     {
         deltaTime = clock.restart().asSeconds(); 
-
+        
         sf::Event event;
         while (window.pollEvent(event)) 
         { 
             if (event.type == sf::Event::Closed)
                 window.close();
         }
-        player.Update(deltaTime);
+        player.Update(deltaTime,bulletVec,fire_delay_clock,&arrow_texture);
+        for (int i = 0; i < bulletVec.size(); i++)
+        {
+            bulletVec.at(i).fire(deltaTime);
+            if (!(bulletVec.empty()) && kolizja.check_Collision(bulletVec.at(i).bullet, room_collider_top))
+            {
+                bulletVec.erase(bulletVec.begin() + i);
+                if(i!=0)
+                    i--;
+            }
+            if (!(bulletVec.empty()) && kolizja.check_Collision(bulletVec.at(i).bullet, room_collider_left))
+            {
+                bulletVec.erase(bulletVec.begin() + i);
+                if (i != 0)
+                    i--;
+            }
+            if (!(bulletVec.empty()) && kolizja.check_Collision(bulletVec.at(i).bullet, room_collider_right))
+            {
+                bulletVec.erase(bulletVec.begin() + i);
+                if (i != 0)
+                    i--;
+            }
+            if (!(bulletVec.empty()) && kolizja.check_Collision(bulletVec.at(i).bullet, room_collider_down))
+            {
+                bulletVec.erase(bulletVec.begin() + i);
+                if (i != 0)
+                    i--;
+            }
+                
+        }
         kolizja.check_Collision(player.body, kamien);
         kolizja.check_Collision(player.body, room_collider_top);
         kolizja.check_Collision(player.body, room_collider_left);
@@ -310,6 +344,8 @@ int main()
        // window.setView(view);
         window.draw(level->background_s);
         level->pick_room_layout(player,kolizja,window, player.x, player.y);
+        for (int i = 0; i < bulletVec.size(); i++)
+            bulletVec.at(i).Draw(window);
         //window.draw(kamien);
         player.Draw(window);
         window.display();

@@ -1,10 +1,10 @@
 #include "Hero.h"
-#include <iostream>
 
-hero::hero(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed) :
+hero::hero(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed, float fire_rate) :
     animation(texture, imageCount, switchTime)
 {
     this->speed = speed;
+    this->fire_rate = fire_rate;
     row = 0;
     faceRight = true;
 
@@ -19,7 +19,7 @@ void hero::Draw(sf::RenderWindow& window)
     window.draw(body);
 }
 
-void hero::Update(float deltaTime)
+void hero::Update(float deltaTime, std::vector<Bullet> &bulletVec, sf::Clock &fire_delay_clock, sf::Texture *arrow)
 {
     sf::Vector2f movement(0.0f, 0.0f);
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
@@ -38,7 +38,46 @@ void hero::Update(float deltaTime)
     {
         movement.x += speed * deltaTime;
     }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+    {
+        if (fire_delay_clock.getElapsedTime().asSeconds() >= fire_rate)
+        {
+            Bullet newBullet({ 7,19 }, body.getPosition(), 200.0f, 1.0f, 1, arrow, 0.0f);
+            bulletVec.push_back(newBullet);
+            fire_delay_clock.restart();
+        }
 
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+    {
+        if (fire_delay_clock.getElapsedTime().asSeconds() >= fire_rate)
+        {
+            Bullet newBullet({ 7,19 }, body.getPosition(), 200.0f, 1.0f, 2, arrow, 180.0f);
+            bulletVec.push_back(newBullet);
+            fire_delay_clock.restart();
+        }
+        
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+    {
+        if (fire_delay_clock.getElapsedTime().asSeconds() >= fire_rate)
+        {
+            Bullet newBullet({ 7,19 }, body.getPosition(), 200.0f, 1.0f, 3, arrow, -90.0f);
+            bulletVec.push_back(newBullet);
+            fire_delay_clock.restart();
+        }
+        
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+    {
+        if (fire_delay_clock.getElapsedTime().asSeconds() >= fire_rate)
+        {
+            Bullet newBullet({ 7,19 }, body.getPosition(), 200.0f, 1.0f, 4, arrow, 90.0f);
+            bulletVec.push_back(newBullet);
+            fire_delay_clock.restart();
+        }
+        
+    }
     if (movement.x == 0.0f)
     {
         row = 0;
@@ -53,37 +92,6 @@ void hero::Update(float deltaTime)
     }
     if (movement.y != 0.0f)
         row = 1;
-
-    /*if (body.getPosition().x < 32)
-    {
-        y--;
-        body.setPosition({ 660, body.getPosition().y });
-        std::cout << y << std::endl;
-    }
-        
-    else if (body.getPosition().x > 668)
-    {
-        y++;
-        body.setPosition({ 40, body.getPosition().y });
-        std::cout << y << std::endl;
-    }
-        
-    else if (body.getPosition().y < 32)
-    {
-        x--;
-        body.setPosition({ body.getPosition().x, 360 });
-        std::cout << x << std::endl;
-    }
-        
-    else if (body.getPosition().y > 368)
-    {
-        x++;
-        body.setPosition({ body.getPosition().x, 40 });
-        std::cout << x << std::endl;
-    }*/
-       
-
-
 
     animation.Update(row, deltaTime, faceRight);
     body.setTextureRect(animation.uvRect);
