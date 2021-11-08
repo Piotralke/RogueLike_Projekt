@@ -267,7 +267,9 @@ int main()
     room_collider_down.setPosition(350, 384);
 
     sf::Texture arrow_texture;
+    sf::Texture fire_ball_texture;
     arrow_texture.loadFromFile("grafiki/arrow.png");
+    fire_ball_texture.loadFromFile("grafiki/fire_ball.png");
 
     sf::RenderWindow window(sf::VideoMode(700, 400), "RogueLike!", sf::Style::Default);
     generate_map* level = new generate_map;
@@ -276,13 +278,14 @@ int main()
     hero player(&playerTexture, sf::Vector2u(4, 2), 0.1f, 100.0f, 0.5f, 200.0f, 100.0f);
     sf::Texture wizardTexture;
     wizardTexture.loadFromFile("grafiki/wizard_animation.png");
-    monster wizard(&wizardTexture, sf::Vector2u(4,1),0.1f,0.0f,0.2f,150.0f,30.0f,1,true);
+    monster wizard(&wizardTexture, sf::Vector2u(4,1),0.1f,0.0f,1.5f,150.0f,30.0f,1,true);
     sf::RectangleShape kamien;
     kamien.setSize({2,2});
     kamien.setOrigin(kamien.getSize() / 2.0f);
     kamien.setPosition(30.0f, 370.0f);
     kamien.setFillColor(sf::Color());
     std::vector<Bullet> bulletVec;
+    std::vector<Bullet> monsterBulletVec;
     srand(time(NULL));
     level->init_grid();
     level->max_level_counter(1);
@@ -292,6 +295,7 @@ int main()
     float deltaTime = 0.0f;
     sf::Clock clock;
     sf::Clock fire_delay_clock;
+    sf::Clock monster_fire_delay_clock;
     while (window.isOpen())
     {
         deltaTime = clock.restart().asSeconds(); 
@@ -303,7 +307,7 @@ int main()
                 window.close();
         }
         player.Update(deltaTime,bulletVec,fire_delay_clock,&arrow_texture);
-        wizard.animation.Update(1,deltaTime,true);
+        wizard.Update(deltaTime,monster_fire_delay_clock, &fire_ball_texture, monsterBulletVec,player);
         for (int i = 0; i < bulletVec.size(); i++)
         {
             bulletVec.at(i).fire(deltaTime);
@@ -333,6 +337,35 @@ int main()
             }
                 
         }
+        for (int i = 0; i < monsterBulletVec.size(); i++)
+        {
+            monsterBulletVec.at(i).fire(deltaTime);
+            if (!(monsterBulletVec.empty()) && kolizja.check_Collision(monsterBulletVec.at(i).bullet, room_collider_top))
+            {
+                monsterBulletVec.erase(monsterBulletVec.begin() + i);
+                if (i != 0)
+                    i--;
+            }
+            if (!(monsterBulletVec.empty()) && kolizja.check_Collision(monsterBulletVec.at(i).bullet, room_collider_left))
+            {
+                monsterBulletVec.erase(monsterBulletVec.begin() + i);
+                if (i != 0)
+                    i--;
+            }
+            if (!(monsterBulletVec.empty()) && kolizja.check_Collision(monsterBulletVec.at(i).bullet, room_collider_right))
+            {
+                monsterBulletVec.erase(monsterBulletVec.begin() + i);
+                if (i != 0)
+                    i--;
+            }
+            if (!(monsterBulletVec.empty()) && kolizja.check_Collision(monsterBulletVec.at(i).bullet, room_collider_down))
+            {
+                monsterBulletVec.erase(monsterBulletVec.begin() + i);
+                if (i != 0)
+                    i--;
+            }
+
+        }
         kolizja.check_Collision(player.body, kamien);
         kolizja.check_Collision(player.body, room_collider_top);
         kolizja.check_Collision(player.body, room_collider_left);
@@ -345,7 +378,11 @@ int main()
         window.draw(level->background_s);
         level->pick_room_layout(player,kolizja,window, player.x, player.y);
         for (int i = 0; i < bulletVec.size(); i++)
+        {
             bulletVec.at(i).Draw(window);
+        }
+        for (int i = 0; i < monsterBulletVec.size(); i++)
+            monsterBulletVec.at(i).Draw(window);
         //window.draw(kamien);
         wizard.Draw(window);
         player.Draw(window);
