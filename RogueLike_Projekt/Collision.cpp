@@ -1,5 +1,4 @@
 #include "Collision.h"
-#include <iostream>
 bool Collision::check_Collision(sf::RectangleShape& ob1, sf::RectangleShape& ob2)
 {
 	sf::RectangleShape* poly1 = &ob1;

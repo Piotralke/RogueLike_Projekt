@@ -24,5 +24,9 @@ public:
     sf::Vector2f GetPosition();
     float getDamage();
     float getHealth();
+    float getSpeed();
+    float getShotSpeed();
+    float getFireDelay();
     void getHit(float damage);
+    void setStatistics(float damage, float health, float fire_delay, float shot_speed, float speed);
 };

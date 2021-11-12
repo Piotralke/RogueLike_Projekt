@@ -115,8 +115,27 @@ float hero::getHealth()
 {
     return health;
 }
-
+float hero::getSpeed()
+{
+    return speed;
+}
+float hero::getShotSpeed()
+{
+    return shot_speed;
+}
+float hero::getFireDelay()
+{
+    return fire_rate;
+}
 void hero::getHit(float damage)
 {
     health -= damage;
+}
+void hero::setStatistics(float damage, float health, float fire_delay, float shot_speed, float speed)
+{
+    this->damage += damage;
+    this->health += health;
+    this->fire_rate += fire_delay;
+    this->shot_speed += shot_speed;
+    this->speed += speed;
 }
