@@ -1,18 +1,20 @@
 #include "Hero.h"
 #include <iostream>
-hero::hero(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed, float fire_rate, float shot_speed, float health) :
+hero::hero(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed, float fire_rate, float shot_speed, float health,
+    float damage, sf::Vector2f size, sf::Vector2f position) :
     animation(texture, imageCount, switchTime)
 {
     this->speed = speed;
     this->fire_rate = fire_rate;
     this->shot_speed = shot_speed;
     this->health = health;
+    this->damage = damage;
     row = 0;
     faceRight = true;
 
-    body.setSize(sf::Vector2f(16.0f, 20.0f));
+    body.setSize(size);
     body.setOrigin(body.getSize() / 2.0f);
-    body.setPosition(100.0f, 100.0f);
+    body.setPosition(position);
     body.setTexture(texture);
 }
 
@@ -44,7 +46,7 @@ void hero::Update(float deltaTime, std::vector<Bullet> &bulletVec, sf::Clock &fi
     {
         if (fire_delay_clock.getElapsedTime().asSeconds() >= fire_rate)
         {
-            Bullet newBullet({ 7,19 }, body.getPosition(), shot_speed, 1.0f, {0.0f, -1.0f}, arrow, 0.0f);
+            Bullet newBullet({ 7,19 }, body.getPosition(), shot_speed, damage, {0.0f, -1.0f}, arrow, 0.0f);
             bulletVec.push_back(newBullet);
             fire_delay_clock.restart();
         }
@@ -54,7 +56,7 @@ void hero::Update(float deltaTime, std::vector<Bullet> &bulletVec, sf::Clock &fi
     {
         if (fire_delay_clock.getElapsedTime().asSeconds() >= fire_rate)
         {
-            Bullet newBullet({ 7,19 }, body.getPosition(), shot_speed, 1.0f, { 0.0f, 1.0f }, arrow, 180.0f);
+            Bullet newBullet({ 7,19 }, body.getPosition(), shot_speed, damage, { 0.0f, 1.0f }, arrow, 180.0f);
             bulletVec.push_back(newBullet);
             fire_delay_clock.restart();
         }
@@ -64,7 +66,7 @@ void hero::Update(float deltaTime, std::vector<Bullet> &bulletVec, sf::Clock &fi
     {
         if (fire_delay_clock.getElapsedTime().asSeconds() >= fire_rate)
         {
-            Bullet newBullet({ 7,19 }, body.getPosition(), shot_speed, 1.0f, { -1.0f, 0.0f }, arrow, -90.0f);
+            Bullet newBullet({ 7,19 }, body.getPosition(), shot_speed, damage, { -1.0f, 0.0f }, arrow, -90.0f);
             bulletVec.push_back(newBullet);
             fire_delay_clock.restart();
         }
@@ -74,7 +76,7 @@ void hero::Update(float deltaTime, std::vector<Bullet> &bulletVec, sf::Clock &fi
     {
         if (fire_delay_clock.getElapsedTime().asSeconds() >= fire_rate)
         {
-            Bullet newBullet({ 7,19 }, body.getPosition(), shot_speed, 1.0f, { 1.0f, 0.0f }, arrow, 90.0f);
+            Bullet newBullet({ 7,19 }, body.getPosition(), shot_speed, damage, { 1.0f, 0.0f }, arrow, 90.0f);
             bulletVec.push_back(newBullet);
             fire_delay_clock.restart();
         }
@@ -103,4 +105,18 @@ void hero::Update(float deltaTime, std::vector<Bullet> &bulletVec, sf::Clock &fi
 sf::Vector2f hero::GetPosition()
 {
     return body.getPosition();
+}
+
+float hero::getDamage()
+{
+    return damage;
+}
+float hero::getHealth()
+{
+    return health;
+}
+
+void hero::getHit(float damage)
+{
+    health -= damage;
 }

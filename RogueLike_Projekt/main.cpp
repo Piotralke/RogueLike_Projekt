@@ -9,6 +9,7 @@
 #include "Collision.h"
 #include "Bullet.h"
 #include "Monster.h"
+#include <vector>
 
 #define SIZE 11
 
@@ -16,7 +17,6 @@ class object
 {
     private:
         int x, y;
-        int obj_type;
         // tekstura(?)
 };
 
@@ -270,15 +270,20 @@ int main()
     sf::Texture fire_ball_texture;
     arrow_texture.loadFromFile("grafiki/arrow.png");
     fire_ball_texture.loadFromFile("grafiki/fire_ball.png");
-
+    std::vector<monster> monsterVec;
     sf::RenderWindow window(sf::VideoMode(700, 400), "RogueLike!", sf::Style::Default);
     generate_map* level = new generate_map;
     sf::Texture playerTexture;
     playerTexture.loadFromFile("grafiki/hero_animation.png");
-    hero player(&playerTexture, sf::Vector2u(4, 2), 0.1f, 100.0f, 0.5f, 200.0f, 100.0f);
+    hero player(&playerTexture, sf::Vector2u(4, 2), 0.1f, 100.0f, 0.5f, 200.0f, 100.0f, 6.0f, { 16.0f,20.0f }, {350.0f,200.0f});
     sf::Texture wizardTexture;
     wizardTexture.loadFromFile("grafiki/wizard_animation.png");
-    monster wizard(&wizardTexture, sf::Vector2u(4,1),0.1f,0.0f,1.5f,150.0f,30.0f,1,true);
+    sf::Texture ghostTexture;
+    ghostTexture.loadFromFile("grafiki/ghost_animation.png");
+    monster wizard(&wizardTexture, sf::Vector2u(4, 1), 0.1f, 0.0f, 1.5f, 150.0f, 30.0f, 10.0f, { 16.0f,20.0f }, {100.0f,100.0f}, true);
+    monster ghost(&ghostTexture, sf::Vector2u(4, 1), 0.1f, 75.0f, 1.5f, 150.0f, 30.0f, 4.0f ,{ 12.0f,17.0f }, {600.0f,100.0f}, false);
+    monsterVec.push_back(ghost);
+    monsterVec.push_back(wizard);
     sf::RectangleShape kamien;
     kamien.setSize({2,2});
     kamien.setOrigin(kamien.getSize() / 2.0f);
@@ -296,6 +301,7 @@ int main()
     sf::Clock clock;
     sf::Clock fire_delay_clock;
     sf::Clock monster_fire_delay_clock;
+    sf::Clock invisibility_clock;
     while (window.isOpen())
     {
         deltaTime = clock.restart().asSeconds(); 
@@ -307,7 +313,12 @@ int main()
                 window.close();
         }
         player.Update(deltaTime,bulletVec,fire_delay_clock,&arrow_texture);
-        wizard.Update(deltaTime,monster_fire_delay_clock, &fire_ball_texture, monsterBulletVec,player);
+        for (int j = 0; j < monsterVec.size(); j++)
+        {
+            monsterVec.at(j).Update(deltaTime, monster_fire_delay_clock, &fire_ball_texture, monsterBulletVec, player);
+        }
+        //wizard.Update(deltaTime,monster_fire_delay_clock, &fire_ball_texture, monsterBulletVec,player);
+       // ghost.Update(deltaTime,monster_fire_delay_clock, &fire_ball_texture, monsterBulletVec,player);
         for (int i = 0; i < bulletVec.size(); i++)
         {
             bulletVec.at(i).fire(deltaTime);
@@ -316,26 +327,41 @@ int main()
                 bulletVec.erase(bulletVec.begin() + i);
                 if(i!=0)
                     i--;
+                break;
             }
             if (!(bulletVec.empty()) && kolizja.check_Collision(bulletVec.at(i).bullet, room_collider_left))
             {
                 bulletVec.erase(bulletVec.begin() + i);
                 if (i != 0)
                     i--;
+                break;
             }
             if (!(bulletVec.empty()) && kolizja.check_Collision(bulletVec.at(i).bullet, room_collider_right))
             {
                 bulletVec.erase(bulletVec.begin() + i);
                 if (i != 0)
                     i--;
+                break;
             }
             if (!(bulletVec.empty()) && kolizja.check_Collision(bulletVec.at(i).bullet, room_collider_down))
             {
                 bulletVec.erase(bulletVec.begin() + i);
                 if (i != 0)
                     i--;
+                break;
             }
-                
+            for (int j = 0; j < monsterVec.size(); j++)
+            {
+                if (!(monsterVec.empty()) && kolizja.check_Collision(bulletVec.at(i).bullet, monsterVec.at(j).body))
+                {
+                    monsterVec.at(j).getHit(player.getDamage());
+                    bulletVec.erase(bulletVec.begin() + i);
+                    if (i != 0)
+                        i--;
+              
+                    break;
+                }
+            }
         }
         for (int i = 0; i < monsterBulletVec.size(); i++)
         {
@@ -345,27 +371,61 @@ int main()
                 monsterBulletVec.erase(monsterBulletVec.begin() + i);
                 if (i != 0)
                     i--;
+                break;
             }
             if (!(monsterBulletVec.empty()) && kolizja.check_Collision(monsterBulletVec.at(i).bullet, room_collider_left))
             {
                 monsterBulletVec.erase(monsterBulletVec.begin() + i);
                 if (i != 0)
                     i--;
+                break;
             }
             if (!(monsterBulletVec.empty()) && kolizja.check_Collision(monsterBulletVec.at(i).bullet, room_collider_right))
             {
                 monsterBulletVec.erase(monsterBulletVec.begin() + i);
                 if (i != 0)
                     i--;
+                break;
             }
             if (!(monsterBulletVec.empty()) && kolizja.check_Collision(monsterBulletVec.at(i).bullet, room_collider_down))
             {
                 monsterBulletVec.erase(monsterBulletVec.begin() + i);
                 if (i != 0)
                     i--;
+                break;
             }
-
+            if (kolizja.check_Collision(monsterBulletVec.at(i).bullet, player.body))
+            {
+                if (invisibility_clock.getElapsedTime().asSeconds() >= 1.0f)
+                {
+                    player.getHit(monsterBulletVec.at(i).getDamage());
+                    invisibility_clock.restart();
+                }
+                monsterBulletVec.erase(monsterBulletVec.begin() + i);
+                if (i != 0)
+                    i--;
+                break;
+            }
         }
+        for (int i = 0; i < monsterVec.size(); i++)
+        {
+            if (!(monsterVec.empty()) && kolizja.check_Collision(monsterVec.at(i).body, player.body))
+            {
+                if (invisibility_clock.getElapsedTime().asSeconds() >= 1.0f)
+                {
+                    player.getHit(monsterVec.at(i).getDamage());
+                    invisibility_clock.restart();
+                }  
+            }
+            if (!(monsterVec.empty()) && monsterVec.at(i).getHealth() <= 0.0f)
+            {
+                monsterVec.erase(monsterVec.begin() + i);
+                if (i != 0)
+                    i--;
+                break;
+            }
+        }
+        std::cout << player.getHealth() << std::endl;
         kolizja.check_Collision(player.body, kamien);
         kolizja.check_Collision(player.body, room_collider_top);
         kolizja.check_Collision(player.body, room_collider_left);
@@ -384,7 +444,12 @@ int main()
         for (int i = 0; i < monsterBulletVec.size(); i++)
             monsterBulletVec.at(i).Draw(window);
         //window.draw(kamien);
-        wizard.Draw(window);
+        for (int j = 0; j < monsterVec.size(); j++)
+        {
+            monsterVec.at(j).Draw(window);
+        }
+        //wizard.Draw(window);
+        //ghost.Draw(window);
         player.Draw(window);
         window.display();
     }

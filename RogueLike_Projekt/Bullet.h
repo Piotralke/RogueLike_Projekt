@@ -13,4 +13,5 @@ class Bullet
 		Bullet(sf::Vector2f size, sf::Vector2f position, float shot_speed, float rate_of_fire, sf::Vector2f direction, sf::Texture *texture, float rotation);
 		void fire(float deltaTime);
 		void Draw(sf::RenderWindow& window);
+		float getDamage();
 };

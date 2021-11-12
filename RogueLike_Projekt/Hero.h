@@ -6,7 +6,7 @@
 class hero
 {
 protected:
-    float speed = 20.0f;
+    float speed;
     float health;
     float damage;
     bool faceRight;
@@ -17,10 +17,12 @@ public:
     int x = 5, y = 5;
     sf::RectangleShape body;
     Animation animation;
-    hero(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed, float fire_rate, float shot_speed, float health);
+    hero(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed, float fire_rate, float shot_speed, float health,
+        float damage, sf::Vector2f size, sf::Vector2f position);
     void Draw(sf::RenderWindow& window);
     void Update(float deltaTime, std::vector<Bullet> &bulletVec, sf::Clock &fire_delay_clock, sf::Texture *arrow);
     sf::Vector2f GetPosition();
-    void shot(float vec_x, float vec_y); //albo jakis jeden argument, jasli strzelanie byloby tylko pod katem prostym
-        // strzelenie w kierunku w ktorym patrzymy od pozycji gracza
+    float getDamage();
+    float getHealth();
+    void getHit(float damage);
 };

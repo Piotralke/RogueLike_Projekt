@@ -20,3 +20,8 @@ void Bullet::Draw(sf::RenderWindow& window)
 {
 	window.draw(bullet);
 }
+
+float Bullet::getDamage()
+{
+	return damage;
+}
