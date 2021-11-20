@@ -23,6 +23,6 @@ public:
     void max_level_counter(int level);
     int neighbour_count(int i, int j);
     bool visit(int i, int j);
-    void wypisz();
+    void wypisz(sf::RenderWindow& window,hero& player);
     bool generate_layout();
 };

@@ -14,7 +14,11 @@ protected:
 public:
     sf::Texture background_t;
     sf::Sprite background_s;
+    sf::RectangleShape minimap_room;
+    sf::RectangleShape hero_m;
+    sf::Texture minimap_rt;
+    sf::Texture hero_minimap;
     int check_doors(int i, int j);
     void Draw(sf::RenderWindow& window, sf::RectangleShape& door);
-    void pick_room_layout(hero& player, Collision kolizja, sf::RenderWindow& window, int i, int j);
+    void pick_room_layout(hero& player, Collision kolizja, sf::RenderWindow& window, int i, int j, std::vector<Bullet>& heroB, std::vector<Bullet>& monsterB);
 };

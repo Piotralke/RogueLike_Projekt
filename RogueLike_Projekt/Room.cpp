@@ -18,13 +18,14 @@ void room::Draw(sf::RenderWindow& window, sf::RectangleShape& door)
 {
     window.draw(door);
 }
-void room::pick_room_layout(hero& player, Collision kolizja, sf::RenderWindow& window, int i, int j)
+void room::pick_room_layout(hero& player, Collision kolizja, sf::RenderWindow& window, int i, int j, std::vector<Bullet>& heroB, std::vector<Bullet>& monsterB)
 {
     doors_t.loadFromFile("grafiki/doors_o.png");
     sf::RectangleShape doors;
     doors.setSize({ 32, 32 });
     doors.setOrigin(doors.getSize() / 2.0f);
     int room_doors = check_doors(i, j);
+    //losowanie layaout, o ile nie odwiedzony pokoj
     if (room_doors & 0b0001)
     {
         doors.setPosition(16, 200);
@@ -35,6 +36,10 @@ void room::pick_room_layout(hero& player, Collision kolizja, sf::RenderWindow& w
         {
             player.y--;
             player.body.setPosition({ 655, player.body.getPosition().y });
+            heroB.clear();
+            heroB = std::vector<Bullet>();
+            monsterB.clear();
+            monsterB = std::vector<Bullet>();
         }
 
     }
@@ -48,6 +53,10 @@ void room::pick_room_layout(hero& player, Collision kolizja, sf::RenderWindow& w
         {
             player.y++;
             player.body.setPosition({ 45, player.body.getPosition().y });
+            heroB.clear();
+            heroB = std::vector<Bullet>();
+            monsterB.clear();
+            monsterB = std::vector<Bullet>();
         }
     }
     if (room_doors & 0b0100)
@@ -60,6 +69,10 @@ void room::pick_room_layout(hero& player, Collision kolizja, sf::RenderWindow& w
         {
             player.x++;
             player.body.setPosition({ player.body.getPosition().x, 45 });
+            heroB.clear();
+            heroB = std::vector<Bullet>();
+            monsterB.clear();
+            monsterB = std::vector<Bullet>();
         }
     }
     if (room_doors & 0b1000)
@@ -72,6 +85,10 @@ void room::pick_room_layout(hero& player, Collision kolizja, sf::RenderWindow& w
         {
             player.x--;
             player.body.setPosition({ player.body.getPosition().x, 355 });
+            heroB.clear();
+            heroB = std::vector<Bullet>();
+            monsterB.clear();
+            monsterB = std::vector<Bullet>();
         }
     }
 }

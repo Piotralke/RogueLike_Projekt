@@ -32,12 +32,19 @@ int main()
     room_collider_down.setOrigin(room_collider_down.getSize() / 2.0f);
     room_collider_down.setPosition(350, 384);
 
+    sf::Font font;
+    font.loadFromFile("font.ttf");
     sf::Texture arrow_texture;
     sf::Texture fire_ball_texture;
+    sf::Texture hud_texture;
+    sf::Sprite hud_sprite;
+    hud_texture.loadFromFile("grafiki/hud.png");
+    hud_sprite.setTexture(hud_texture);
+    hud_sprite.setPosition({700.0f,0.0f});
     arrow_texture.loadFromFile("grafiki/arrow.png");
     fire_ball_texture.loadFromFile("grafiki/fire_ball.png");
     std::vector<monster> monsterVec;
-    sf::RenderWindow window(sf::VideoMode(700, 400), "RogueLike!", sf::Style::Default);
+    sf::RenderWindow window(sf::VideoMode(800, 400), "RogueLike!");
     generate_map* level = new generate_map;
     sf::Texture playerTexture;
     playerTexture.loadFromFile("grafiki/hero_animation.png");
@@ -72,7 +79,7 @@ int main()
     level->max_level_counter(1);
     level->visit(5, 5);
     level->generate_layout();
-    level->wypisz();
+    
     float deltaTime = 0.0f;
     sf::Clock clock;
     sf::Clock fire_delay_clock;
@@ -224,7 +231,7 @@ int main()
         
         window.clear();
         window.draw(level->background_s);
-        level->pick_room_layout(player,kolizja,window, player.x, player.y);
+        level->pick_room_layout(player,kolizja,window, player.x, player.y, bulletVec, monsterBulletVec);
         for (int i = 0; i < bulletVec.size(); i++)
         {
             bulletVec.at(i).Draw(window);
@@ -240,6 +247,8 @@ int main()
             itemVec.at(i).Draw(window);
         }
         player.Draw(window);
+        window.draw(hud_sprite);
+        level->wypisz(window, player);
         window.display();
     }
 

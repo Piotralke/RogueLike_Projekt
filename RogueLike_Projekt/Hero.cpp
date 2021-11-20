@@ -20,6 +20,11 @@ hero::hero(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, floa
 
 void hero::Draw(sf::RenderWindow& window)
 {
+    //sf::Text health_text;
+    //health_text.setFont(font);
+    //health_text.setCharacterSize(10);
+    //health_text.setFillColor(sf::Color::White);
+    //health_text.set
     window.draw(body);
 }
 

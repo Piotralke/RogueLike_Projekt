@@ -4,6 +4,14 @@ generate_map::generate_map()
 {
     background_t.loadFromFile("grafiki/background.png", sf::IntRect(0, 0, 700, 400));
     background_s.setTexture(background_t);
+    minimap_room.setSize({ 8.0f,8.0f });
+    minimap_rt.loadFromFile("grafiki/minimap_room.png");
+    minimap_room.setTexture(&minimap_rt);
+    hero_minimap.loadFromFile("grafiki/hero_minimap.png");
+    hero_m.setTexture(&hero_minimap);
+    hero_m.setSize({ 6.0f,4.0f });
+
+
 }
 void generate_map::init_grid()
 {
@@ -48,15 +56,21 @@ bool generate_map::visit(int i, int j)
 
     return true;
 }
-void generate_map::wypisz()
+void generate_map::wypisz(sf::RenderWindow& window, hero& player)
 {
     for (int i = 0; i < SIZE; i++)
     {
         for (int j = 0; j < SIZE; j++)
-            std::cout << grid[i][j] << " ";
-        std::cout << std::endl;
+        {
+            if (grid[i][j] != 0)
+            {
+                minimap_room.setPosition({ 706.0f + j * 8,6.0f + i * 8 });
+                window.draw(minimap_room);
+            }
+        }
     }
-
+    hero_m.setPosition({ 707.0f + player.y * 8, 8.0f + player.x * 8 });
+    window.draw(hero_m);
 }
 bool generate_map::generate_layout()
 {
