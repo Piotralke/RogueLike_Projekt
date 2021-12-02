@@ -13,11 +13,114 @@ generate_map::generate_map()
 
 
 }
+std::string generate_map::random_layout(int i, int j)
+{
+    std::string path;
+    std::string liczba;
+    path = "layouts/";
+    switch (check_doors(i, j)) {
+    case 0b0001:
+        path += "0001/layout";
+        liczba = std::to_string(std::rand() % 9);
+        path += liczba;
+        path += ".txt";
+        break;
+    case 0b0010:
+        path += "0010/layout";
+        liczba = std::to_string(std::rand() % 9);
+        path += liczba;
+        path += ".txt";
+        break;
+    case 0b0011:
+        path += "0011/layout";
+        liczba = std::to_string(std::rand() % 9);
+        path += liczba;
+        path += ".txt";
+        break;
+    case 0b0100:
+        path += "0100/layout";
+        liczba = std::to_string(std::rand() % 9);
+        path += liczba;
+        path += ".txt";
+        break;
+    case 0b0101:
+        path += "0101/layout";
+        liczba = std::to_string(std::rand() % 9);
+        path += liczba;
+        path += ".txt";
+        break;
+    case 0b0110:
+        path += "0110/layout";
+        liczba = std::to_string(std::rand() % 9);
+        path += liczba;
+        path += ".txt";
+        break;
+    case 0b0111:
+        path += "0111/layout";
+        liczba = std::to_string(std::rand() % 9);
+        path += liczba;
+        path += ".txt";
+        break;
+    case 0b1000:
+        path += "1000/layout";
+        liczba = std::to_string(std::rand() % 9);
+        path += liczba;
+        path += ".txt";
+        break;
+    case 0b1001:
+        path += "1001/layout";
+        liczba = std::to_string(std::rand() % 9);
+        path += liczba;
+        path += ".txt";
+        break;
+    case 0b1010:
+        path += "1010/layout";
+        liczba = std::to_string(std::rand() % 9);
+        path += liczba;
+        path += ".txt";
+        break;
+    case 0b1011:
+        path += "1011/layout";
+        liczba = std::to_string(std::rand() % 9);
+        path += liczba;
+        path += ".txt";
+        break;
+    case 0b1100:
+        path += "1100/layout";
+        liczba = std::to_string(std::rand() % 9);
+        path += liczba;
+        path += ".txt";
+        break;
+    case 0b1101:
+        path += "1101/layout";
+        liczba = std::to_string(std::rand() % 9);
+        path += liczba;
+        path += ".txt";
+        break;
+    case 0b1110:
+        path += "1110/layout";
+        liczba = std::to_string(std::rand() % 9);
+        path += liczba;
+        path += ".txt";
+        break;
+    case 0b1111:
+        path += "1111/layout";
+        liczba = std::to_string(std::rand() % 9);
+        path += liczba;
+        path += ".txt";
+        break;
+    }
+    return path;
+}
 void generate_map::init_grid()
 {
     for (int i = 0; i < SIZE; i++)
         for (int j = 0; j < SIZE; j++)
-            grid[i][j] = 0;
+        {
+            grid[i][j].exist = 0;
+            grid[i][j].type = 0;
+        }
+           
 }
 void generate_map::max_level_counter(int level)
 {
@@ -26,12 +129,12 @@ void generate_map::max_level_counter(int level)
 }
 int generate_map::neighbour_count(int i, int j)
 {
-    return grid[i - 1][j] + grid[i][j - 1] + grid[i + 1][j] + grid[i][j + 1];
+    return grid[i - 1][j].exist + grid[i][j - 1].exist + grid[i + 1][j].exist + grid[i][j + 1].exist;
 }
 bool generate_map::visit(int i, int j)
 {
 
-    if (grid[i][j])
+    if (grid[i][j].exist)
         return false;
 
     int neigbours = neighbour_count(i, j);
@@ -48,13 +151,23 @@ bool generate_map::visit(int i, int j)
         if (random > 0 && i != 5 || random > 0 && j != 5)
             return false;
     }
-
-    RoomQueue_i.push(i);
-    RoomQueue_j.push(j);
-    grid[i][j] = 1;
+    RoomQueue.push({ i,j });
+    grid[i][j].exist = 1;
+    grid[i][j].type = 1;
     rooms_counter++;
 
     return true;
+}
+void generate_map::wypiszkons()
+{
+    for (int i = 0; i < SIZE; i++)
+    {
+        for (int j = 0; j < SIZE; j++)
+        {
+            std::cout << grid[i][j].type;
+        }
+        std::cout << std::endl;
+    }
 }
 void generate_map::wypisz(sf::RenderWindow& window, hero& player)
 {
@@ -62,8 +175,9 @@ void generate_map::wypisz(sf::RenderWindow& window, hero& player)
     {
         for (int j = 0; j < SIZE; j++)
         {
-            if (grid[i][j] != 0)
+            if (grid[i][j].exist == 1)
             {
+               
                 minimap_room.setPosition({ 706.0f + j * 8,6.0f + i * 8 });
                 window.draw(minimap_room);
             }
@@ -74,61 +188,74 @@ void generate_map::wypisz(sf::RenderWindow& window, hero& player)
 }
 bool generate_map::generate_layout()
 {
-    int i, j;
+    sf::Vector2i i;
     while (rooms_counter < max_rooms && !(rooms_counter > min_rooms))
     {
-        if (RoomQueue_i.size() > 0 && RoomQueue_j.size() > 0)
+        if (RoomQueue.size()>0)
         {
-            i = RoomQueue_i.front();
-            RoomQueue_i.pop();
-            j = RoomQueue_j.front();
-            RoomQueue_j.pop();
+            i = RoomQueue.front();
+            RoomQueue.pop();
             bool created = false;
-            if (i > 0)
-                created = created | visit(i - 1, j);
-            if (i < SIZE)
-                created = created | visit(i + 1, j);
-            if (j > 0)
-                created = created | visit(i, j - 1);
-            if (j < SIZE)
-                created = created | visit(i, j + 1);
-            if (!created)
+            if (i.x > 0)
+                created = created | visit(i.x - 1, i.y);
+            if (i.x < SIZE)
+                created = created | visit(i.x + 1, i.y);
+            if (i.y > 0)
+                created = created | visit(i.x, i.y - 1);
+            if (i.y < SIZE)
+                created = created | visit(i.x, i.y + 1);
+            if (RoomQueue.empty())
             {
-                DeadEnd_i.push(i);
-                DeadEnd_j.push(j);
-            }
-            if (RoomQueue_i.empty())
-            {
-                RoomQueue_i.push(i);
-                RoomQueue_j.push(j);
-            }
-        }
-        else if (!placedSpecial)
-        {
-            if (rooms_counter >= min_rooms && DeadEnd_i.size() > 2)
-            {
-                placedSpecial = true;
-                room* Boss_room = new room;
-            Boss_room:grid[DeadEnd_i.top()][DeadEnd_j.top()];
-                grid[DeadEnd_i.top()][DeadEnd_j.top()] = 2;
-                DeadEnd_i.pop();
-                DeadEnd_j.pop();
-
-                room* Shop = new room;
-            Shop:grid[DeadEnd_i.top()][DeadEnd_j.top()];
-                grid[DeadEnd_i.top()][DeadEnd_j.top()] = 3;
-                DeadEnd_i.pop();
-                DeadEnd_j.pop();
-
-                room* Item_Room = new room;
-            Item_Room:grid[DeadEnd_i.top()][DeadEnd_j.top()];
-                grid[DeadEnd_i.top()][DeadEnd_j.top()] = 4;
-                DeadEnd_i.pop();
-                DeadEnd_j.pop();
-
-                return true;
+                RoomQueue.push(i);
             }
         }
     }
+    for (int i = 0; i < SIZE; i++)
+    {
+        for (int j = 0; j < SIZE; j++)
+        {
+            if (grid[i][j].exist == 1 && neighbour_count(i, j) == 1)
+                DeadEnd.push_back({ i,j });
+        }
+    }
 
+     std::cout << rooms_counter << std::endl;
+     std::cout << DeadEnd.size() << std::endl;
+     
+         sf::Vector2i max = DeadEnd.at(0);
+         float max_distance=0;
+         int max_pos = 0;
+         for (int i = 0; i < DeadEnd.size(); i++)
+         {
+             float distance = sqrt((pow(5-DeadEnd.at(i).x, 2) + pow(5-DeadEnd.at(i).y,2)));
+             if (distance > max_distance)
+             {
+                 max_pos = i;
+                 max = DeadEnd.at(i);
+                 std::swap(distance, max_distance);
+             }
+         }
+         grid[max.x][max.y].type = 2;              // boss room
+         DeadEnd.erase(DeadEnd.begin()+max_pos);
+
+         int random = std::rand() % DeadEnd.size();
+         grid[DeadEnd.at(random).x][DeadEnd.at(random).y].type = 3;    //sklep
+         DeadEnd.erase(DeadEnd.begin() + random);
+
+         random = std::rand() % DeadEnd.size();
+         grid[DeadEnd.at(random).x][DeadEnd.at(random).y].type = 4;    //pokoj z przedmiotem
+         DeadEnd.erase(DeadEnd.begin() + random);
+         for (int i = 0; i < SIZE; i++)
+         {
+             for (int j = 0; j < SIZE; j++)
+             {
+                 if (grid[i][j].exist)
+                 {
+                     grid[i][j].sciezka = random_layout(i, j);
+                     std::cout << grid[i][j].sciezka << std::endl;
+                 }  
+             }
+         }
+         return true;
+     
 }

@@ -18,19 +18,19 @@ int main()
     sf::RectangleShape room_collider_down;
     room_collider_top.setSize({642,29});
     room_collider_top.setOrigin(room_collider_top.getSize() / 2.0f);
-    room_collider_top.setPosition(350, 16);
+    room_collider_top.setPosition(350, 19);
 
     room_collider_left.setSize({ 29,400 });
     room_collider_left.setOrigin(room_collider_left.getSize() / 2.0f);
-    room_collider_left.setPosition(16, 200); 
+    room_collider_left.setPosition(19, 200); 
 
     room_collider_right.setSize({ 29,400 });
     room_collider_right.setOrigin(room_collider_right.getSize() / 2.0f);
-    room_collider_right.setPosition(684, 200);
+    room_collider_right.setPosition(681, 200);
 
     room_collider_down.setSize({ 642,29 });
     room_collider_down.setOrigin(room_collider_down.getSize() / 2.0f);
-    room_collider_down.setPosition(350, 384);
+    room_collider_down.setPosition(350, 381);
 
     sf::Font font;
     font.loadFromFile("font.ttf");
@@ -70,7 +70,7 @@ int main()
     sf::RectangleShape kamien;
     kamien.setSize({2,2});
     kamien.setOrigin(kamien.getSize() / 2.0f);
-    kamien.setPosition(30.0f, 370.0f);
+    kamien.setPosition(33.0f, 367.0f);
     kamien.setFillColor(sf::Color());
     std::vector<Bullet> bulletVec;
     std::vector<Bullet> monsterBulletVec;
@@ -79,12 +79,13 @@ int main()
     level->max_level_counter(1);
     level->visit(5, 5);
     level->generate_layout();
-    
+    std::cout << level->random_layout(5, 5) << std::endl;
     float deltaTime = 0.0f;
     sf::Clock clock;
     sf::Clock fire_delay_clock;
     sf::Clock monster_fire_delay_clock;
     sf::Clock invisibility_clock;
+    level->wypiszkons();
     while (window.isOpen())
     {
         deltaTime = clock.restart().asSeconds(); 
@@ -231,7 +232,7 @@ int main()
         
         window.clear();
         window.draw(level->background_s);
-        level->pick_room_layout(player,kolizja,window, player.x, player.y, bulletVec, monsterBulletVec);
+        level->pick_room_layout(player,kolizja,window, bulletVec, monsterBulletVec);
         for (int i = 0; i < bulletVec.size(); i++)
         {
             bulletVec.at(i).Draw(window);
@@ -248,6 +249,7 @@ int main()
         }
         player.Draw(window);
         window.draw(hud_sprite);
+        player.DrawStats(window, font);
         level->wypisz(window, player);
         window.display();
     }

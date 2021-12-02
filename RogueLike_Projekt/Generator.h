@@ -11,18 +11,18 @@ protected:
     int rooms_counter = 0;
     int max_rooms;
     int min_rooms;
-    std::queue <int> RoomQueue_i;
-    std::queue <int> RoomQueue_j;
-    std::stack <int> DeadEnd_i;
-    std::stack <int> DeadEnd_j;
+    std::queue <sf::Vector2i> RoomQueue;
+    std::vector <sf::Vector2i> DeadEnd;
     bool placedSpecial = false;
 
 public:
     generate_map();
+    std::string random_layout(int i, int j);
     void init_grid();
     void max_level_counter(int level);
     int neighbour_count(int i, int j);
     bool visit(int i, int j);
+    void wypiszkons();
     void wypisz(sf::RenderWindow& window,hero& player);
     bool generate_layout();
 };

@@ -6,8 +6,14 @@
 class room
 {
 protected:
-    int grid[SIZE][SIZE];
-    int room_type;
+    struct room_properties
+    {
+        int exist;
+        int type;
+        bool visited;
+        std::string sciezka;
+    };
+    room_properties grid[SIZE][SIZE];
     sf::Texture doors_t;
     sf::Sprite doors_s;
 
@@ -20,5 +26,5 @@ public:
     sf::Texture hero_minimap;
     int check_doors(int i, int j);
     void Draw(sf::RenderWindow& window, sf::RectangleShape& door);
-    void pick_room_layout(hero& player, Collision kolizja, sf::RenderWindow& window, int i, int j, std::vector<Bullet>& heroB, std::vector<Bullet>& monsterB);
+    void pick_room_layout(hero& player, Collision kolizja, sf::RenderWindow& window, std::vector<Bullet>& heroB, std::vector<Bullet>& monsterB);
 };
