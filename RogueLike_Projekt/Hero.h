@@ -13,7 +13,7 @@ protected:
     unsigned int row;
     float fire_rate;
     float shot_speed; 
-
+    sf::Clock fire_delay_clock;
 public:
     int x = 5, y = 5;
     sf::RectangleShape body;
@@ -22,7 +22,7 @@ public:
         float damage, sf::Vector2f size, sf::Vector2f position);
     void DrawStats(sf::RenderWindow& window, sf::Font& font);
     void Draw(sf::RenderWindow& window);
-    void Update(float deltaTime, std::vector<Bullet> &bulletVec, sf::Clock &fire_delay_clock, sf::Texture *arrow);
+    void Update(float deltaTime, std::vector<Bullet> &bulletVec, sf::Texture *arrow);
     sf::Vector2f GetPosition();
     float getDamage();
     float getHealth();

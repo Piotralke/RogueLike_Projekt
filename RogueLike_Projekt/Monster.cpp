@@ -1,6 +1,6 @@
 #include "Monster.h"
 
-void monster::Update(float deltaTime, sf::Clock &fire_delay_clock, sf::Texture* arrow, std::vector<Bullet>& bulletVec, hero player)
+void monster::Update(float deltaTime, sf::Texture* arrow, std::vector<Bullet>& bulletVec, hero player)
 {
 	if (fire_delay_clock.getElapsedTime().asSeconds() >= fire_rate && shooting == true)
 	{

@@ -84,7 +84,7 @@ void hero::Draw(sf::RenderWindow& window)
     window.draw(body);
 }
 
-void hero::Update(float deltaTime, std::vector<Bullet> &bulletVec, sf::Clock &fire_delay_clock, sf::Texture *arrow)
+void hero::Update(float deltaTime, std::vector<Bullet> &bulletVec, sf::Texture *arrow)
 {
     sf::Vector2f movement(0.0f, 0.0f);
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))

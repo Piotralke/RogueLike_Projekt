@@ -119,7 +119,9 @@ void generate_map::init_grid()
         {
             grid[i][j].exist = 0;
             grid[i][j].type = 0;
+            grid[i][j].visited = false;
         }
+    grid[5][5].visited = true;
            
 }
 void generate_map::max_level_counter(int level)
@@ -251,8 +253,15 @@ bool generate_map::generate_layout()
              {
                  if (grid[i][j].exist)
                  {
-                     grid[i][j].sciezka = random_layout(i, j);
-                     std::cout << grid[i][j].sciezka << std::endl;
+                     if (i == 5 && j == 5)
+                     {
+                         grid[i][j].sciezka = "layouts/spawn.txt";
+                     }
+                     else
+                     {
+                         grid[i][j].sciezka = random_layout(i, j);
+                         std::cout << grid[i][j].sciezka << std::endl;
+                     } 
                  }  
              }
          }

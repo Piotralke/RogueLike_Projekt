@@ -11,6 +11,7 @@
 
 int main()
 {
+    
     Collision kolizja;
     sf::RectangleShape room_collider_top;
     sf::RectangleShape room_collider_left;
@@ -44,19 +45,13 @@ int main()
     arrow_texture.loadFromFile("grafiki/arrow.png");
     fire_ball_texture.loadFromFile("grafiki/fire_ball.png");
     std::vector<monster> monsterVec;
+    std::vector<Object> objectVec;
     sf::RenderWindow window(sf::VideoMode(800, 400), "RogueLike!");
     generate_map* level = new generate_map;
     sf::Texture playerTexture;
     playerTexture.loadFromFile("grafiki/hero_animation.png");
     hero player(&playerTexture, sf::Vector2u(4, 2), 0.1f, 100.0f, 1.0f, 200.0f, 100.0f, 6.0f, { 16.0f,20.0f }, {350.0f,200.0f});
-    sf::Texture wizardTexture;
-    wizardTexture.loadFromFile("grafiki/wizard_animation.png");
-    sf::Texture ghostTexture;
-    ghostTexture.loadFromFile("grafiki/ghost_animation.png");
-    monster wizard(&wizardTexture, sf::Vector2u(4, 1), 0.1f, 0.0f, 1.5f, 150.0f, 30.0f, 10.0f, { 16.0f,20.0f }, {100.0f,100.0f}, true);
-    monster ghost(&ghostTexture, sf::Vector2u(4, 1), 0.1f, 75.0f, 1.5f, 150.0f, 30.0f, 4.0f ,{ 12.0f,17.0f }, {600.0f,100.0f}, false);
-    monsterVec.push_back(ghost);
-    monsterVec.push_back(wizard);
+    
     sf::Texture bootsTexture;
     bootsTexture.loadFromFile("grafiki/boots.png");
     Item boots(&bootsTexture, { 200.0f,200.0f }, {16.0f,16.0f},0.0f,0.0f,0.0f,0.0f,50.0f);
@@ -82,10 +77,9 @@ int main()
     std::cout << level->random_layout(5, 5) << std::endl;
     float deltaTime = 0.0f;
     sf::Clock clock;
-    sf::Clock fire_delay_clock;
-    sf::Clock monster_fire_delay_clock;
     sf::Clock invisibility_clock;
     level->wypiszkons();
+    level->init_Texture();
     while (window.isOpen())
     {
         deltaTime = clock.restart().asSeconds(); 
@@ -96,10 +90,14 @@ int main()
             if (event.type == sf::Event::Closed)
                 window.close();
         }
-        player.Update(deltaTime,bulletVec,fire_delay_clock,&arrow_texture);
+        player.Update(deltaTime,bulletVec,&arrow_texture);
         for (int j = 0; j < monsterVec.size(); j++)
         {
-            monsterVec.at(j).Update(deltaTime, monster_fire_delay_clock, &fire_ball_texture, monsterBulletVec, player);
+            monsterVec.at(j).Update(deltaTime, &fire_ball_texture, monsterBulletVec, player);
+        }
+        for (int i = 0; i < objectVec.size(); i++)
+        {
+            kolizja.check_Collision(player.body, objectVec.at(i).shape);
         }
         for (int i = 0; i < bulletVec.size(); i++)
         {
@@ -232,10 +230,14 @@ int main()
         
         window.clear();
         window.draw(level->background_s);
-        level->pick_room_layout(player,kolizja,window, bulletVec, monsterBulletVec);
+        level->pick_room_layout(player,kolizja,window, bulletVec, monsterBulletVec, monsterVec, objectVec);
         for (int i = 0; i < bulletVec.size(); i++)
         {
             bulletVec.at(i).Draw(window);
+        }
+        for (int i = 0; i < objectVec.size(); i++)
+        {
+            objectVec.at(i).Draw(window);
         }
         for (int i = 0; i < monsterBulletVec.size(); i++)
             monsterBulletVec.at(i).Draw(window);
