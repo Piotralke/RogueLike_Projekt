@@ -177,7 +177,7 @@ void generate_map::wypisz(sf::RenderWindow& window, hero& player)
     {
         for (int j = 0; j < SIZE; j++)
         {
-            if (grid[i][j].exist == 1)
+            if (grid[i][j].exist == 1 && grid[i][j].visited)
             {
                
                 minimap_room.setPosition({ 706.0f + j * 8,6.0f + i * 8 });

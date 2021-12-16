@@ -20,7 +20,9 @@ protected:
     };
     room_properties grid[SIZE][SIZE];
     sf::Texture doors_t;
-    sf::Sprite doors_s;
+    sf::Texture doors_bs_t;
+    sf::Texture doors_sh_t;
+    sf::Texture doors_it_t;
     //monster textures
     sf::Texture wizardTexture;
     sf::Texture ghostTexture;
