@@ -1,6 +1,10 @@
 #include "Collision.h"
 bool Collision::check_Collision(sf::RectangleShape& ob1, sf::RectangleShape& ob2)
 {
+	//if (ob1.getGlobalBounds().intersects(ob2.getGlobalBounds()))
+	//{
+	//	ob1.setPosition();
+	//}
 	sf::RectangleShape* poly1 = &ob1;
 	sf::RectangleShape* poly2 = &ob2;
 	
@@ -66,7 +70,7 @@ bool Collision::check_Collision(sf::RectangleShape& ob1, sf::RectangleShape& ob2
 				{
 					displacement.x += (1.0f - t1) * (line_ob1e.x - line_ob1s.x);
 					displacement.y += (1.0f - t1) * (line_ob1e.y - line_ob1s.y);
-					ob1.setPosition({ (ob1.getPosition().x + (displacement.x * (shape == 0 ? -1 : +1))), (ob1.getPosition().y + (displacement.y * (shape == 0 ? -1 : +1))) });
+					ob1.setPosition({ (ob1.getPosition().x + (displacement.x * (shape == 0 ? -1 : 1))), (ob1.getPosition().y + (displacement.y * (shape == 0 ? -1 : 1))) });
 					return true;
 				}
 			}

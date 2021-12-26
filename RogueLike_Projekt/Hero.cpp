@@ -8,6 +8,7 @@ hero::hero(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, floa
     this->fire_rate = fire_rate;
     this->shot_speed = shot_speed;
     this->health = health;
+    this->maxHealth = health;
     this->damage = damage;
     row = 0;
     faceRight = true;
@@ -22,13 +23,17 @@ void hero::DrawStats(sf::RenderWindow& window, sf::Font& font)
 {
     sf::Text health_text;
     std::string health_string;
+    sf::RectangleShape health_bar;
+    health_bar.setFillColor(sf::Color::Red);
+    health_bar.setSize({(health/maxHealth*53),8});
+    health_bar.setPosition({731.0f,104.0f});
     health_text.setFont(font);
     health_text.setCharacterSize(8);
     health_text.setFillColor(sf::Color::White);
-    health_string = std::to_string(health);
+    health_string = std::to_string(maxHealth);
     health_string.erase(health_string.size() - 4, 4);
     health_text.setString(health_string);
-    health_text.setPosition({ 740.0f,102.0f });
+    health_text.setPosition({ 735.0f,103.0f });
 
     sf::Text damage_text;
     std::string damage_string;
@@ -71,12 +76,13 @@ void hero::DrawStats(sf::RenderWindow& window, sf::Font& font)
     speed_text.setPosition({ 740.0f,176.0f });
 
     // y dla coinow 196.0f
-
+    window.draw(health_bar);
     window.draw(health_text);
     window.draw(damage_text);
     window.draw(shot_speed_text);
     window.draw(fire_rate_text);
     window.draw(speed_text);
+    
 }
 
 void hero::Draw(sf::RenderWindow& window)
@@ -192,10 +198,13 @@ void hero::getHit(float damage)
 {
     health -= damage;
 }
-void hero::setStatistics(float damage, float health, float fire_delay, float shot_speed, float speed)
+void hero::setStatistics(float damage, float health,float maxHealth, float fire_delay, float shot_speed, float speed)
 {
     this->damage += damage;
+    this->maxHealth += maxHealth;
     this->health += health;
+    if (this->health > this->maxHealth)
+        this->health = this->maxHealth;
     this->fire_rate += fire_delay;
     this->shot_speed += shot_speed;
     this->speed += speed;

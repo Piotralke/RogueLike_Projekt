@@ -17,21 +17,27 @@ int main()
     sf::RectangleShape room_collider_left;
     sf::RectangleShape room_collider_right;
     sf::RectangleShape room_collider_down;
+    std::vector<sf::RectangleShape> roomVec;
     room_collider_top.setSize({642,29});
     room_collider_top.setOrigin(room_collider_top.getSize() / 2.0f);
     room_collider_top.setPosition(350, 19);
+    roomVec.push_back(room_collider_top);
 
     room_collider_left.setSize({ 29,400 });
     room_collider_left.setOrigin(room_collider_left.getSize() / 2.0f);
     room_collider_left.setPosition(19, 200); 
+    roomVec.push_back(room_collider_left);
 
     room_collider_right.setSize({ 29,400 });
     room_collider_right.setOrigin(room_collider_right.getSize() / 2.0f);
     room_collider_right.setPosition(681, 200);
+    roomVec.push_back(room_collider_right);
 
     room_collider_down.setSize({ 642,29 });
     room_collider_down.setOrigin(room_collider_down.getSize() / 2.0f);
     room_collider_down.setPosition(350, 381);
+    roomVec.push_back(room_collider_down);
+
 
     sf::Font font;
     font.loadFromFile("font.ttf");
@@ -54,13 +60,25 @@ int main()
     
     sf::Texture bootsTexture;
     bootsTexture.loadFromFile("grafiki/boots.png");
-    Item boots(&bootsTexture, { 200.0f,200.0f }, {16.0f,16.0f},0.0f,0.0f,0.0f,0.0f,50.0f);
+    Item boots(&bootsTexture, { 200.0f,200.0f }, {16.0f,16.0f},0.0f,0.0f, 0.0f,0.0f,0.0f,50.0f);
     sf::Texture glovesTexture;
     glovesTexture.loadFromFile("grafiki/gloves.png");
-    Item gloves(&glovesTexture, { 400.0f,200.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, -0.5f, 50.0f, 0.0f);
+    Item gloves(&glovesTexture, { 400.0f,200.0f }, { 16.0f,16.0f }, 0.0f,0.0f, 0.0f, -0.5f, 50.0f, 0.0f);
+    sf::Texture helmetTexture;
+    helmetTexture.loadFromFile("grafiki/helmet.png");
+    Item helmet(&helmetTexture, { 350.0f,300.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 50.0f, 0.0f, 0.0f, 0.0f);
+    sf::Texture small_healPotTexture;
+    small_healPotTexture.loadFromFile("grafiki/small_healPot.png");
+    Item small_healPot(&small_healPotTexture, { 150.0f,300.0f }, { 16.0f,16.0f }, 0.0f, 20.0f, 0.0f, 0.0f, 0.0f, 0.0f);
+    sf::Texture big_healPotTexture;
+    big_healPotTexture.loadFromFile("grafiki/big_healPot.png");
+    Item big_healPot(&big_healPotTexture, { 550.0f,300.0f }, { 16.0f,16.0f }, 0.0f, 50.0f, 0.0f, 0.0f, 0.0f, 0.0f);
     std::vector<Item> itemVec;
     itemVec.push_back(boots);
     itemVec.push_back(gloves);
+    itemVec.push_back(helmet);
+    itemVec.push_back(small_healPot);
+    itemVec.push_back(big_healPot);
 
     sf::RectangleShape kamien;
     kamien.setSize({2,2});

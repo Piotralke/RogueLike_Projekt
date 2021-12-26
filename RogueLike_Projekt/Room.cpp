@@ -41,7 +41,7 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
                 read >> znak;
                 if (znak == '0')        //0-9 MONSTER
                 {
-                    if (!grid[player.x][player.y].visited)
+                   // if (!grid[player.x][player.y].visited)
                     {
                         monster wizard(&wizardTexture, sf::Vector2u(4, 1), 0.1f, 0.0f, 1.5f, 150.0f, 30.0f, 10.0f, { 16.0f,20.0f }, { 50.0f + 30 * j,50.0f + 30 * i }, true);
                         monsterVEC.push_back(wizard);
@@ -50,7 +50,7 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
                 }
                 else if (znak == '1')
                 {
-                    if (!grid[player.x][player.y].visited)
+                   // if (!grid[player.x][player.y].visited)
                     {
                         monster ghost(&ghostTexture, sf::Vector2u(4, 1), 0.1f, 75.0f, 1.5f, 150.0f, 30.0f, 4.0f, { 12.0f,17.0f }, { 50.0f + 30 * j,50.0f + 30 * i }, false);
                         monsterVEC.push_back(ghost);

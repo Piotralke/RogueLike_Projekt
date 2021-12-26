@@ -7,6 +7,7 @@ class hero
 {
 protected:
     float speed;
+    float maxHealth;
     float health;
     float damage;
     bool faceRight;
@@ -30,5 +31,5 @@ public:
     float getShotSpeed();
     float getFireDelay();
     void getHit(float damage);
-    void setStatistics(float damage, float health, float fire_delay, float shot_speed, float speed);
+    void setStatistics(float damage, float health,float maxHealth, float fire_delay, float shot_speed, float speed);
 };
