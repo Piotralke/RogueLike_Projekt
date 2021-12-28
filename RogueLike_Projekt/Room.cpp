@@ -5,6 +5,7 @@ void room::init_Texture() {
     ghostTexture.loadFromFile("grafiki/ghost_animation.png");
     rockTexture.loadFromFile("grafiki/rock.png");
     bonesTexture.loadFromFile("grafiki/bone_pile.png");
+    necromancerTexture.loadFromFile("grafiki/necromancer.png");
 }
 
 int room::check_doors(int i, int j)
@@ -26,7 +27,7 @@ void room::Draw(sf::RenderWindow& window, sf::RectangleShape& door)
     window.draw(door);
 }
 
-void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::vector<Object>& objectVEC)
+void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::vector<Object>& objectVEC, std::vector<boss>& bossVec)
 {
     std::ifstream read(grid[player.x][player.y].sciezka);
     
@@ -43,7 +44,7 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
                 {
                    // if (!grid[player.x][player.y].visited)
                     {
-                        monster wizard(&wizardTexture, sf::Vector2u(4, 1), 0.1f, 0.0f, 1.5f, 150.0f, 30.0f, 10.0f, { 16.0f,20.0f }, { 50.0f + 30 * j,50.0f + 30 * i }, true);
+                        monster wizard(&wizardTexture, sf::Vector2u(4, 1), 0.1f, 0.0f, 1.5f, 150.0f, 30.0f, 10.0f, { 16.0f,20.0f }, { 50.0f + 30 * j,50.0f + 30 * i }, true, false);
                         monsterVEC.push_back(wizard);
                     }
                     
@@ -52,7 +53,7 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
                 {
                    // if (!grid[player.x][player.y].visited)
                     {
-                        monster ghost(&ghostTexture, sf::Vector2u(4, 1), 0.1f, 75.0f, 1.5f, 150.0f, 30.0f, 4.0f, { 12.0f,17.0f }, { 50.0f + 30 * j,50.0f + 30 * i }, false);
+                        monster ghost(&ghostTexture, sf::Vector2u(4, 1), 0.1f, 75.0f, 1.5f, 150.0f, 30.0f, 4.0f, { 12.0f,17.0f }, { 50.0f + 30 * j,50.0f + 30 * i }, false, true);
                         monsterVEC.push_back(ghost);
                     }
                    
@@ -135,8 +136,14 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
                 {
 
                 }
-                else if (znak == 'A')
+                else if (znak == 'A')   //A-E boss
                 {
+                    //if (!grid[player.x][player.y].visited)
+                    {
+                        boss necromancer(&necromancerTexture, sf::Vector2u(3, 2), 0.1f, 60.0f, 2.3f, 100.0f, 150.0f, 15.0f, { 27.0f,40.0f }, { 50.0f + 30 * j,50.0f + 30 * i }, true, false);
+                        bossVec.push_back(necromancer);
+                    }
+                    
 
                 }
                 else if (znak == 'B')
@@ -160,7 +167,7 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
     }
 }
 
-void room::pick_room_layout(hero& player, Collision kolizja, sf::RenderWindow& window, std::vector<Bullet>& heroB, std::vector<Bullet>& monsterB, std::vector<monster>& monsterVEC, std::vector<Object>& objectVEC)
+void room::pick_room_layout(hero& player, Collision kolizja, sf::RenderWindow& window, std::vector<Bullet>& heroB, std::vector<Bullet>& monsterB, std::vector<monster>& monsterVEC, std::vector<Object>& objectVEC, std::vector<boss>& bossVec)
 {
     if (!monsterVEC.empty())
     {
@@ -214,7 +221,7 @@ void room::pick_room_layout(hero& player, Collision kolizja, sf::RenderWindow& w
             monsterB = std::vector<Bullet>();
             objectVEC.clear();
             objectVEC = std::vector<Object>();
-            read_from_file(player,monsterVEC,objectVEC);
+            read_from_file(player,monsterVEC,objectVEC,bossVec);
             grid[player.x][player.y].visited = true;
         }
 
@@ -251,7 +258,7 @@ void room::pick_room_layout(hero& player, Collision kolizja, sf::RenderWindow& w
             monsterB = std::vector<Bullet>();
             objectVEC.clear();
             objectVEC = std::vector<Object>();
-            read_from_file(player, monsterVEC, objectVEC);
+            read_from_file(player, monsterVEC, objectVEC,bossVec);
             grid[player.x][player.y].visited = true;
         }
     }
@@ -287,7 +294,7 @@ void room::pick_room_layout(hero& player, Collision kolizja, sf::RenderWindow& w
             monsterB = std::vector<Bullet>();
             objectVEC.clear();
             objectVEC = std::vector<Object>();
-            read_from_file(player, monsterVEC, objectVEC);
+            read_from_file(player, monsterVEC, objectVEC, bossVec);
             grid[player.x][player.y].visited = true;
         }
     }
@@ -323,7 +330,7 @@ void room::pick_room_layout(hero& player, Collision kolizja, sf::RenderWindow& w
             monsterB = std::vector<Bullet>();
             objectVEC.clear();
             objectVEC = std::vector<Object>();
-            read_from_file(player, monsterVEC, objectVEC);
+            read_from_file(player, monsterVEC, objectVEC, bossVec);
             grid[player.x][player.y].visited = true;
         }
     }

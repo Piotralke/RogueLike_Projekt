@@ -6,6 +6,7 @@
 #include "Collision.h"
 #include "Monster.h"
 #include "Objects.h"
+#include "Boss.h"
 #define SIZE 11
 
 class room
@@ -25,11 +26,14 @@ protected:
     sf::Texture doors_it_t;
     //monster textures
     sf::Texture wizardTexture;
-    sf::Texture ghostTexture;
+    
     //object textures
     sf::Texture rockTexture;
     sf::Texture bonesTexture;
+    //boss texture
+    sf::Texture necromancerTexture;
 public:
+    sf::Texture ghostTexture;
     sf::Texture background_t;
     sf::Sprite background_s;
     sf::RectangleShape minimap_room;
@@ -39,6 +43,7 @@ public:
     void init_Texture();
     int check_doors(int i, int j);
     void Draw(sf::RenderWindow& window, sf::RectangleShape& door);
-    void read_from_file(hero& player, std::vector<monster>& monsterVEC, std::vector<Object>& objectVEC);
-    void pick_room_layout(hero& player, Collision kolizja, sf::RenderWindow& window, std::vector<Bullet>& heroB, std::vector<Bullet>& monsterB, std::vector<monster>& monsterVEC, std::vector<Object>& objectVEC);
+    void read_from_file(hero& player, std::vector<monster>& monsterVEC, std::vector<Object>& objectVEC, std::vector<boss>& bossVec);
+    void pick_room_layout(hero& player, Collision kolizja, sf::RenderWindow& window, std::vector<Bullet>& heroB, std::vector<Bullet>& monsterB,
+        std::vector<monster>& monsterVEC, std::vector<Object>& objectVEC, std::vector<boss>& bossVec);
 };

@@ -15,12 +15,13 @@ protected:
     float fire_rate;
     float shot_speed; 
     sf::Clock fire_delay_clock;
+    bool flying;
 public:
     int x = 5, y = 5;
     sf::RectangleShape body;
     Animation animation;
     hero(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed, float fire_rate, float shot_speed, float health,
-        float damage, sf::Vector2f size, sf::Vector2f position);
+        float damage, sf::Vector2f size, sf::Vector2f position, bool flying);
     void DrawStats(sf::RenderWindow& window, sf::Font& font);
     void Draw(sf::RenderWindow& window);
     void Update(float deltaTime, std::vector<Bullet> &bulletVec, sf::Texture *arrow);

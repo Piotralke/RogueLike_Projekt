@@ -8,6 +8,7 @@
 #include "Room.h"
 #include "Generator.h"
 #include "Item.h"
+#include "Boss.h"
 
 int main()
 {
@@ -52,11 +53,12 @@ int main()
     fire_ball_texture.loadFromFile("grafiki/fire_ball.png");
     std::vector<monster> monsterVec;
     std::vector<Object> objectVec;
+    std::vector<boss> bossVec;
     sf::RenderWindow window(sf::VideoMode(800, 400), "RogueLike!");
     generate_map* level = new generate_map;
     sf::Texture playerTexture;
     playerTexture.loadFromFile("grafiki/hero_animation.png");
-    hero player(&playerTexture, sf::Vector2u(4, 2), 0.1f, 100.0f, 1.0f, 200.0f, 100.0f, 6.0f, { 16.0f,20.0f }, {350.0f,200.0f});
+    hero player(&playerTexture, sf::Vector2u(4, 2), 0.1f, 100.0f, 1.0f, 200.0f, 100.0f, 6.0f, { 16.0f,20.0f }, {350.0f,200.0f},false);
     
     sf::Texture bootsTexture;
     bootsTexture.loadFromFile("grafiki/boots.png");
@@ -109,9 +111,13 @@ int main()
                 window.close();
         }
         player.Update(deltaTime,bulletVec,&arrow_texture);
-        for (int j = 0; j < monsterVec.size(); j++)
+        for (int i = 0; i < bossVec.size(); i++)
         {
-            monsterVec.at(j).Update(deltaTime, &fire_ball_texture, monsterBulletVec, player);
+            bossVec.at(i).Update(deltaTime, &fire_ball_texture, monsterBulletVec, monsterVec, player,&level->ghostTexture);
+        }
+        for (int i = 0; i < monsterVec.size(); i++)
+        {
+            monsterVec.at(i).Update(deltaTime, &fire_ball_texture, monsterBulletVec, player);
         }
         for (int i = 0; i < objectVec.size(); i++)
         {
@@ -248,7 +254,7 @@ int main()
         
         window.clear();
         window.draw(level->background_s);
-        level->pick_room_layout(player,kolizja,window, bulletVec, monsterBulletVec, monsterVec, objectVec);
+        level->pick_room_layout(player,kolizja,window, bulletVec, monsterBulletVec, monsterVec, objectVec, bossVec);
         for (int i = 0; i < bulletVec.size(); i++)
         {
             bulletVec.at(i).Draw(window);
@@ -262,6 +268,10 @@ int main()
         for (int j = 0; j < monsterVec.size(); j++)
         {
             monsterVec.at(j).Draw(window);
+        }
+        for (int j = 0; j < bossVec.size(); j++)
+        {
+            bossVec.at(j).Draw(window);
         }
         for (int i = 0; i < itemVec.size(); i++)
         {

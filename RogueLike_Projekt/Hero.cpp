@@ -1,7 +1,7 @@
 #include "Hero.h"
 #include <iostream>
 hero::hero(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed, float fire_rate, float shot_speed, float health,
-    float damage, sf::Vector2f size, sf::Vector2f position) :
+    float damage, sf::Vector2f size, sf::Vector2f position, bool flying) :
     animation(texture, imageCount, switchTime)
 {
     this->speed = speed;
@@ -12,6 +12,7 @@ hero::hero(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, floa
     this->damage = damage;
     row = 0;
     faceRight = true;
+    this->flying = flying;
 
     body.setSize(size);
     body.setOrigin(body.getSize() / 2.0f);
