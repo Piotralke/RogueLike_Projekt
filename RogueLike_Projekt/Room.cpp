@@ -212,7 +212,7 @@ void room::pick_room_layout(hero& player, Collision kolizja, sf::RenderWindow& w
         }
         
         Draw(window, doors);
-        if (kolizja.check_Collision(player.body, doors) && monsterVEC.empty())
+        if (kolizja.check_Collision(player.body, doors) && monsterVEC.empty() && bossVec.empty())
         {
             player.y--;
             player.body.setPosition({ 655, player.body.getPosition().y });
@@ -248,7 +248,7 @@ void room::pick_room_layout(hero& player, Collision kolizja, sf::RenderWindow& w
             doors.setTexture(&doors_t);
         }
         Draw(window, doors);
-        if (kolizja.check_Collision(player.body, doors)&&monsterVEC.empty())
+        if (kolizja.check_Collision(player.body, doors)&&monsterVEC.empty()&&bossVec.empty())
         {
 
             player.y++;
@@ -284,7 +284,7 @@ void room::pick_room_layout(hero& player, Collision kolizja, sf::RenderWindow& w
             doors.setTexture(&doors_t);
         }
         Draw(window, doors);
-        if (kolizja.check_Collision(player.body, doors) && monsterVEC.empty())
+        if (kolizja.check_Collision(player.body, doors) && monsterVEC.empty() && bossVec.empty())
         {
 
             player.x++;
@@ -320,7 +320,7 @@ void room::pick_room_layout(hero& player, Collision kolizja, sf::RenderWindow& w
             doors.setTexture(&doors_t);
         }
         Draw(window, doors);
-        if (kolizja.check_Collision(player.body, doors) && monsterVEC.empty())
+        if (kolizja.check_Collision(player.body, doors) && monsterVEC.empty() && bossVec.empty())
         {
 
             player.x--;

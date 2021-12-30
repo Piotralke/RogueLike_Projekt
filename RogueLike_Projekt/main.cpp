@@ -139,6 +139,7 @@ int main()
 
             }
          
+            if (!(bulletVec.empty()))
             for (int k = 0; k < monsterVec.size(); k++)
             {
                 if (!(monsterVec.empty()) && kolizja.check_Collision(bulletVec.at(i).bullet, monsterVec.at(k).body))
@@ -152,6 +153,7 @@ int main()
                 }
             }
 
+            if (!(bulletVec.empty()))
             for (int l = 0; l < bossVec.size(); l++)
             {
                 if (!(bossVec.empty()) && kolizja.check_Collision(bulletVec.at(i).bullet, bossVec.at(l).body))
@@ -165,6 +167,7 @@ int main()
                 }
             }
 
+            if (!(bulletVec.empty()))
             for (int m = 0; m < objectVec.size(); m++) {
                 if (!(bulletVec.empty()) && kolizja.check_Collision(bulletVec.at(i).bullet, objectVec.at(m).shape))
                 {
@@ -250,34 +253,34 @@ int main()
 
         for (int i = 0; i < bossVec.size(); i++)
         {
-            if (!(bossVec.empty()) && kolizja.check_Collision(bossVec.at(i).body, player.body))
-            {
-                if (invisibility_clock.getElapsedTime().asSeconds() >= 1.0f)
-                {
-                    player.getHit(bossVec.at(i).getDamage());
-                    invisibility_clock.restart();
-                }
-            }
-
-            if (!(bossVec.empty()) && bossVec.at(i).getHealth() <= 0.0f)
-            {
-                bossVec.erase(bossVec.begin() + i);
-                if (i != 0)
-                    i--;
-                break;
-            }
-
-            if (!(bossVec.empty()) && !(bossVec.at(i).getFlying()))
-                for (int j = 0; j < objectVec.size(); j++)
-                {
-                    kolizja.check_Collision(bossVec.at(i).body, objectVec.at(j).shape);
-                }
-
-            if (!(bossVec.empty()))
-                for (int k = 0; k < roomVec.size(); k++) {
-                    kolizja.check_Collision(bossVec.at(i).body, roomVec.at(k));
-                }
-
+           if (!(bossVec.empty()) && kolizja.check_Collision(bossVec.at(i).body, player.body))
+           {
+               if (invisibility_clock.getElapsedTime().asSeconds() >= 1.0f)
+               {
+                   player.getHit(bossVec.at(i).getDamage());
+                   invisibility_clock.restart();
+               }
+           }
+         
+           if (!(bossVec.empty()) && bossVec.at(i).getHealth() <= 0.0f)
+           {
+               bossVec.erase(bossVec.begin() + i);
+               if (i != 0)
+                   i--;
+               break;
+           }
+         
+           if (!(bossVec.empty()) && !(bossVec.at(i).getFlying()))
+               for (int j = 0; j < objectVec.size(); j++)
+               {
+                   kolizja.check_Collision(bossVec.at(i).body, objectVec.at(j).shape);
+               }
+         
+           if (!(bossVec.empty()))
+               for (int k = 0; k < roomVec.size(); k++) {
+                   kolizja.check_Collision(bossVec.at(i).body, roomVec.at(k));
+               }
+         
         }
 
         for (int i = 0; i < itemVec.size(); i++)
