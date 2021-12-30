@@ -1,6 +1,12 @@
 #include"Boss.h"
 void boss::Update(float deltaTime, sf::Texture* arrow, std::vector<Bullet>& bulletVec, std::vector<monster>& monsterVec, hero player, sf::Texture* ghostTexture)
 {
+	if (getDirVec(player).x < 0) {
+		faceRight = true;
+	}
+	else {
+		faceRight = false;
+	}
 	if (fire_delay_clock.getElapsedTime().asSeconds() >= fire_rate && shooting == true)
 	{
 		sf::Vector2f shottingDir = getDirVec(player);
@@ -25,7 +31,11 @@ void boss::Update(float deltaTime, sf::Texture* arrow, std::vector<Bullet>& bull
 		monsterVec.push_back(ghost);
 		monsterVec.push_back(ghost1);
 		spawn_delay_clock.restart();
+		animation.Update(1, deltaTime, faceRight);
 	}
-	animation.Update(0, deltaTime, true);
+	else {
+		animation.Update(0, deltaTime, faceRight);
+	}
+	
 	body.setTextureRect(animation.uvRect);
 }

@@ -6,6 +6,7 @@ void room::init_Texture() {
     rockTexture.loadFromFile("grafiki/rock.png");
     bonesTexture.loadFromFile("grafiki/bone_pile.png");
     necromancerTexture.loadFromFile("grafiki/necromancer.png");
+
 }
 
 int room::check_doors(int i, int j)
@@ -169,7 +170,7 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
 
 void room::pick_room_layout(hero& player, Collision kolizja, sf::RenderWindow& window, std::vector<Bullet>& heroB, std::vector<Bullet>& monsterB, std::vector<monster>& monsterVEC, std::vector<Object>& objectVEC, std::vector<boss>& bossVec)
 {
-    if (!monsterVEC.empty())
+    if (!monsterVEC.empty() || !bossVec.empty())
     {
         doors_t.loadFromFile("grafiki/doors_c.png");
         doors_bs_t.loadFromFile("grafiki/doors_boss_c.png");

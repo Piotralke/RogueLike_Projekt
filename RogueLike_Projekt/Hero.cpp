@@ -195,10 +195,15 @@ float hero::getFireDelay()
 {
     return fire_rate;
 }
+bool hero::getFlying()
+{
+    return flying;
+}
 void hero::getHit(float damage)
 {
     health -= damage;
 }
+
 void hero::setStatistics(float damage, float health,float maxHealth, float fire_delay, float shot_speed, float speed)
 {
     this->damage += damage;

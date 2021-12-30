@@ -103,13 +103,13 @@ int main()
     while (window.isOpen())
     {
         deltaTime = clock.restart().asSeconds(); 
-        
         sf::Event event;
         while (window.pollEvent(event)) 
         { 
             if (event.type == sf::Event::Closed)
                 window.close();
         }
+
         player.Update(deltaTime,bulletVec,&arrow_texture);
         for (int i = 0; i < bossVec.size(); i++)
         {
@@ -123,42 +123,27 @@ int main()
         {
             kolizja.check_Collision(player.body, objectVec.at(i).shape);
         }
+
         for (int i = 0; i < bulletVec.size(); i++)
         {
             bulletVec.at(i).fire(deltaTime);
-            if (!(bulletVec.empty()) && kolizja.check_Collision(bulletVec.at(i).bullet, room_collider_top))
-            {
-                bulletVec.erase(bulletVec.begin() + i);
-                if(i!=0)
-                    i--;
-                break;
-            }
-            if (!(bulletVec.empty()) && kolizja.check_Collision(bulletVec.at(i).bullet, room_collider_left))
-            {
-                bulletVec.erase(bulletVec.begin() + i);
-                if (i != 0)
-                    i--;
-                break;
-            }
-            if (!(bulletVec.empty()) && kolizja.check_Collision(bulletVec.at(i).bullet, room_collider_right))
-            {
-                bulletVec.erase(bulletVec.begin() + i);
-                if (i != 0)
-                    i--;
-                break;
-            }
-            if (!(bulletVec.empty()) && kolizja.check_Collision(bulletVec.at(i).bullet, room_collider_down))
-            {
-                bulletVec.erase(bulletVec.begin() + i);
-                if (i != 0)
-                    i--;
-                break;
-            }
-            for (int j = 0; j < monsterVec.size(); j++)
-            {
-                if (!(monsterVec.empty()) && kolizja.check_Collision(bulletVec.at(i).bullet, monsterVec.at(j).body))
+
+            for (int j = 0; j < roomVec.size(); j++) {
+                if (!(bulletVec.empty()) && kolizja.check_Collision(bulletVec.at(i).bullet, roomVec.at(j)))
                 {
-                    monsterVec.at(j).getHit(player.getDamage());
+                    bulletVec.erase(bulletVec.begin() + i);
+                    if (i != 0)
+                        i--;
+                    break;
+                }
+
+            }
+         
+            for (int k = 0; k < monsterVec.size(); k++)
+            {
+                if (!(monsterVec.empty()) && kolizja.check_Collision(bulletVec.at(i).bullet, monsterVec.at(k).body))
+                {
+                    monsterVec.at(k).getHit(player.getDamage());
                     bulletVec.erase(bulletVec.begin() + i);
                     if (i != 0)
                         i--;
@@ -166,39 +151,47 @@ int main()
                     break;
                 }
             }
+
+            for (int l = 0; l < bossVec.size(); l++)
+            {
+                if (!(bossVec.empty()) && kolizja.check_Collision(bulletVec.at(i).bullet, bossVec.at(l).body))
+                {
+                    bossVec.at(l).getHit(player.getDamage());
+                    bulletVec.erase(bulletVec.begin() + i);
+                    if (i != 0)
+                        i--;
+
+                    break;
+                }
+            }
+
+            for (int m = 0; m < objectVec.size(); m++) {
+                if (!(bulletVec.empty()) && kolizja.check_Collision(bulletVec.at(i).bullet, objectVec.at(m).shape))
+                {
+                    bulletVec.erase(bulletVec.begin() + i);
+                    if (i != 0)
+                        i--;
+                    break;
+                }
+
+            }
         }
+
         for (int i = 0; i < monsterBulletVec.size(); i++)
         {
             monsterBulletVec.at(i).fire(deltaTime);
-            if (!(monsterBulletVec.empty()) && kolizja.check_Collision(monsterBulletVec.at(i).bullet, room_collider_top))
-            {
-                monsterBulletVec.erase(monsterBulletVec.begin() + i);
-                if (i != 0)
-                    i--;
-                break;
+            for (int j = 0; j < roomVec.size(); j++) {
+                if (!(monsterBulletVec.empty()) && kolizja.check_Collision(monsterBulletVec.at(i).bullet, roomVec.at(j)))
+                {
+                    monsterBulletVec.erase(monsterBulletVec.begin() + i);
+                    if (i != 0)
+                        i--;
+                    break;
+                }
+
             }
-            if (!(monsterBulletVec.empty()) && kolizja.check_Collision(monsterBulletVec.at(i).bullet, room_collider_left))
-            {
-                monsterBulletVec.erase(monsterBulletVec.begin() + i);
-                if (i != 0)
-                    i--;
-                break;
-            }
-            if (!(monsterBulletVec.empty()) && kolizja.check_Collision(monsterBulletVec.at(i).bullet, room_collider_right))
-            {
-                monsterBulletVec.erase(monsterBulletVec.begin() + i);
-                if (i != 0)
-                    i--;
-                break;
-            }
-            if (!(monsterBulletVec.empty()) && kolizja.check_Collision(monsterBulletVec.at(i).bullet, room_collider_down))
-            {
-                monsterBulletVec.erase(monsterBulletVec.begin() + i);
-                if (i != 0)
-                    i--;
-                break;
-            }
-            if (kolizja.check_Collision(monsterBulletVec.at(i).bullet, player.body))
+
+            if (!(monsterBulletVec.empty()) && kolizja.check_Collision(monsterBulletVec.at(i).bullet, player.body))
             {
                 if (invisibility_clock.getElapsedTime().asSeconds() >= 1.0f)
                 {
@@ -210,7 +203,19 @@ int main()
                     i--;
                 break;
             }
+            if(!(monsterBulletVec.empty()))
+            for (int m = 0; m < objectVec.size(); m++) {
+                if (!(monsterBulletVec.empty()) && kolizja.check_Collision(monsterBulletVec.at(i).bullet, objectVec.at(m).shape))
+                {
+                    monsterBulletVec.erase(monsterBulletVec.begin() + i);
+                    if (i != 0)
+                        i--;
+                    break;
+                }
+
+            }
         }
+
         for (int i = 0; i < monsterVec.size(); i++)
         {
             if (!(monsterVec.empty()) && kolizja.check_Collision(monsterVec.at(i).body, player.body))
@@ -221,6 +226,7 @@ int main()
                     invisibility_clock.restart();
                 }  
             }
+
             if (!(monsterVec.empty()) && monsterVec.at(i).getHealth() <= 0.0f)
             {
                 monsterVec.erase(monsterVec.begin() + i);
@@ -228,7 +234,52 @@ int main()
                     i--;
                 break;
             }
+
+            if (!(monsterVec.empty()) && !(monsterVec.at(i).getFlying()) )    
+            for (int j = 0; j < objectVec.size(); j++)
+            {
+                kolizja.check_Collision(monsterVec.at(i).body, objectVec.at(j).shape);
+            }
+
+            if(!(monsterVec.empty()))
+                 for (int k = 0; k < roomVec.size(); k++) {
+                    kolizja.check_Collision(monsterVec.at(i).body, roomVec.at(k));
+                 }
+
         }
+
+        for (int i = 0; i < bossVec.size(); i++)
+        {
+            if (!(bossVec.empty()) && kolizja.check_Collision(bossVec.at(i).body, player.body))
+            {
+                if (invisibility_clock.getElapsedTime().asSeconds() >= 1.0f)
+                {
+                    player.getHit(bossVec.at(i).getDamage());
+                    invisibility_clock.restart();
+                }
+            }
+
+            if (!(bossVec.empty()) && bossVec.at(i).getHealth() <= 0.0f)
+            {
+                bossVec.erase(bossVec.begin() + i);
+                if (i != 0)
+                    i--;
+                break;
+            }
+
+            if (!(bossVec.empty()) && !(bossVec.at(i).getFlying()))
+                for (int j = 0; j < objectVec.size(); j++)
+                {
+                    kolizja.check_Collision(bossVec.at(i).body, objectVec.at(j).shape);
+                }
+
+            if (!(bossVec.empty()))
+                for (int k = 0; k < roomVec.size(); k++) {
+                    kolizja.check_Collision(bossVec.at(i).body, roomVec.at(k));
+                }
+
+        }
+
         for (int i = 0; i < itemVec.size(); i++)
         {
             if (!(itemVec.empty()) && kolizja.check_Collision(itemVec.at(i).item, player.body))
@@ -240,17 +291,10 @@ int main()
                 break;
             }
         }
-        //std::cout << "Health: " << player.getHealth() << std::endl;
-        //std::cout << "Damage: " << player.getDamage() << std::endl;
-        //std::cout << "Speed: " << player.getSpeed() << std::endl;
-        //std::cout << "Shot Speed: " << player.getShotSpeed() << std::endl;
-        //std::cout << "Fire rate: " << player.getFireDelay() << std::endl;
-        //std::cout << std::endl;
-        kolizja.check_Collision(player.body, kamien);
-        kolizja.check_Collision(player.body, room_collider_top);
-        kolizja.check_Collision(player.body, room_collider_left);
-        kolizja.check_Collision(player.body, room_collider_right);
-        kolizja.check_Collision(player.body, room_collider_down);
+        
+        for (int i = 0; i < roomVec.size(); i++) {
+            kolizja.check_Collision(player.body, roomVec.at(i));
+        }
         
         window.clear();
         window.draw(level->background_s);
@@ -263,15 +307,17 @@ int main()
         {
             objectVec.at(i).Draw(window);
         }
-        for (int i = 0; i < monsterBulletVec.size(); i++)
+        for (int i = 0; i < monsterBulletVec.size(); i++) 
+        {
             monsterBulletVec.at(i).Draw(window);
-        for (int j = 0; j < monsterVec.size(); j++)
+        }    
+        for (int i = 0; i < monsterVec.size(); i++)
         {
-            monsterVec.at(j).Draw(window);
+            monsterVec.at(i).Draw(window);
         }
-        for (int j = 0; j < bossVec.size(); j++)
+        for (int i = 0; i < bossVec.size(); i++)
         {
-            bossVec.at(j).Draw(window);
+            bossVec.at(i).Draw(window);
         }
         for (int i = 0; i < itemVec.size(); i++)
         {

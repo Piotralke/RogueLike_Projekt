@@ -31,6 +31,7 @@ public:
     float getSpeed();
     float getShotSpeed();
     float getFireDelay();
+    bool getFlying();
     void getHit(float damage);
     void setStatistics(float damage, float health,float maxHealth, float fire_delay, float shot_speed, float speed);
 };
