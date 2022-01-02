@@ -30,6 +30,7 @@ protected:
     //object textures
     sf::Texture rockTexture;
     sf::Texture bonesTexture;
+    sf::Texture holeTexture;
     //boss texture
     sf::Texture necromancerTexture;
 public:

@@ -171,7 +171,8 @@ int main()
 
             if (!(bulletVec.empty()))
             for (int m = 0; m < objectVec.size(); m++) {
-                if (!(bulletVec.empty()) && kolizja.check_Collision(bulletVec.at(i).bullet, objectVec.at(m).shape))
+                if (!(bulletVec.empty()) && objectVec.at(m).shootable==false)
+                    if(kolizja.check_Collision(bulletVec.at(i).bullet, objectVec.at(m).shape))
                 {
                     bulletVec.erase(bulletVec.begin() + i);
                     if (i != 0)
@@ -304,14 +305,15 @@ int main()
         window.clear();
         window.draw(level->background_s);
         level->pick_room_layout(player,kolizja,window, bulletVec, monsterBulletVec, monsterVec, objectVec, bossVec);
-        for (int i = 0; i < bulletVec.size(); i++)
-        {
-            bulletVec.at(i).Draw(window);
-        }
         for (int i = 0; i < objectVec.size(); i++)
         {
             objectVec.at(i).Draw(window);
         }
+        for (int i = 0; i < bulletVec.size(); i++)
+        {
+            bulletVec.at(i).Draw(window);
+        }
+        
         for (int i = 0; i < monsterBulletVec.size(); i++) 
         {
             monsterBulletVec.at(i).Draw(window);

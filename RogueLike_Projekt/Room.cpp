@@ -5,6 +5,7 @@ void room::init_Texture() {
     ghostTexture.loadFromFile("grafiki/ghost_animation.png");
     rockTexture.loadFromFile("grafiki/rock.png");
     bonesTexture.loadFromFile("grafiki/bone_pile.png");
+    holeTexture.loadFromFile("grafiki/hole.png");
     necromancerTexture.loadFromFile("grafiki/necromancer.png");
 
 }
@@ -117,17 +118,18 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
                 }
                 else if (znak == 'a')
                 {
-                    Object rock(&rockTexture, { 50.0f + 30 * j,50.0f + 30 * i }, {30.0f,30.0f});
+                    Object rock(&rockTexture, { 50.0f + 30 * j,50.0f + 30 * i }, {30.0f,30.0f}, false);
                     objectVEC.push_back(rock);
                 }
                 else if (znak == 'b')
                 {
-                    Object bones(&bonesTexture, { 50.0f + 30 * j,50.0f + 30 * i }, { 30.0f,30.0f });
+                    Object bones(&bonesTexture, { 50.0f + 30 * j,50.0f + 30 * i }, { 30.0f,30.0f }, false);
                     objectVEC.push_back(bones);
                 }
                 else if (znak == 'c')
                 {
-
+                    Object hole(&holeTexture, { 50.0f + 30 * j,50.0f + 30 * i }, { 30.0f,30.0f }, true);
+                    objectVEC.push_back(hole);
                 }
                 else if (znak == 'd')
                 {
