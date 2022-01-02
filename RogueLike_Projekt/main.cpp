@@ -211,13 +211,14 @@ int main()
             }
             if(!(monsterBulletVec.empty()))
             for (int m = 0; m < objectVec.size(); m++) {
-                if (!(monsterBulletVec.empty()) && kolizja.check_Collision(monsterBulletVec.at(i).bullet, objectVec.at(m).shape))
-                {
-                    monsterBulletVec.erase(monsterBulletVec.begin() + i);
-                    if (i != 0)
+                if(objectVec.at(m).shootable==false)
+                    if (!(monsterBulletVec.empty()) && kolizja.check_Collision(monsterBulletVec.at(i).bullet, objectVec.at(m).shape))
+                    {
+                        monsterBulletVec.erase(monsterBulletVec.begin() + i);
+                        if (i != 0)
                         i--;
-                    break;
-                }
+                        break;
+                    }
 
             }
         }

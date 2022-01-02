@@ -9,10 +9,10 @@ void boss::Update(float deltaTime, sf::Texture* arrow, std::vector<Bullet>& bull
 	}
 	if (fire_delay_clock.getElapsedTime().asSeconds() >= fire_rate && shooting == true)
 	{
-		sf::Vector2f shottingDir = getDirVec(player);
+		sf::Vector2f shottingDir = getDirVec(player), test1 = {15.0f,2.0f}, test2 = { 2.0f,15.0f };
 		Bullet newBullet({ 10,10 }, body.getPosition(), shot_speed, damage, -shottingDir, arrow, getDirDeg(shottingDir));
-		Bullet newBullet1({ 10,10 }, { body.getPosition().x - 30, body.getPosition().y }, shot_speed, damage, -shottingDir, arrow, getDirDeg(shottingDir));
-		Bullet newBullet2({ 10,10 }, { body.getPosition().x + 30, body.getPosition().y}, shot_speed, damage,  -shottingDir, arrow, getDirDeg(shottingDir));
+		Bullet newBullet1({ 10,10 }, { body.getPosition().x, body.getPosition().y+10}, shot_speed, damage, -shottingDir + test1, arrow, getDirDeg(shottingDir));
+		Bullet newBullet2({ 10,10 }, { body.getPosition().x, body.getPosition().y-10}, shot_speed, damage, -shottingDir - test1, arrow, getDirDeg(shottingDir));
 		bulletVec.push_back(newBullet);
 		bulletVec.push_back(newBullet1);
 		bulletVec.push_back(newBullet2);
