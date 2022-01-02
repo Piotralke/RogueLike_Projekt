@@ -163,6 +163,22 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
                 {
 
                 }
+                else if (znak == 'I') //item
+                {
+                    
+                }
+                else if (znak == 'p') //maly potion
+                {
+
+                }
+                else if (znak == 'P') //duzy potion
+                {
+
+                }
+                else if (znak == '$') // item do kupienia(nwm czy bedzie to potrzebne)
+                {
+
+                }
             }
         }
     }

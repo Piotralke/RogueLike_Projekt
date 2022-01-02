@@ -44,6 +44,7 @@ int main()
     font.loadFromFile("font.ttf");
     sf::Texture arrow_texture;
     sf::Texture fire_ball_texture;
+    sf::Texture skull_texture;
     sf::Texture hud_texture;
     sf::Sprite hud_sprite;
     hud_texture.loadFromFile("grafiki/hud.png");
@@ -51,6 +52,7 @@ int main()
     hud_sprite.setPosition({700.0f,0.0f});
     arrow_texture.loadFromFile("grafiki/arrow.png");
     fire_ball_texture.loadFromFile("grafiki/fire_ball.png");
+    skull_texture.loadFromFile("grafiki/skull.png");
     std::vector<monster> monsterVec;
     std::vector<Object> objectVec;
     std::vector<boss> bossVec;
@@ -113,7 +115,7 @@ int main()
         player.Update(deltaTime,bulletVec,&arrow_texture);
         for (int i = 0; i < bossVec.size(); i++)
         {
-            bossVec.at(i).Update(deltaTime, &fire_ball_texture, monsterBulletVec, monsterVec, player,&level->ghostTexture);
+            bossVec.at(i).Update(deltaTime, &skull_texture, monsterBulletVec, monsterVec, player,&level->ghostTexture);
         }
         for (int i = 0; i < monsterVec.size(); i++)
         {

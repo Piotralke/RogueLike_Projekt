@@ -257,6 +257,30 @@ bool generate_map::generate_layout()
                      {
                          grid[i][j].sciezka = "layouts/spawn.txt";
                      }
+                     else if (grid[i][j].type==2)
+                     {
+                         std::string liczba;
+                         grid[i][j].sciezka = "layouts/boss/";
+                         liczba = std::to_string(std::rand() % 5);  //5 albo 10 po 1 albo 2 na kazdego bossa
+                         grid[i][j].sciezka += liczba;
+                         grid[i][j].sciezka += ".txt";
+                     }
+                     else if (grid[i][j].type == 3)
+                     {
+                         std::string liczba;
+                         grid[i][j].sciezka = "layouts/shop/";
+                         liczba = std::to_string(std::rand() % 9);  //mozliwe ze bedzie jeden layout
+                         grid[i][j].sciezka += liczba;              //albo kilka ale z 2-3 max
+                         grid[i][j].sciezka += ".txt";              //to samo do item roomu
+                     }
+                     else if (grid[i][j].type == 3)
+                     {
+                         std::string liczba;
+                         grid[i][j].sciezka = "layouts/item/";
+                         liczba = std::to_string(std::rand() % 9);
+                         grid[i][j].sciezka += liczba;
+                         grid[i][j].sciezka += ".txt";
+                     }
                      else
                      {
                          grid[i][j].sciezka = random_layout(i, j);
