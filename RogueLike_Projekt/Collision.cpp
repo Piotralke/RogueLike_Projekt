@@ -1,10 +1,16 @@
 #include "Collision.h"
 bool Collision::check_Collision(sf::RectangleShape& ob1, sf::RectangleShape& ob2)
 {
-	//if (ob1.getGlobalBounds().intersects(ob2.getGlobalBounds()))
-	//{
-	//	ob1.setPosition();
-	//}
+//	if (ob1.getGlobalBounds().intersects(ob2.getGlobalBounds()))
+//	{
+//		ob1.setPosition(ob1.getPosition().x, ob2.getPosition().y - ob1.getSize().y);
+//		return true;
+//	}
+//	else
+//		return false;
+//}
+
+
 	sf::RectangleShape* poly1 = &ob1;
 	sf::RectangleShape* poly2 = &ob2;
 	

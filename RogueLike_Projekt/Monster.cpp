@@ -1,5 +1,5 @@
 #include "Monster.h"
-
+#include <iostream>
 sf::Vector2f monster::getDirVec(hero player)
 {
 	return this->GetPosition() - player.GetPosition();
@@ -10,7 +10,7 @@ float monster::getDirDeg(sf::Vector2f DirVec)
 	return std::atan2f(DirVec.y, DirVec.x) * 180 / PI - 90.0f;
 }
 
-void monster::Update(float deltaTime, sf::Texture* arrow, std::vector<Bullet>& bulletVec, hero player)
+void monster::Update(float deltaTime, sf::Texture* arrow, std::vector<Bullet>& bulletVec, std::vector<monster>& monsterVec, hero player, int& skeleton_count, int& dead_skeleton)
 {
 	if (fire_delay_clock.getElapsedTime().asSeconds() >= fire_rate && shooting == true)
 	{
@@ -31,7 +31,35 @@ void monster::Update(float deltaTime, sf::Texture* arrow, std::vector<Bullet>& b
 	else {
 		faceRight = false;
 	}
-		
-	animation.Update(0, deltaTime, faceRight);
+	if (this->resurection == true && this->health <= 0.0f)
+	{
+		if (this->dead == false)
+		{
+			dead_skeleton++;
+			dead = true;
+			animation_clock.restart();
+			memSpeed = speed;
+			row = 1;
+			speed = 0.0f;
+		}
+		if (skeleton_count == monsterVec.size() && dead_skeleton == monsterVec.size())
+		{
+			skeleton_count = 0;
+			monsterVec.clear();
+			monsterVec = std::vector<monster>();
+		}	
+	}
+	if (animation_clock.getElapsedTime().asSeconds() >= 10.0f && this->dead == true) {
+
+		speed = memSpeed;
+		health = memHealth;
+		row = 0;
+		dead = false;
+		dead_skeleton--;
+	}
+	std::cout << "skeleton count" << skeleton_count << std::endl;
+	std::cout << "dead skeleton" << dead_skeleton << std::endl;
+	std::cout << "vec size" << monsterVec.size() << std::endl;
+	animation.Update(row, deltaTime, faceRight);
 	body.setTextureRect(animation.uvRect);
 }

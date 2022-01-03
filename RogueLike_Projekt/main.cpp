@@ -98,6 +98,8 @@ int main()
     level->generate_layout();
     std::cout << level->random_layout(5, 5) << std::endl;
     float deltaTime = 0.0f;
+    int skeleton_count = 0;
+    int dead_skeleton = 0;
     sf::Clock clock;
     sf::Clock invisibility_clock;
     level->wypiszkons();
@@ -119,7 +121,7 @@ int main()
         }
         for (int i = 0; i < monsterVec.size(); i++)
         {
-            monsterVec.at(i).Update(deltaTime, &fire_ball_texture, monsterBulletVec, player);
+            monsterVec.at(i).Update(deltaTime, &fire_ball_texture, monsterBulletVec, monsterVec, player, skeleton_count, dead_skeleton);
         }
         for (int i = 0; i < objectVec.size(); i++)
         {
@@ -234,14 +236,14 @@ int main()
                 }  
             }
 
-            if (!(monsterVec.empty()) && monsterVec.at(i).getHealth() <= 0.0f)
+            if (!(monsterVec.empty()) && monsterVec.at(i).getHealth() <= 0.0f && monsterVec.at(i).resurection == false)
             {
                 monsterVec.erase(monsterVec.begin() + i);
                 if (i != 0)
                     i--;
                 break;
             }
-
+            
             if (!(monsterVec.empty()) && !(monsterVec.at(i).getFlying()) )    
             for (int j = 0; j < objectVec.size(); j++)
             {
@@ -305,7 +307,7 @@ int main()
         
         window.clear();
         window.draw(level->background_s);
-        level->pick_room_layout(player,kolizja,window, bulletVec, monsterBulletVec, monsterVec, objectVec, bossVec);
+        level->pick_room_layout(player,kolizja,window, bulletVec, monsterBulletVec, monsterVec, objectVec, bossVec, skeleton_count);
         for (int i = 0; i < objectVec.size(); i++)
         {
             objectVec.at(i).Draw(window);

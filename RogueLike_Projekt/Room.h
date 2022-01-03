@@ -26,6 +26,9 @@ protected:
     sf::Texture doors_it_t;
     //monster textures
     sf::Texture wizardTexture;
+    sf::Texture skeletonTexture;
+    sf::Texture zombieTexture;
+    sf::Texture demonTexture;
     
     //object textures
     sf::Texture rockTexture;
@@ -44,7 +47,7 @@ public:
     void init_Texture();
     int check_doors(int i, int j);
     void Draw(sf::RenderWindow& window, sf::RectangleShape& door);
-    void read_from_file(hero& player, std::vector<monster>& monsterVEC, std::vector<Object>& objectVEC, std::vector<boss>& bossVec);
+    void read_from_file(hero& player, std::vector<monster>& monsterVEC, std::vector<Object>& objectVEC, std::vector<boss>& bossVec, int& skeleton_count);
     void pick_room_layout(hero& player, Collision kolizja, sf::RenderWindow& window, std::vector<Bullet>& heroB, std::vector<Bullet>& monsterB,
-        std::vector<monster>& monsterVEC, std::vector<Object>& objectVEC, std::vector<boss>& bossVec);
+        std::vector<monster>& monsterVEC, std::vector<Object>& objectVEC, std::vector<boss>& bossVec, int& skeleton_count);
 };

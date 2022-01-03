@@ -26,16 +26,17 @@ void boss::Update(float deltaTime, sf::Texture* arrow, std::vector<Bullet>& bull
 	}
 	if (spawn_delay_clock.getElapsedTime().asSeconds() >= 15.0f)
 	{
-		monster ghost(ghostTexture, sf::Vector2u(4, 1), 0.1f, 75.0f, 1.5f, 150.0f, 30.0f, 4.0f, { 12.0f,17.0f }, { body.getPosition().x - 25,body.getPosition().y }, false, true);
-		monster ghost1(ghostTexture, sf::Vector2u(4, 1), 0.1f, 75.0f, 1.5f, 150.0f, 30.0f, 4.0f, { 12.0f,17.0f }, { body.getPosition().x + 25,body.getPosition().y }, false, true);
+		monster ghost(ghostTexture, sf::Vector2u(4, 1), 0.1f, 75.0f, 1.5f, 150.0f, 30.0f, 4.0f, { 12.0f,17.0f }, { body.getPosition().x - 25,body.getPosition().y }, false, true, false);
+		monster ghost1(ghostTexture, sf::Vector2u(4, 1), 0.1f, 75.0f, 1.5f, 150.0f, 30.0f, 4.0f, { 12.0f,17.0f }, { body.getPosition().x + 25,body.getPosition().y }, false, true, false);
 		monsterVec.push_back(ghost);
 		monsterVec.push_back(ghost1);
 		spawn_delay_clock.restart();
-		animation.Update(1, deltaTime, faceRight);
+		animation_clock.restart();
+		row = 1;
 	}
-	else {
-		animation.Update(0, deltaTime, faceRight);
+	if(animation_clock.getElapsedTime().asSeconds()>=0.5f) {
+		row = 0;
 	}
-	
+	animation.Update(row, deltaTime, faceRight);
 	body.setTextureRect(animation.uvRect);
 }
