@@ -10,10 +10,13 @@ void room::init_Texture() {
     elfTexture.loadFromFile("grafiki/dark_elf_animation.png");
     slimeTexture.loadFromFile("grafiki/slime_animation.png");
     trollTexture.loadFromFile("grafiki/troll_animation.png");
+    towerTexture.loadFromFile("grafiki/tower.png");
 
     rockTexture.loadFromFile("grafiki/rock.png");
     bonesTexture.loadFromFile("grafiki/bone_pile.png");
     holeTexture.loadFromFile("grafiki/hole.png");
+    barrelTexture.loadFromFile("grafiki/barrel.png");
+    crateTexture.loadFromFile("grafiki/crate.png");
 
     necromancerTexture.loadFromFile("grafiki/necromancer.png");
 
@@ -22,6 +25,7 @@ void room::init_Texture() {
     skull_texture.loadFromFile("grafiki/skull.png");
     slime_ball_texture.loadFromFile("grafiki/slime_ball.png");
     bone_texture.loadFromFile("grafiki/bone.png");
+    cannon_ball_texture.loadFromFile("grafiki/cannon_ball.png");
 
 }
 
@@ -134,9 +138,10 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
                 }
                 else if (znak == '9')
                 {
-                    if (!grid[player.x][player.y].visited)
+                   // if (!grid[player.x][player.y].visited)
                     {
-
+                        monster tower(&towerTexture, sf::Vector2u(1, 1), 0.1f, 0.0f, 2.5f, 200.0f, 50.0f, 10.0f, { 18.0f,30.0f }, { 50.0f + 30 * j,50.0f + 30 * i }, true, false, false, &cannon_ball_texture, { 11,11 });
+                        monsterVEC.push_back(tower);
                     }
                 }
                 else if (znak == 'a')
@@ -156,11 +161,13 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
                 }
                 else if (znak == 'd')
                 {
-
+                    Object barrel(&barrelTexture, { 50.0f + 30 * j,50.0f + 30 * i }, { 30.0f,30.0f }, false);
+                    objectVEC.push_back(barrel);
                 }
                 else if (znak == 'e')
                 {
-
+                     Object crate(&crateTexture, { 50.0f + 30 * j,50.0f + 30 * i }, { 30.0f,30.0f }, false);
+                     objectVEC.push_back(crate);
                 }
                 else if (znak == 'A')   //A-E boss
                 {

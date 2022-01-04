@@ -33,11 +33,14 @@ protected:
     sf::Texture elfTexture;
     sf::Texture slimeTexture;
     sf::Texture trollTexture;
+    sf::Texture towerTexture;
     
     //object textures
     sf::Texture rockTexture;
     sf::Texture bonesTexture;
     sf::Texture holeTexture;
+    sf::Texture barrelTexture;
+    sf::Texture crateTexture;
     //boss texture
     sf::Texture necromancerTexture;
     //aroows textures
@@ -46,6 +49,7 @@ protected:
     sf::Texture skull_texture;
     sf::Texture slime_ball_texture;
     sf::Texture bone_texture;
+    sf::Texture cannon_ball_texture;
 public:
     sf::Texture ghostTexture;
     sf::Texture background_t;

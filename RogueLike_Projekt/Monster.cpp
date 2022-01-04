@@ -35,8 +35,34 @@ void monster::Update(float deltaTime, std::vector<Bullet>& bulletVec, std::vecto
 			Bullet newBullet(bullet_size, body.getPosition(), shot_speed, damage, -shottingDir, arrow, getDirDeg(shottingDir) - 90.0f);
 			bulletVec.push_back(newBullet);
 			test = 1;
+		}
+		else if (shot_speed == 200.0f)
+		{
+			if (test == 0)
+			{
+				Bullet newBullet1(bullet_size, body.getPosition(), shot_speed, damage, { 0.0f, -1.0f }, arrow, 0.0f);
+				Bullet newBullet2(bullet_size, body.getPosition(), shot_speed, damage, { 0.0f, 1.0f }, arrow, 0.0f);
+				Bullet newBullet3(bullet_size, body.getPosition(), shot_speed, damage, { 1.0f, 0.0f }, arrow, 0.0f);
+				Bullet newBullet4(bullet_size, body.getPosition(), shot_speed, damage, { -1.0f, 0.0f }, arrow, 0.0f);
+				bulletVec.push_back(newBullet1);
+				bulletVec.push_back(newBullet2);
+				bulletVec.push_back(newBullet3);
+				bulletVec.push_back(newBullet4);
+				test = 1;
+			}
+			else if (test == 1)
+			{
+				Bullet newBullet1(bullet_size, body.getPosition(), shot_speed, damage, { 1.0f, 1.0f }, arrow, 0.0f);
+				Bullet newBullet2(bullet_size, body.getPosition(), shot_speed, damage, { 1.0f, -1.0f }, arrow, 0.0f);
+				Bullet newBullet3(bullet_size, body.getPosition(), shot_speed, damage, { -1.0f, 1.0f }, arrow, 0.0f);
+				Bullet newBullet4(bullet_size, body.getPosition(), shot_speed, damage, { -1.0f, -1.0f }, arrow, 0.0f);
+				bulletVec.push_back(newBullet1);
+				bulletVec.push_back(newBullet2);
+				bulletVec.push_back(newBullet3);
+				bulletVec.push_back(newBullet4);
+				test = 0;
+			}
 			
-
 		}
 		else
 		{
