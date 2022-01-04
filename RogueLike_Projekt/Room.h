@@ -30,6 +30,7 @@ protected:
     sf::Texture zombieTexture;
     sf::Texture demonTexture;
     sf::Texture spiderTexture;
+    sf::Texture elfTexture;
     
     //object textures
     sf::Texture rockTexture;
@@ -37,6 +38,10 @@ protected:
     sf::Texture holeTexture;
     //boss texture
     sf::Texture necromancerTexture;
+    //aroows textures
+    sf::Texture arrow_texture;
+    sf::Texture fire_ball_texture;
+    sf::Texture skull_texture;
 public:
     sf::Texture ghostTexture;
     sf::Texture background_t;

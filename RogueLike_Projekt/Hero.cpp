@@ -1,7 +1,7 @@
 #include "Hero.h"
 #include <iostream>
 hero::hero(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed, float fire_rate, float shot_speed, float health,
-    float damage, sf::Vector2f size, sf::Vector2f position, bool flying) :
+    float damage, sf::Vector2f size, sf::Vector2f position, bool flying, sf::Texture* arrow) :
     animation(texture, imageCount, switchTime)
 {
     this->speed = speed;
@@ -13,7 +13,7 @@ hero::hero(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, floa
     row = 0;
     faceRight = true;
     this->flying = flying;
-
+    this->arrow = arrow;
     body.setSize(size);
     body.setOrigin(body.getSize() / 2.0f);
     body.setPosition(position);
@@ -91,7 +91,7 @@ void hero::Draw(sf::RenderWindow& window)
     window.draw(body);
 }
 
-void hero::Update(float deltaTime, std::vector<Bullet> &bulletVec, sf::Texture *arrow)
+void hero::Update(float deltaTime, std::vector<Bullet> &bulletVec)
 {
     sf::Vector2f movement(0.0f, 0.0f);
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))

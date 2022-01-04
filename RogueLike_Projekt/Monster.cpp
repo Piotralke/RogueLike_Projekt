@@ -7,21 +7,67 @@ sf::Vector2f monster::getDirVec(hero player)
 
 float monster::getDirDeg(sf::Vector2f DirVec)
 {
-	return std::atan2f(DirVec.y, DirVec.x) * 180 / PI - 90.0f;
+	return std::atan2f(DirVec.y, DirVec.x) * 180 / PI ;
 }
 
-void monster::Update(float deltaTime, sf::Texture* arrow, std::vector<Bullet>& bulletVec, std::vector<monster>& monsterVec, hero player, int& skeleton_count, int& dead_skeleton)
+void monster::Update(float deltaTime, std::vector<Bullet>& bulletVec, std::vector<monster>& monsterVec, hero player, int& skeleton_count, int& dead_skeleton)
 {
-	if (fire_delay_clock.getElapsedTime().asSeconds() >= fire_rate && shooting == true)
+	if (shot_clock.getElapsedTime().asSeconds() >= 0.25f && memSpeed == 150.0f && test == 1)
 	{
 		sf::Vector2f shottingDir = getDirVec(player);
-		Bullet newBullet({ 8,8 }, body.getPosition(), shot_speed, damage, -shottingDir, arrow, getDirDeg(shottingDir));
+		Bullet newBullet(bullet_size, body.getPosition(), shot_speed, damage, -shottingDir, arrow, getDirDeg(shottingDir) - 90.0f);
 		bulletVec.push_back(newBullet);
+		test++;
+	}
+	else if (shot_clock.getElapsedTime().asSeconds() >= 0.5f && memSpeed == 150.0f && test == 2)
+	{
+		sf::Vector2f shottingDir = getDirVec(player);
+		Bullet newBullet(bullet_size, body.getPosition(), shot_speed, damage, -shottingDir, arrow, getDirDeg(shottingDir) - 90.0f);
+		bulletVec.push_back(newBullet);
+		test = 0;
+	}
+	if (fire_delay_clock.getElapsedTime().asSeconds() >= fire_rate && shooting == true)
+	{
+		if (memSpeed == 150.f)
+		{
+			shot_clock.restart();
+			sf::Vector2f shottingDir = getDirVec(player);
+			Bullet newBullet(bullet_size, body.getPosition(), shot_speed, damage, -shottingDir, arrow, getDirDeg(shottingDir) - 90.0f);
+			bulletVec.push_back(newBullet);
+			test = 1;
+			
+
+		}
+		else
+		{
+			sf::Vector2f shottingDir = getDirVec(player);
+			Bullet newBullet(bullet_size, body.getPosition(), shot_speed, damage, -shottingDir, arrow, getDirDeg(shottingDir) - 90.0f);
+			bulletVec.push_back(newBullet);
+			
+		}
 		fire_delay_clock.restart();
 	}
 	if (speed > 0.0f)
 	{
-		sf::Vector2f moveDir = { 0.0f,0.0f };
+		sf::Vector2f moveDir;
+		if (memSpeed == 150.0f)
+		{
+			sf::Vector2f movement;
+			if(rotate_clock.getElapsedTime().asSeconds()<1.0f)
+				movement = {0.0f,1.0f};
+			if (rotate_clock.getElapsedTime().asSeconds() >= 1.0f)
+			{
+				movement.y = (-1);
+			}
+			if (rotate_clock.getElapsedTime().asSeconds() >= 2.0f)
+			{
+				rotate_clock.restart();
+			}
+			
+			body.move({ movement.x * speed * deltaTime, movement.y * speed * deltaTime });
+			
+		}
+		moveDir = -getDirVec(player);
 		if (memSpeed >= 170.0f)
 		{
 			if (jump_clock.getElapsedTime().asSeconds() >= 2.5f)
@@ -29,15 +75,6 @@ void monster::Update(float deltaTime, sf::Texture* arrow, std::vector<Bullet>& b
 				jump_clock.restart();
 				speed = memSpeed;
 				row = 1;
-				if (abs(getDirVec(player).x) > 100.0f || abs(getDirVec(player).y) > 100.0f)
-				{
-					float vecX = -50.0f + rand() / (RAND_MAX / 50.0f);
-					float vecY = -50.0f + rand() / (RAND_MAX / 50.0f);
-					std::cout << "X" << vecX << " Y" << vecY << std::endl;
-					moveDir = { vecX, vecY };
-				}
-				else
-					moveDir = -getDirVec(player);
 			}
 			else if(jump_clock.getElapsedTime().asSeconds()>=0.9f)
 			{
@@ -48,9 +85,8 @@ void monster::Update(float deltaTime, sf::Texture* arrow, std::vector<Bullet>& b
 			sf::Vector2f moveDirNorm = { moveDir.x / (float)sqrt(pow(moveDir.x, 2) + pow(moveDir.y, 2)), moveDir.y / (float)sqrt(pow(moveDir.x, 2) + pow(moveDir.y, 2)) };
 			body.move({ moveDirNorm.x * speed * deltaTime, moveDirNorm.y * speed * deltaTime });
 		}
-		else
+		else if(memSpeed!=150.0f)
 		{
-			moveDir = -getDirVec(player);
 			sf::Vector2f moveDirNorm = { moveDir.x / (float)sqrt(pow(moveDir.x, 2) + pow(moveDir.y, 2)), moveDir.y / (float)sqrt(pow(moveDir.x, 2) + pow(moveDir.y, 2)) };
 			body.move({ moveDirNorm.x * speed * deltaTime, moveDirNorm.y * speed * deltaTime });
 		}
