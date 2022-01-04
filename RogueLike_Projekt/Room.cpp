@@ -8,13 +8,18 @@ void room::init_Texture() {
     demonTexture.loadFromFile("grafiki/demon_animation.png");
     spiderTexture.loadFromFile("grafiki/spider_animation.png");
     elfTexture.loadFromFile("grafiki/dark_elf_animation.png");
+    slimeTexture.loadFromFile("grafiki/slime_animation.png");
+
     rockTexture.loadFromFile("grafiki/rock.png");
     bonesTexture.loadFromFile("grafiki/bone_pile.png");
     holeTexture.loadFromFile("grafiki/hole.png");
+
     necromancerTexture.loadFromFile("grafiki/necromancer.png");
+
     arrow_texture.loadFromFile("grafiki/arrow.png");
     fire_ball_texture.loadFromFile("grafiki/fire_ball.png");
     skull_texture.loadFromFile("grafiki/skull.png");
+    slime_ball_texture.loadFromFile("grafiki/slime_ball.png");
 
 }
 
@@ -111,9 +116,10 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
                 }
                 else if (znak == '7')
                 {
-                    if (!grid[player.x][player.y].visited)
+                 //   if (!grid[player.x][player.y].visited)
                     {
-
+                        monster slime(&slimeTexture, sf::Vector2u(4, 3), 0.1f, 0.0f, 1.0f, 110.0f, 30.0f, 5.0f, { 16.0f,16.0f }, { 50.0f + 30 * j,50.0f + 30 * i }, true, false, false, &slime_ball_texture, { 8,9 }, true);
+                        monsterVEC.push_back(slime);
                     }
                 }
                 else if (znak == '8')
@@ -157,7 +163,7 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
                 {
                     //if (!grid[player.x][player.y].visited)
                     {
-                        boss necromancer(&necromancerTexture, sf::Vector2u(3, 2), 0.1f, 60.0f, 2.3f, 100.0f, 150.0f, 15.0f, { 27.0f,40.0f }, { 50.0f + 30 * j,50.0f + 30 * i }, true, false, false, &skull_texture, { 10,10 });
+                        boss necromancer(&necromancerTexture, sf::Vector2u(3, 2), 0.1f, 60.0f, 2.3f, 120.0f, 150.0f, 15.0f, { 27.0f,40.0f }, { 50.0f + 30 * j,50.0f + 30 * i }, true, false, false, &skull_texture, { 10,10 });
                         bossVec.push_back(necromancer);
                     }
                     

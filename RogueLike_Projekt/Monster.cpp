@@ -91,6 +91,47 @@ void monster::Update(float deltaTime, std::vector<Bullet>& bulletVec, std::vecto
 			body.move({ moveDirNorm.x * speed * deltaTime, moveDirNorm.y * speed * deltaTime });
 		}
 	}
+	if (teleport)
+	{
+		if (jump_clock.getElapsedTime().asSeconds() >= 2.0f)
+		{
+			row = 1;
+			if (jump_clock.getElapsedTime().asSeconds() >= 2.4 && test == 0)
+			{
+				int random = rand() % 4;
+				switch (random)
+				{
+				case 0:
+					body.setPosition({ 110.0f,110.0f });
+					break;
+				case 1:
+					body.setPosition({ 110.0f,270.0f });
+					break;
+				case 2:
+					body.setPosition({ 570.0f,110.0f });
+					break;
+				case 3:
+					body.setPosition({ 570.0f,270.0f });
+					break;
+				}
+				test = 1;
+			}
+			else if (jump_clock.getElapsedTime().asSeconds() >= 2.4 && test == 1)
+			{
+				row = 2;
+				test = 2;
+			}
+			else if (jump_clock.getElapsedTime().asSeconds() >= 2.8 && test == 2)
+			{
+				row = 0;
+				test = 0;
+				jump_clock.restart();
+				fire_delay_clock.restart();
+			}
+			
+		}
+		
+	}
 	if (getDirVec(player).x < 0) {
 		faceRight = true;
 	}

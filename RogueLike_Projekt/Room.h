@@ -31,6 +31,7 @@ protected:
     sf::Texture demonTexture;
     sf::Texture spiderTexture;
     sf::Texture elfTexture;
+    sf::Texture slimeTexture;
     
     //object textures
     sf::Texture rockTexture;
@@ -42,6 +43,7 @@ protected:
     sf::Texture arrow_texture;
     sf::Texture fire_ball_texture;
     sf::Texture skull_texture;
+    sf::Texture slime_ball_texture;
 public:
     sf::Texture ghostTexture;
     sf::Texture background_t;
