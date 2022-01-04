@@ -29,6 +29,7 @@ protected:
     sf::Texture skeletonTexture;
     sf::Texture zombieTexture;
     sf::Texture demonTexture;
+    sf::Texture spiderTexture;
     
     //object textures
     sf::Texture rockTexture;

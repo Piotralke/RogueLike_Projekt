@@ -6,6 +6,7 @@ void room::init_Texture() {
     skeletonTexture.loadFromFile("grafiki/skeleton_animation.png");
     zombieTexture.loadFromFile("grafiki/zombie_animation.png");
     demonTexture.loadFromFile("grafiki/demon_animation.png");
+    spiderTexture.loadFromFile("grafiki/spider_animation.png");
     rockTexture.loadFromFile("grafiki/rock.png");
     bonesTexture.loadFromFile("grafiki/bone_pile.png");
     holeTexture.loadFromFile("grafiki/hole.png");
@@ -90,9 +91,10 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
                 }
                 else if (znak == '5')
                 {
-                    if (!grid[player.x][player.y].visited)
+                  //  if (!grid[player.x][player.y].visited)
                     {
-
+                        monster spider(&spiderTexture, sf::Vector2u(9, 2), 0.1f, 171.0f, 0.0f, 0.0f, 10.0f, 4.0f, { 14.0f,13.0f }, { 50.0f + 30 * j,50.0f + 30 * i }, false, false, false);
+                        monsterVEC.push_back(spider);
                     }
                 }
                 else if (znak == '6')
