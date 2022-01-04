@@ -239,14 +239,31 @@ bool generate_map::generate_layout()
          }
          grid[max.x][max.y].type = 2;              // boss room
          DeadEnd.erase(DeadEnd.begin()+max_pos);
+         bool okay = true;
+         do
+         {
+             int random = std::rand() % DeadEnd.size();
+             if (DeadEnd.at(random).x != 5 && DeadEnd.at(random).y != 5)
+             {
+                 grid[DeadEnd.at(random).x][DeadEnd.at(random).y].type = 3; //sklep
+                 DeadEnd.erase(DeadEnd.begin() + random);
+                 okay = false;
+             }
+         } while (okay);
+         okay = true;
+                                            
+         do
+         {
+             int random = std::rand() % DeadEnd.size();
+             if (DeadEnd.at(random).x != 5 && DeadEnd.at(random).y != 5)
+             {
+                 grid[DeadEnd.at(random).x][DeadEnd.at(random).y].type = 4; //pokoj z przedmiotem
+                 DeadEnd.erase(DeadEnd.begin() + random);
+                 okay = false;
+             }
+         } while (okay);
 
-         int random = std::rand() % DeadEnd.size();
-         grid[DeadEnd.at(random).x][DeadEnd.at(random).y].type = 3;    //sklep
-         DeadEnd.erase(DeadEnd.begin() + random);
-
-         random = std::rand() % DeadEnd.size();
-         grid[DeadEnd.at(random).x][DeadEnd.at(random).y].type = 4;    //pokoj z przedmiotem
-         DeadEnd.erase(DeadEnd.begin() + random);
+         
          for (int i = 0; i < SIZE; i++)
          {
              for (int j = 0; j < SIZE; j++)

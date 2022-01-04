@@ -68,18 +68,16 @@ int main()
     sf::Texture helmetTexture;
     helmetTexture.loadFromFile("grafiki/helmet.png");
     Item helmet(&helmetTexture, { 350.0f,300.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 50.0f, 0.0f, 0.0f, 0.0f);
-    sf::Texture small_healPotTexture;
-    small_healPotTexture.loadFromFile("grafiki/small_healPot.png");
-    Item small_healPot(&small_healPotTexture, { 150.0f,300.0f }, { 16.0f,16.0f }, 0.0f, 20.0f, 0.0f, 0.0f, 0.0f, 0.0f);
-    sf::Texture big_healPotTexture;
-    big_healPotTexture.loadFromFile("grafiki/big_healPot.png");
-    Item big_healPot(&big_healPotTexture, { 550.0f,300.0f }, { 16.0f,16.0f }, 0.0f, 50.0f, 0.0f, 0.0f, 0.0f, 0.0f);
+    
+    
+    
+    
+    
+    
     std::vector<Item> itemVec;
     itemVec.push_back(boots);
     itemVec.push_back(gloves);
     itemVec.push_back(helmet);
-    itemVec.push_back(small_healPot);
-    itemVec.push_back(big_healPot);
 
     sf::RectangleShape kamien;
     kamien.setSize({2,2});
@@ -285,16 +283,18 @@ int main()
                }
          
         }
-
-        for (int i = 0; i < itemVec.size(); i++)
+        if (monsterVec.empty() && bossVec.empty())
         {
-            if (!(itemVec.empty()) && kolizja.check_Collision(itemVec.at(i).item, player.body))
+            for (int i = 0; i < itemVec.size(); i++)
             {
-                itemVec.at(i).giveItem(&player);
-                itemVec.erase(itemVec.begin() + i);
-                if (i != 0)
-                    i--;
-                break;
+                if (!(itemVec.empty()) && kolizja.check_Collision(itemVec.at(i).item, player.body))
+                {
+                    itemVec.at(i).giveItem(&player);
+                    itemVec.erase(itemVec.begin() + i);
+                    if (i != 0)
+                        i--;
+                    break;
+                }
             }
         }
         
@@ -304,7 +304,7 @@ int main()
         
         window.clear();
         window.draw(level->background_s);
-        level->pick_room_layout(player,kolizja,window, bulletVec, monsterBulletVec, monsterVec, objectVec, bossVec, skeleton_count);
+        level->pick_room_layout(player,kolizja,window, bulletVec, monsterBulletVec, monsterVec, objectVec, bossVec,itemVec, skeleton_count);
         for (int i = 0; i < objectVec.size(); i++)
         {
             objectVec.at(i).Draw(window);
@@ -326,9 +326,12 @@ int main()
         {
             bossVec.at(i).Draw(window);
         }
-        for (int i = 0; i < itemVec.size(); i++)
+        if (monsterVec.empty() && bossVec.empty())
         {
-            itemVec.at(i).Draw(window);
+            for (int i = 0; i < itemVec.size(); i++)
+            {
+                itemVec.at(i).Draw(window);
+            }
         }
         player.Draw(window);
         window.draw(hud_sprite);
