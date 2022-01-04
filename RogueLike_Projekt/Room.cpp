@@ -9,6 +9,7 @@ void room::init_Texture() {
     spiderTexture.loadFromFile("grafiki/spider_animation.png");
     elfTexture.loadFromFile("grafiki/dark_elf_animation.png");
     slimeTexture.loadFromFile("grafiki/slime_animation.png");
+    trollTexture.loadFromFile("grafiki/troll_animation.png");
 
     rockTexture.loadFromFile("grafiki/rock.png");
     bonesTexture.loadFromFile("grafiki/bone_pile.png");
@@ -20,6 +21,7 @@ void room::init_Texture() {
     fire_ball_texture.loadFromFile("grafiki/fire_ball.png");
     skull_texture.loadFromFile("grafiki/skull.png");
     slime_ball_texture.loadFromFile("grafiki/slime_ball.png");
+    bone_texture.loadFromFile("grafiki/bone.png");
 
 }
 
@@ -118,15 +120,16 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
                 {
                  //   if (!grid[player.x][player.y].visited)
                     {
-                        monster slime(&slimeTexture, sf::Vector2u(4, 3), 0.1f, 0.0f, 1.0f, 110.0f, 30.0f, 5.0f, { 16.0f,16.0f }, { 50.0f + 30 * j,50.0f + 30 * i }, true, false, false, &slime_ball_texture, { 8,9 }, true);
+                        monster slime(&slimeTexture, sf::Vector2u(4, 3), 0.1f, 0.0f, 1.0f, 110.0f, 25.0f, 5.0f, { 16.0f,16.0f }, { 50.0f + 30 * j,50.0f + 30 * i }, true, false, false, &slime_ball_texture, { 8,9 }, true);
                         monsterVEC.push_back(slime);
                     }
                 }
                 else if (znak == '8')
                 {
-                    if (!grid[player.x][player.y].visited)
+               //     if (!grid[player.x][player.y].visited)
                     {
-
+                        monster troll(&trollTexture, sf::Vector2u(4, 1), 0.1f, 70.0f, 2.0f, 130.0f, 20.0f, 7.0f, { 13.0f,18.0f }, { 50.0f + 30 * j,50.0f + 30 * i }, true, false, false, &bone_texture, { 7,15 });
+                        monsterVEC.push_back(troll);
                     }
                 }
                 else if (znak == '9')
