@@ -21,46 +21,36 @@ void monster::Update(float deltaTime, sf::Texture* arrow, std::vector<Bullet>& b
 	}
 	if (speed > 0.0f)
 	{
+		sf::Vector2f moveDir = { 0.0f,0.0f };
 		if (memSpeed >= 170.0f)
 		{
 			if (jump_clock.getElapsedTime().asSeconds() >= 2.5f)
 			{
-				std::cout << "weszlo" << std::endl;
 				jump_clock.restart();
 				speed = memSpeed;
 				row = 1;
-				sf::Vector2f moveDir = -getDirVec(player);
 				if (abs(getDirVec(player).x) > 100.0f || abs(getDirVec(player).y) > 100.0f)
 				{
-					std::cout << "losowo" << std::endl;
 					float vecX = -50.0f + rand() / (RAND_MAX / 50.0f);
 					float vecY = -50.0f + rand() / (RAND_MAX / 50.0f);
-					//std::cout << "X" << vecX << std::endl << "Y" << vecY << std::endl;
+					std::cout << "X" << vecX << " Y" << vecY << std::endl;
 					moveDir = { vecX, vecY };
-					sf::Vector2f moveDirNorm = { moveDir.x / (float)sqrt(pow(moveDir.x, 2) + pow(moveDir.y, 2)), moveDir.y / (float)sqrt(pow(moveDir.x, 2) + pow(moveDir.y, 2)) };
-					body.move({ moveDirNorm.x * speed * deltaTime, moveDirNorm.y * speed * deltaTime });
-					std::cout << speed;
-					//std::cout << "X" << moveDirNorm.x << std::endl << "Y" << moveDirNorm.y << std::endl;
-					//chuj wie dlaczego pajaki sie nie ruszaja, speed jest, wektory tez git dzialaja, ani do gracza ani losowo nie chce kurwa chodzic
 				}
 				else
-				{
-					std::cout << "do gracza" << std::endl;
-					sf::Vector2f moveDirNorm = { moveDir.x / (float)sqrt(pow(moveDir.x, 2) + pow(moveDir.y, 2)), moveDir.y / (float)sqrt(pow(moveDir.x, 2) + pow(moveDir.y, 2)) };
-					body.move({ moveDirNorm.x * speed * deltaTime, moveDirNorm.y * speed * deltaTime });
-					std::cout << "X" << moveDirNorm.x << std::endl << "Y" << moveDirNorm.y << std::endl;
-				}
+					moveDir = -getDirVec(player);
 			}
 			else if(jump_clock.getElapsedTime().asSeconds()>=0.9f)
 			{
 				row = 0;
-				speed = 0.01;	//musi byc tyle, bo jak 0 to juz tutaj nie wejdzie wgl a przy tej wartosci w sumie i tak stoi w miejscu
+				speed = 0.01;
 			}
 			
+			sf::Vector2f moveDirNorm = { moveDir.x / (float)sqrt(pow(moveDir.x, 2) + pow(moveDir.y, 2)), moveDir.y / (float)sqrt(pow(moveDir.x, 2) + pow(moveDir.y, 2)) };
+			body.move({ moveDirNorm.x * speed * deltaTime, moveDirNorm.y * speed * deltaTime });
 		}
 		else
 		{
-			sf::Vector2f moveDir = -getDirVec(player);
+			moveDir = -getDirVec(player);
 			sf::Vector2f moveDirNorm = { moveDir.x / (float)sqrt(pow(moveDir.x, 2) + pow(moveDir.y, 2)), moveDir.y / (float)sqrt(pow(moveDir.x, 2) + pow(moveDir.y, 2)) };
 			body.move({ moveDirNorm.x * speed * deltaTime, moveDirNorm.y * speed * deltaTime });
 		}
