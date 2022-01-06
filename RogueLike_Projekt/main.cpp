@@ -57,41 +57,23 @@ int main()
     generate_map* level = new generate_map;
     sf::Texture playerTexture;
     playerTexture.loadFromFile("grafiki/hero_animation.png");
-    hero player(&playerTexture, sf::Vector2u(4, 2), 0.1f, 100.0f, 1.0f, 200.0f, 100.0f, 6.0f, { 16.0f,20.0f }, {350.0f,200.0f},false,&player_arrow);
+    hero player(&playerTexture, sf::Vector2u(4, 2), 0.1f, 200.0f, 1.0f, 200.0f, 100.0f, 60.0f, { 16.0f,20.0f }, {350.0f,200.0f},false,&player_arrow);
     
-    sf::Texture bootsTexture;
-    bootsTexture.loadFromFile("grafiki/boots.png");
-    Item boots(&bootsTexture, { 200.0f,200.0f }, {16.0f,16.0f},0.0f,0.0f, 0.0f,0.0f,0.0f,50.0f);
-    sf::Texture glovesTexture;
-    glovesTexture.loadFromFile("grafiki/gloves.png");
-    Item gloves(&glovesTexture, { 400.0f,200.0f }, { 16.0f,16.0f }, 0.0f,0.0f, 0.0f, -0.5f, 50.0f, 0.0f);
-    sf::Texture helmetTexture;
-    helmetTexture.loadFromFile("grafiki/helmet.png");
-    Item helmet(&helmetTexture, { 350.0f,300.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 50.0f, 0.0f, 0.0f, 0.0f);
-    
-    
-    
-    
-    
-    
+    sf::Texture coinTexture;
+    coinTexture.loadFromFile("grafiki/coin.png");
+    sf::Texture ladderTexture;
+    ladderTexture.loadFromFile("grafiki/ladder.png");
     std::vector<Item> itemVec;
-    itemVec.push_back(boots);
-    itemVec.push_back(gloves);
-    itemVec.push_back(helmet);
-
-    sf::RectangleShape kamien;
-    kamien.setSize({2,2});
-    kamien.setOrigin(kamien.getSize() / 2.0f);
-    kamien.setPosition(33.0f, 367.0f);
-    kamien.setFillColor(sf::Color());
+    int levels = 1;
+    bool created = false;
     std::vector<Bullet> bulletVec;
     std::vector<Bullet> monsterBulletVec;
     srand(time(NULL));
     level->init_grid();
-    level->max_level_counter(1);
+    level->max_level_counter(levels);
     level->visit(5, 5);
     level->generate_layout();
-    std::cout << level->random_layout(5, 5) << std::endl;
+    //std::cout << level->random_layout(5, 5) << std::endl;
     float deltaTime = 0.0f;
     int skeleton_count = 0;
     int dead_skeleton = 0;
@@ -99,6 +81,7 @@ int main()
     sf::Clock invisibility_clock;
     level->wypiszkons();
     level->init_Texture();
+    level->read_from_file(player, monsterVec, objectVec, bossVec, itemVec, skeleton_count);
     while (window.isOpen())
     {
         deltaTime = clock.restart().asSeconds(); 
@@ -120,7 +103,30 @@ int main()
         }
         for (int i = 0; i < objectVec.size(); i++)
         {
-            kolizja.check_Collision(player.body, objectVec.at(i).shape);
+            if (kolizja.check_Collision(player.body, objectVec.at(i).shape) && objectVec.at(i).go_down == true)
+            {
+                levels++;
+                level->init_grid();
+                level->max_level_counter(levels);
+                level->visit(5, 5);
+                level->generate_layout();
+                player.x = 5;
+                player.y = 5;
+                level->read_from_file(player, monsterVec, objectVec, bossVec, itemVec, skeleton_count);
+                bulletVec.clear();
+                bulletVec = std::vector<Bullet>();
+                monsterBulletVec.clear();
+                monsterBulletVec = std::vector<Bullet>();
+                objectVec.clear();
+                objectVec = std::vector<Object>();
+                itemVec.clear();
+                itemVec = std::vector<Item>();
+                monsterVec.clear();
+                monsterVec = std::vector<monster>();
+                bossVec.clear();
+                bossVec = std::vector<boss>();
+                created = false;
+            }
         }
 
         for (int i = 0; i < bulletVec.size(); i++)
@@ -233,6 +239,12 @@ int main()
 
             if (!(monsterVec.empty()) && monsterVec.at(i).getHealth() <= 0.0f && monsterVec.at(i).resurection == false)
             {
+                int random = rand() % 2;
+                if (random == 0)
+                {
+                    Item coin(&coinTexture, monsterVec.at(i).GetPosition(), { 8.0f,8.0f }, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1);
+                    itemVec.push_back(coin);
+                }
                 monsterVec.erase(monsterVec.begin() + i);
                 if (i != 0)
                     i--;
@@ -283,20 +295,25 @@ int main()
                }
          
         }
-        if (monsterVec.empty() && bossVec.empty())
-        {
-            for (int i = 0; i < itemVec.size(); i++)
-            {
-                if (!(itemVec.empty()) && kolizja.check_Collision(itemVec.at(i).item, player.body))
-                {
-                    itemVec.at(i).giveItem(&player);
-                    itemVec.erase(itemVec.begin() + i);
-                    if (i != 0)
-                        i--;
-                    break;
-                }
-            }
-        }
+
+
+       for (int i = 0; i < itemVec.size(); i++)
+       {
+           if (monsterVec.empty() && bossVec.empty() || itemVec.at(i).getMoney() > 0)
+           {
+               if (!(itemVec.empty()) && itemVec.at(i).item.getGlobalBounds().intersects(player.body.getGlobalBounds()) &&player.getMoney()>=itemVec.at(i).getValue())
+               {
+                   itemVec.at(i).giveItem(&player);
+                   player.setStatistics(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, -itemVec.at(i).getValue());
+                   itemVec.erase(itemVec.begin() + i);
+                   if (i != 0)
+                       i--;
+                   break;
+               }
+           }
+           
+       }
+
         
         for (int i = 0; i < roomVec.size(); i++) {
             kolizja.check_Collision(player.body, roomVec.at(i));
@@ -326,15 +343,31 @@ int main()
         {
             bossVec.at(i).Draw(window);
         }
-        if (monsterVec.empty() && bossVec.empty())
+        
+        for (int i = 0; i < itemVec.size(); i++)
         {
-            for (int i = 0; i < itemVec.size(); i++)
-            {
-                itemVec.at(i).Draw(window);
-            }
+            if (monsterVec.empty() && bossVec.empty() || itemVec.at(i).getMoney()>0)
+             itemVec.at(i).Draw(window,font);
         }
+        if (level->getRoomType(player) == 2 && bossVec.empty() && monsterVec.empty() && !created)
+            {
+            Object ladder(&ladderTexture, { 350.0f,200.0f }, { 16.0f,16.0f }, true, true);
+            objectVec.push_back(ladder);
+            created = true;
+            }
+
+        sf::Text lvl_text;
+        std::string lvl_string;
+        lvl_text.setFont(font);
+        lvl_text.setCharacterSize(8);
+        lvl_text.setFillColor(sf::Color::White);
+        lvl_string = std::to_string(levels);
+        lvl_text.setString(lvl_string);
+        lvl_text.setPosition({ 740.0f,213.0f });
+
         player.Draw(window);
         window.draw(hud_sprite);
+        window.draw(lvl_text);
         player.DrawStats(window, font);
         level->wypisz(window, player);
         window.display();

@@ -76,13 +76,22 @@ void hero::DrawStats(sf::RenderWindow& window, sf::Font& font)
     speed_text.setString(speed_string);
     speed_text.setPosition({ 740.0f,176.0f });
 
-    // y dla coinow 196.0f
+    sf::Text coin_text;
+    std::string coin_string;
+    coin_text.setFont(font);
+    coin_text.setCharacterSize(8);
+    coin_text.setFillColor(sf::Color::White);
+    coin_string = std::to_string(money);
+    coin_text.setString(coin_string);
+    coin_text.setPosition({ 740.0f,196.0f });
+
     window.draw(health_bar);
     window.draw(health_text);
     window.draw(damage_text);
     window.draw(shot_speed_text);
     window.draw(fire_rate_text);
     window.draw(speed_text);
+    window.draw(coin_text);
     
 }
 
@@ -199,12 +208,16 @@ bool hero::getFlying()
 {
     return flying;
 }
+int hero::getMoney()
+{
+    return money;
+}
 void hero::getHit(float damage)
 {
     health -= damage;
 }
 
-void hero::setStatistics(float damage, float health,float maxHealth, float fire_delay, float shot_speed, float speed)
+void hero::setStatistics(float damage, float health,float maxHealth, float fire_delay, float shot_speed, float speed, int money)
 {
     this->damage += damage;
     this->maxHealth += maxHealth;
@@ -214,4 +227,5 @@ void hero::setStatistics(float damage, float health,float maxHealth, float fire_
     this->fire_rate += fire_delay;
     this->shot_speed += shot_speed;
     this->speed += speed;
+    this->money += money;
 }

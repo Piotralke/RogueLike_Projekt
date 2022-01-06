@@ -220,7 +220,7 @@ bool generate_map::generate_layout()
                 DeadEnd.push_back({ i,j });
         }
     }
-
+    wypiszkons();
      std::cout << rooms_counter << std::endl;
      std::cout << DeadEnd.size() << std::endl;
      
@@ -278,7 +278,7 @@ bool generate_map::generate_layout()
                      {
                          std::string liczba;
                          grid[i][j].sciezka = "layouts/boss/";
-                         liczba = std::to_string(std::rand() % 5);  //5 albo 10 po 1 albo 2 na kazdego bossa
+                         liczba = std::to_string(std::rand() % 2 +1);  //5 albo 10 po 1 albo 2 na kazdego bossa
                          grid[i][j].sciezka += liczba;
                          grid[i][j].sciezka += ".txt";
                      }
@@ -286,7 +286,8 @@ bool generate_map::generate_layout()
                      {
                          std::string liczba;
                          grid[i][j].sciezka = "layouts/shop/";
-                         liczba = std::to_string(std::rand() % 9);  //mozliwe ze bedzie jeden layout
+                       //  liczba = std::to_string(std::rand() % 9);  //mozliwe ze bedzie jeden layout
+                         liczba = std::to_string(1);
                          grid[i][j].sciezka += liczba;              //albo kilka ale z 2-3 max
                          grid[i][j].sciezka += ".txt";              //to samo do item roomu
                      }
@@ -306,6 +307,11 @@ bool generate_map::generate_layout()
                  }  
              }
          }
+         DeadEnd.clear();
+         DeadEnd = std::vector<sf::Vector2i>();
+         std::queue <sf::Vector2i> RoomQueueTmp;
+         RoomQueue = RoomQueueTmp;
+         rooms_counter = 0;
          return true;
      
 }

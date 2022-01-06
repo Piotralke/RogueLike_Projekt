@@ -21,6 +21,12 @@ protected:
         std::string sciezka;
     };
     room_properties grid[SIZE][SIZE];
+
+    std::vector<Item> noValueItems;
+    std::vector<Item> valueItems;
+    std::vector<Item> shopItems;
+    std::vector<Item> itemRoomVec;
+
     sf::Texture doors_t;
     sf::Texture doors_bs_t;
     sf::Texture doors_sh_t;
@@ -42,6 +48,7 @@ protected:
     sf::Texture holeTexture;
     sf::Texture barrelTexture;
     sf::Texture crateTexture;
+    sf::Texture ladderTexture;
     //boss texture
     sf::Texture necromancerTexture;
     //aroows textures
@@ -52,6 +59,10 @@ protected:
     sf::Texture bone_texture;
     sf::Texture cannon_ball_texture;
     //item textures
+    sf::Texture bootsTexture;
+    sf::Texture glovesTexture;
+    sf::Texture helmetTexture;
+
     sf::Texture small_healPotTexture;
     sf::Texture big_healPotTexture;
 public:
@@ -68,4 +79,5 @@ public:
     void read_from_file(hero& player, std::vector<monster>& monsterVEC, std::vector<Object>& objectVEC, std::vector<boss>& bossVec, std::vector<Item>& itemVec, int& skeleton_count);
     void pick_room_layout(hero& player, Collision kolizja, sf::RenderWindow& window, std::vector<Bullet>& heroB, std::vector<Bullet>& monsterB,
         std::vector<monster>& monsterVEC, std::vector<Object>& objectVEC, std::vector<boss>& bossVec, std::vector<Item>& itemVec, int& skeleton_count);
+    int getRoomType(hero& player);
 };

@@ -17,6 +17,7 @@ void room::init_Texture() {
     holeTexture.loadFromFile("grafiki/hole.png");
     barrelTexture.loadFromFile("grafiki/barrel.png");
     crateTexture.loadFromFile("grafiki/crate.png");
+    ladderTexture.loadFromFile("grafiki/ladder.png");
 
     necromancerTexture.loadFromFile("grafiki/necromancer.png");
 
@@ -29,6 +30,26 @@ void room::init_Texture() {
 
     small_healPotTexture.loadFromFile("grafiki/small_healPot.png");
     big_healPotTexture.loadFromFile("grafiki/big_healPot.png");
+
+    bootsTexture.loadFromFile("grafiki/boots.png");
+    glovesTexture.loadFromFile("grafiki/gloves.png");
+    helmetTexture.loadFromFile("grafiki/helmet.png");
+
+    Item boots(&bootsTexture, { 350.0f,200.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 50.0f, 0);
+    Item gloves(&glovesTexture, { 350.0f,200.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 0.0f, -0.5f, 50.0f, 0.0f, 0);
+    Item helmet(&helmetTexture, { 350.0f,200.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 50.0f, 0.0f, 0.0f, 0.0f, 0);
+
+    noValueItems.push_back(boots);
+    noValueItems.push_back(gloves);
+    noValueItems.push_back(helmet);
+    
+    Item bootsv(&bootsTexture, { 350.0f,200.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 50.0f, 0,20);
+    Item glovesv(&glovesTexture, { 350.0f,200.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 0.0f, -0.5f, 50.0f, 0.0f, 0,20);
+    Item helmetv(&helmetTexture, { 350.0f,200.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 50.0f, 0.0f, 0.0f, 0.0f, 0,20);
+
+    valueItems.push_back(bootsv);
+    valueItems.push_back(glovesv);
+    valueItems.push_back(helmetv);
 
 }
 
@@ -174,7 +195,7 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
                 }
                 else if (znak == 'A')   //A-E boss
                 {
-                    //if (!grid[player.x][player.y].visited)
+                    if (!grid[player.x][player.y].visited)
                     {
                         boss necromancer(&necromancerTexture, sf::Vector2u(3, 2), 0.1f, 60.0f, 2.3f, 120.0f, 150.0f, 15.0f, { 27.0f,40.0f }, { 50.0f + 30 * j,50.0f + 30 * i }, true, false, false, &skull_texture, { 10,10 });
                         bossVec.push_back(necromancer);
@@ -200,13 +221,18 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
                 }
                 else if (znak == 'I') //item
                 {
-                    
+                if (!grid[player.x][player.y].visited)
+                {
+                    int random = rand() % noValueItems.size();
+                    noValueItems.at(random).item.setPosition({ 50.0f + 30 * j,50.0f + 30 * i });
+                    itemRoomVec.push_back(noValueItems.at(random));
+                }   
                 }
                 else if (znak == 'p') //maly potion
                 {
           //      if (!grid[player.x][player.y].visited)
                 {
-                    Item small_healPot(&small_healPotTexture, { 50.0f + 30 * j,50.0f + 30 * i }, { 16.0f,16.0f }, 0.0f, 20.0f, 0.0f, 0.0f, 0.0f, 0.0f); 
+                    Item small_healPot(&small_healPotTexture, { 50.0f + 30 * j,50.0f + 30 * i }, { 16.0f,16.0f }, 0.0f, 20.0f, 0.0f, 0.0f, 0.0f, 0.0f,0); 
                         itemVec.push_back(small_healPot);
                 } 
                 }
@@ -214,14 +240,38 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
                 {
             //    if (!grid[player.x][player.y].visited)
                 {
-                    Item big_healPot(&big_healPotTexture, { 50.0f + 30 * j,50.0f + 30 * i }, { 16.0f,16.0f }, 0.0f, 50.0f, 0.0f, 0.0f, 0.0f, 0.0f);
+                    Item big_healPot(&big_healPotTexture, { 50.0f + 30 * j,50.0f + 30 * i }, { 16.0f,16.0f }, 0.0f, 50.0f, 0.0f, 0.0f, 0.0f, 0.0f,0);
                     itemVec.push_back(big_healPot);
                 }
                
                 }
                 else if (znak == '$') // item do kupienia(nwm czy bedzie to potrzebne)
                 {
-
+                if (!grid[player.x][player.y].visited)
+                {
+                    int random = rand() % valueItems.size();
+                    valueItems.at(random).item.setPosition({ 50.0f + 30 * j,50.0f + 30 * i });
+                    shopItems.push_back(valueItems.at(random));
+                }
+                      
+                }
+                else if (znak == 'h') // maly potion do kupienia
+                {
+                if (!grid[player.x][player.y].visited)
+                {
+                    Item small_healPot(&small_healPotTexture, { 50.0f + 30 * j,50.0f + 30 * i }, { 16.0f,16.0f }, 0.0f, 20.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0, 5);
+                    shopItems.push_back(small_healPot);
+                }
+                       
+                }
+                else if (znak == 'H') // duzy potion do kupienia
+                {
+                if (!grid[player.x][player.y].visited)
+                {
+                    Item big_healPot(&big_healPotTexture, { 50.0f + 30 * j,50.0f + 30 * i }, { 16.0f,16.0f }, 0.0f, 50.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0, 10);
+                    shopItems.push_back(big_healPot);
+                }
+                     
                 }
             }
         }
@@ -275,17 +325,38 @@ void room::pick_room_layout(hero& player, Collision kolizja, sf::RenderWindow& w
         Draw(window, doors);
         if (kolizja.check_Collision(player.body, doors) && monsterVEC.empty() && bossVec.empty())
         {
-            player.y--;
-            player.body.setPosition({ 655, player.body.getPosition().y });
             heroB.clear();
             heroB = std::vector<Bullet>();
             monsterB.clear();
             monsterB = std::vector<Bullet>();
             objectVEC.clear();
             objectVEC = std::vector<Object>();
+            if (grid[player.x][player.y].type == 3)
+            {
+                shopItems = itemVec;
+            }
+            else if (grid[player.x][player.y].type == 4)
+            {
+                itemRoomVec = itemVec;
+            }
             itemVec.clear();
             itemVec = std::vector<Item>();
+            player.y--;
+            player.body.setPosition({ 655, player.body.getPosition().y });
             read_from_file(player,monsterVEC,objectVEC,bossVec, itemVec, skeleton_count);
+            if (grid[player.x][player.y].type == 3)
+            {
+                itemVec = shopItems;
+            }
+            else if (grid[player.x][player.y].type == 4)
+            {
+                 itemVec = itemRoomVec;
+            }
+            else if (grid[player.x][player.y].type == 2 && bossVec.empty() && monsterVEC.empty())
+            {
+                Object ladder(&ladderTexture, { 350.0f,200.0f }, { 16.0f,16.0f }, true, true);
+                objectVEC.push_back(ladder);
+            }
             grid[player.x][player.y].visited = true;
         }
 
@@ -313,18 +384,38 @@ void room::pick_room_layout(hero& player, Collision kolizja, sf::RenderWindow& w
         Draw(window, doors);
         if (kolizja.check_Collision(player.body, doors)&&monsterVEC.empty()&&bossVec.empty())
         {
-
-            player.y++;
-            player.body.setPosition({ 45, player.body.getPosition().y });
             heroB.clear();
             heroB = std::vector<Bullet>();
             monsterB.clear();
             monsterB = std::vector<Bullet>();
             objectVEC.clear();
             objectVEC = std::vector<Object>();
+            if (grid[player.x][player.y].type == 3)
+            {
+                shopItems = itemVec;
+            }
+            else if (grid[player.x][player.y].type == 4)
+            {
+                itemRoomVec = itemVec;
+            }
             itemVec.clear();
             itemVec = std::vector<Item>();
+            player.y++;
+            player.body.setPosition({ 45, player.body.getPosition().y });
             read_from_file(player, monsterVEC, objectVEC,bossVec, itemVec, skeleton_count);
+            if (grid[player.x][player.y].type == 3)
+            {
+                itemVec = shopItems;
+            }
+            else if (grid[player.x][player.y].type == 4)
+            {
+                itemVec = itemRoomVec;
+            }
+            else if (grid[player.x][player.y].type == 2 && bossVec.empty() && monsterVEC.empty())
+            {
+                Object ladder(&ladderTexture, { 350.0f,200.0f }, { 16.0f,16.0f }, true, true);
+                objectVEC.push_back(ladder);
+            }
             grid[player.x][player.y].visited = true;
         }
     }
@@ -351,18 +442,39 @@ void room::pick_room_layout(hero& player, Collision kolizja, sf::RenderWindow& w
         Draw(window, doors);
         if (kolizja.check_Collision(player.body, doors) && monsterVEC.empty() && bossVec.empty())
         {
-
-            player.x++;
-            player.body.setPosition({ player.body.getPosition().x, 45 });
             heroB.clear();
             heroB = std::vector<Bullet>();
             monsterB.clear();
             monsterB = std::vector<Bullet>();
             objectVEC.clear();
             objectVEC = std::vector<Object>();
+            if (grid[player.x][player.y].type == 3)
+            {
+                shopItems = itemVec;
+            }
+            else if (grid[player.x][player.y].type == 4)
+            {
+                itemRoomVec = itemVec;
+            }
             itemVec.clear();
             itemVec = std::vector<Item>();
+            player.x++;
+            player.body.setPosition({ player.body.getPosition().x, 45 });
+            
             read_from_file(player, monsterVEC, objectVEC, bossVec, itemVec, skeleton_count);
+            if (grid[player.x][player.y].type == 3)
+            {
+                itemVec = shopItems;
+            }
+            else if (grid[player.x][player.y].type == 4)
+            {
+                itemVec = itemRoomVec;
+            }
+            else if (grid[player.x][player.y].type == 2 && bossVec.empty() && monsterVEC.empty())
+            {
+                Object ladder(&ladderTexture, { 350.0f,200.0f }, { 16.0f,16.0f }, true, true);
+                objectVEC.push_back(ladder);
+            }
             grid[player.x][player.y].visited = true;
         }
     }
@@ -390,18 +502,46 @@ void room::pick_room_layout(hero& player, Collision kolizja, sf::RenderWindow& w
         if (kolizja.check_Collision(player.body, doors) && monsterVEC.empty() && bossVec.empty())
         {
 
-            player.x--;
-            player.body.setPosition({ player.body.getPosition().x, 355 });
             heroB.clear();
             heroB = std::vector<Bullet>();
             monsterB.clear();
             monsterB = std::vector<Bullet>();
             objectVEC.clear();
             objectVEC = std::vector<Object>();
+            if (grid[player.x][player.y].type == 3)
+            {
+                shopItems = itemVec;
+            }
+            else if (grid[player.x][player.y].type == 4)
+            {
+                itemRoomVec = itemVec;
+            }
             itemVec.clear();
             itemVec = std::vector<Item>();
+
+            player.x--;
+            player.body.setPosition({ player.body.getPosition().x, 355 });
+            
             read_from_file(player, monsterVEC, objectVEC, bossVec, itemVec,  skeleton_count);
+            if (grid[player.x][player.y].type == 3)
+            {
+                itemVec = shopItems;
+            }
+            else if (grid[player.x][player.y].type == 4)
+            {
+                itemVec = itemRoomVec;
+            }
+            else if (grid[player.x][player.y].type == 2 && bossVec.empty() && monsterVEC.empty())
+            {
+                Object ladder(&ladderTexture, { 350.0f,200.0f }, { 16.0f,16.0f }, true, true);
+                objectVEC.push_back(ladder);
+            }
+            
             grid[player.x][player.y].visited = true;
         }
     }
+}
+int room::getRoomType(hero& player)
+{
+    return grid[player.x][player.y].type;
 }

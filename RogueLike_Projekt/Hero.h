@@ -10,6 +10,7 @@ protected:
     float maxHealth;
     float health;
     float damage;
+    int money=100;
     bool faceRight;
     unsigned int row;
     float fire_rate;
@@ -32,7 +33,8 @@ public:
     float getSpeed();
     float getShotSpeed();
     float getFireDelay();
+    int getMoney();
     bool getFlying();
     void getHit(float damage);
-    void setStatistics(float damage, float health,float maxHealth, float fire_delay, float shot_speed, float speed);
+    void setStatistics(float damage, float health,float maxHealth, float fire_delay, float shot_speed, float speed,int money);
 };
