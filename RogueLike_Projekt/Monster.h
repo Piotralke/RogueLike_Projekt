@@ -28,5 +28,6 @@ class monster : public hero
         sf::Vector2f getDirVec(hero player);
         float getDirDeg(sf::Vector2f);
         void Update(float deltaTime, std::vector<Bullet>& bulletVec, std::vector<monster>& monsterVec, hero player, int& skeleton_count,int& dead_skeleton);
+        void Draw(sf::RenderWindow& window);
         
 };

@@ -51,6 +51,8 @@ protected:
     sf::Texture ladderTexture;
     //boss texture
     sf::Texture necromancerTexture;
+    sf::Texture brother1Texture;
+    sf::Texture brother2Texture;
     //aroows textures
     sf::Texture arrow_texture;
     sf::Texture fire_ball_texture;
@@ -62,6 +64,7 @@ protected:
     sf::Texture bootsTexture;
     sf::Texture glovesTexture;
     sf::Texture helmetTexture;
+    sf::Texture wingsTexture;
 
     sf::Texture small_healPotTexture;
     sf::Texture big_healPotTexture;

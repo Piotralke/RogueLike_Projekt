@@ -18,6 +18,10 @@ hero::hero(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, floa
     body.setOrigin(body.getSize() / 2.0f);
     body.setPosition(position);
     body.setTexture(texture);
+    wings_t.loadFromFile("grafiki/wings.png");
+    wings.setSize({ 36.0f,20.0f });
+    wings.setOrigin(wings.getSize() / 2.0f);
+    wings.setTexture(&wings_t);
 }
 
 void hero::DrawStats(sf::RenderWindow& window, sf::Font& font)
@@ -97,7 +101,13 @@ void hero::DrawStats(sf::RenderWindow& window, sf::Font& font)
 
 void hero::Draw(sf::RenderWindow& window)
 {
+    if (flying)
+    {
+        wings.setPosition(body.getPosition().x, body.getPosition().y-6.0f);
+        window.draw(wings);
+    }
     window.draw(body);
+
 }
 
 void hero::Update(float deltaTime, std::vector<Bullet> &bulletVec)
@@ -217,7 +227,7 @@ void hero::getHit(float damage)
     health -= damage;
 }
 
-void hero::setStatistics(float damage, float health,float maxHealth, float fire_delay, float shot_speed, float speed, int money)
+void hero::setStatistics(float damage, float health,float maxHealth, float fire_delay, float shot_speed, float speed, int money, bool flying)
 {
     this->damage += damage;
     this->maxHealth += maxHealth;
@@ -228,4 +238,9 @@ void hero::setStatistics(float damage, float health,float maxHealth, float fire_
     this->shot_speed += shot_speed;
     this->speed += speed;
     this->money += money;
+    if (this->flying == false)
+    {
+        this->flying = flying;
+    }
+    
 }

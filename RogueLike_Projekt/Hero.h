@@ -12,12 +12,14 @@ protected:
     float damage;
     int money=100;
     bool faceRight;
-    unsigned int row;
+    unsigned int row=0;
     float fire_rate;
     float shot_speed; 
     sf::Clock fire_delay_clock;
     bool flying;
     sf::Texture* arrow;
+    sf::Texture wings_t;
+    sf::RectangleShape wings;
 public:
     int x = 5, y = 5;
     sf::RectangleShape body;
@@ -36,5 +38,5 @@ public:
     int getMoney();
     bool getFlying();
     void getHit(float damage);
-    void setStatistics(float damage, float health,float maxHealth, float fire_delay, float shot_speed, float speed,int money);
+    void setStatistics(float damage, float health,float maxHealth, float fire_delay, float shot_speed, float speed,int money,bool flying);
 };

@@ -192,3 +192,8 @@ void monster::Update(float deltaTime, std::vector<Bullet>& bulletVec, std::vecto
 	animation.Update(row, deltaTime, faceRight);
 	body.setTextureRect(animation.uvRect);
 }
+void monster::Draw(sf::RenderWindow& window)
+{
+	window.draw(body);
+
+}

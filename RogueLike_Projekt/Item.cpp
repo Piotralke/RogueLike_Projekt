@@ -1,6 +1,6 @@
 #include "Item.h"
 
-Item::Item(sf::Texture* itemTexture, sf::Vector2f position, sf::Vector2f size, float damage, float health,float maxHealth, float fire_delay, float shot_speed, float speed, int money, int value)
+Item::Item(sf::Texture* itemTexture, sf::Vector2f position, sf::Vector2f size, float damage, float health,float maxHealth, float fire_delay, float shot_speed, float speed, int money, int value, bool flying)
 {
 	item.setSize(size);
 	item.setOrigin(item.getSize() / 2.0f);
@@ -14,10 +14,11 @@ Item::Item(sf::Texture* itemTexture, sf::Vector2f position, sf::Vector2f size, f
 	this->speed = speed;
 	this->money = money;
 	this->value = value;
+	this->flying = flying;
 }
 void Item::giveItem(hero* player)
 {
-	player->setStatistics(damage, health,maxHealth, fire_delay, shot_speed, speed, money);
+	player->setStatistics(damage, health,maxHealth, fire_delay, shot_speed, speed, money,flying);
 }
 void Item::Draw(sf::RenderWindow& window, sf::Font& font)
 {
@@ -33,7 +34,6 @@ void Item::Draw(sf::RenderWindow& window, sf::Font& font)
 		price_text.setString(price_string);
 		price_text.setPosition({ item.getPosition().x - 7.0f,item.getPosition().y+7.0f });
 		window.draw(price_text);
-
 	}
 }
 int Item::getMoney()

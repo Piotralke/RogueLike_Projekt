@@ -291,11 +291,12 @@ bool generate_map::generate_layout()
                          grid[i][j].sciezka += liczba;              //albo kilka ale z 2-3 max
                          grid[i][j].sciezka += ".txt";              //to samo do item roomu
                      }
-                     else if (grid[i][j].type == 3)
+                     else if (grid[i][j].type == 4)
                      {
                          std::string liczba;
                          grid[i][j].sciezka = "layouts/item/";
-                         liczba = std::to_string(std::rand() % 9);
+                         liczba = std::to_string(1);
+                      //   liczba = std::to_string(std::rand() % 9);
                          grid[i][j].sciezka += liczba;
                          grid[i][j].sciezka += ".txt";
                      }

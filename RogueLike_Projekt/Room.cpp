@@ -20,6 +20,8 @@ void room::init_Texture() {
     ladderTexture.loadFromFile("grafiki/ladder.png");
 
     necromancerTexture.loadFromFile("grafiki/necromancer.png");
+    brother1Texture.loadFromFile("grafiki/brother1.png");
+    brother2Texture.loadFromFile("grafiki/brother2.png");
 
     arrow_texture.loadFromFile("grafiki/arrow.png");
     fire_ball_texture.loadFromFile("grafiki/fire_ball.png");
@@ -34,22 +36,27 @@ void room::init_Texture() {
     bootsTexture.loadFromFile("grafiki/boots.png");
     glovesTexture.loadFromFile("grafiki/gloves.png");
     helmetTexture.loadFromFile("grafiki/helmet.png");
+    wingsTexture.loadFromFile("grafiki/wings_item.png");
 
     Item boots(&bootsTexture, { 350.0f,200.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 50.0f, 0);
     Item gloves(&glovesTexture, { 350.0f,200.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 0.0f, -0.5f, 50.0f, 0.0f, 0);
     Item helmet(&helmetTexture, { 350.0f,200.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 50.0f, 0.0f, 0.0f, 0.0f, 0);
+  //  Item wings(&wingsTexture, { 350.0f,200.0f }, { 28.0f,32.0f }, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0, 0,true);
 
     noValueItems.push_back(boots);
     noValueItems.push_back(gloves);
     noValueItems.push_back(helmet);
+ //   noValueItems.push_back(wings);
     
     Item bootsv(&bootsTexture, { 350.0f,200.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 50.0f, 0,20);
     Item glovesv(&glovesTexture, { 350.0f,200.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 0.0f, -0.5f, 50.0f, 0.0f, 0,20);
     Item helmetv(&helmetTexture, { 350.0f,200.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 50.0f, 0.0f, 0.0f, 0.0f, 0,20);
+    Item wingsv(&wingsTexture, { 350.0f,200.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 50.0f, 0.0f, 0.0f, 0.0f, 0,100, true);
 
     valueItems.push_back(bootsv);
     valueItems.push_back(glovesv);
     valueItems.push_back(helmetv);
+    valueItems.push_back(wingsv);
 
 }
 
@@ -195,9 +202,9 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
                 }
                 else if (znak == 'A')   //A-E boss
                 {
-                    if (!grid[player.x][player.y].visited)
+              //      if (!grid[player.x][player.y].visited)
                     {
-                        boss necromancer(&necromancerTexture, sf::Vector2u(3, 2), 0.1f, 60.0f, 2.3f, 120.0f, 150.0f, 15.0f, { 27.0f,40.0f }, { 50.0f + 30 * j,50.0f + 30 * i }, true, false, false, &skull_texture, { 10,10 });
+                        boss necromancer(&necromancerTexture, sf::Vector2u(3, 2), 0.1f, 120.0f, 2.3f, 120.0f, 140.0f, 15.0f, { 27.0f,40.0f }, { 50.0f + 30 * j,50.0f + 30 * i }, true, false, false,true, true, true,&skull_texture, { 10,10 });
                         bossVec.push_back(necromancer);
                     }
                     
@@ -205,11 +212,19 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
                 }
                 else if (znak == 'B')
                 {
-
+            //    if (!grid[player.x][player.y].visited)
+                {
+                    boss brother1(&brother1Texture, sf::Vector2u(8, 1), 0.1f, 80.0f, 0.0f, 0.0f, 120.0f, 15.0f, { 34.0f,46.0f }, { 50.0f + 30 * j,50.0f + 30 * i }, false, false, false,false, false,false, NULL, { 0,0 });
+                    bossVec.push_back(brother1);
+                }
                 }
                 else if (znak == 'C')
                 {
-
+         //       if (!grid[player.x][player.y].visited)
+                {
+                    boss brother2(&brother2Texture, sf::Vector2u(12, 2), 0.1f, 100.0f, 1.4f, 120.0f, 80.0f, 15.0f, { 30.0f,44.0f }, { 50.0f + 30 * j,50.0f + 30 * i }, true, false, false, false, false,true, &arrow_texture, { 7,19 });
+                    bossVec.push_back(brother2);
+                }
                 }
                 else if (znak == 'D')
                 {
@@ -350,7 +365,7 @@ void room::pick_room_layout(hero& player, Collision kolizja, sf::RenderWindow& w
             }
             else if (grid[player.x][player.y].type == 4)
             {
-                 itemVec = itemRoomVec;
+                itemVec = itemRoomVec;
             }
             else if (grid[player.x][player.y].type == 2 && bossVec.empty() && monsterVEC.empty())
             {

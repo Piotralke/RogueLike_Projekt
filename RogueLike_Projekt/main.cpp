@@ -101,9 +101,14 @@ int main()
         {
             monsterVec.at(i).Update(deltaTime, monsterBulletVec, monsterVec, player, skeleton_count, dead_skeleton);
         }
+
         for (int i = 0; i < objectVec.size(); i++)
         {
-            if (kolizja.check_Collision(player.body, objectVec.at(i).shape) && objectVec.at(i).go_down == true)
+            if(objectVec.at(i).go_down == false && player.getFlying() == false)
+            {
+                kolizja.check_Collision(player.body, objectVec.at(i).shape);
+            }
+            else if(objectVec.at(i).go_down == true && (kolizja.check_Collision(player.body, objectVec.at(i).shape)))
             {
                 levels++;
                 level->init_grid();
@@ -127,6 +132,7 @@ int main()
                 bossVec = std::vector<boss>();
                 created = false;
             }
+
         }
 
         for (int i = 0; i < bulletVec.size(); i++)
@@ -299,12 +305,12 @@ int main()
 
        for (int i = 0; i < itemVec.size(); i++)
        {
-           if (monsterVec.empty() && bossVec.empty() || itemVec.at(i).getMoney() > 0)
+           if (monsterVec.empty() && bossVec.empty())
            {
                if (!(itemVec.empty()) && itemVec.at(i).item.getGlobalBounds().intersects(player.body.getGlobalBounds()) &&player.getMoney()>=itemVec.at(i).getValue())
                {
                    itemVec.at(i).giveItem(&player);
-                   player.setStatistics(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, -itemVec.at(i).getValue());
+                   player.setStatistics(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, -itemVec.at(i).getValue(),false);
                    itemVec.erase(itemVec.begin() + i);
                    if (i != 0)
                        i--;
@@ -346,7 +352,7 @@ int main()
         
         for (int i = 0; i < itemVec.size(); i++)
         {
-            if (monsterVec.empty() && bossVec.empty() || itemVec.at(i).getMoney()>0)
+            if (monsterVec.empty() && bossVec.empty())
              itemVec.at(i).Draw(window,font);
         }
         if (level->getRoomType(player) == 2 && bossVec.empty() && monsterVec.empty() && !created)
