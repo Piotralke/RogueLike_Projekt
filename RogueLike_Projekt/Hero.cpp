@@ -1,7 +1,7 @@
 #include "Hero.h"
 #include <iostream>
 hero::hero(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed, float fire_rate, float shot_speed, float health,
-    float damage, sf::Vector2f size, sf::Vector2f position, bool flying, sf::Texture* arrow) :
+    float damage, sf::Vector2f size, sf::Vector2f position, bool flying, sf::Texture* arrow, sf::Texture* wings_t) :
     animation(texture, imageCount, switchTime)
 {
     this->speed = speed;
@@ -18,10 +18,10 @@ hero::hero(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, floa
     body.setOrigin(body.getSize() / 2.0f);
     body.setPosition(position);
     body.setTexture(texture);
-    wings_t.loadFromFile("grafiki/wings.png");
+ //   wings_t.loadFromFile("grafiki/wings.png");
     wings.setSize({ 36.0f,20.0f });
     wings.setOrigin(wings.getSize() / 2.0f);
-    wings.setTexture(&wings_t);
+    wings.setTexture(wings_t);
 }
 
 void hero::DrawStats(sf::RenderWindow& window, sf::Font& font)
