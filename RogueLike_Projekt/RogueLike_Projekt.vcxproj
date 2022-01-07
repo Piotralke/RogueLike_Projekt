@@ -171,6 +171,7 @@
     <ClCompile Include="Hero.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Monster.cpp" />
     <ClCompile Include="Objects.cpp" />
     <ClCompile Include="Room.cpp" />
@@ -183,6 +184,7 @@
     <ClInclude Include="Generator.h" />
     <ClInclude Include="Hero.h" />
     <ClInclude Include="Item.h" />
+    <ClInclude Include="Menu.h" />
     <ClInclude Include="Monster.h" />
     <ClInclude Include="Objects.h" />
     <ClInclude Include="Room.h" />
