@@ -14,11 +14,19 @@ int main()
 {
     
     Collision kolizja;
+ 
+    std::vector<sf::RectangleShape> roomVec;
+    std::vector<monster> monsterVec;
+    std::vector<Object> objectVec;
+    std::vector<boss> bossVec;
+    std::vector<Item> itemVec;
+    std::vector<Bullet> bulletVec;
+    std::vector<Bullet> monsterBulletVec;
+
     sf::RectangleShape room_collider_top;
     sf::RectangleShape room_collider_left;
     sf::RectangleShape room_collider_right;
     sf::RectangleShape room_collider_down;
-    std::vector<sf::RectangleShape> roomVec;
     room_collider_top.setSize({642,29});
     room_collider_top.setOrigin(room_collider_top.getSize() / 2.0f);
     room_collider_top.setPosition(350, 19);
@@ -50,10 +58,11 @@ int main()
     hud_sprite.setPosition({700.0f,0.0f});
     sf::Texture player_arrow;
     player_arrow.loadFromFile("grafiki/arrow.png");
-    std::vector<monster> monsterVec;
-    std::vector<Object> objectVec;
-    std::vector<boss> bossVec;
+    
+    sf::Image icon;
+    icon.loadFromFile("grafiki/icon.png");
     sf::RenderWindow window(sf::VideoMode(800, 400), "RogueLike!");
+    window.setIcon(15, 18, icon.getPixelsPtr());
     generate_map* level = new generate_map;
     sf::Texture playerTexture;
     playerTexture.loadFromFile("grafiki/hero_animation.png");
@@ -63,11 +72,10 @@ int main()
     coinTexture.loadFromFile("grafiki/coin.png");
     sf::Texture ladderTexture;
     ladderTexture.loadFromFile("grafiki/ladder.png");
-    std::vector<Item> itemVec;
+    
     int levels = 1;
     bool created = false;
-    std::vector<Bullet> bulletVec;
-    std::vector<Bullet> monsterBulletVec;
+
     srand(time(NULL));
     level->init_grid();
     level->max_level_counter(levels);

@@ -220,9 +220,9 @@ bool generate_map::generate_layout()
                 DeadEnd.push_back({ i,j });
         }
     }
-    wypiszkons();
-     std::cout << rooms_counter << std::endl;
-     std::cout << DeadEnd.size() << std::endl;
+   // wypiszkons();
+   // std::cout << rooms_counter << std::endl;
+   // std::cout << DeadEnd.size() << std::endl;
      
          sf::Vector2i max = DeadEnd.at(0);
          float max_distance=0;
@@ -303,7 +303,7 @@ bool generate_map::generate_layout()
                      else
                      {
                          grid[i][j].sciezka = random_layout(i, j);
-                         std::cout << grid[i][j].sciezka << std::endl;
+                        // std::cout << grid[i][j].sciezka << std::endl;
                      } 
                  }  
              }
