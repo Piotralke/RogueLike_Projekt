@@ -305,7 +305,7 @@ int main()
 
        for (int i = 0; i < itemVec.size(); i++)
        {
-           if (monsterVec.empty() && bossVec.empty())
+           if (monsterVec.empty() && bossVec.empty() || itemVec.at(i).getMoney() > 0)
            {
                if (!(itemVec.empty()) && itemVec.at(i).item.getGlobalBounds().intersects(player.body.getGlobalBounds()) &&player.getMoney()>=itemVec.at(i).getValue())
                {
@@ -352,7 +352,7 @@ int main()
         
         for (int i = 0; i < itemVec.size(); i++)
         {
-            if (monsterVec.empty() && bossVec.empty())
+            if (monsterVec.empty() && bossVec.empty() || itemVec.at(i).getMoney() > 0)
              itemVec.at(i).Draw(window,font);
         }
         if (level->getRoomType(player) == 2 && bossVec.empty() && monsterVec.empty() && !created)

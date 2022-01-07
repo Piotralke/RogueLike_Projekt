@@ -1,5 +1,5 @@
 #include "Monster.h"
-#include <iostream>
+
 sf::Vector2f monster::getDirVec(hero player)
 {
 	return this->GetPosition() - player.GetPosition();
@@ -177,6 +177,7 @@ void monster::Update(float deltaTime, std::vector<Bullet>& bulletVec, std::vecto
 		if (skeleton_count == monsterVec.size() && dead_skeleton == monsterVec.size())
 		{
 			skeleton_count = 0;
+			dead_skeleton = 0;
 			monsterVec.clear();
 			monsterVec = std::vector<monster>();
 		}	
@@ -189,6 +190,7 @@ void monster::Update(float deltaTime, std::vector<Bullet>& bulletVec, std::vecto
 		dead = false;
 		dead_skeleton--;
 	}
+
 	animation.Update(row, deltaTime, faceRight);
 	body.setTextureRect(animation.uvRect);
 }

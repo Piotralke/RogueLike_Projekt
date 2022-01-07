@@ -112,7 +112,7 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
                 }
                 else if (znak == '2')
                 {
-                    if (!grid[player.x][player.y].visited)
+                    //if (!grid[player.x][player.y].visited)
                     {
                         monster skeleton(&skeletonTexture, sf::Vector2u(4, 2), 0.1f, 65.0f, 0.0f, 0.0f, 15.0f, 4.0f, { 10.0f,16.0f }, { 50.0f + 30 * j,50.0f + 30 * i }, false, false, true, NULL, { 0,0 });
                         monsterVEC.push_back(skeleton);
