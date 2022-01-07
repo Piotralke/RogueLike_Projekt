@@ -1,0 +1,11 @@
+a a a a a a a a a a a a a a a a a a a a a
+O b O O O O 2 O O O b O O O O O O O b b a
+O O . O O O O O O O O O O 2 O O O O . O a
+O O O O O O O O O O O O O O O O O O O 5 a
+O O O O O O O O O O O O O O O O O O O O a
+O O O O O O O O O O P O O O O O O O O O a
+O O O O O O O O O O O O O O O O O O O O a
+O O 2 O O b O O O O O O O O O O O O O O a
+O b . O O O O O O O b O O O 3 O O O . O a
+O O O O O O O O O O O O O O O b O O O O a
+a a a a a a a a a a a a a a a a a a a a a

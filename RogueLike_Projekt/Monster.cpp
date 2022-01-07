@@ -79,13 +79,13 @@ void monster::Update(float deltaTime, std::vector<Bullet>& bulletVec, std::vecto
 		if (memSpeed == 150.0f)
 		{
 			sf::Vector2f movement;
-			if(rotate_clock.getElapsedTime().asSeconds()<1.0f)
+			if(rotate_clock.getElapsedTime().asSeconds()<0.8f)
 				movement = {0.0f,1.0f};
-			if (rotate_clock.getElapsedTime().asSeconds() >= 1.0f)
+			if (rotate_clock.getElapsedTime().asSeconds() >= 0.8f)
 			{
 				movement.y = (-1);
 			}
-			if (rotate_clock.getElapsedTime().asSeconds() >= 2.0f)
+			if (rotate_clock.getElapsedTime().asSeconds() >= 1.6f)
 			{
 				rotate_clock.restart();
 			}

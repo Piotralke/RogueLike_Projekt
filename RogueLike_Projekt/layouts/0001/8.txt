@@ -1,0 +1,11 @@
+1 c c c c c c c c c c c c c c c c c c c c
+c c c c c c c c c c c c c c c c c c 0 c c
+c c c c c c c c c c c c c c c c c c c c c
+c c c c c c c c c c c c c c c c c O O O c
+O O O O O O O O O O O O O O O O O O O O c
+O O O O O O O O O O P O O O O O O O O O c
+O O O O O O O O O O O O O O O O O O O O c
+c c c c c c c c c c c c c c c c O O O O c
+c c c c c c c c c c c c c c c c c c c c c
+c c c c c c c c c c c c c c c c c c 0 c c
+1 c c c c c c c c c c c c c c c c c c c c

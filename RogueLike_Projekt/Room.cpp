@@ -94,7 +94,7 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
                 read >> znak;
                 if (znak == '0')        //0-9 MONSTER
                 {
-                   // if (!grid[player.x][player.y].visited)
+                    if (!grid[player.x][player.y].visited)
                     {
                         monster wizard(&wizardTexture, sf::Vector2u(4, 1), 0.1f, 0.0f, 1.5f, 150.0f, 30.0f, 10.0f, { 16.0f,20.0f }, { 50.0f + 30 * j,50.0f + 30 * i }, true, false, false, &fire_ball_texture, { 8,8 });
                         monsterVEC.push_back(wizard);
@@ -103,7 +103,7 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
                 }
                 else if (znak == '1')
                 {
-                   // if (!grid[player.x][player.y].visited)
+                    if (!grid[player.x][player.y].visited)
                     {
                         monster ghost(&ghostTexture, sf::Vector2u(4, 1), 0.1f, 75.0f, 0.0f, 0.0f, 30.0f, 5.0f, { 12.0f,17.0f }, { 50.0f + 30 * j,50.0f + 30 * i }, false, true, false, NULL, { 0,0 });
                         monsterVEC.push_back(ghost);
@@ -112,7 +112,7 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
                 }
                 else if (znak == '2')
                 {
-                  //  if (!grid[player.x][player.y].visited)
+                    if (!grid[player.x][player.y].visited)
                     {
                         monster skeleton(&skeletonTexture, sf::Vector2u(4, 2), 0.1f, 65.0f, 0.0f, 0.0f, 15.0f, 4.0f, { 10.0f,16.0f }, { 50.0f + 30 * j,50.0f + 30 * i }, false, false, true, NULL, { 0,0 });
                         monsterVEC.push_back(skeleton);
@@ -121,7 +121,7 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
                 }
                 else if (znak == '3')
                 {
-                 //   if (!grid[player.x][player.y].visited)
+                    if (!grid[player.x][player.y].visited)
                     {
                         monster zombie(&zombieTexture, sf::Vector2u(4, 1), 0.15f, 40.0f, 0.0f, 0.0f, 50.0f, 15.0f, { 20.0f,33.0f }, { 50.0f + 30 * j,50.0f + 30 * i }, false, false, false, NULL, { 0,0 });
                         monsterVEC.push_back(zombie);
@@ -129,7 +129,7 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
                 }
                 else if (znak == '4')
                 {
-                //    if (!grid[player.x][player.y].visited)
+                    if (!grid[player.x][player.y].visited)
                     {
                         monster demon(&demonTexture, sf::Vector2u(4, 1), 0.1f, 110.0f, 0.0f, 0.0f, 10.0f, 6.0f, { 14.0f,22.0f }, { 50.0f + 30 * j,50.0f + 30 * i }, false, false, false, NULL, { 0,0 });
                         monsterVEC.push_back(demon);
@@ -137,7 +137,7 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
                 }
                 else if (znak == '5')
                 {
-                  //  if (!grid[player.x][player.y].visited)
+                    if (!grid[player.x][player.y].visited)
                     {
                         monster spider(&spiderTexture, sf::Vector2u(9, 2), 0.1f, 170.0f, 0.0f, 0.0f, 10.0f, 4.0f, { 14.0f,13.0f }, { 50.0f + 30 * j,50.0f + 30 * i }, false, false, false, NULL, { 0,0 });
                         monsterVEC.push_back(spider);
@@ -145,7 +145,7 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
                 }
                 else if (znak == '6')
                 {
-                  //  if (!grid[player.x][player.y].visited)
+                    if (!grid[player.x][player.y].visited)
                     {
                         monster elf(&elfTexture, sf::Vector2u(4, 2), 0.1f, 150.0f, 2.5f, 170.0f, 30.0f, 9.0f, { 16.0f,20.0f }, { 50.0f + 30 * j,50.0f + 30 * i }, true, false, false, &arrow_texture, { 7,19 });
                         monsterVEC.push_back(elf);
@@ -153,7 +153,7 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
                 }
                 else if (znak == '7')
                 {
-                 //   if (!grid[player.x][player.y].visited)
+                    if (!grid[player.x][player.y].visited)
                     {
                         monster slime(&slimeTexture, sf::Vector2u(4, 3), 0.1f, 0.0f, 1.0f, 110.0f, 25.0f, 5.0f, { 16.0f,16.0f }, { 50.0f + 30 * j,50.0f + 30 * i }, true, false, false, &slime_ball_texture, { 8,9 }, true);
                         monsterVEC.push_back(slime);
@@ -161,7 +161,7 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
                 }
                 else if (znak == '8')
                 {
-               //     if (!grid[player.x][player.y].visited)
+                    if (!grid[player.x][player.y].visited)
                     {
                         monster troll(&trollTexture, sf::Vector2u(4, 1), 0.1f, 70.0f, 2.0f, 130.0f, 20.0f, 7.0f, { 13.0f,18.0f }, { 50.0f + 30 * j,50.0f + 30 * i }, true, false, false, &bone_texture, { 7,15 });
                         monsterVEC.push_back(troll);
@@ -169,7 +169,7 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
                 }
                 else if (znak == '9')
                 {
-                   // if (!grid[player.x][player.y].visited)
+                    if (!grid[player.x][player.y].visited)
                     {
                         monster tower(&towerTexture, sf::Vector2u(1, 1), 0.1f, 0.0f, 2.5f, 200.0f, 50.0f, 10.0f, { 18.0f,30.0f }, { 50.0f + 30 * j,50.0f + 30 * i }, true, false, false, &cannon_ball_texture, { 11,11 });
                         monsterVEC.push_back(tower);
@@ -202,7 +202,7 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
                 }
                 else if (znak == 'A')   //A-E boss
                 {
-              //      if (!grid[player.x][player.y].visited)
+                    if (!grid[player.x][player.y].visited)
                     {
                         boss necromancer(&necromancerTexture, sf::Vector2u(3, 2), 0.1f, 120.0f, 2.3f, 120.0f, 140.0f, 15.0f, { 27.0f,40.0f }, { 50.0f + 30 * j,50.0f + 30 * i }, true, false, false,true, true, true,&skull_texture, { 10,10 });
                         bossVec.push_back(necromancer);
@@ -212,7 +212,7 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
                 }
                 else if (znak == 'B')
                 {
-            //    if (!grid[player.x][player.y].visited)
+                if (!grid[player.x][player.y].visited)
                 {
                     boss brother1(&brother1Texture, sf::Vector2u(8, 1), 0.1f, 80.0f, 0.0f, 0.0f, 120.0f, 15.0f, { 34.0f,46.0f }, { 50.0f + 30 * j,50.0f + 30 * i }, false, false, false,false, false,false, NULL, { 0,0 });
                     bossVec.push_back(brother1);
@@ -220,7 +220,7 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
                 }
                 else if (znak == 'C')
                 {
-         //       if (!grid[player.x][player.y].visited)
+                if (!grid[player.x][player.y].visited)
                 {
                     boss brother2(&brother2Texture, sf::Vector2u(12, 2), 0.1f, 100.0f, 1.4f, 120.0f, 80.0f, 15.0f, { 30.0f,44.0f }, { 50.0f + 30 * j,50.0f + 30 * i }, true, false, false, false, false,true, &arrow_texture, { 7,19 });
                     bossVec.push_back(brother2);
@@ -245,7 +245,7 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
                 }
                 else if (znak == 'p') //maly potion
                 {
-          //      if (!grid[player.x][player.y].visited)
+                if (!grid[player.x][player.y].visited)
                 {
                     Item small_healPot(&small_healPotTexture, { 50.0f + 30 * j,50.0f + 30 * i }, { 16.0f,16.0f }, 0.0f, 20.0f, 0.0f, 0.0f, 0.0f, 0.0f,0); 
                         itemVec.push_back(small_healPot);
@@ -253,7 +253,7 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
                 }
                 else if (znak == 'P') //duzy potion
                 {
-            //    if (!grid[player.x][player.y].visited)
+                if (!grid[player.x][player.y].visited)
                 {
                     Item big_healPot(&big_healPotTexture, { 50.0f + 30 * j,50.0f + 30 * i }, { 16.0f,16.0f }, 0.0f, 50.0f, 0.0f, 0.0f, 0.0f, 0.0f,0);
                     itemVec.push_back(big_healPot);

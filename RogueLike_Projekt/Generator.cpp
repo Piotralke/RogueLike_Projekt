@@ -20,91 +20,91 @@ std::string generate_map::random_layout(int i, int j)
     path = "layouts/";
     switch (check_doors(i, j)) {
     case 0b0001:
-        path += "0001/layout";
+        path += "0001/";
         liczba = std::to_string(std::rand() % 9);
         path += liczba;
         path += ".txt";
         break;
     case 0b0010:
-        path += "0010/layout";
+        path += "0010/";
         liczba = std::to_string(std::rand() % 9);
         path += liczba;
         path += ".txt";
         break;
     case 0b0011:
-        path += "0011/layout";
+        path += "0011/";
         liczba = std::to_string(std::rand() % 9);
         path += liczba;
         path += ".txt";
         break;
     case 0b0100:
-        path += "0100/layout";
+        path += "0100/";
         liczba = std::to_string(std::rand() % 9);
         path += liczba;
         path += ".txt";
         break;
     case 0b0101:
-        path += "0101/layout";
+        path += "0101/";
         liczba = std::to_string(std::rand() % 9);
         path += liczba;
         path += ".txt";
         break;
     case 0b0110:
-        path += "0110/layout";
+        path += "0110/";
         liczba = std::to_string(std::rand() % 9);
         path += liczba;
         path += ".txt";
         break;
     case 0b0111:
-        path += "0111/layout";
+        path += "0111/";
         liczba = std::to_string(std::rand() % 9);
         path += liczba;
         path += ".txt";
         break;
     case 0b1000:
-        path += "1000/layout";
+        path += "1000/";
         liczba = std::to_string(std::rand() % 9);
         path += liczba;
         path += ".txt";
         break;
     case 0b1001:
-        path += "1001/layout";
+        path += "1001/";
         liczba = std::to_string(std::rand() % 9);
         path += liczba;
         path += ".txt";
         break;
     case 0b1010:
-        path += "1010/layout";
+        path += "1010/";
         liczba = std::to_string(std::rand() % 9);
         path += liczba;
         path += ".txt";
         break;
     case 0b1011:
-        path += "1011/layout";
+        path += "1011/";
         liczba = std::to_string(std::rand() % 9);
         path += liczba;
         path += ".txt";
         break;
     case 0b1100:
-        path += "1100/layout";
+        path += "1100/";
         liczba = std::to_string(std::rand() % 9);
         path += liczba;
         path += ".txt";
         break;
     case 0b1101:
-        path += "1101/layout";
+        path += "1101/";
         liczba = std::to_string(std::rand() % 9);
         path += liczba;
         path += ".txt";
         break;
     case 0b1110:
-        path += "1110/layout";
+        path += "1110/";
         liczba = std::to_string(std::rand() % 9);
         path += liczba;
         path += ".txt";
         break;
     case 0b1111:
-        path += "1111/layout";
+        path += "1111/";
         liczba = std::to_string(std::rand() % 9);
         path += liczba;
         path += ".txt";
