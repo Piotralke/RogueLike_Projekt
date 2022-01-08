@@ -110,6 +110,15 @@ void hero::Draw(sf::RenderWindow& window)
 
 }
 
+void hero::DrawMenu(sf::RenderWindow& window, float deltaTime)
+{
+    if (flying)
+        faceRight = false;
+    animation.Update(0, deltaTime, faceRight);
+    body.setTextureRect(animation.uvRect);
+    window.draw(body);
+}
+
 void hero::Update(float deltaTime, std::vector<Bullet> &bulletVec)
 {
     sf::Vector2f movement(0.0f, 0.0f);

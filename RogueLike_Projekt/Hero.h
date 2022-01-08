@@ -27,6 +27,7 @@ public:
         float damage, sf::Vector2f size, sf::Vector2f position, bool flying, sf::Texture* arrow, sf::Texture* wings_t=NULL);
     void DrawStats(sf::RenderWindow& window, sf::Font& font);
     void Draw(sf::RenderWindow& window);
+    void DrawMenu(sf::RenderWindow& window, float deltaTime);
     void Update(float deltaTime, std::vector<Bullet> &bulletVec);
     sf::Vector2f GetPosition();
     float getDamage();
