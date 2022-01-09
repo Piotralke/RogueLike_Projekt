@@ -122,6 +122,8 @@ int main()
     playerMenuTexture2.loadFromFile("grafiki/player_menu2.png");
     sf::Texture coinTexture;
     coinTexture.loadFromFile("grafiki/coin.png");
+    sf::Texture coinsTexture;
+    coinsTexture.loadFromFile("grafiki/coins.png");
     sf::Texture ladderTexture;
     ladderTexture.loadFromFile("grafiki/ladder.png");
     sf::Texture wings_t;
@@ -138,7 +140,7 @@ int main()
 
 
     generate_map* level = new generate_map;
-    hero player(&playerTexture, sf::Vector2u(4, 2), 0.1f, 200.0f, 1.0f, 200.0f, 10.0f, 60.0f, { 16.0f,20.0f }, {350.0f,200.0f},false,&player_arrow,&wings_t);
+    hero player(&playerTexture, sf::Vector2u(4, 2), 0.1f, 100.0f, 1.0f, 200.0f, 100.0f, 8.0f, { 16.0f,20.0f }, {350.0f,200.0f},false,&player_arrow,&wings_t);
     hero playerMenu(&playerMenuTexture, sf::Vector2u(4, 1), 0.1f, 0, 0, 0, 0, 0, { 96.0f,120.0f }, {100.0f,300.0f},false,NULL,NULL);
    // hero playerMenu2(&playerMenuTexture2, sf::Vector2u(4, 1), 0.1f, 0, 0, 0, 0, 0, { 96.0f,120.0f }, {700.0f,300.0f},false,NULL,NULL);
     hero playerMenu2(&playerMenuTexture, sf::Vector2u(4, 1), 0.1f, 0, 0, 0, 0, 0, { 96.0f,120.0f }, {700.0f,300.0f},true,NULL,NULL);
@@ -178,7 +180,7 @@ int main()
             window.display();
             if (!(working) && new_game)
             {
-                hero player2(&playerTexture, sf::Vector2u(4, 2), 0.1f, 200.0f, 1.0f, 200.0f, 10.0f, 60.0f, { 16.0f,20.0f }, { 350.0f,200.0f }, true, &player_arrow, &wings_t);
+                hero player2(&playerTexture, sf::Vector2u(4, 2), 0.1f, 100.0f, 1.0f, 200.0f, 100.0f, 8.0f, { 16.0f,20.0f }, { 350.0f,200.0f }, false, &player_arrow, &wings_t);
                 player = player2;
                 levels = 1;
                 level->init_grid();
@@ -453,6 +455,8 @@ int main()
 
                     if (!(bossVec.empty()) && bossVec.at(i).getHealth() <= 0.0f)
                     {
+                        Item coin(&coinsTexture, bossVec.at(i).GetPosition(), { 8.0f,8.0f }, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 15);
+                        itemVec.push_back(coin);
                         bossVec.erase(bossVec.begin() + i);
                         if (i != 0)
                             i--;

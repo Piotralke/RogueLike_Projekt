@@ -61,10 +61,19 @@ protected:
     sf::Texture bone_texture;
     sf::Texture cannon_ball_texture;
     //item textures
-    sf::Texture bootsTexture;
-    sf::Texture glovesTexture;
+    sf::Texture boots1Texture;
+    sf::Texture boots2Texture;
+    sf::Texture gloves1Texture;
+    sf::Texture gloves2Texture;
     sf::Texture helmetTexture;
     sf::Texture wingsTexture;
+    sf::Texture sword1Texture;
+    sf::Texture sword2Texture;
+    sf::Texture chestplateTexture;
+    sf::Texture axeTexture;
+    sf::Texture grailTexture;
+    sf::Texture ring1Texture;
+    sf::Texture ring2Texture;
 
     sf::Texture small_healPotTexture;
     sf::Texture big_healPotTexture;

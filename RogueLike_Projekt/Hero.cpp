@@ -243,9 +243,15 @@ void hero::setStatistics(float damage, float health,float maxHealth, float fire_
     this->health += health;
     if (this->health > this->maxHealth)
         this->health = this->maxHealth;
-    this->fire_rate += fire_delay;
+    if (this->fire_rate >= 0.2f)
+        this->fire_rate += fire_delay;
+    else if (this->fire_rate < 0.2f)
+        this->fire_rate = 0.2f;
     this->shot_speed += shot_speed;
-    this->speed += speed;
+    if (this->speed <= 300.0f)
+        this->speed += speed;
+    else if (this->speed > 300.0f)
+        this->speed = 300.0f;
     this->money += money;
     if (this->flying == false)
     {

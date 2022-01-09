@@ -33,30 +33,72 @@ void room::init_Texture() {
     small_healPotTexture.loadFromFile("grafiki/small_healPot.png");
     big_healPotTexture.loadFromFile("grafiki/big_healPot.png");
 
-    bootsTexture.loadFromFile("grafiki/boots.png");
-    glovesTexture.loadFromFile("grafiki/gloves.png");
+    boots1Texture.loadFromFile("grafiki/boots1.png");
+    boots2Texture.loadFromFile("grafiki/boots2.png");
+    gloves1Texture.loadFromFile("grafiki/gloves1.png");
+    gloves2Texture.loadFromFile("grafiki/gloves2.png");
     helmetTexture.loadFromFile("grafiki/helmet.png");
     wingsTexture.loadFromFile("grafiki/wings_item.png");
+    sword1Texture.loadFromFile("grafiki/sword1.png");
+    sword2Texture.loadFromFile("grafiki/sword2.png");
+    chestplateTexture.loadFromFile("grafiki/chestplate.png");
+    axeTexture.loadFromFile("grafiki/axe.png");
+    grailTexture.loadFromFile("grafiki/grail.png");
+    ring1Texture.loadFromFile("grafiki/ring1.png");
+    ring2Texture.loadFromFile("grafiki/ring2.png");
 
-    Item boots(&bootsTexture, { 350.0f,200.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 50.0f, 0);
-    Item gloves(&glovesTexture, { 350.0f,200.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 0.0f, -0.5f, 50.0f, 0.0f, 0);
-    Item helmet(&helmetTexture, { 350.0f,200.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 50.0f, 0.0f, 0.0f, 0.0f, 0);
+    Item boots1(&boots1Texture, { 350.0f,200.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 25.0f, 0);
+    Item boots2(&boots2Texture, { 350.0f,200.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 50.0f, 0);
+    Item gloves1(&gloves1Texture, { 350.0f,200.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 0.0f, -0.05f, 10.0f, 0.0f, 0);
+    Item gloves2(&gloves2Texture, { 350.0f,200.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 0.0f, -0.10f, 15.0f, 0.0f, 0);
+    Item helmet(&helmetTexture, { 350.0f,200.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 30.0f, 0.0f, 0.0f, 0.0f, 0);
+    Item sword1(&sword1Texture, { 350.0f,200.0f }, { 16.0f,16.0f }, 5.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0);
+    Item sword2(&sword2Texture, { 350.0f,200.0f }, { 16.0f,16.0f }, 10.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0);
+    Item chestplate(&chestplateTexture, { 350.0f,200.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 50.0f, 0.0f, 0.0f, -10.0f, 0);
+    Item axe(&axeTexture, { 350.0f,200.0f }, { 16.0f,16.0f }, 15.0f, 0.0f, 0.0f, 0.05f, 0.0f, 0.0f, 0);
+    Item ring1(&ring1Texture, { 350.0f,200.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 0.0f, 0.0f, 20.0f, 0.0f, 0);
+    Item ring2(&ring2Texture, { 350.0f,200.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 0.0f, 0.0f, 30.0f, 0.0f, 0);
   //  Item wings(&wingsTexture, { 350.0f,200.0f }, { 28.0f,32.0f }, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0, 0,true);
 
-    noValueItems.push_back(boots);
-    noValueItems.push_back(gloves);
+    noValueItems.push_back(boots1);
+    noValueItems.push_back(gloves1);
+    noValueItems.push_back(gloves2);
     noValueItems.push_back(helmet);
+    noValueItems.push_back(sword1);
+    noValueItems.push_back(sword2);
+    noValueItems.push_back(chestplate);
+    noValueItems.push_back(axe);
+    noValueItems.push_back(ring1);
+    noValueItems.push_back(ring2);
  //   noValueItems.push_back(wings);
     
-    Item bootsv(&bootsTexture, { 350.0f,200.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 50.0f, 0,20);
-    Item glovesv(&glovesTexture, { 350.0f,200.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 0.0f, -0.5f, 50.0f, 0.0f, 0,20);
-    Item helmetv(&helmetTexture, { 350.0f,200.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 50.0f, 0.0f, 0.0f, 0.0f, 0,20);
-    Item wingsv(&wingsTexture, { 350.0f,200.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 50.0f, 0.0f, 0.0f, 0.0f, 0,100, true);
+    Item boots1v(&boots1Texture, { 350.0f,200.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 25.0f, 0,20);
+    Item boots2v(&boots2Texture, { 350.0f,200.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 50.0f, 0,30);
+    Item gloves1v(&gloves1Texture, { 350.0f,200.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 0.0f, -0.05f, 10.0f, 0.0f, 0,20);
+    Item gloves2v(&gloves2Texture, { 350.0f,200.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 0.0f, -0.10f, 15.0f, 0.0f, 0, 30);
+    Item helmetv(&helmetTexture, { 350.0f,200.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 30.0f, 0.0f, 0.0f, 0.0f, 0, 20);
+    Item sword1v(&sword1Texture, { 350.0f,200.0f }, { 16.0f,16.0f }, 5.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0, 20);
+    Item sword2v(&sword2Texture, { 350.0f,200.0f }, { 16.0f,16.0f }, 10.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0, 30);
+    Item chestplatev(&chestplateTexture, { 350.0f,200.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 50.0f, 0.0f, 0.0f, -10.0f, 0, 30);
+    Item axev(&axeTexture, { 350.0f,200.0f }, { 16.0f,16.0f }, 15.0f, 0.0f, 0.0f, 0.05f, 0.0f, 0.0f, 0, 25);
+    Item wingsv(&wingsTexture, { 350.0f,200.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0,50, true);
+    Item grailv(&wingsTexture, { 350.0f,200.0f }, { 16.0f,16.0f }, 10.0f, 50.0f, 50.0f, -0.05f, 10.0f, 0.0f, 0,60, false);
+    Item ring1v(&ring1Texture, { 350.0f,200.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 0.0f, 0.0f, 20.0f, 0.0f, 0,20);
+    Item ring2v(&ring2Texture, { 350.0f,200.0f }, { 16.0f,16.0f }, 0.0f, 0.0f, 0.0f, 0.0f, 30.0f, 0.0f, 0,30);
 
-    valueItems.push_back(bootsv);
-    valueItems.push_back(glovesv);
+    valueItems.push_back(boots1v);
+    valueItems.push_back(boots2v);
+    valueItems.push_back(gloves1v);
+    valueItems.push_back(gloves2v);
     valueItems.push_back(helmetv);
+    valueItems.push_back(sword1v);
+    valueItems.push_back(sword2v);
+    valueItems.push_back(chestplatev);
+    valueItems.push_back(axev);
     valueItems.push_back(wingsv);
+    valueItems.push_back(grailv);
+    valueItems.push_back(ring1v);
+    valueItems.push_back(ring2v);
 
 }
 
@@ -112,7 +154,7 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
                 }
                 else if (znak == '2')
                 {
-                    //if (!grid[player.x][player.y].visited)
+                    if (!grid[player.x][player.y].visited)
                     {
                         monster skeleton(&skeletonTexture, sf::Vector2u(4, 2), 0.1f, 65.0f, 0.0f, 0.0f, 15.0f, 4.0f, { 10.0f,16.0f }, { 50.0f + 30 * j,50.0f + 30 * i }, false, false, true, NULL, { 0,0 });
                         monsterVEC.push_back(skeleton);
