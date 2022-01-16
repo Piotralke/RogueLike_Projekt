@@ -1,5 +1,24 @@
 #include "Hero.h"
 #include <iostream>
+
+/** \brief Konstruktor dla postaci
+ *
+ * Konstruktor zapisuje parametry podane jako parametry do danego obiektu
+ * @param texture WskaŸnik na teksture dla postaci
+ * @param imageCount
+ * @param switchTime Czas po jakim ma siê zmieniæ tekstura(wykorzystywana w animacji)
+ * @param speed Parametr okreœlaj¹cy prêdkoœæ postaci
+ * @param fire_rate Parametr okreœlaj¹cy szybkostrzelnoœæ postaci
+ * @param shot_speed Parametr okreœlaj¹cy prêdkoœæ pocisku wystrzelonego przez dan¹ postaæ
+ * @param health Parametr okreœlaj¹cy podstawow¹ iloœæ ¿ycia postaci
+ * @param damage Parametr okreœlaj¹cy obra¿enia jakie zadaje postaæ
+ * @param size Rozmiar pojedynczej tekstury postaci
+ * @param position Pozycja na której postaæ ma zostaæ postawiona
+ * @param flying Parametr okreœlaj¹cy czy postaæ mo¿e przechodziæ przez przeszkody
+ * @param arrow WskaŸnik na teksture dla naboju postaci
+ * @param wings_t WskaŸnik na teksture skrzyde³
+ */
+
 hero::hero(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed, float fire_rate, float shot_speed, float health,
     float damage, sf::Vector2f size, sf::Vector2f position, bool flying, sf::Texture* arrow, sf::Texture* wings_t) :
     animation(texture, imageCount, switchTime)
@@ -18,11 +37,17 @@ hero::hero(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, floa
     body.setOrigin(body.getSize() / 2.0f);
     body.setPosition(position);
     body.setTexture(texture);
- //   wings_t.loadFromFile("grafiki/wings.png");
     wings.setSize({ 36.0f,20.0f });
     wings.setOrigin(wings.getSize() / 2.0f);
     wings.setTexture(wings_t);
 }
+
+/** \brief Funkcja wypisuj¹ca statystyki
+ *
+ * Funkcja wypisuj¹ca statystyki w okreœlonym miejscu na HUDzie gry, u¿ywana tylko dla postaci g³ównej
+ * @param window WskaŸnik na okno, w którym ma wypisaæ statystyki
+ * @param font WskaŸnik na czcionkê u¿ywan¹ w programie
+ */
 
 void hero::DrawStats(sf::RenderWindow& window, sf::Font& font)
 {
@@ -99,6 +124,12 @@ void hero::DrawStats(sf::RenderWindow& window, sf::Font& font)
     
 }
 
+/** \brief Funkcja wyœwietlaj¹ca postaæ
+ *
+ * Funkcja, która wyœwietla na podane okno postaæ, u³atwia nam wyœwietlanie tej postaci
+ * @param window WskaŸnik na okno, w którym ma wyœwietliæ postaæ
+ */
+
 void hero::Draw(sf::RenderWindow& window)
 {
     if (flying)
@@ -110,6 +141,13 @@ void hero::Draw(sf::RenderWindow& window)
 
 }
 
+/** \brief Funkcja od wyœwietlania postaci w menu
+ *
+ * Funkcja u³atwia wyœwietlanie postaci animowanych w menu, u¿ywana tylko w menu
+ * @param window WskaŸnik na okno, w którym ma wyœwietliæ postaæ
+ * @param deltaTime
+ */
+
 void hero::DrawMenu(sf::RenderWindow& window, float deltaTime)
 {
     if (flying)
@@ -118,6 +156,13 @@ void hero::DrawMenu(sf::RenderWindow& window, float deltaTime)
     body.setTextureRect(animation.uvRect);
     window.draw(body);
 }
+
+/** \brief Funkcja aktualizuj¹ca pozycje postaci
+ *
+ * G³ówna funkcja dla naszej postaci, w niej obs³ugiwane s¹ klawisze odpowiadaj¹ce za poruszanie siê postaci oraz strzelanie
+ * @param deltaTime
+ * @param bulletVec WskaŸnik na vector naboi postaci g³ównej
+ */
 
 void hero::Update(float deltaTime, std::vector<Bullet> &bulletVec)
 {
@@ -198,43 +243,108 @@ void hero::Update(float deltaTime, std::vector<Bullet> &bulletVec)
     body.move(movement);
 }
 
+/** \brief Funkcja zwracaj¹ca pozycje postaci
+ *
+ * @return body.getPosition() Zwraca pozycjê postaci
+ */
+
 sf::Vector2f hero::GetPosition()
 {
     return body.getPosition();
 }
 
+/** \brief Funkcja zwracaj¹ca obra¿enia postaci
+ *
+ * @return body.getPosition() Zwraca obra¿enia postaci
+ */
+
 float hero::getDamage()
 {
     return damage;
 }
+
+/** \brief Funkcja zwracaj¹ca ¿ycie postaci
+ *
+ * @return body.getPosition() Zwraca ¿ycie postaci
+ */
+
 float hero::getHealth()
 {
     return health;
 }
+
+/** \brief Funkcja zwracaj¹ca prêdkoœæ postaci
+ *
+ * @return body.getPosition() Zwraca prêdkoœæ postaci
+ */
+
 float hero::getSpeed()
 {
     return speed;
 }
+
+/** \brief Funkcja zwracaj¹ca prêdkoœæ naboju postaci
+ *
+ * @return body.getPosition() Zwraca prêdkoœæ naboju postaci
+ */
+
 float hero::getShotSpeed()
 {
     return shot_speed;
 }
+
+/** \brief Funkcja zwracaj¹ca szybkostrzelnoœæ postaci
+ *
+ * @return body.getPosition() Zwraca szybkostrzelnoœæ postaci
+ */
+
 float hero::getFireDelay()
 {
     return fire_rate;
 }
+
+/** \brief Funkcja zwracaj¹ca czy postaæ mo¿e latac
+ *
+ * @return body.getPosition() Zwraca czy postaæ mo¿e lataæ
+ */
+
 bool hero::getFlying()
 {
     return flying;
 }
+
+/** \brief Funkcja zwracaj¹ca iloœæ monetek postaci
+ *
+ * @return body.getPosition() Zwraca iloœæ monetek postaci
+ */
+
 int hero::getMoney()
 {
     return money;
 }
+
+/** \brief Funkcja zadaj¹ca obra¿enia postaci
+ *
+ * @param damage Parametr o ile ma obni¿yc ¿ycie postaci
+ */
+
 void hero::getHit(float damage)
 {
     health -= damage;
 }
+
+/** \brief Funkcja dodaj¹ca statystyki
+ *
+ * Funkcja wywo³uj¹ca siê przy podnoszeniu przedmiotów, która dodaje parametry tych przedmiotów do naszej postaci
+ * @param damage Parametr okreœlaj¹cy ile obra¿eñ ma dodaæ do naszej postaci
+ * @param health Parametr okreœlaj¹cy ile ¿ycia ma dodaæ do naszej postaci
+ * @param maxHealth Parametr okreœlaj¹cy ile maksymalnego ¿ycia ma dodaæ do naszej postaci
+ * @param fire_delay Parametr okreœlaj¹cy ile szybkostrzelnoœci ma dodaæ do naszej postaci
+ * @param shot_speed Parametr okreœlaj¹cy ile predkoœci naboju ma dodaæ do naszej postaci
+ * @param speed Parametr okreœlaj¹cy ile prêdkoœci ma dodaæ do naszej postaci
+ * @param money Parametr okreœlaj¹cy ile monet ma dodaæ do naszej postaci
+ * @param flying Parametr okreœlaj¹cy czy ma dodaæ do postaci przechodzenie przez przeszkody
+ */
 
 void hero::setStatistics(float damage, float health,float maxHealth, float fire_delay, float shot_speed, float speed, int money, bool flying)
 {
@@ -256,6 +366,5 @@ void hero::setStatistics(float damage, float health,float maxHealth, float fire_
     if (this->flying == false)
     {
         this->flying = flying;
-    }
-    
+    } 
 }

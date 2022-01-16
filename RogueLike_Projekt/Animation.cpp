@@ -1,5 +1,12 @@
 #include "Animation.h"
 
+/** \brief Konstruktor dla animacji
+ *
+ * @param texture WskaŸnik na teksture
+ * @param imageCount
+ * @param switchTime Czas po jakim ma siê zmieniæ tekstura(wykorzystywana w animacji)
+ */
+
 Animation::Animation(sf::Texture* texture, sf::Vector2u imageCount, float switchTime)
     {
         this->imageCount = imageCount;
@@ -10,6 +17,14 @@ Animation::Animation(sf::Texture* texture, sf::Vector2u imageCount, float switch
         uvRect.width = texture->getSize().x / float(imageCount.x);
         uvRect.height = texture->getSize().y / float(imageCount.y);
     }
+
+/** \brief Funkcja ma za zadanie przemieszczanie siê po ca³ej teksturze
+ *
+ * @param row
+ * @param deltaTime
+ * @param faceRight Parametr okreœlaj¹cy w któr¹ stronê ma byæ skierowana postaæ(w lewo lub w prawo)
+ */
+
 void Animation::Update(int row, float deltaTime, bool faceRight)
     {
         currentImage.y = row;

@@ -1,5 +1,9 @@
 #include "Generator.h"
 
+/** \brief Konstruktor dla generatora mapy
+ *
+ */
+
 generate_map::generate_map()
 {
     background_t.loadFromFile("grafiki/background.png", sf::IntRect(0, 0, 700, 400));
@@ -10,9 +14,15 @@ generate_map::generate_map()
     hero_minimap.loadFromFile("grafiki/hero_minimap.png");
     hero_m.setTexture(&hero_minimap);
     hero_m.setSize({ 6.0f,4.0f });
-
-
 }
+
+/** \brief Funkcja zwracaj¹ca wylosowan¹ œcie¿kê do uk³adu dla danego pokoju
+ *
+ * @param i Parametr i pokoju
+ * @param j Parametr j pokoju
+ * @return path zwracana wylosowana œcie¿ka
+ */
+
 std::string generate_map::random_layout(int i, int j)
 {
     std::string path;
@@ -112,6 +122,11 @@ std::string generate_map::random_layout(int i, int j)
     }
     return path;
 }
+
+/** \brief Funkcja wype³niaj¹ca zerami nasz¹ strukturê poziomu
+ *
+ */
+
 void generate_map::init_grid()
 {
     for (int i = 0; i < SIZE; i++)
@@ -124,15 +139,38 @@ void generate_map::init_grid()
     grid[5][5].visited = true;
            
 }
+
+/** \brief Funkcja ustalaj¹ca maskymaln¹ i minimaln¹ iloœæ pokojów na danym poziomie
+ *
+ * @param level Numer poziomu na którym siê aktualnie znajdujemy
+ */
+
 void generate_map::max_level_counter(int level)
 {
     min_rooms = 20 + level * 1;
     max_rooms = min_rooms + 6;
 }
+
+/** \brief Funkcja zliczaj¹ca iloœæ s¹siadów danego pokoju
+ *
+ * @param i Parametr i pokoju
+ * @param j Parametr j pokoju
+ * @return grid[i - 1][j].exist + grid[i][j - 1].exist + grid[i + 1][j].exist + grid[i][j + 1].exist zwraca iloœæ s¹siadów danego pokoju
+ */
+
 int generate_map::neighbour_count(int i, int j)
 {
     return grid[i - 1][j].exist + grid[i][j - 1].exist + grid[i + 1][j].exist + grid[i][j + 1].exist;
 }
+
+/** \brief Funkcja tworz¹ca pokój
+ *
+ * @param i Parametr i pokoju
+ * @param j Parametr j pokoju
+ * @return false je¿eli nie stworzy³ pokój
+ * @return true je¿eli stworzy³ pokój
+ */
+
 bool generate_map::visit(int i, int j)
 {
 
@@ -160,6 +198,11 @@ bool generate_map::visit(int i, int j)
 
     return true;
 }
+
+/** \brief Funkcja wypisuj¹ca mape poziomu w konsoli
+ *
+ */
+
 void generate_map::wypiszkons()
 {
     for (int i = 0; i < SIZE; i++)
@@ -171,6 +214,13 @@ void generate_map::wypiszkons()
         std::cout << std::endl;
     }
 }
+
+/** \brief Funkcja wypisuj¹ca mape poziomu w HUDzie gry
+* 
+ * @param window WskaŸnik na okno, w którym ma wypisaæ statystyki
+ * @param player WskaŸnik na postaæ g³ówn¹
+ */
+
 void generate_map::wypisz(sf::RenderWindow& window, hero& player)
 {
     for (int i = 0; i < SIZE; i++)
@@ -188,7 +238,13 @@ void generate_map::wypisz(sf::RenderWindow& window, hero& player)
     hero_m.setPosition({ 707.0f + player.y * 8, 8.0f + player.x * 8 });
     window.draw(hero_m);
 }
-bool generate_map::generate_layout()
+
+/** \brief G³ówna funkcja generuj¹ca rozk³ad pokojów w poziomu
+* 
+ * Funkcja, która wywo³uje wszystkie wczeœniej zdefiniowane funkcje z tej klasy do wygenerowania nowego rozk³adu poziomu
+ */
+
+void generate_map::generate_layout()
 {
     sf::Vector2i i;
     while (rooms_counter < max_rooms && !(rooms_counter > min_rooms))
@@ -312,7 +368,5 @@ bool generate_map::generate_layout()
          DeadEnd = std::vector<sf::Vector2i>();
          std::queue <sf::Vector2i> RoomQueueTmp;
          RoomQueue = RoomQueueTmp;
-         rooms_counter = 0;
-         return true;
-     
+         rooms_counter = 0;    
 }

@@ -1,4 +1,15 @@
 #include"Boss.h"
+
+/** \brief Funkcja aktualizuj¹ca pozycje bossów oraz okreœlaj¹ca ich specjalne umiejêtnoœci
+ *
+ * G³ówna funkcja dla naszych bossów, w niej s¹ sprecyzowane unikalne zachowania dla ka¿dego bossa
+ * @param deltaTime
+ * @param bulletVec WskaŸnik na vector naboi potworów
+ * @param monsterVec WskaŸnik na vector potworów
+ * @param player Wys³ana ca³a nasza g³ówna postaæ
+ * @param ghostTexture WskaŸnik na teksture ducha
+ */
+
 void boss::Update(float deltaTime, std::vector<Bullet>& bulletVec, std::vector<monster>& monsterVec, hero player, sf::Texture* ghostTexture)
 {
 	if (getDirVec(player).x < 0) {

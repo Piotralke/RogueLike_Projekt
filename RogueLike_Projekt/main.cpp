@@ -188,7 +188,6 @@ int main()
                 level->visit(5, 5);
                 level->generate_layout();
                 level->wypiszkons();
-                //level->init_Texture();
                 level->read_from_file(player, monsterVec, objectVec, bossVec, itemVec, skeleton_count);
                 created = false;
                 new_game = false;

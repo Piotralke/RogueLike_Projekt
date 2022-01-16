@@ -24,5 +24,5 @@ public:
     bool visit(int i, int j);
     void wypiszkons();
     void wypisz(sf::RenderWindow& window,hero& player);
-    bool generate_layout();
+    void generate_layout();
 };
