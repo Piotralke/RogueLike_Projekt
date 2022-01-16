@@ -1,14 +1,23 @@
 #include "Menu.h"
-void menu::Draw(sf::RenderWindow& window)
-{
-	window.draw(background_s);
-	window.draw(button_s);
-	window.draw(play_text);
-	window.draw(sound_text);
-	window.draw(bestiary_text);
-	window.draw(exit_text);
-	window.draw(sound_mark);
-}
+
+/** \brief Konstruktor dla menu
+ *
+ * Konstruktor zapisuje parametry podane jako parametry do danego obiektu
+ * @param texture WskaŸnik na teksture dla postaci
+ * @param imageCount
+ * @param switchTime Czas po jakim ma siê zmieniæ tekstura(wykorzystywana w animacji)
+ * @param speed Parametr okreœlaj¹cy prêdkoœæ postaci
+ * @param fire_rate Parametr okreœlaj¹cy szybkostrzelnoœæ postaci
+ * @param shot_speed Parametr okreœlaj¹cy prêdkoœæ pocisku wystrzelonego przez dan¹ postaæ
+ * @param health Parametr okreœlaj¹cy podstawow¹ iloœæ ¿ycia postaci
+ * @param damage Parametr okreœlaj¹cy obra¿enia jakie zadaje postaæ
+ * @param size Rozmiar pojedynczej tekstury postaci
+ * @param position Pozycja na której postaæ ma zostaæ postawiona
+ * @param flying Parametr okreœlaj¹cy czy postaæ mo¿e przechodziæ przez przeszkody
+ * @param arrow WskaŸnik na teksture dla naboju postaci
+ * @param wings_t WskaŸnik na teksture skrzyde³
+ */
+
 menu::menu(sf::Font& font)
 {
 	this->font = font;
@@ -23,7 +32,7 @@ menu::menu(sf::Font& font)
 	bestiary_s.setPosition({ 0.0f,0.0f });
 	this->position = 0;
 	this->sound = true;
-	
+
 	play_text.setFont(font);
 	play_text.setCharacterSize(16);
 	play_text.setFillColor(sf::Color::White);
@@ -54,6 +63,32 @@ menu::menu(sf::Font& font)
 	exit_text.setString("EXIT");
 	exit_text.setPosition({ 330.0f,260.0f });
 }
+
+/** \brief Funkcja wyœwietlaj¹ca menu
+ *
+ * Funkcja u³atwiaj¹ca wyœwietlanie wszystkich potrzebnych elementów menu
+ * @param window WskaŸnik na okno, w którym ma wyœwietliæ przedmiot
+ */
+
+void menu::Draw(sf::RenderWindow& window)
+{
+	window.draw(background_s);
+	window.draw(button_s);
+	window.draw(play_text);
+	window.draw(sound_text);
+	window.draw(bestiary_text);
+	window.draw(exit_text);
+	window.draw(sound_mark);
+}
+
+/** \brief Funkcja 
+ *
+ * Funkcja 
+ * @param window WskaŸnik na okno, w którym ma wyœwietliæ przedmiot
+ * @param mainMusic WskaŸnik na muzykê
+ * @param bossMusic WskaŸnik na muzykê
+ */
+
 bool menu::update(sf::RenderWindow& window, sf::Music& mainMusic, sf::Music& bossMusic)
 {
 	if (click_delay.getElapsedTime().asSeconds() >= 0.2)
@@ -148,6 +183,12 @@ bool menu::update(sf::RenderWindow& window, sf::Music& mainMusic, sf::Music& bos
 	
 	return true;
 }
+
+/** \brief Funkcja zwracaj¹ca teksture guzika
+ *
+ * @return button_s zwraca teksture guzika
+ */
+
 sf::Sprite menu::getTexture()
 {
 	return button_s;

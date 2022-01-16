@@ -68,7 +68,7 @@ void Item::Draw(sf::RenderWindow& window, sf::Font& font)
 
 /** \brief Funkcja zwracaj¹ca 
  *
- * @return body.getPosition() Zwraca pozycjê postaci
+ * @return money
  */
 
 int Item::getMoney()
@@ -76,9 +76,9 @@ int Item::getMoney()
 	return money;
 }
 
-/** \brief Funkcja zwracaj¹ca pozycje postaci
+/** \brief Funkcja zwracaj¹ca cenê przedmiotu
  *
- * @return body.getPosition() Zwraca pozycjê postaci
+ * @return value
  */
 
 int Item::getValue()
