@@ -7,9 +7,9 @@
  * @param position Pozycja startowa naszego naboju
  * @param shot_speed Parametr okreœlaj¹cy prêdkoœæ pocisku 
  * @param damage Parametr okreœlaj¹cy obra¿enia
- * @param shooting_direction
+ * @param shooting_direction Wektor wskazuj¹cy kierunek, w którym pocisk ma przemierzaæ
  * @param texture WskaŸnik na teksture naboju
- * @param rotation
+ * @param rotation K¹t pod jakim obrucona jest tekstura pocisku 
  */
 
 Bullet::Bullet(sf::Vector2f size, sf::Vector2f position, float shot_speed, float damage, sf::Vector2f shotting_direction, sf::Texture *texture, float rotation)
@@ -27,7 +27,7 @@ Bullet::Bullet(sf::Vector2f size, sf::Vector2f position, float shot_speed, float
 
 /** \brief Funkcja przemieszczaj¹ca nabój
  *
- * @param deltaTime
+ * @param deltaTime Zmienna okreœlaj¹ca ile czasu minê³o pomiêdzy klatkami gry (umo¿liwia ona p³ynniejsze dzia³anie gry, poniewa¿ niezale¿nie od wykorzystanie zasobów komputera gra nie powinna przyspieszaæ, ani zwalniaæ)
  */
 
 void Bullet::fire(float deltaTime)

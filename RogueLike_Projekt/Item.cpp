@@ -47,6 +47,7 @@ void Item::giveItem(hero* player)
  *
  * Funkcja, która wyœwietla na podane okno przedmiot, u³atwia nam wyœwietlanie tego przedmiotu
  * @param window WskaŸnik na okno, w którym ma wyœwietliæ przedmiot
+ * @param font WskaŸnik na czcionkê u¿ywan¹ w programie
  */
 
 void Item::Draw(sf::RenderWindow& window, sf::Font& font)
@@ -66,9 +67,9 @@ void Item::Draw(sf::RenderWindow& window, sf::Font& font)
 	}
 }
 
-/** \brief Funkcja zwracaj¹ca 
+/** \brief Funkcja zwracaj¹ca iloœæ monet otrzymywanych z danego przedmiotu
  *
- * @return money
+ * @return money Zwraca iloœæ monet 
  */
 
 int Item::getMoney()
@@ -78,7 +79,7 @@ int Item::getMoney()
 
 /** \brief Funkcja zwracaj¹ca cenê przedmiotu
  *
- * @return value
+ * @return value Zwraca cenê przedmiotu
  */
 
 int Item::getValue()

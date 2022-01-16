@@ -5,7 +5,7 @@
  *
  * Konstruktor zapisuje parametry podane jako parametry do danego obiektu
  * @param texture WskaŸnik na teksture dla postaci
- * @param imageCount
+ * @param imageCount Kontener przechowuj¹cy informacje o iloœci teskstur zawartych w pliku graficznym animacji postaci (dla bohatera 4,2 - 4oznacza 4 ró¿ne tekstury dla animacji, a 2 iloœæ ró¿nych aninmacji)
  * @param switchTime Czas po jakim ma siê zmieniæ tekstura(wykorzystywana w animacji)
  * @param speed Parametr okreœlaj¹cy prêdkoœæ postaci
  * @param fire_rate Parametr okreœlaj¹cy szybkostrzelnoœæ postaci
@@ -145,7 +145,7 @@ void hero::Draw(sf::RenderWindow& window)
  *
  * Funkcja u³atwia wyœwietlanie postaci animowanych w menu, u¿ywana tylko w menu
  * @param window WskaŸnik na okno, w którym ma wyœwietliæ postaæ
- * @param deltaTime
+ * @param deltaTime Zmienna okreœlaj¹ca ile czasu minê³o pomiêdzy klatkami gry (umo¿liwia ona p³ynniejsze dzia³anie gry, poniewa¿ niezale¿nie od wykorzystanie zasobów komputera gra nie powinna przyspieszaæ, ani zwalniaæ)
  */
 
 void hero::DrawMenu(sf::RenderWindow& window, float deltaTime)
@@ -160,7 +160,7 @@ void hero::DrawMenu(sf::RenderWindow& window, float deltaTime)
 /** \brief Funkcja aktualizuj¹ca pozycje postaci
  *
  * G³ówna funkcja dla naszej postaci, w niej obs³ugiwane s¹ klawisze odpowiadaj¹ce za poruszanie siê postaci oraz strzelanie
- * @param deltaTime
+ * @param deltaTime Zmienna okreœlaj¹ca ile czasu minê³o pomiêdzy klatkami gry (umo¿liwia ona p³ynniejsze dzia³anie gry, poniewa¿ niezale¿nie od wykorzystanie zasobów komputera gra nie powinna przyspieszaæ, ani zwalniaæ)
  * @param bulletVec WskaŸnik na vector naboi postaci g³ównej
  */
 

@@ -2,20 +2,8 @@
 
 /** \brief Konstruktor dla menu
  *
- * Konstruktor zapisuje parametry podane jako parametry do danego obiektu
- * @param texture WskaŸnik na teksture dla postaci
- * @param imageCount
- * @param switchTime Czas po jakim ma siê zmieniæ tekstura(wykorzystywana w animacji)
- * @param speed Parametr okreœlaj¹cy prêdkoœæ postaci
- * @param fire_rate Parametr okreœlaj¹cy szybkostrzelnoœæ postaci
- * @param shot_speed Parametr okreœlaj¹cy prêdkoœæ pocisku wystrzelonego przez dan¹ postaæ
- * @param health Parametr okreœlaj¹cy podstawow¹ iloœæ ¿ycia postaci
- * @param damage Parametr okreœlaj¹cy obra¿enia jakie zadaje postaæ
- * @param size Rozmiar pojedynczej tekstury postaci
- * @param position Pozycja na której postaæ ma zostaæ postawiona
- * @param flying Parametr okreœlaj¹cy czy postaæ mo¿e przechodziæ przez przeszkody
- * @param arrow WskaŸnik na teksture dla naboju postaci
- * @param wings_t WskaŸnik na teksture skrzyde³
+ * Konstruktor 
+ * @param font WskaŸnik na czcionkê u¿ywan¹ w programie
  */
 
 menu::menu(sf::Font& font)
@@ -85,10 +73,10 @@ void menu::Draw(sf::RenderWindow& window)
  *
  * Funkcja 
  * @param window WskaŸnik na okno, w którym ma wyœwietliæ przedmiot
- * @param mainMusic WskaŸnik na muzykê
- * @param bossMusic WskaŸnik na muzykê
+ * @param mainMusic WskaŸnik na g³ówn¹ muzykê gry
+ * @param bossMusic WskaŸnik na muzykê odtwarzan¹ podczas walki z Bossem
  */
-
+ 
 bool menu::update(sf::RenderWindow& window, sf::Music& mainMusic, sf::Music& bossMusic)
 {
 	if (click_delay.getElapsedTime().asSeconds() >= 0.2)

@@ -3,7 +3,7 @@
 /** \brief Funkcja aktualizuj¹ca pozycje bossów oraz okreœlaj¹ca ich specjalne umiejêtnoœci
  *
  * G³ówna funkcja dla naszych bossów, w niej s¹ sprecyzowane unikalne zachowania dla ka¿dego bossa
- * @param deltaTime
+ * @param deltaTime Zmienna okreœlaj¹ca ile czasu minê³o pomiêdzy klatkami gry (umo¿liwia ona p³ynniejsze dzia³anie gry, poniewa¿ niezale¿nie od wykorzystanie zasobów komputera gra nie powinna przyspieszaæ, ani zwalniaæ)
  * @param bulletVec WskaŸnik na vector naboi potworów
  * @param monsterVec WskaŸnik na vector potworów
  * @param player Wys³ana ca³a nasza g³ówna postaæ

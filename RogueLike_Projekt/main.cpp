@@ -511,7 +511,7 @@ int main()
 
                 window.clear();
                 window.draw(level->background_s);
-                level->pick_room_layout(player, kolizja, window, bulletVec, monsterBulletVec, monsterVec, objectVec, bossVec, itemVec, skeleton_count);
+                level->load_room_layout(player, kolizja, window, bulletVec, monsterBulletVec, monsterVec, objectVec, bossVec, itemVec, skeleton_count);
 
                 /*Wyswietlanie wszystkiego*/
 

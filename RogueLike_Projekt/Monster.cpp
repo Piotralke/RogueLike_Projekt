@@ -1,14 +1,33 @@
 #include "Monster.h"
-
+/** \brief Funkcja zwracaj¹ca wektor od przeciwnika do gracza
+ *
+ * @param player WskaŸnik na gracza
+ * @return this->GetPosition() - player.GetPosition() zwraca wektor od przeciwnika do gracza
+ */
 sf::Vector2f monster::getDirVec(hero player)
 {
 	return this->GetPosition() - player.GetPosition();
 }
-
+/** \brief Funkcja zwracaj¹ca k¹t pod jakim jest dany wektor
+ *
+ * @param DirVec Wektor od przeciwnika do gracza
+ * @return std::atan2f(DirVec.y, DirVec.x) * 180 / PI Zwraca k¹t pod jakim jest dany wektor. U¿ywane do obracania tekstur pocisków
+ */
 float monster::getDirDeg(sf::Vector2f DirVec)
 {
 	return std::atan2f(DirVec.y, DirVec.x) * 180 / PI ;
 }
+
+/** \brief Funkcja aktualizuj¹ca pozycje przeciwników oraz okreœlaj¹ca ich specjalne umiejêtnoœci
+ *
+ * G³ówna funkcja dla przeciwników, w niej s¹ sprecyzowane unikalne zachowania dla ka¿dego przeciwnika
+ * @param deltaTime Zmienna okreœlaj¹ca ile czasu minê³o pomiêdzy klatkami gry (umo¿liwia ona p³ynniejsze dzia³anie gry, poniewa¿ niezale¿nie od wykorzystanie zasobów komputera gra nie powinna przyspieszaæ, ani zwalniaæ)
+ * @param bulletVec WskaŸnik na vector naboi potworów
+ * @param monsterVec WskaŸnik na vector potworów
+ * @param player Wys³ana ca³a nasza g³ówna postaæ
+ * @param skeleton_count Iloœæ szkieletów na mapie gry
+ * @param dead_skeleton	Iloœæ obalonych szkieletów
+ */
 
 void monster::Update(float deltaTime, std::vector<Bullet>& bulletVec, std::vector<monster>& monsterVec, hero player, int& skeleton_count, int& dead_skeleton)
 {
@@ -194,8 +213,12 @@ void monster::Update(float deltaTime, std::vector<Bullet>& bulletVec, std::vecto
 	animation.Update(row, deltaTime, faceRight);
 	body.setTextureRect(animation.uvRect);
 }
+/** \brief Funkcja wyœwietlaj¹ca przeciwnika
+ *
+ * Funkcja, która wyœwietla na podane okno przeciwnika
+ * @param window WskaŸnik na okno, w którym ma zostaæ wyœwietlony przeciwnik
+ */
 void monster::Draw(sf::RenderWindow& window)
 {
 	window.draw(body);
-
 }
