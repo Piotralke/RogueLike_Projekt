@@ -25,6 +25,7 @@ void room::init_Texture() {
     necromancerTexture.loadFromFile("grafiki/necromancer.png");
     brother1Texture.loadFromFile("grafiki/brother1.png");
     brother2Texture.loadFromFile("grafiki/brother2.png");
+    devilAnimation.loadFromFile("grafiki/devil_animation.png");
 
     arrow_texture.loadFromFile("grafiki/arrow.png");
     fire_ball_texture.loadFromFile("grafiki/fire_ball.png");
@@ -294,7 +295,11 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
                 }
                 else if (znak == 'D')
                 {
-
+                if (!grid[player.x][player.y].visited)
+                {
+                    boss devil(&devilAnimation, sf::Vector2u(6, 3), 0.1f, 80.0f, 0.0f, 0.0f, 100.0f, 15.0f, { 27.0f,41.0f }, { 50.0f + 30 * j,50.0f + 30 * i }, false, false, false, false, true, true, NULL, { 0,0 });
+                    bossVec.push_back(devil);
+                }
                 }
                 else if (znak == 'E')
                 {

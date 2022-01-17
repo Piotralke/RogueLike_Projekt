@@ -10,7 +10,7 @@
  * @param ghostTexture Wskaünik na teksture ducha
  */
 
-void boss::Update(float deltaTime, std::vector<Bullet>& bulletVec, std::vector<monster>& monsterVec, hero player, sf::Texture* ghostTexture)
+void boss::Update(float deltaTime, std::vector<Bullet>& bulletVec, std::vector<monster>& monsterVec, hero player, sf::Texture* ghostTexture, sf::Texture* demonTexture)
 {
 	if (getDirVec(player).x < 0) {
 		faceRight = true;
@@ -39,7 +39,7 @@ void boss::Update(float deltaTime, std::vector<Bullet>& bulletVec, std::vector<m
 		sf::Vector2f moveDirNorm = { moveDir.x / (float)sqrt(pow(moveDir.x, 2) + pow(moveDir.y, 2)), moveDir.y / (float)sqrt(pow(moveDir.x, 2) + pow(moveDir.y, 2)) };
 		body.move({ moveDirNorm.x * speed * deltaTime, moveDirNorm.y * speed * deltaTime });
 	}
-	else if (special_movement)
+	else if (special_movement )
 	{
 		if (abs((float)sqrt(pow(-getDirVec(player).x, 2) + pow(-getDirVec(player).y, 2)) < 150.0f ))
 		{
@@ -67,16 +67,36 @@ void boss::Update(float deltaTime, std::vector<Bullet>& bulletVec, std::vector<m
 	}
 	if (spawn_delay_clock.getElapsedTime().asSeconds() >= 15.0f && spawn == true)
 	{
-		monster ghost(ghostTexture, sf::Vector2u(4, 1), 0.1f, 75.0f, 1.5f, 150.0f, 30.0f, 4.0f, { 12.0f,17.0f }, { body.getPosition().x - 25,body.getPosition().y }, false, true, false, NULL, { 0,0 });
-		monster ghost1(ghostTexture, sf::Vector2u(4, 1), 0.1f, 75.0f, 1.5f, 150.0f, 30.0f, 4.0f, { 12.0f,17.0f }, { body.getPosition().x + 25,body.getPosition().y }, false, true, false, NULL, { 0,0 });
-		monsterVec.push_back(ghost);
-		monsterVec.push_back(ghost1);
-		spawn_delay_clock.restart();
-		animation_clock.restart();
-		row = 1;
+		if (shooting == true)
+		{
+			monster ghost(ghostTexture, sf::Vector2u(4, 1), 0.1f, 75.0f, 1.5f, 150.0f, 30.0f, 4.0f, { 12.0f,17.0f }, { body.getPosition().x - 25,body.getPosition().y }, false, true, false, NULL, { 0,0 });
+			monster ghost1(ghostTexture, sf::Vector2u(4, 1), 0.1f, 75.0f, 1.5f, 150.0f, 30.0f, 4.0f, { 12.0f,17.0f }, { body.getPosition().x + 25,body.getPosition().y }, false, true, false, NULL, { 0,0 });
+			monsterVec.push_back(ghost);
+			monsterVec.push_back(ghost1);
+			spawn_delay_clock.restart();
+			animation_clock.restart();
+			row = 1;
+		}
+		else
+		{
+			monster demon(demonTexture, sf::Vector2u(4, 1), 0.1f, 110.0f, 0.0f, 0.0f, 10.0f, 6.0f, { 14.0f,22.0f }, { body.getPosition().x - 25,body.getPosition().y }, false, false, false, NULL, { 0,0 });
+			monster demon1(demonTexture, sf::Vector2u(4, 1), 0.1f, 110.0f, 0.0f, 0.0f, 10.0f, 6.0f, { 14.0f,22.0f }, { body.getPosition().x + 25,body.getPosition().y }, false, false, false, NULL, { 0,0 });
+			monsterVec.push_back(demon);
+			monsterVec.push_back(demon1);
+			spawn_delay_clock.restart();
+			animation_clock.restart();
+			row = 2;
+		}
 	}
 	if(animation_clock.getElapsedTime().asSeconds()>=0.5f && spawn == true) {
 		row = 0;
+	}
+	if (memSpeed == 80.0f && spawn == true)
+	{
+		if (abs(getDirVec(player).x) <= 5.0f || abs(getDirVec(player).y) <= 5.0f)
+		{
+			speed = 200.0f;
+		}
 	}
 	animation.Update(row, deltaTime, faceRight);
 	body.setTextureRect(animation.uvRect);

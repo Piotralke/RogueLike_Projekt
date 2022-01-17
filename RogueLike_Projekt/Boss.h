@@ -15,5 +15,5 @@ public:
 		float damage, sf::Vector2f size, sf::Vector2f position, bool shooting, bool flying, bool resurection,bool triple_shot, bool spawn, bool special_movement, sf::Texture* arrow, sf::Vector2i bullet_size)
 		:monster(texture, imageCount,switchTime, speed, fire_rate, shot_speed, health,
 			damage, size, position, shooting, flying, resurection, arrow, bullet_size), triple_shot(triple_shot),spawn(spawn), special_movement(special_movement){}
-	void Update(float deltaTime, std::vector<Bullet>& bulletVec, std::vector<monster>& monsterVec, hero player, sf::Texture* ghostTexture);
+	void Update(float deltaTime, std::vector<Bullet>& bulletVec, std::vector<monster>& monsterVec, hero player, sf::Texture* ghostTexture, sf::Texture* demonTexture);
 };

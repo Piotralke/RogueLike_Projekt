@@ -246,7 +246,7 @@ int main()
 
                 for (int i = 0; i < bossVec.size(); i++)
                 {
-                    bossVec.at(i).Update(deltaTime, monsterBulletVec, monsterVec, player, &level->ghostTexture);
+                    bossVec.at(i).Update(deltaTime, monsterBulletVec, monsterVec, player, &level->ghostTexture, &level->demonTexture);
                 }
 
                 for (int i = 0; i < monsterVec.size(); i++)

@@ -35,7 +35,6 @@ protected:
     sf::Texture wizardTexture;
     sf::Texture skeletonTexture;
     sf::Texture zombieTexture;
-    sf::Texture demonTexture;
     sf::Texture spiderTexture;
     sf::Texture elfTexture;
     sf::Texture slimeTexture;
@@ -53,6 +52,7 @@ protected:
     sf::Texture necromancerTexture;
     sf::Texture brother1Texture;
     sf::Texture brother2Texture;
+    sf::Texture devilAnimation;
     //aroows textures
     sf::Texture arrow_texture;
     sf::Texture fire_ball_texture;
@@ -79,6 +79,7 @@ protected:
     sf::Texture big_healPotTexture;
 public:
     sf::Texture ghostTexture;
+    sf::Texture demonTexture;
     sf::Texture background_t;
     sf::Sprite background_s;
     sf::RectangleShape minimap_room;
