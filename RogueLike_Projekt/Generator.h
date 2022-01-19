@@ -14,7 +14,7 @@ protected:
     std::queue <sf::Vector2i> RoomQueue;
     std::vector <sf::Vector2i> DeadEnd;
     bool placedSpecial = false;
-
+    
 public:
     generate_map();
     std::string random_layout(int i, int j);

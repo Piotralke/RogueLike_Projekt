@@ -1,6 +1,7 @@
 #pragma once
 #include "Animation.h"
 #include "Bullet.h"
+#include "Collision.h"
 #include "SFML/Graphics.hpp"
 
 class hero

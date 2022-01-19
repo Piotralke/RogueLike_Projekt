@@ -1,4 +1,5 @@
 #pragma once
+#include "Collision.h"
 #include <SFML/Graphics.hpp>
 
 class Object {

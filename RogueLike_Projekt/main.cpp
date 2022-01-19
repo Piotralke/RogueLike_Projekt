@@ -27,14 +27,14 @@ int main()
     sf::RectangleShape room_collider_left;
     sf::RectangleShape room_collider_right;
     sf::RectangleShape room_collider_down;
-    room_collider_top.setSize({642,29});
+    room_collider_top.setSize({ 642,29 });
     room_collider_top.setOrigin(room_collider_top.getSize() / 2.0f);
     room_collider_top.setPosition(350, 19);
     roomVec.push_back(room_collider_top);
 
     room_collider_left.setSize({ 29,400 });
     room_collider_left.setOrigin(room_collider_left.getSize() / 2.0f);
-    room_collider_left.setPosition(19, 200); 
+    room_collider_left.setPosition(19, 200);
     roomVec.push_back(room_collider_left);
 
     room_collider_right.setSize({ 29,400 });
@@ -47,6 +47,11 @@ int main()
     room_collider_down.setPosition(350, 381);
     roomVec.push_back(room_collider_down);
 
+    sf::RectangleShape kamien;
+    kamien.setSize({ 2,2 });
+    kamien.setOrigin(kamien.getSize() / 2.0f);
+    kamien.setPosition(34,366);
+    roomVec.push_back(kamien);
 
     int levels = 1;
     bool created = false;
@@ -111,13 +116,13 @@ int main()
     sf::Sprite hud_sprite;
     hud_texture.loadFromFile("grafiki/hud.png");
     hud_sprite.setTexture(hud_texture);
-    hud_sprite.setPosition({700.0f,0.0f});
+    hud_sprite.setPosition({ 700.0f,0.0f });
     sf::Texture player_arrow;
     player_arrow.loadFromFile("grafiki/arrow.png");
     sf::Texture playerTexture;
-    playerTexture.loadFromFile("grafiki/hero_animation.png");    
+    playerTexture.loadFromFile("grafiki/hero_animation.png");
     sf::Texture playerMenuTexture;
-    playerMenuTexture.loadFromFile("grafiki/player_menu.png");    
+    playerMenuTexture.loadFromFile("grafiki/player_menu.png");
     sf::Texture playerMenuTexture2;
     playerMenuTexture2.loadFromFile("grafiki/player_menu2.png");
     sf::Texture coinTexture;
@@ -131,7 +136,7 @@ int main()
 
     sf::Text lvl_text;
     std::string lvl_string;
-    
+
     sf::Image icon;
     icon.loadFromFile("grafiki/icon.png");
     sf::RenderWindow window(sf::VideoMode(800, 400), "RogueLike!");
@@ -140,12 +145,12 @@ int main()
 
 
     generate_map* level = new generate_map;
-    hero player(&playerTexture, sf::Vector2u(4, 2), 0.1f, 100.0f, 1.0f, 200.0f, 100.0f, 8.0f, { 16.0f,20.0f }, {350.0f,200.0f},false,&player_arrow,&wings_t);
-    hero playerMenu(&playerMenuTexture, sf::Vector2u(4, 1), 0.1f, 0, 0, 0, 0, 0, { 96.0f,120.0f }, {100.0f,300.0f},false,NULL,NULL);
-   // hero playerMenu2(&playerMenuTexture2, sf::Vector2u(4, 1), 0.1f, 0, 0, 0, 0, 0, { 96.0f,120.0f }, {700.0f,300.0f},false,NULL,NULL);
-    hero playerMenu2(&playerMenuTexture, sf::Vector2u(4, 1), 0.1f, 0, 0, 0, 0, 0, { 96.0f,120.0f }, {700.0f,300.0f},true,NULL,NULL);
+    hero player(&playerTexture, sf::Vector2u(4, 2), 0.1f, 100.0f, 1.0f, 200.0f, 100.0f, 80.0f, { 16.0f,20.0f }, { 350.0f,200.0f }, false, &player_arrow, &wings_t);
+    hero playerMenu(&playerMenuTexture, sf::Vector2u(4, 1), 0.1f, 0, 0, 0, 0, 0, { 96.0f,120.0f }, { 100.0f,300.0f }, false, NULL, NULL);
+    // hero playerMenu2(&playerMenuTexture2, sf::Vector2u(4, 1), 0.1f, 0, 0, 0, 0, 0, { 96.0f,120.0f }, {700.0f,300.0f},false,NULL,NULL);
+    hero playerMenu2(&playerMenuTexture, sf::Vector2u(4, 1), 0.1f, 0, 0, 0, 0, 0, { 96.0f,120.0f }, { 700.0f,300.0f }, true, NULL, NULL);
     menu menu(font);
-    bool working=true;
+    bool working = true;
     bool new_game = true;
     level->init_Texture();
 
@@ -180,7 +185,7 @@ int main()
             window.display();
             if (!(working) && new_game)
             {
-                hero player2(&playerTexture, sf::Vector2u(4, 2), 0.1f, 100.0f, 1.0f, 200.0f, 100.0f, 8.0f, { 16.0f,20.0f }, { 350.0f,200.0f }, false, &player_arrow, &wings_t);
+                hero player2(&playerTexture, sf::Vector2u(4, 2), 0.1f, 100.0f, 1.0f, 200.0f, 100.0f, 80.0f, { 16.0f,20.0f }, { 350.0f,200.0f }, false, &player_arrow, &wings_t);
                 player = player2;
                 levels = 1;
                 level->init_grid();
@@ -246,7 +251,7 @@ int main()
 
                 for (int i = 0; i < bossVec.size(); i++)
                 {
-                    bossVec.at(i).Update(deltaTime, monsterBulletVec, monsterVec, player, &level->ghostTexture, &level->demonTexture);
+                    bossVec.at(i).Update(deltaTime, monsterBulletVec, monsterVec, player, &level->ghostTexture, &level->demonTexture,objectVec,roomVec);
                 }
 
                 for (int i = 0; i < monsterVec.size(); i++)
@@ -581,7 +586,7 @@ int main()
         }
     }
 
-        
+
 
     return 0;
 }

@@ -11,17 +11,7 @@
 
 bool Collision::check_Collision(sf::RectangleShape& ob1, sf::RectangleShape& ob2)
 {
-//	
-//	if (ob1.getGlobalBounds().intersects(ob2.getGlobalBounds()))
-//	{
-//		ob1.setPosition(tmpPos);
-//		return true;
-//	}
-//	else {
-//		tmpPos = ob1.getPosition();
-//		return false;
-//	}
-//		
+
 
 sf::RectangleShape* poly1 = &ob1;
 sf::RectangleShape* poly2 = &ob2;
