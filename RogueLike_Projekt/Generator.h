@@ -4,16 +4,20 @@
 #include <queue>
 #include <stack>
 #include <iostream>
+/**
+* Klasa odpowiedzialna za generacjê poziomu
+*/
+
 class generate_map : public room
 {
 protected:
 
-    int rooms_counter = 0;
-    int max_rooms;
-    int min_rooms;
-    std::queue <sf::Vector2i> RoomQueue;
-    std::vector <sf::Vector2i> DeadEnd;
-    bool placedSpecial = false;
+    int rooms_counter = 0; /**<Zmienna okreœlaj¹ca ile pokojów zosta³o wygenerowane*/
+    int max_rooms;  /**<Zmienna okreœlaj¹ca maksymaln¹ liczbê pokojów*/
+    int min_rooms;  /**<Zmienna okreœlaj¹ca minimaln¹ liczbê pokojów*/
+    std::queue <sf::Vector2i> RoomQueue;    /**<Kolejka przechowuj¹ca pokoje*/
+    std::vector <sf::Vector2i> DeadEnd; /**<Wektor przechowuj¹cy pokoje z jednymi drzwiami (Pokoje - œlepe zau³ki)*/
+    bool placedSpecial = false; /**<Zmienna okreœlaj¹ca, czy zosta³y umiejscowione specjalne pokoje*/
     
 public:
     generate_map();
