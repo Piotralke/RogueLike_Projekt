@@ -16,14 +16,18 @@ class room
 {
 protected:
     /**
-    * Struktura zawieraj¹ca parametry pokoju
+    * @brief Struktura zawieraj¹ca parametry pokoju
+    * @param room_properties::exist Zmienna okreœlaj¹ca, czy w danym polu macierzy istnieje pokój
+    * @param room_properties::type Typ pokoju
+    * @param room_properties::visited Zmienna okreœlaj¹ca, czy pokój zosta³ ju¿ odwiedzony
+    * @param room_properties::sciezka Zmienna okreœlaj¹ca œcie¿kê do pliku tekstowego zawieraj¹cego uk³ad danego pokoju
     */
     struct room_properties
     {
-        int exist; /**<Zmienna okreœlaj¹ca, czy w danym polu macierzy istnieje pokój*/
-        int type; /**<Typ pokoju*/
-        bool visited; /**<Zmienna okreœlaj¹ca, czy pokój zosta³ ju¿ odwiedzony*/
-        std::string sciezka; /**<Zmienna okreœlaj¹ca œcie¿kê do pliku tekstowego zawieraj¹cego uk³ad danego pokoju*/
+        int exist; 
+        int type; 
+        bool visited; 
+        std::string sciezka; 
     };
     room_properties grid[SIZE][SIZE]; /**<Macierz, na której generowane s¹ pokoje*/
 
