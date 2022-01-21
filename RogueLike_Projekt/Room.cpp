@@ -1,7 +1,7 @@
-#include "Room.h"
-/** \brief Funkcja inicjujπca tekstury
+Ôªø#include "Room.h"
+/** \brief  Funkcja inicjujƒÖca tekstury
  *
- * Funkcja inicjuje tekstury przeciwnikÛw, obiektÛw, przedmiotÛw itp. ktÛre bÍdπ umieszczane na mapie
+ * Funkcja inicjuje tekstury przeciwnik√≥w, obiekt√≥w, przedmiot√≥w itp. kt√≥re bƒôdƒÖ umieszczane na mapie
  */
 void room::init_Texture() {
     wizardTexture.loadFromFile("grafiki/wizard_animation.png");
@@ -105,12 +105,12 @@ void room::init_Texture() {
     valueItems.push_back(ring2v);
 
 }
-/** \brief Funkcja sprawdzajπca uk≥ad drzwi danego pokoju
+/** \brief  Funkcja sprawdzajƒÖca uk≈Çad drzwi danego pokoju
  *
- * Funkcja sprawdzajπca uk≥ad drzwi danego pokoju
+ * Funkcja sprawdzajƒÖca uk≈Çad drzwi danego pokoju
  * @param i Parametr i pokoju
  * @param j Parametr j pokoju
- * @return room_doors Liczba zapisana w postaci binarnej, w ktÛrej kaødy bit odpowiada danym drzwiom w pokoju
+ * @return room_doors Liczba zapisana w postaci binarnej, w kt√≥rej ka≈ºdy bit odpowiada danym drzwiom w pokoju
  */
 int room::check_doors(int i, int j)
 {
@@ -126,27 +126,28 @@ int room::check_doors(int i, int j)
     return room_doors;
 
 }
-/** \brief Funkcja wyúwietlajπca drzwi
+/** \brief  Funkcja wy≈õwietlajƒÖca drzwi
  *
- * Funkcja, ktÛra wyúwietla na podane okno drzwi
- * @param window Wskaünik na okno, w ktÛrym ma zostaÊ wyúwietlony obiekt
- * @param door Wskaünik na drzwi
+ * Funkcja, kt√≥ra wy≈õwietla na podane okno drzwi
+ * @param window Wska≈∫nik na okno, w kt√≥rym ma zostaƒá wy≈õwietlony obiekt
+ * @param door Wska≈∫nik na drzwi
  */
 void room::Draw(sf::RenderWindow& window, sf::RectangleShape& door)
 {
     window.draw(door);
 }
-/** \brief Funkcja odczytujπca uk≥ad pokoju z pliku
+/** \brief  Funkcja odczytujƒÖca uk≈Çad pokoju z pliku
  *
- * Funkcja, ktÛra odczytuje plik, a nastÍpnie ustawia odpowiednie przedmioty oraz przeciwnikÛw na mapie
- * @param player Wskaünik na gracza
- * @param monsterVEC Wskaünik na vector potworÛw
- * @param objectVEC Wskaünik na vector obiektÛw
- * @param bossVec Wskaünik na vector bossÛw
- * @param itemVec Wskaünik na vector przedmiotÛw
- * @param skeleton_count IloúÊ szkieletÛw na mapie gry
+ * Funkcja, kt√≥ra odczytuje plik, a nastƒôpnie ustawia odpowiednie przedmioty oraz przeciwnik√≥w na mapie
+ * @param player Wska≈∫nik na gracza
+ * @param monsterVEC Wska≈∫nik na vector potwor√≥w
+ * @param objectVEC Wska≈∫nik na vector obiekt√≥w
+ * @param bossVec Wska≈∫nik na vector boss√≥w
+ * @param itemVec Wska≈∫nik na vector przedmiot√≥w
+ * @param skeleton_count Ilo≈õƒá szkielet√≥w na mapie gry
+ * @param level Poziom na kt√≥rym aktualnie znajduje siƒô gracz
  */
-void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::vector<Object>& objectVEC, std::vector<boss>& bossVec, std::vector<Item>& itemVec, int& skeleton_count)
+void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::vector<Object>& objectVEC, std::vector<boss>& bossVec, std::vector<Item>& itemVec, int& skeleton_count, int level)
 {
     std::ifstream read(grid[player.x][player.y].sciezka);
     
@@ -301,10 +302,6 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
                     bossVec.push_back(devil);
                 }
                 }
-                else if (znak == 'E')
-                {
-
-                }
                 else if (znak == 'I') //item
                 {
                 if (!grid[player.x][player.y].visited)
@@ -363,22 +360,23 @@ void room::read_from_file(hero& player, std::vector<monster>& monsterVEC, std::v
         }
     }
 }
-/** \brief Funkcja Ustawiajaca odpowiednio drzwi w pokoju
+/** \brief  Funkcja Ustawiajaca odpowiednio drzwi w pokoju
  *
  * Funkcja dobiera odpowiednio teksture drzwi (zamkniete badz otwarte) i sprawdza kolizje gracza z nimi
- * @param player Wskaünik na gracza
- * @param kolizja Klasa odpowiadajπca za wykrywanie kolizji
- * @param window Wskaünik na okno, w ktÛrym majπ byÊ aktualizowane pozycje drzwi
- * @param heroB Wskaünik na vector pociskÛw gracza
- * @param monsterB Wskaünik na vector pociskÛw przeciwnikÛw
- * @param monsterVEC Wskaünik na vector przeciwnikÛw
- * @param objectVEC Wskaünik na vector obiektÛw
- * @param bossVec Wskaünik na vector bossÛw
- * @param itemVec Wskaünik na vector przedmiotÛw
- * @param skeleton_count IloúÊ szkieletÛw na mapie gry
+ * @param player Wska≈∫nik na gracza
+ * @param kolizja Klasa odpowiadajƒÖca za wykrywanie kolizji
+ * @param window Wska≈∫nik na okno, w kt√≥rym majƒÖ byƒá aktualizowane pozycje drzwi
+ * @param heroB Wska≈∫nik na vector pocisk√≥w gracza
+ * @param monsterB Wska≈∫nik na vector pocisk√≥w przeciwnik√≥w
+ * @param monsterVEC Wska≈∫nik na vector przeciwnik√≥w
+ * @param objectVEC Wska≈∫nik na vector obiekt√≥w
+ * @param bossVec Wska≈∫nik na vector boss√≥w
+ * @param itemVec Wska≈∫nik na vector przedmiot√≥w
+ * @param skeleton_count Ilo≈õƒá szkielet√≥w na mapie gry
+ * @param level Poziom na kt√≥rym aktualnie znajduje siƒô gracz
  */
 void room::load_room_layout(hero& player, Collision kolizja, sf::RenderWindow& window, std::vector<Bullet>& heroB, std::vector<Bullet>& monsterB,
-    std::vector<monster>& monsterVEC, std::vector<Object>& objectVEC, std::vector<boss>& bossVec, std::vector<Item>& itemVec, int& skeleton_count)
+    std::vector<monster>& monsterVEC, std::vector<Object>& objectVEC, std::vector<boss>& bossVec, std::vector<Item>& itemVec, int& skeleton_count, int level)
 {
     if (!monsterVEC.empty() || !bossVec.empty())
     {
@@ -441,7 +439,7 @@ void room::load_room_layout(hero& player, Collision kolizja, sf::RenderWindow& w
             itemVec = std::vector<Item>();
             player.y--;
             player.body.setPosition({ 655, player.body.getPosition().y });
-            read_from_file(player,monsterVEC,objectVEC,bossVec, itemVec, skeleton_count);
+            read_from_file(player,monsterVEC,objectVEC,bossVec, itemVec, skeleton_count, level);
             if (grid[player.x][player.y].type == 3)
             {
                 itemVec = shopItems;
@@ -500,7 +498,7 @@ void room::load_room_layout(hero& player, Collision kolizja, sf::RenderWindow& w
             itemVec = std::vector<Item>();
             player.y++;
             player.body.setPosition({ 45, player.body.getPosition().y });
-            read_from_file(player, monsterVEC, objectVEC,bossVec, itemVec, skeleton_count);
+            read_from_file(player, monsterVEC, objectVEC,bossVec, itemVec, skeleton_count, level);
             if (grid[player.x][player.y].type == 3)
             {
                 itemVec = shopItems;
@@ -559,7 +557,7 @@ void room::load_room_layout(hero& player, Collision kolizja, sf::RenderWindow& w
             player.x++;
             player.body.setPosition({ player.body.getPosition().x, 45 });
             
-            read_from_file(player, monsterVEC, objectVEC, bossVec, itemVec, skeleton_count);
+            read_from_file(player, monsterVEC, objectVEC, bossVec, itemVec, skeleton_count, level);
             if (grid[player.x][player.y].type == 3)
             {
                 itemVec = shopItems;
@@ -620,7 +618,7 @@ void room::load_room_layout(hero& player, Collision kolizja, sf::RenderWindow& w
             player.x--;
             player.body.setPosition({ player.body.getPosition().x, 355 });
             
-            read_from_file(player, monsterVEC, objectVEC, bossVec, itemVec,  skeleton_count);
+            read_from_file(player, monsterVEC, objectVEC, bossVec, itemVec,  skeleton_count, level);
             if (grid[player.x][player.y].type == 3)
             {
                 itemVec = shopItems;
@@ -639,10 +637,10 @@ void room::load_room_layout(hero& player, Collision kolizja, sf::RenderWindow& w
         }
     }
 }
-/** \brief Funkcja zwracajπca typ pokoju
+/** \brief  Funkcja zwracajƒÖca typ pokoju
  *
- * Funkcja zwraca typ pokoju, w ktÛrym znajduje siÍ gracz
- * @param player Wskaünik na gracza
+ * Funkcja zwraca typ pokoju, w kt√≥rym znajduje siƒô gracz
+ * @param player Wska≈∫nik na gracza
  */
 int room::getRoomType(hero& player)
 {

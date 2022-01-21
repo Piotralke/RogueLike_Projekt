@@ -1,6 +1,6 @@
-#include "Generator.h"
+ï»¿#include "Generator.h"
 
-/** \brief Konstruktor dla generatora mapy
+/** \brief  Konstruktor dla generatora mapy
  *
  */
 
@@ -16,11 +16,11 @@ generate_map::generate_map()
     hero_m.setSize({ 6.0f,4.0f });
 }
 
-/** \brief Funkcja zwracaj¹ca wylosowan¹ œcie¿kê do uk³adu dla danego pokoju
+/** \brief  Funkcja zwracajÄ…ca wylosowanÄ… Å›cieÅ¼kÄ™ do ukÅ‚adu dla danego pokoju
  *
  * @param i Parametr i pokoju
  * @param j Parametr j pokoju
- * @return path zwracana wylosowana œcie¿ka
+ * @return path zwracana wylosowana Å›cieÅ¼ka
  */
 
 std::string generate_map::random_layout(int i, int j)
@@ -123,7 +123,7 @@ std::string generate_map::random_layout(int i, int j)
     return path;
 }
 
-/** \brief Funkcja wype³niaj¹ca zerami nasz¹ strukturê poziomu
+/** \brief  Funkcja wypeÅ‚niajÄ…ca zerami naszÄ… strukturÄ™ poziomu
  *
  */
 
@@ -140,9 +140,9 @@ void generate_map::init_grid()
            
 }
 
-/** \brief Funkcja ustalaj¹ca maskymaln¹ i minimaln¹ iloœæ pokojów na danym poziomie
+/** \brief  Funkcja ustalajÄ…ca maskymalnÄ… i minimalnÄ… iloÅ›Ä‡ pokojÃ³w na danym poziomie
  *
- * @param level Numer poziomu na którym siê aktualnie znajdujemy
+ * @param level Numer poziomu na ktÃ³rym siÄ™ aktualnie znajdujemy
  */
 
 void generate_map::max_level_counter(int level)
@@ -151,11 +151,11 @@ void generate_map::max_level_counter(int level)
     max_rooms = min_rooms + 6;
 }
 
-/** \brief Funkcja zliczaj¹ca iloœæ s¹siadów danego pokoju
+/** \brief  Funkcja zliczajÄ…ca iloÅ›Ä‡ sÄ…siadÃ³w danego pokoju
  *
  * @param i Parametr i pokoju
  * @param j Parametr j pokoju
- * @return grid[i - 1][j].exist + grid[i][j - 1].exist + grid[i + 1][j].exist + grid[i][j + 1].exist zwraca iloœæ s¹siadów danego pokoju
+ * @return grid[i - 1][j].exist + grid[i][j - 1].exist + grid[i + 1][j].exist + grid[i][j + 1].exist zwraca iloÅ›Ä‡ sÄ…siadÃ³w danego pokoju
  */
 
 int generate_map::neighbour_count(int i, int j)
@@ -163,12 +163,12 @@ int generate_map::neighbour_count(int i, int j)
     return grid[i - 1][j].exist + grid[i][j - 1].exist + grid[i + 1][j].exist + grid[i][j + 1].exist;
 }
 
-/** \brief Funkcja tworz¹ca pokój
+/** \brief  Funkcja tworzÄ…ca pokÃ³j
  *
  * @param i Parametr i pokoju
  * @param j Parametr j pokoju
- * @return false je¿eli nie stworzy³ pokój
- * @return true je¿eli stworzy³ pokój
+ * @return false jeÅ¼eli nie stworzyÅ‚ pokÃ³j
+ * @return true jeÅ¼eli stworzyÅ‚ pokÃ³j
  */
 
 bool generate_map::visit(int i, int j)
@@ -199,7 +199,7 @@ bool generate_map::visit(int i, int j)
     return true;
 }
 
-/** \brief Funkcja wypisuj¹ca mape poziomu w konsoli
+/** \brief  Funkcja wypisujÄ…ca mape poziomu w konsoli
  *
  */
 
@@ -215,10 +215,10 @@ void generate_map::wypiszkons()
     }
 }
 
-/** \brief Funkcja wypisuj¹ca mape poziomu w HUDzie gry
+/** \brief  Funkcja wypisujÄ…ca mape poziomu w HUDzie gry
 * 
- * @param window WskaŸnik na okno, w którym ma wypisaæ statystyki
- * @param player WskaŸnik na postaæ g³ówn¹
+ * @param window WskaÅºnik na okno, w ktÃ³rym ma wypisaÄ‡ statystyki
+ * @param player WskaÅºnik na postaÄ‡ gÅ‚Ã³wnÄ…
  */
 
 void generate_map::wypisz(sf::RenderWindow& window, hero& player)
@@ -239,9 +239,9 @@ void generate_map::wypisz(sf::RenderWindow& window, hero& player)
     window.draw(hero_m);
 }
 
-/** \brief G³ówna funkcja generuj¹ca rozk³ad pokojów w poziomu
+/** \brief  GÅ‚Ã³wna funkcja generujÄ…ca rozkÅ‚ad pokojÃ³w w poziomu
 * 
- * Funkcja, która wywo³uje wszystkie wczeœniej zdefiniowane funkcje z tej klasy do wygenerowania nowego rozk³adu poziomu
+ * Funkcja, ktÃ³ra wywoÅ‚uje wszystkie wczeÅ›niej zdefiniowane funkcje z tej klasy do wygenerowania nowego rozkÅ‚adu poziomu
  */
 
 void generate_map::generate_layout()

@@ -1,16 +1,16 @@
-#pragma once
+ï»¿#pragma once
 #include <SFML/Graphics.hpp>
 /**
-* Klasa odpowiedzialna za odtwarzanie animacji przeciwników, gracza itp 
+* \brief Klasa odpowiedzialna za odtwarzanie animacji przeciwnikÃ³w, gracza itp 
 */
 class Animation {
 private:
-    sf::Vector2u imageCount; /**<Iloœæ obraznków w jednej animacji*/
-    sf::Vector2u currentImage;  /**<Aktualny obrazek, na którym jest animacja*/
-    float totalTime;    /**<£¹czny czas wyœwietlania jednej animacji*/
-    float switchTime;   /**<Czas co jaki zmieniany jest obrazek*/
+    sf::Vector2u imageCount; /**<\brief IloÅ›Ä‡ obraznkÃ³w w jednej animacji*/
+    sf::Vector2u currentImage;  /**<\brief Aktualny obrazek, na ktÃ³rym jest animacja*/
+    float totalTime;    /**<\brief Â£Ä…czny czas wyÅ›wietlania jednej animacji*/
+    float switchTime;   /**<\brief Czas co jaki zmieniany jest obrazek*/
 public:
-    sf::IntRect uvRect; /**<Obszar, ktory jest wielkoœci jednego obrazka z ca³ego pliku zawieraj¹cego animacjê*/
+    sf::IntRect uvRect; /**<\brief Obszar, ktory jest wielkoÅ›ci jednego obrazka z caÅ‚ego pliku zawierajÄ…cego animacjÄ™*/
     Animation(sf::Texture* texture, sf::Vector2u imageCount, float switchTime);
         void Update(int row, float deltaTime, bool faceRight);
 };

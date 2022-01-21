@@ -1,31 +1,31 @@
-#pragma once
+ï»¿#pragma once
 #include "Animation.h"
 #include "Bullet.h"
 #include "Collision.h"
 #include "SFML/Graphics.hpp"
 /**
-* Klasa reprezentuj¹ca gracza
+* \brief Klasa reprezentujÄ…ca gracza
 */
 class hero
 {
 protected:
-    float speed;    /**<Prêdkoœæ poruszania siê*/
-    float maxHealth; /**<Maksymalne ¿ycie*/
-    float health;   /**<Aktualne ¿ycie*/
-    float damage; /**<Obra¿enia*/
-    int money=0; /**<Iloœæ monet*/ 
-    bool faceRight; /**<Zmienna okreœlaj¹ce, w którym kierunku patrzy siê gracz*/
-    unsigned int row=0; /**<Zmienna okreœlaj¹ca, który wiersz animacji ma byæ wykonywany*/
-    float fire_rate; /**<Odstêp pomiêdzy mo¿liwoœæi¹ strza³u*/
-    float shot_speed; /**<Szybkoœæ pocisków*/
-    sf::Clock fire_delay_clock; /**<Zegar odmie¿aj¹cy czas pomiêdzy wystrza³em pocisku*/
-    bool flying;    /**<Zmienna okreœlaj¹ca mo¿liwoœæ latania*/
-    sf::Texture* arrow; /**<Tekstura pocisku*/
-    sf::RectangleShape wings; /**<Prostok¹t pobieraj¹cy teksturê skrzyde³, która pojawia siê, gdy gracz mo¿e lataæ*/
+    float speed;    /**<\brief PrÄ™dkoÅ›Ä‡ poruszania siÄ™*/
+    float maxHealth; /**<\brief Maksymalne Å¼ycie*/
+    float health;   /**<\brief Aktualne Å¼ycie*/
+    float damage; /**<\brief ObraÅ¼enia*/
+    int money=0; /**<\brief IloÅ›Ä‡ monet*/ 
+    bool faceRight; /**<\brief Zmienna okreÅ›lajÄ…ce, w ktÃ³rym kierunku patrzy siÄ™ gracz*/
+    unsigned int row=0; /**<\brief Zmienna okreÅ›lajÄ…ca, ktÃ³ry wiersz animacji ma byÄ‡ wykonywany*/
+    float fire_rate; /**<\brief OdstÄ™p pomiÄ™dzy moÅ¼liwoÅ›Ä‡iÄ… strzaÅ‚u*/
+    float shot_speed; /**<\brief SzybkoÅ›Ä‡ pociskÃ³w*/
+    sf::Clock fire_delay_clock; /**<\brief Zegar odmieÅ¼ajÄ…cy czas pomiÄ™dzy wystrzaÅ‚em pocisku*/
+    bool flying;    /**<\brief Zmienna okreÅ›lajÄ…ca moÅ¼liwoÅ›Ä‡ latania*/
+    sf::Texture* arrow; /**<\brief Tekstura pocisku*/
+    sf::RectangleShape wings; /**<\brief ProstokÄ…t pobierajÄ…cy teksturÄ™ skrzydeÅ‚, ktÃ³ra pojawia siÄ™, gdy gracz moÅ¼e lataÄ‡*/
 public:
-    int x = 5, y = 5;   /**<Pozycja pokoju, w którym znajduje siê gracz*/
-    sf::RectangleShape body; /**<Prostok¹t odpowiedzialny za wykrywanie kolizji gracza oraz wyœwietlanie jego tekstury*/
-    Animation animation;    /**<Animacja postaci*/
+    int x = 5, y = 5;   /**<\brief Pozycja pokoju, w ktÃ³rym znajduje siÄ™ gracz*/
+    sf::RectangleShape body; /**<\brief ProstokÄ…t odpowiedzialny za wykrywanie kolizji gracza oraz wyÅ›wietlanie jego tekstury*/
+    Animation animation;    /**<\brief Animacja postaci*/
     hero(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed, float fire_rate, float shot_speed, float health,
         float damage, sf::Vector2f size, sf::Vector2f position, bool flying, sf::Texture* arrow, sf::Texture* wings_t=NULL);
     void DrawStats(sf::RenderWindow& window, sf::Font& font);

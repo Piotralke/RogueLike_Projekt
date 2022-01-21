@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>RogueLike Game: Plik źródłowy C:/Users/Radouan Battoui/source/repos/Piotralke/RogueLike_Projekt/RogueLike_Projekt/Hero.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="icon.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">RogueLike Game<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Gra na projekt z PJC2</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Szukaj','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('_hero_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Hero.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_hero_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="_animation_8h.html">Animation.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="_bullet_8h.html">Bullet.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="_collision_8h.html">Collision.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;SFML/Graphics.hpp&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="classhero.html">    9</a></span><span class="keyword">class </span><a class="code hl_class" href="classhero.html">hero</a></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classhero.html#a411f38ef99d0048854e6fa92c0efbcf3">   12</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="classhero.html#a411f38ef99d0048854e6fa92c0efbcf3">speed</a>;    </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="classhero.html#a8729ef5a2fce0c91759c21ae48d14ade">   13</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="classhero.html#a8729ef5a2fce0c91759c21ae48d14ade">maxHealth</a>; </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="classhero.html#a4b3c3c501cb1506fe5ef7580044238f8">   14</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="classhero.html#a4b3c3c501cb1506fe5ef7580044238f8">health</a>;   </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classhero.html#a7094ef3563753ea8f13bc34a2da6adfb">   15</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="classhero.html#a7094ef3563753ea8f13bc34a2da6adfb">damage</a>; </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classhero.html#ab036d8e694b585af6c2b3e91e633ed3e">   16</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="classhero.html#ab036d8e694b585af6c2b3e91e633ed3e">money</a>=0; </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="classhero.html#a259f31988f0b966dac02ed9c9934a111">   17</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="classhero.html#a259f31988f0b966dac02ed9c9934a111">faceRight</a>; </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classhero.html#ad1cd1051bb00ea423c6249281de7e6b7">   18</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="classhero.html#ad1cd1051bb00ea423c6249281de7e6b7">row</a>=0; </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classhero.html#a92cc4f33815208a1a8157e9cf5181e49">   19</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="classhero.html#a92cc4f33815208a1a8157e9cf5181e49">fire_rate</a>; </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classhero.html#aeb6daa9af19c67fba829162d60c32214">   20</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="classhero.html#aeb6daa9af19c67fba829162d60c32214">shot_speed</a>; </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classhero.html#a31d76fc92c93125ea75241da537b3aca">   21</a></span>    sf::Clock <a class="code hl_variable" href="classhero.html#a31d76fc92c93125ea75241da537b3aca">fire_delay_clock</a>; </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classhero.html#a653f4d958a60a0a78e4a31adde064014">   22</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="classhero.html#a653f4d958a60a0a78e4a31adde064014">flying</a>;    </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classhero.html#a4df4fde8402385b88cd35b03aa676730">   23</a></span>    sf::Texture* <a class="code hl_variable" href="classhero.html#a4df4fde8402385b88cd35b03aa676730">arrow</a>; </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classhero.html#af27c43fd42231f7cc16d568d218d2ceb">   24</a></span>    sf::RectangleShape <a class="code hl_variable" href="classhero.html#af27c43fd42231f7cc16d568d218d2ceb">wings</a>; </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classhero.html#a0ffdd4635502f2d7ae2bd8dccd3f41dc">   26</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="classhero.html#a0ffdd4635502f2d7ae2bd8dccd3f41dc">x</a> = 5, <a class="code hl_variable" href="classhero.html#a2d7ad24533be9a327c99dce6473b9352">y</a> = 5;   </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classhero.html#a6bd01104af1be9944221dec33d180b35">   27</a></span>    sf::RectangleShape <a class="code hl_variable" href="classhero.html#a6bd01104af1be9944221dec33d180b35">body</a>; </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classhero.html#af97bcb6bd8217eb21417bda1a19c3f8e">   28</a></span>    <a class="code hl_class" href="class_animation.html">Animation</a> <a class="code hl_variable" href="classhero.html#af97bcb6bd8217eb21417bda1a19c3f8e">animation</a>;    </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_function" href="classhero.html#ab110d7070b02e44feb1523167ded66e3">hero</a>(sf::Texture* texture, sf::Vector2u imageCount, <span class="keywordtype">float</span> switchTime, <span class="keywordtype">float</span> <a class="code hl_variable" href="classhero.html#a411f38ef99d0048854e6fa92c0efbcf3">speed</a>, <span class="keywordtype">float</span> <a class="code hl_variable" href="classhero.html#a92cc4f33815208a1a8157e9cf5181e49">fire_rate</a>, <span class="keywordtype">float</span> <a class="code hl_variable" href="classhero.html#aeb6daa9af19c67fba829162d60c32214">shot_speed</a>, <span class="keywordtype">float</span> <a class="code hl_variable" href="classhero.html#a4b3c3c501cb1506fe5ef7580044238f8">health</a>,</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordtype">float</span> <a class="code hl_variable" href="classhero.html#a7094ef3563753ea8f13bc34a2da6adfb">damage</a>, sf::Vector2f size, sf::Vector2f position, <span class="keywordtype">bool</span> <a class="code hl_variable" href="classhero.html#a653f4d958a60a0a78e4a31adde064014">flying</a>, sf::Texture* <a class="code hl_variable" href="classhero.html#a4df4fde8402385b88cd35b03aa676730">arrow</a>, sf::Texture* wings_t=NULL);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classhero.html#af4109e06cfc0ed1d182f8d38e08a23ce">DrawStats</a>(sf::RenderWindow&amp; window, sf::Font&amp; font);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classhero.html#a3d84dad985324b86102c2cadf0863ef6">Draw</a>(sf::RenderWindow&amp; window);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classhero.html#afa6c9a234f77f560607c9cca7f5ba2e7">DrawMenu</a>(sf::RenderWindow&amp; window, <span class="keywordtype">float</span> deltaTime);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classhero.html#abe462a3fc37afb1527cd34ed96cd5fef">Update</a>(<span class="keywordtype">float</span> deltaTime, std::vector&lt;Bullet&gt; &amp;bulletVec);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    sf::Vector2f <a class="code hl_function" href="classhero.html#a2a63d301b05b4bb2450541e3ba399ff9">GetPosition</a>();</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">float</span> <a class="code hl_function" href="classhero.html#adc016029672da959045036b6c0f1f880">getDamage</a>();</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordtype">float</span> <a class="code hl_function" href="classhero.html#aa5c6d724fd25db6419faed6abf38f0f5">getHealth</a>();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">float</span> <a class="code hl_function" href="classhero.html#ad7575e1d92c07645bc1dc5b6536c9249">getSpeed</a>();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">float</span> <a class="code hl_function" href="classhero.html#ade2e3d8c35e3c2cadc8dcc2e8c7e0194">getShotSpeed</a>();</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">float</span> <a class="code hl_function" href="classhero.html#a09e1317036453b3ca1400167d9a893ee">getFireDelay</a>();</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classhero.html#a1e81382ce4b77106626ae24651728560">getMoney</a>();</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classhero.html#a690ca38d939f00791712414c801da14e">getFlying</a>();</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classhero.html#a6e16eb948cb76bb82fab9b4b71f4e844">getHit</a>(<span class="keywordtype">float</span> <a class="code hl_variable" href="classhero.html#a7094ef3563753ea8f13bc34a2da6adfb">damage</a>);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classhero.html#aa57fba5727988cae193f083eaa290fbb">setStatistics</a>(<span class="keywordtype">float</span> <a class="code hl_variable" href="classhero.html#a7094ef3563753ea8f13bc34a2da6adfb">damage</a>, <span class="keywordtype">float</span> <a class="code hl_variable" href="classhero.html#a4b3c3c501cb1506fe5ef7580044238f8">health</a>,<span class="keywordtype">float</span> <a class="code hl_variable" href="classhero.html#a8729ef5a2fce0c91759c21ae48d14ade">maxHealth</a>, <span class="keywordtype">float</span> fire_delay, <span class="keywordtype">float</span> <a class="code hl_variable" href="classhero.html#aeb6daa9af19c67fba829162d60c32214">shot_speed</a>, <span class="keywordtype">float</span> <a class="code hl_variable" href="classhero.html#a411f38ef99d0048854e6fa92c0efbcf3">speed</a>,<span class="keywordtype">int</span> <a class="code hl_variable" href="classhero.html#ab036d8e694b585af6c2b3e91e633ed3e">money</a>,<span class="keywordtype">bool</span> <a class="code hl_variable" href="classhero.html#a653f4d958a60a0a78e4a31adde064014">flying</a>);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>};</div>
+<div class="ttc" id="a_animation_8h_html"><div class="ttname"><a href="_animation_8h.html">Animation.h</a></div></div>
+<div class="ttc" id="a_bullet_8h_html"><div class="ttname"><a href="_bullet_8h.html">Bullet.h</a></div></div>
+<div class="ttc" id="a_collision_8h_html"><div class="ttname"><a href="_collision_8h.html">Collision.h</a></div></div>
+<div class="ttc" id="aclass_animation_html"><div class="ttname"><a href="class_animation.html">Animation</a></div><div class="ttdoc">Klasa odpowiedzialna za odtwarzanie animacji przeciwników, gracza itp.</div><div class="ttdef"><b>Definition:</b> <a href="_animation_8h_source.html#l00006">Animation.h:6</a></div></div>
+<div class="ttc" id="aclasshero_html"><div class="ttname"><a href="classhero.html">hero</a></div><div class="ttdoc">Klasa reprezentująca gracza.</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8h_source.html#l00009">Hero.h:10</a></div></div>
+<div class="ttc" id="aclasshero_html_a09e1317036453b3ca1400167d9a893ee"><div class="ttname"><a href="classhero.html#a09e1317036453b3ca1400167d9a893ee">hero::getFireDelay</a></div><div class="ttdeci">float getFireDelay()</div><div class="ttdoc">Funkcja zwracająca szybkostrzelność postaci.</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8cpp_source.html#l00301">Hero.cpp:301</a></div></div>
+<div class="ttc" id="aclasshero_html_a0ffdd4635502f2d7ae2bd8dccd3f41dc"><div class="ttname"><a href="classhero.html#a0ffdd4635502f2d7ae2bd8dccd3f41dc">hero::x</a></div><div class="ttdeci">int x</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8h_source.html#l00026">Hero.h:26</a></div></div>
+<div class="ttc" id="aclasshero_html_a1e81382ce4b77106626ae24651728560"><div class="ttname"><a href="classhero.html#a1e81382ce4b77106626ae24651728560">hero::getMoney</a></div><div class="ttdeci">int getMoney()</div><div class="ttdoc">Funkcja zwracająca ilość monetek postaci.</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8cpp_source.html#l00321">Hero.cpp:321</a></div></div>
+<div class="ttc" id="aclasshero_html_a259f31988f0b966dac02ed9c9934a111"><div class="ttname"><a href="classhero.html#a259f31988f0b966dac02ed9c9934a111">hero::faceRight</a></div><div class="ttdeci">bool faceRight</div><div class="ttdoc">Zmienna określające, w którym kierunku patrzy się gracz.</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8h_source.html#l00017">Hero.h:17</a></div></div>
+<div class="ttc" id="aclasshero_html_a2a63d301b05b4bb2450541e3ba399ff9"><div class="ttname"><a href="classhero.html#a2a63d301b05b4bb2450541e3ba399ff9">hero::GetPosition</a></div><div class="ttdeci">sf::Vector2f GetPosition()</div><div class="ttdoc">Funkcja zwracająca pozycje postaci.</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8cpp_source.html#l00251">Hero.cpp:251</a></div></div>
+<div class="ttc" id="aclasshero_html_a2d7ad24533be9a327c99dce6473b9352"><div class="ttname"><a href="classhero.html#a2d7ad24533be9a327c99dce6473b9352">hero::y</a></div><div class="ttdeci">int y</div><div class="ttdoc">Pozycja pokoju, w którym znajduje się gracz.</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8h_source.html#l00026">Hero.h:26</a></div></div>
+<div class="ttc" id="aclasshero_html_a31d76fc92c93125ea75241da537b3aca"><div class="ttname"><a href="classhero.html#a31d76fc92c93125ea75241da537b3aca">hero::fire_delay_clock</a></div><div class="ttdeci">sf::Clock fire_delay_clock</div><div class="ttdoc">Zegar odmieżający czas pomiędzy wystrzałem pocisku.</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8h_source.html#l00021">Hero.h:21</a></div></div>
+<div class="ttc" id="aclasshero_html_a3d84dad985324b86102c2cadf0863ef6"><div class="ttname"><a href="classhero.html#a3d84dad985324b86102c2cadf0863ef6">hero::Draw</a></div><div class="ttdeci">void Draw(sf::RenderWindow &amp;window)</div><div class="ttdoc">Funkcja wyświetlająca postać</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8cpp_source.html#l00133">Hero.cpp:133</a></div></div>
+<div class="ttc" id="aclasshero_html_a411f38ef99d0048854e6fa92c0efbcf3"><div class="ttname"><a href="classhero.html#a411f38ef99d0048854e6fa92c0efbcf3">hero::speed</a></div><div class="ttdeci">float speed</div><div class="ttdoc">Prędkość poruszania się</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8h_source.html#l00012">Hero.h:12</a></div></div>
+<div class="ttc" id="aclasshero_html_a4b3c3c501cb1506fe5ef7580044238f8"><div class="ttname"><a href="classhero.html#a4b3c3c501cb1506fe5ef7580044238f8">hero::health</a></div><div class="ttdeci">float health</div><div class="ttdoc">Aktualne życie.</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8h_source.html#l00014">Hero.h:14</a></div></div>
+<div class="ttc" id="aclasshero_html_a4df4fde8402385b88cd35b03aa676730"><div class="ttname"><a href="classhero.html#a4df4fde8402385b88cd35b03aa676730">hero::arrow</a></div><div class="ttdeci">sf::Texture * arrow</div><div class="ttdoc">Tekstura pocisku.</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8h_source.html#l00023">Hero.h:23</a></div></div>
+<div class="ttc" id="aclasshero_html_a653f4d958a60a0a78e4a31adde064014"><div class="ttname"><a href="classhero.html#a653f4d958a60a0a78e4a31adde064014">hero::flying</a></div><div class="ttdeci">bool flying</div><div class="ttdoc">Zmienna określająca możliwość latania.</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8h_source.html#l00022">Hero.h:22</a></div></div>
+<div class="ttc" id="aclasshero_html_a690ca38d939f00791712414c801da14e"><div class="ttname"><a href="classhero.html#a690ca38d939f00791712414c801da14e">hero::getFlying</a></div><div class="ttdeci">bool getFlying()</div><div class="ttdoc">Funkcja zwracająca czy postać może latac.</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8cpp_source.html#l00311">Hero.cpp:311</a></div></div>
+<div class="ttc" id="aclasshero_html_a6bd01104af1be9944221dec33d180b35"><div class="ttname"><a href="classhero.html#a6bd01104af1be9944221dec33d180b35">hero::body</a></div><div class="ttdeci">sf::RectangleShape body</div><div class="ttdoc">Prostokąt odpowiedzialny za wykrywanie kolizji gracza oraz wyświetlanie jego tekstury.</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8h_source.html#l00027">Hero.h:27</a></div></div>
+<div class="ttc" id="aclasshero_html_a6e16eb948cb76bb82fab9b4b71f4e844"><div class="ttname"><a href="classhero.html#a6e16eb948cb76bb82fab9b4b71f4e844">hero::getHit</a></div><div class="ttdeci">void getHit(float damage)</div><div class="ttdoc">Funkcja zadająca obrażenia postaci.</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8cpp_source.html#l00331">Hero.cpp:331</a></div></div>
+<div class="ttc" id="aclasshero_html_a7094ef3563753ea8f13bc34a2da6adfb"><div class="ttname"><a href="classhero.html#a7094ef3563753ea8f13bc34a2da6adfb">hero::damage</a></div><div class="ttdeci">float damage</div><div class="ttdoc">Obrażenia.</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8h_source.html#l00015">Hero.h:15</a></div></div>
+<div class="ttc" id="aclasshero_html_a8729ef5a2fce0c91759c21ae48d14ade"><div class="ttname"><a href="classhero.html#a8729ef5a2fce0c91759c21ae48d14ade">hero::maxHealth</a></div><div class="ttdeci">float maxHealth</div><div class="ttdoc">Maksymalne życie.</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8h_source.html#l00013">Hero.h:13</a></div></div>
+<div class="ttc" id="aclasshero_html_a92cc4f33815208a1a8157e9cf5181e49"><div class="ttname"><a href="classhero.html#a92cc4f33815208a1a8157e9cf5181e49">hero::fire_rate</a></div><div class="ttdeci">float fire_rate</div><div class="ttdoc">Odstęp pomiędzy możliwośćią strzału.</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8h_source.html#l00019">Hero.h:19</a></div></div>
+<div class="ttc" id="aclasshero_html_aa57fba5727988cae193f083eaa290fbb"><div class="ttname"><a href="classhero.html#aa57fba5727988cae193f083eaa290fbb">hero::setStatistics</a></div><div class="ttdeci">void setStatistics(float damage, float health, float maxHealth, float fire_delay, float shot_speed, float speed, int money, bool flying)</div><div class="ttdoc">Funkcja dodająca statystyki.</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8cpp_source.html#l00349">Hero.cpp:349</a></div></div>
+<div class="ttc" id="aclasshero_html_aa5c6d724fd25db6419faed6abf38f0f5"><div class="ttname"><a href="classhero.html#aa5c6d724fd25db6419faed6abf38f0f5">hero::getHealth</a></div><div class="ttdeci">float getHealth()</div><div class="ttdoc">Funkcja zwracająca życie postaci.</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8cpp_source.html#l00271">Hero.cpp:271</a></div></div>
+<div class="ttc" id="aclasshero_html_ab036d8e694b585af6c2b3e91e633ed3e"><div class="ttname"><a href="classhero.html#ab036d8e694b585af6c2b3e91e633ed3e">hero::money</a></div><div class="ttdeci">int money</div><div class="ttdoc">Ilość monet.</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8h_source.html#l00016">Hero.h:16</a></div></div>
+<div class="ttc" id="aclasshero_html_ab110d7070b02e44feb1523167ded66e3"><div class="ttname"><a href="classhero.html#ab110d7070b02e44feb1523167ded66e3">hero::hero</a></div><div class="ttdeci">hero(sf::Texture *texture, sf::Vector2u imageCount, float switchTime, float speed, float fire_rate, float shot_speed, float health, float damage, sf::Vector2f size, sf::Vector2f position, bool flying, sf::Texture *arrow, sf::Texture *wings_t=NULL)</div><div class="ttdoc">Konstruktor dla postaci.</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8cpp_source.html#l00022">Hero.cpp:22</a></div></div>
+<div class="ttc" id="aclasshero_html_abe462a3fc37afb1527cd34ed96cd5fef"><div class="ttname"><a href="classhero.html#abe462a3fc37afb1527cd34ed96cd5fef">hero::Update</a></div><div class="ttdeci">void Update(float deltaTime, std::vector&lt; Bullet &gt; &amp;bulletVec)</div><div class="ttdoc">Funkcja aktualizująca pozycje postaci.</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8cpp_source.html#l00167">Hero.cpp:167</a></div></div>
+<div class="ttc" id="aclasshero_html_ad1cd1051bb00ea423c6249281de7e6b7"><div class="ttname"><a href="classhero.html#ad1cd1051bb00ea423c6249281de7e6b7">hero::row</a></div><div class="ttdeci">unsigned int row</div><div class="ttdoc">Zmienna określająca, który wiersz animacji ma być wykonywany.</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8h_source.html#l00018">Hero.h:18</a></div></div>
+<div class="ttc" id="aclasshero_html_ad7575e1d92c07645bc1dc5b6536c9249"><div class="ttname"><a href="classhero.html#ad7575e1d92c07645bc1dc5b6536c9249">hero::getSpeed</a></div><div class="ttdeci">float getSpeed()</div><div class="ttdoc">Funkcja zwracająca prędkość postaci.</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8cpp_source.html#l00281">Hero.cpp:281</a></div></div>
+<div class="ttc" id="aclasshero_html_adc016029672da959045036b6c0f1f880"><div class="ttname"><a href="classhero.html#adc016029672da959045036b6c0f1f880">hero::getDamage</a></div><div class="ttdeci">float getDamage()</div><div class="ttdoc">Funkcja zwracająca obrażenia postaci.</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8cpp_source.html#l00261">Hero.cpp:261</a></div></div>
+<div class="ttc" id="aclasshero_html_ade2e3d8c35e3c2cadc8dcc2e8c7e0194"><div class="ttname"><a href="classhero.html#ade2e3d8c35e3c2cadc8dcc2e8c7e0194">hero::getShotSpeed</a></div><div class="ttdeci">float getShotSpeed()</div><div class="ttdoc">Funkcja zwracająca prędkość naboju postaci.</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8cpp_source.html#l00291">Hero.cpp:291</a></div></div>
+<div class="ttc" id="aclasshero_html_aeb6daa9af19c67fba829162d60c32214"><div class="ttname"><a href="classhero.html#aeb6daa9af19c67fba829162d60c32214">hero::shot_speed</a></div><div class="ttdeci">float shot_speed</div><div class="ttdoc">Szybkość pocisków.</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8h_source.html#l00020">Hero.h:20</a></div></div>
+<div class="ttc" id="aclasshero_html_af27c43fd42231f7cc16d568d218d2ceb"><div class="ttname"><a href="classhero.html#af27c43fd42231f7cc16d568d218d2ceb">hero::wings</a></div><div class="ttdeci">sf::RectangleShape wings</div><div class="ttdoc">Prostokąt pobierający teksturę skrzydeł, która pojawia się, gdy gracz może latać</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8h_source.html#l00024">Hero.h:24</a></div></div>
+<div class="ttc" id="aclasshero_html_af4109e06cfc0ed1d182f8d38e08a23ce"><div class="ttname"><a href="classhero.html#af4109e06cfc0ed1d182f8d38e08a23ce">hero::DrawStats</a></div><div class="ttdeci">void DrawStats(sf::RenderWindow &amp;window, sf::Font &amp;font)</div><div class="ttdoc">Funkcja wypisująca statystyki.</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8cpp_source.html#l00052">Hero.cpp:52</a></div></div>
+<div class="ttc" id="aclasshero_html_af97bcb6bd8217eb21417bda1a19c3f8e"><div class="ttname"><a href="classhero.html#af97bcb6bd8217eb21417bda1a19c3f8e">hero::animation</a></div><div class="ttdeci">Animation animation</div><div class="ttdoc">Animacja postaci.</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8h_source.html#l00028">Hero.h:28</a></div></div>
+<div class="ttc" id="aclasshero_html_afa6c9a234f77f560607c9cca7f5ba2e7"><div class="ttname"><a href="classhero.html#afa6c9a234f77f560607c9cca7f5ba2e7">hero::DrawMenu</a></div><div class="ttdeci">void DrawMenu(sf::RenderWindow &amp;window, float deltaTime)</div><div class="ttdoc">Funkcja od wyświetlania postaci w menu.</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8cpp_source.html#l00151">Hero.cpp:151</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ea6415965c179a977ca772ba5200736a.html">RogueLike_Projekt</a></li><li class="navelem"><a class="el" href="_hero_8h.html">Hero.h</a></li>
+    <li class="footer">Wygenerowano przez <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+  </ul>
+</div>
+</body>
+</html>

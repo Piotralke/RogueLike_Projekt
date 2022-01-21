@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>RogueLike Game: Plik źródłowy C:/Users/Radouan Battoui/source/repos/Piotralke/RogueLike_Projekt/RogueLike_Projekt/Bullet.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="icon.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">RogueLike Game<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Gra na projekt z PJC2</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Szukaj','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('_bullet_8cpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Bullet.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_bullet_8cpp.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="_bullet_8h.html">Bullet.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_bullet.html#aa0b0ee735fe5e11e6ec3529e73f798f0">   15</a></span><a class="code hl_function" href="class_bullet.html#aa0b0ee735fe5e11e6ec3529e73f798f0">Bullet::Bullet</a>(sf::Vector2f size, sf::Vector2f position, <span class="keywordtype">float</span> shot_speed, <span class="keywordtype">float</span> damage, sf::Vector2f shotting_direction, sf::Texture *texture, <span class="keywordtype">float</span> rotation)</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <a class="code hl_variable" href="class_bullet.html#abf236b59e2bdee7068d2872d12e1cab4">bullet</a>.setSize(size);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_variable" href="class_bullet.html#abf236b59e2bdee7068d2872d12e1cab4">bullet</a>.setOrigin(<a class="code hl_variable" href="class_bullet.html#abf236b59e2bdee7068d2872d12e1cab4">bullet</a>.getSize() / 2.0f);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_variable" href="class_bullet.html#abf236b59e2bdee7068d2872d12e1cab4">bullet</a>.setPosition(position);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_variable" href="class_bullet.html#abf236b59e2bdee7068d2872d12e1cab4">bullet</a>.setTexture(texture);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_variable" href="class_bullet.html#abf236b59e2bdee7068d2872d12e1cab4">bullet</a>.setRotation(rotation);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    this-&gt;shot_speed = <a class="code hl_variable" href="class_bullet.html#a2969fab3453d46306577fcbeb511899e">shot_speed</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    this-&gt;damage = <a class="code hl_variable" href="class_bullet.html#a1cad8c80e63d13da57b563b8e8e3f79e">damage</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_variable" href="class_bullet.html#a5107e323ea2ad259b59aeb8eb1c331a8">direction</a> = shotting_direction;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_variable" href="class_bullet.html#a8c2aee78ba14e336b725de9ed9ea50fe">directionNormalized</a> = { <a class="code hl_variable" href="class_bullet.html#a5107e323ea2ad259b59aeb8eb1c331a8">direction</a>.x / (float)sqrt(pow(<a class="code hl_variable" href="class_bullet.html#a5107e323ea2ad259b59aeb8eb1c331a8">direction</a>.x, 2) + pow(<a class="code hl_variable" href="class_bullet.html#a5107e323ea2ad259b59aeb8eb1c331a8">direction</a>.y, 2)), <a class="code hl_variable" href="class_bullet.html#a5107e323ea2ad259b59aeb8eb1c331a8">direction</a>.y / (<span class="keywordtype">float</span>)sqrt(pow(<a class="code hl_variable" href="class_bullet.html#a5107e323ea2ad259b59aeb8eb1c331a8">direction</a>.x, 2) + pow(<a class="code hl_variable" href="class_bullet.html#a5107e323ea2ad259b59aeb8eb1c331a8">direction</a>.y, 2)) };</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_bullet.html#a803116523e35a6ab49630be5f385bcb3">   33</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_bullet.html#a803116523e35a6ab49630be5f385bcb3">Bullet::fire</a>(<span class="keywordtype">float</span> deltaTime)</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>{</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_variable" href="class_bullet.html#abf236b59e2bdee7068d2872d12e1cab4">bullet</a>.move({ <a class="code hl_variable" href="class_bullet.html#a8c2aee78ba14e336b725de9ed9ea50fe">directionNormalized</a>.x * <a class="code hl_variable" href="class_bullet.html#a2969fab3453d46306577fcbeb511899e">shot_speed</a> * deltaTime, <a class="code hl_variable" href="class_bullet.html#a8c2aee78ba14e336b725de9ed9ea50fe">directionNormalized</a>.y * <a class="code hl_variable" href="class_bullet.html#a2969fab3453d46306577fcbeb511899e">shot_speed</a> * deltaTime });    </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_bullet.html#a5ce2ff7bf70508a7a1435f2311fbaedc">   44</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_bullet.html#a5ce2ff7bf70508a7a1435f2311fbaedc">Bullet::Draw</a>(sf::RenderWindow&amp; window)</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>{</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    window.draw(<a class="code hl_variable" href="class_bullet.html#abf236b59e2bdee7068d2872d12e1cab4">bullet</a>);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="class_bullet.html#a91292326aa343585f0635c28a5851c62">   54</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="class_bullet.html#a91292326aa343585f0635c28a5851c62">Bullet::getDamage</a>()</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>{</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_bullet.html#a1cad8c80e63d13da57b563b8e8e3f79e">damage</a>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}</div>
+<div class="ttc" id="a_bullet_8h_html"><div class="ttname"><a href="_bullet_8h.html">Bullet.h</a></div></div>
+<div class="ttc" id="aclass_bullet_html_a1cad8c80e63d13da57b563b8e8e3f79e"><div class="ttname"><a href="class_bullet.html#a1cad8c80e63d13da57b563b8e8e3f79e">Bullet::damage</a></div><div class="ttdeci">float damage</div><div class="ttdoc">Obrażenia pocisku.</div><div class="ttdef"><b>Definition:</b> <a href="_bullet_8h_source.html#l00011">Bullet.h:11</a></div></div>
+<div class="ttc" id="aclass_bullet_html_a2969fab3453d46306577fcbeb511899e"><div class="ttname"><a href="class_bullet.html#a2969fab3453d46306577fcbeb511899e">Bullet::shot_speed</a></div><div class="ttdeci">float shot_speed</div><div class="ttdoc">Szybkość poruszania się pocisku.</div><div class="ttdef"><b>Definition:</b> <a href="_bullet_8h_source.html#l00010">Bullet.h:10</a></div></div>
+<div class="ttc" id="aclass_bullet_html_a5107e323ea2ad259b59aeb8eb1c331a8"><div class="ttname"><a href="class_bullet.html#a5107e323ea2ad259b59aeb8eb1c331a8">Bullet::direction</a></div><div class="ttdeci">sf::Vector2f direction</div><div class="ttdoc">Wektor, w którym kikerunku pocisk ma lecieć</div><div class="ttdef"><b>Definition:</b> <a href="_bullet_8h_source.html#l00012">Bullet.h:12</a></div></div>
+<div class="ttc" id="aclass_bullet_html_a5ce2ff7bf70508a7a1435f2311fbaedc"><div class="ttname"><a href="class_bullet.html#a5ce2ff7bf70508a7a1435f2311fbaedc">Bullet::Draw</a></div><div class="ttdeci">void Draw(sf::RenderWindow &amp;window)</div><div class="ttdoc">Funkcja wyświetlająca nabój.</div><div class="ttdef"><b>Definition:</b> <a href="_bullet_8cpp_source.html#l00044">Bullet.cpp:44</a></div></div>
+<div class="ttc" id="aclass_bullet_html_a803116523e35a6ab49630be5f385bcb3"><div class="ttname"><a href="class_bullet.html#a803116523e35a6ab49630be5f385bcb3">Bullet::fire</a></div><div class="ttdeci">void fire(float deltaTime)</div><div class="ttdoc">Funkcja przemieszczająca nabój.</div><div class="ttdef"><b>Definition:</b> <a href="_bullet_8cpp_source.html#l00033">Bullet.cpp:33</a></div></div>
+<div class="ttc" id="aclass_bullet_html_a8c2aee78ba14e336b725de9ed9ea50fe"><div class="ttname"><a href="class_bullet.html#a8c2aee78ba14e336b725de9ed9ea50fe">Bullet::directionNormalized</a></div><div class="ttdeci">sf::Vector2f directionNormalized</div><div class="ttdoc">Znormalizowany wektor kierunku strzału.</div><div class="ttdef"><b>Definition:</b> <a href="_bullet_8h_source.html#l00013">Bullet.h:13</a></div></div>
+<div class="ttc" id="aclass_bullet_html_a91292326aa343585f0635c28a5851c62"><div class="ttname"><a href="class_bullet.html#a91292326aa343585f0635c28a5851c62">Bullet::getDamage</a></div><div class="ttdeci">float getDamage()</div><div class="ttdoc">Funkcja zwracająca obrażenia naboju.</div><div class="ttdef"><b>Definition:</b> <a href="_bullet_8cpp_source.html#l00054">Bullet.cpp:54</a></div></div>
+<div class="ttc" id="aclass_bullet_html_aa0b0ee735fe5e11e6ec3529e73f798f0"><div class="ttname"><a href="class_bullet.html#aa0b0ee735fe5e11e6ec3529e73f798f0">Bullet::Bullet</a></div><div class="ttdeci">Bullet(sf::Vector2f size, sf::Vector2f position, float shot_speed, float rate_of_fire, sf::Vector2f direction, sf::Texture *texture, float rotation)</div><div class="ttdoc">Konstruktor dla naboju.</div><div class="ttdef"><b>Definition:</b> <a href="_bullet_8cpp_source.html#l00015">Bullet.cpp:15</a></div></div>
+<div class="ttc" id="aclass_bullet_html_abf236b59e2bdee7068d2872d12e1cab4"><div class="ttname"><a href="class_bullet.html#abf236b59e2bdee7068d2872d12e1cab4">Bullet::bullet</a></div><div class="ttdeci">sf::RectangleShape bullet</div><div class="ttdoc">Prostokąt będący obszarem do wykrywania kolizji oraz do pobrania tekstury i wyświetlania pocisku w gr...</div><div class="ttdef"><b>Definition:</b> <a href="_bullet_8h_source.html#l00015">Bullet.h:15</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ea6415965c179a977ca772ba5200736a.html">RogueLike_Projekt</a></li><li class="navelem"><a class="el" href="_bullet_8cpp.html">Bullet.cpp</a></li>
+    <li class="footer">Wygenerowano przez <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+  </ul>
+</div>
+</body>
+</html>

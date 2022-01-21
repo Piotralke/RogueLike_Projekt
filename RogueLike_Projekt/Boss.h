@@ -1,21 +1,21 @@
-#pragma once
+ï»¿#pragma once
 #include<SFML/Graphics.hpp>
 #include"Monster.h"
 #include "Collision.h"
 #include "Objects.h"
 /**
-*	Klasa reprezentuj¹ca bossów
+*	\brief Klasa reprezentujÄ…ca bossÃ³w
 */
 class boss : public monster
 {
 private:
-	sf::Clock spawn_delay_clock; /**<Zegar odmierzaj¹cy czas miêdzy mo¿liwoœci¹ przyzywania przeciwników */
-	bool triple_shot;	/**<Zmienna okreœlaj¹ca, czy przeciwnik strzela potrójnym strza³em*/
-	bool spawn;	/**<Zmienna okreœlaj¹ca, czy przeciwnik mo¿e przyzywaæ pomocników */
-	bool special_movement;	/**<Zmienna okreœlaj¹ca, czy przeciwnik posiada specjalny sposób poruszania siê*/
-	bool can_shot=true; /**<Zmienna okreœlaj¹ca, czy przeciwnik mo¿e strzelaæ w danej chwili*/
-	sf::Vector2f randomDir = {1.0f,0.0f};	/**<Zmienna okreœlaj¹ca losowy kierunek poruszania siê*/
-	bool running=false;	/**<Zmienna okreœlaj¹ca, czy przeciwnik szar¿uje w stronê gracza*/
+	sf::Clock spawn_delay_clock; /**<\brief Zegar odmierzajÄ…cy czas miÄ™dzy moÅ¼liwoÅ›ciÄ… przyzywania przeciwnikÃ³w */
+	bool triple_shot;	/**<\brief Zmienna okreÅ›lajÄ…ca, czy przeciwnik strzela potrÃ³jnym strzaÅ‚em*/
+	bool spawn;	/**<\brief Zmienna okreÅ›lajÄ…ca, czy przeciwnik moÅ¼e przyzywaÄ‡ pomocnikÃ³w */
+	bool special_movement;	/**<\brief Zmienna okreÅ›lajÄ…ca, czy przeciwnik posiada specjalny sposÃ³b poruszania siÄ™*/
+	bool can_shot=true; /**<\brief Zmienna okreÅ›lajÄ…ca, czy przeciwnik moÅ¼e strzelaÄ‡ w danej chwili*/
+	sf::Vector2f randomDir = {1.0f,0.0f};	/**<\brief Zmienna okreÅ›lajÄ…ca losowy kierunek poruszania siÄ™*/
+	bool running=false;	/**<\brief Zmienna okreÅ›lajÄ…ca, czy przeciwnik szarÅ¼uje w stronÄ™ gracza*/
 public:
 	boss(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed, float fire_rate, float shot_speed, float health,
 		float damage, sf::Vector2f size, sf::Vector2f position, bool shooting, bool flying, bool resurection,bool triple_shot, bool spawn, bool special_movement, sf::Texture* arrow, sf::Vector2i bullet_size)

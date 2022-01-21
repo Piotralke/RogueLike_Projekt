@@ -1,23 +1,23 @@
-#pragma once
+ï»¿#pragma once
 #include <SFML/Graphics.hpp>
 #include "Room.h"
 #include <queue>
 #include <stack>
 #include <iostream>
 /**
-* Klasa odpowiedzialna za generacjê poziomu
+* \brief Klasa odpowiedzialna za generacjÄ™ poziomu
 */
 
 class generate_map : public room
 {
 protected:
 
-    int rooms_counter = 0; /**<Zmienna okreœlaj¹ca ile pokojów zosta³o wygenerowane*/
-    int max_rooms;  /**<Zmienna okreœlaj¹ca maksymaln¹ liczbê pokojów*/
-    int min_rooms;  /**<Zmienna okreœlaj¹ca minimaln¹ liczbê pokojów*/
-    std::queue <sf::Vector2i> RoomQueue;    /**<Kolejka przechowuj¹ca pokoje*/
-    std::vector <sf::Vector2i> DeadEnd; /**<Wektor przechowuj¹cy pokoje z jednymi drzwiami (Pokoje - œlepe zau³ki)*/
-    bool placedSpecial = false; /**<Zmienna okreœlaj¹ca, czy zosta³y umiejscowione specjalne pokoje*/
+    int rooms_counter = 0; /**<\brief Zmienna okreÅ›lajÄ…ca ile pokojÃ³w zostaÅ‚o wygenerowane*/
+    int max_rooms;  /**<\brief Zmienna okreÅ›lajÄ…ca maksymalnÄ… liczbÄ™ pokojÃ³w*/
+    int min_rooms;  /**<\brief Zmienna okreÅ›lajÄ…ca minimalnÄ… liczbÄ™ pokojÃ³w*/
+    std::queue <sf::Vector2i> RoomQueue;    /**<\brief Kolejka przechowujÄ…ca pokoje*/
+    std::vector <sf::Vector2i> DeadEnd; /**<\brief Wektor przechowujÄ…cy pokoje z jednymi drzwiami (Pokoje - Å›lepe zauÅ‚ki)*/
+    bool placedSpecial = false; /**<\brief Zmienna okreÅ›lajÄ…ca, czy zostaÅ‚y umiejscowione specjalne pokoje*/
     
 public:
     generate_map();

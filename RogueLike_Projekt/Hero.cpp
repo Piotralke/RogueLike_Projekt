@@ -1,22 +1,22 @@
-#include "Hero.h"
+ï»¿#include "Hero.h"
 #include <iostream>
 
-/** \brief Konstruktor dla postaci
+/** \brief  Konstruktor dla postaci
  *
  * Konstruktor zapisuje parametry podane jako parametry do danego obiektu
- * @param texture WskaŸnik na teksture dla postaci
- * @param imageCount Kontener przechowuj¹cy informacje o iloœci teskstur zawartych w pliku graficznym animacji postaci (dla bohatera 4,2 - 4oznacza 4 ró¿ne tekstury dla animacji, a 2 iloœæ ró¿nych aninmacji)
- * @param switchTime Czas po jakim ma siê zmieniæ tekstura(wykorzystywana w animacji)
- * @param speed Parametr okreœlaj¹cy prêdkoœæ postaci
- * @param fire_rate Parametr okreœlaj¹cy szybkostrzelnoœæ postaci
- * @param shot_speed Parametr okreœlaj¹cy prêdkoœæ pocisku wystrzelonego przez dan¹ postaæ
- * @param health Parametr okreœlaj¹cy podstawow¹ iloœæ ¿ycia postaci
- * @param damage Parametr okreœlaj¹cy obra¿enia jakie zadaje postaæ
+ * @param texture WskaÅºnik na teksture dla postaci
+ * @param imageCount Kontener przechowujÄ…cy informacje o iloÅ›ci teskstur zawartych w pliku graficznym animacji postaci (dla bohatera 4,2 - 4oznacza 4 rÃ³Å¼ne tekstury dla animacji, a 2 iloÅ›Ä‡ rÃ³Å¼nych aninmacji)
+ * @param switchTime Czas po jakim ma siÄ™ zmieniÄ‡ tekstura(wykorzystywana w animacji)
+ * @param speed Parametr okreÅ›lajÄ…cy prÄ™dkoÅ›Ä‡ postaci
+ * @param fire_rate Parametr okreÅ›lajÄ…cy szybkostrzelnoÅ›Ä‡ postaci
+ * @param shot_speed Parametr okreÅ›lajÄ…cy prÄ™dkoÅ›Ä‡ pocisku wystrzelonego przez danÄ… postaÄ‡
+ * @param health Parametr okreÅ›lajÄ…cy podstawowÄ… iloÅ›Ä‡ Å¼ycia postaci
+ * @param damage Parametr okreÅ›lajÄ…cy obraÅ¼enia jakie zadaje postaÄ‡
  * @param size Rozmiar pojedynczej tekstury postaci
- * @param position Pozycja na której postaæ ma zostaæ postawiona
- * @param flying Parametr okreœlaj¹cy czy postaæ mo¿e przechodziæ przez przeszkody
- * @param arrow WskaŸnik na teksture dla naboju postaci
- * @param wings_t WskaŸnik na teksture skrzyde³
+ * @param position Pozycja na ktÃ³rej postaÄ‡ ma zostaÄ‡ postawiona
+ * @param flying Parametr okreÅ›lajÄ…cy czy postaÄ‡ moÅ¼e przechodziÄ‡ przez przeszkody
+ * @param arrow WskaÅºnik na teksture dla naboju postaci
+ * @param wings_t WskaÅºnik na teksture skrzydeÅ‚
  */
 
 hero::hero(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed, float fire_rate, float shot_speed, float health,
@@ -42,11 +42,11 @@ hero::hero(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, floa
     wings.setTexture(wings_t);
 }
 
-/** \brief Funkcja wypisuj¹ca statystyki
+/** \brief  Funkcja wypisujÄ…ca statystyki
  *
- * Funkcja wypisuj¹ca statystyki w okreœlonym miejscu na HUDzie gry, u¿ywana tylko dla postaci g³ównej
- * @param window WskaŸnik na okno, w którym ma wypisaæ statystyki
- * @param font WskaŸnik na czcionkê u¿ywan¹ w programie
+ * Funkcja wypisujÄ…ca statystyki w okreÅ›lonym miejscu na HUDzie gry, uÅ¼ywana tylko dla postaci gÅ‚Ã³wnej
+ * @param window WskaÅºnik na okno, w ktÃ³rym ma wypisaÄ‡ statystyki
+ * @param font WskaÅºnik na czcionkÄ™ uÅ¼ywanÄ… w programie
  */
 
 void hero::DrawStats(sf::RenderWindow& window, sf::Font& font)
@@ -124,10 +124,10 @@ void hero::DrawStats(sf::RenderWindow& window, sf::Font& font)
     
 }
 
-/** \brief Funkcja wyœwietlaj¹ca postaæ
+/** \brief  Funkcja wyÅ›wietlajÄ…ca postaÄ‡
  *
- * Funkcja, która wyœwietla na podane okno postaæ, u³atwia nam wyœwietlanie tej postaci
- * @param window WskaŸnik na okno, w którym ma wyœwietliæ postaæ
+ * Funkcja, ktÃ³ra wyÅ›wietla na podane okno postaÄ‡, uÅ‚atwia nam wyÅ›wietlanie tej postaci
+ * @param window WskaÅºnik na okno, w ktÃ³rym ma wyÅ›wietliÄ‡ postaÄ‡
  */
 
 void hero::Draw(sf::RenderWindow& window)
@@ -141,11 +141,11 @@ void hero::Draw(sf::RenderWindow& window)
 
 }
 
-/** \brief Funkcja od wyœwietlania postaci w menu
+/** \brief  Funkcja od wyÅ›wietlania postaci w menu
  *
- * Funkcja u³atwia wyœwietlanie postaci animowanych w menu, u¿ywana tylko w menu
- * @param window WskaŸnik na okno, w którym ma wyœwietliæ postaæ
- * @param deltaTime Zmienna okreœlaj¹ca ile czasu minê³o pomiêdzy klatkami gry (umo¿liwia ona p³ynniejsze dzia³anie gry, poniewa¿ niezale¿nie od wykorzystanie zasobów komputera gra nie powinna przyspieszaæ, ani zwalniaæ)
+ * Funkcja uÅ‚atwia wyÅ›wietlanie postaci animowanych w menu, uÅ¼ywana tylko w menu
+ * @param window WskaÅºnik na okno, w ktÃ³rym ma wyÅ›wietliÄ‡ postaÄ‡
+ * @param deltaTime Zmienna okreÅ›lajÄ…ca ile czasu minÄ™Å‚o pomiÄ™dzy klatkami gry (umoÅ¼liwia ona pÅ‚ynniejsze dziaÅ‚anie gry, poniewaÅ¼ niezaleÅ¼nie od wykorzystanie zasobÃ³w komputera gra nie powinna przyspieszaÄ‡, ani zwalniaÄ‡)
  */
 
 void hero::DrawMenu(sf::RenderWindow& window, float deltaTime)
@@ -157,11 +157,11 @@ void hero::DrawMenu(sf::RenderWindow& window, float deltaTime)
     window.draw(body);
 }
 
-/** \brief Funkcja aktualizuj¹ca pozycje postaci
+/** \brief  Funkcja aktualizujÄ…ca pozycje postaci
  *
- * G³ówna funkcja dla naszej postaci, w niej obs³ugiwane s¹ klawisze odpowiadaj¹ce za poruszanie siê postaci oraz strzelanie
- * @param deltaTime Zmienna okreœlaj¹ca ile czasu minê³o pomiêdzy klatkami gry (umo¿liwia ona p³ynniejsze dzia³anie gry, poniewa¿ niezale¿nie od wykorzystanie zasobów komputera gra nie powinna przyspieszaæ, ani zwalniaæ)
- * @param bulletVec WskaŸnik na vector naboi postaci g³ównej
+ * GÅ‚Ã³wna funkcja dla naszej postaci, w niej obsÅ‚ugiwane sÄ… klawisze odpowiadajÄ…ce za poruszanie siÄ™ postaci oraz strzelanie
+ * @param deltaTime Zmienna okreÅ›lajÄ…ca ile czasu minÄ™Å‚o pomiÄ™dzy klatkami gry (umoÅ¼liwia ona pÅ‚ynniejsze dziaÅ‚anie gry, poniewaÅ¼ niezaleÅ¼nie od wykorzystanie zasobÃ³w komputera gra nie powinna przyspieszaÄ‡, ani zwalniaÄ‡)
+ * @param bulletVec WskaÅºnik na vector naboi postaci gÅ‚Ã³wnej
  */
 
 void hero::Update(float deltaTime, std::vector<Bullet> &bulletVec)
@@ -243,9 +243,9 @@ void hero::Update(float deltaTime, std::vector<Bullet> &bulletVec)
     body.move(movement);
 }
 
-/** \brief Funkcja zwracaj¹ca pozycje postaci
+/** \brief  Funkcja zwracajÄ…ca pozycje postaci
  *
- * @return body.getPosition() Zwraca pozycjê postaci
+ * @return body.getPosition() Zwraca pozycjÄ™ postaci
  */
 
 sf::Vector2f hero::GetPosition()
@@ -253,9 +253,9 @@ sf::Vector2f hero::GetPosition()
     return body.getPosition();
 }
 
-/** \brief Funkcja zwracaj¹ca obra¿enia postaci
+/** \brief  Funkcja zwracajÄ…ca obraÅ¼enia postaci
  *
- * @return body.getPosition() Zwraca obra¿enia postaci
+ * @return body.getPosition() Zwraca obraÅ¼enia postaci
  */
 
 float hero::getDamage()
@@ -263,9 +263,9 @@ float hero::getDamage()
     return damage;
 }
 
-/** \brief Funkcja zwracaj¹ca ¿ycie postaci
+/** \brief  Funkcja zwracajÄ…ca Å¼ycie postaci
  *
- * @return body.getPosition() Zwraca ¿ycie postaci
+ * @return body.getPosition() Zwraca Å¼ycie postaci
  */
 
 float hero::getHealth()
@@ -273,9 +273,9 @@ float hero::getHealth()
     return health;
 }
 
-/** \brief Funkcja zwracaj¹ca prêdkoœæ postaci
+/** \brief  Funkcja zwracajÄ…ca prÄ™dkoÅ›Ä‡ postaci
  *
- * @return body.getPosition() Zwraca prêdkoœæ postaci
+ * @return body.getPosition() Zwraca prÄ™dkoÅ›Ä‡ postaci
  */
 
 float hero::getSpeed()
@@ -283,9 +283,9 @@ float hero::getSpeed()
     return speed;
 }
 
-/** \brief Funkcja zwracaj¹ca prêdkoœæ naboju postaci
+/** \brief  Funkcja zwracajÄ…ca prÄ™dkoÅ›Ä‡ naboju postaci
  *
- * @return body.getPosition() Zwraca prêdkoœæ naboju postaci
+ * @return body.getPosition() Zwraca prÄ™dkoÅ›Ä‡ naboju postaci
  */
 
 float hero::getShotSpeed()
@@ -293,9 +293,9 @@ float hero::getShotSpeed()
     return shot_speed;
 }
 
-/** \brief Funkcja zwracaj¹ca szybkostrzelnoœæ postaci
+/** \brief  Funkcja zwracajÄ…ca szybkostrzelnoÅ›Ä‡ postaci
  *
- * @return body.getPosition() Zwraca szybkostrzelnoœæ postaci
+ * @return body.getPosition() Zwraca szybkostrzelnoÅ›Ä‡ postaci
  */
 
 float hero::getFireDelay()
@@ -303,9 +303,9 @@ float hero::getFireDelay()
     return fire_rate;
 }
 
-/** \brief Funkcja zwracaj¹ca czy postaæ mo¿e latac
+/** \brief  Funkcja zwracajÄ…ca czy postaÄ‡ moÅ¼e latac
  *
- * @return body.getPosition() Zwraca czy postaæ mo¿e lataæ
+ * @return body.getPosition() Zwraca czy postaÄ‡ moÅ¼e lataÄ‡
  */
 
 bool hero::getFlying()
@@ -313,9 +313,9 @@ bool hero::getFlying()
     return flying;
 }
 
-/** \brief Funkcja zwracaj¹ca iloœæ monetek postaci
+/** \brief  Funkcja zwracajÄ…ca iloÅ›Ä‡ monetek postaci
  *
- * @return body.getPosition() Zwraca iloœæ monetek postaci
+ * @return body.getPosition() Zwraca iloÅ›Ä‡ monetek postaci
  */
 
 int hero::getMoney()
@@ -323,9 +323,9 @@ int hero::getMoney()
     return money;
 }
 
-/** \brief Funkcja zadaj¹ca obra¿enia postaci
+/** \brief  Funkcja zadajÄ…ca obraÅ¼enia postaci
  *
- * @param damage Parametr o ile ma obni¿yc ¿ycie postaci
+ * @param damage Parametr o ile ma obniÅ¼yc Å¼ycie postaci
  */
 
 void hero::getHit(float damage)
@@ -333,17 +333,17 @@ void hero::getHit(float damage)
     health -= damage;
 }
 
-/** \brief Funkcja dodaj¹ca statystyki
+/** \brief  Funkcja dodajÄ…ca statystyki
  *
- * Funkcja wywo³uj¹ca siê przy podnoszeniu przedmiotów, która dodaje parametry tych przedmiotów do naszej postaci
- * @param damage Parametr okreœlaj¹cy ile obra¿eñ ma dodaæ do naszej postaci
- * @param health Parametr okreœlaj¹cy ile ¿ycia ma dodaæ do naszej postaci
- * @param maxHealth Parametr okreœlaj¹cy ile maksymalnego ¿ycia ma dodaæ do naszej postaci
- * @param fire_delay Parametr okreœlaj¹cy ile szybkostrzelnoœci ma dodaæ do naszej postaci
- * @param shot_speed Parametr okreœlaj¹cy ile predkoœci naboju ma dodaæ do naszej postaci
- * @param speed Parametr okreœlaj¹cy ile prêdkoœci ma dodaæ do naszej postaci
- * @param money Parametr okreœlaj¹cy ile monet ma dodaæ do naszej postaci
- * @param flying Parametr okreœlaj¹cy czy ma dodaæ do postaci przechodzenie przez przeszkody
+ * Funkcja wywoÅ‚ujÄ…ca siÄ™ przy podnoszeniu przedmiotÃ³w, ktÃ³ra dodaje parametry tych przedmiotÃ³w do naszej postaci
+ * @param damage Parametr okreÅ›lajÄ…cy ile obraÅ¼eÃ± ma dodaÄ‡ do naszej postaci
+ * @param health Parametr okreÅ›lajÄ…cy ile Å¼ycia ma dodaÄ‡ do naszej postaci
+ * @param maxHealth Parametr okreÅ›lajÄ…cy ile maksymalnego Å¼ycia ma dodaÄ‡ do naszej postaci
+ * @param fire_delay Parametr okreÅ›lajÄ…cy ile szybkostrzelnoÅ›ci ma dodaÄ‡ do naszej postaci
+ * @param shot_speed Parametr okreÅ›lajÄ…cy ile predkoÅ›ci naboju ma dodaÄ‡ do naszej postaci
+ * @param speed Parametr okreÅ›lajÄ…cy ile prÄ™dkoÅ›ci ma dodaÄ‡ do naszej postaci
+ * @param money Parametr okreÅ›lajÄ…cy ile monet ma dodaÄ‡ do naszej postaci
+ * @param flying Parametr okreÅ›lajÄ…cy czy ma dodaÄ‡ do postaci przechodzenie przez przeszkody
  */
 
 void hero::setStatistics(float damage, float health,float maxHealth, float fire_delay, float shot_speed, float speed, int money, bool flying)

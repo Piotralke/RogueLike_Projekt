@@ -1,0 +1,2029 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>RogueLike Game: Dokumentacja klasy room</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="icon.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">RogueLike Game<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Gra na projekt z PJC2</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Szukaj','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classroom.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Komponenty</a> &#124;
+<a href="#pub-methods">Metody publiczne</a> &#124;
+<a href="#pub-attribs">Atrybuty publiczne</a> &#124;
+<a href="#pro-attribs">Atrybuty chronione</a> &#124;
+<a href="classroom-members.html">Lista wszystkich składowych</a>  </div>
+  <div class="headertitle"><div class="title">Dokumentacja klasy room</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Klasa odpowiedzialna za operacje związane z załadowaniem układu pokoju, przechodzenia między pokojami oraz innych związanych z pokojami opcji.  
+ <a href="classroom.html#details">Więcej...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_room_8h_source.html">Room.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagram dziedziczenia dla room</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classroom.png" usemap="#room_map" alt=""/>
+  <map id="room_map" name="room_map">
+<area href="classgenerate__map.html" title="Klasa odpowiedzialna za generację poziomu." alt="generate_map" shape="rect" coords="0,56,92,80"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Komponenty</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structroom_1_1room__properties.html">room_properties</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struktura zawierająca parametry pokoju.  <a href="structroom_1_1room__properties.html#details">Więcej...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:a53ca1cc8644c6e0b481945f41ca77ac2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#a53ca1cc8644c6e0b481945f41ca77ac2">init_Texture</a> ()</td></tr>
+<tr class="memdesc:a53ca1cc8644c6e0b481945f41ca77ac2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja inicjująca tekstury.  <a href="classroom.html#a53ca1cc8644c6e0b481945f41ca77ac2">Więcej...</a><br /></td></tr>
+<tr class="separator:a53ca1cc8644c6e0b481945f41ca77ac2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed58293378a358795faadcffc6e48697"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#aed58293378a358795faadcffc6e48697">check_doors</a> (int i, int j)</td></tr>
+<tr class="memdesc:aed58293378a358795faadcffc6e48697"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja sprawdzająca układ drzwi danego pokoju.  <a href="classroom.html#aed58293378a358795faadcffc6e48697">Więcej...</a><br /></td></tr>
+<tr class="separator:aed58293378a358795faadcffc6e48697"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6cbf5caffffedeff55c38e25a5b1dcd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#ac6cbf5caffffedeff55c38e25a5b1dcd">Draw</a> (sf::RenderWindow &amp;window, sf::RectangleShape &amp;door)</td></tr>
+<tr class="memdesc:ac6cbf5caffffedeff55c38e25a5b1dcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja wyświetlająca drzwi.  <a href="classroom.html#ac6cbf5caffffedeff55c38e25a5b1dcd">Więcej...</a><br /></td></tr>
+<tr class="separator:ac6cbf5caffffedeff55c38e25a5b1dcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6bdd86c04944956d609612f015ed3d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#aa6bdd86c04944956d609612f015ed3d0">read_from_file</a> (<a class="el" href="classhero.html">hero</a> &amp;player, std::vector&lt; <a class="el" href="classmonster.html">monster</a> &gt; &amp;monsterVEC, std::vector&lt; <a class="el" href="class_object.html">Object</a> &gt; &amp;objectVEC, std::vector&lt; <a class="el" href="classboss.html">boss</a> &gt; &amp;bossVec, std::vector&lt; <a class="el" href="class_item.html">Item</a> &gt; &amp;itemVec, int &amp;skeleton_count, int level)</td></tr>
+<tr class="memdesc:aa6bdd86c04944956d609612f015ed3d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja odczytująca układ pokoju z pliku.  <a href="classroom.html#aa6bdd86c04944956d609612f015ed3d0">Więcej...</a><br /></td></tr>
+<tr class="separator:aa6bdd86c04944956d609612f015ed3d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a511afd48176a554e6312d72d24e05563"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#a511afd48176a554e6312d72d24e05563">load_room_layout</a> (<a class="el" href="classhero.html">hero</a> &amp;player, <a class="el" href="class_collision.html">Collision</a> kolizja, sf::RenderWindow &amp;window, std::vector&lt; <a class="el" href="class_bullet.html">Bullet</a> &gt; &amp;heroB, std::vector&lt; <a class="el" href="class_bullet.html">Bullet</a> &gt; &amp;monsterB, std::vector&lt; <a class="el" href="classmonster.html">monster</a> &gt; &amp;monsterVEC, std::vector&lt; <a class="el" href="class_object.html">Object</a> &gt; &amp;objectVEC, std::vector&lt; <a class="el" href="classboss.html">boss</a> &gt; &amp;bossVec, std::vector&lt; <a class="el" href="class_item.html">Item</a> &gt; &amp;itemVec, int &amp;skeleton_count, int level)</td></tr>
+<tr class="memdesc:a511afd48176a554e6312d72d24e05563"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja Ustawiajaca odpowiednio drzwi w pokoju.  <a href="classroom.html#a511afd48176a554e6312d72d24e05563">Więcej...</a><br /></td></tr>
+<tr class="separator:a511afd48176a554e6312d72d24e05563"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad83dedaa79adafdb3f3e019c19afc4f9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#ad83dedaa79adafdb3f3e019c19afc4f9">getRoomType</a> (<a class="el" href="classhero.html">hero</a> &amp;player)</td></tr>
+<tr class="memdesc:ad83dedaa79adafdb3f3e019c19afc4f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja zwracająca typ pokoju.  <a href="classroom.html#ad83dedaa79adafdb3f3e019c19afc4f9">Więcej...</a><br /></td></tr>
+<tr class="separator:ad83dedaa79adafdb3f3e019c19afc4f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Atrybuty publiczne</h2></td></tr>
+<tr class="memitem:ad3ebf8a7af28c784c0dcabf7788d2ed6"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#ad3ebf8a7af28c784c0dcabf7788d2ed6">ghostTexture</a></td></tr>
+<tr class="memdesc:ad3ebf8a7af28c784c0dcabf7788d2ed6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura ducha.  <a href="classroom.html#ad3ebf8a7af28c784c0dcabf7788d2ed6">Więcej...</a><br /></td></tr>
+<tr class="separator:ad3ebf8a7af28c784c0dcabf7788d2ed6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a14c5a399e4e1c0af604a388976a912"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#a1a14c5a399e4e1c0af604a388976a912">demonTexture</a></td></tr>
+<tr class="memdesc:a1a14c5a399e4e1c0af604a388976a912"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura chochlika.  <a href="classroom.html#a1a14c5a399e4e1c0af604a388976a912">Więcej...</a><br /></td></tr>
+<tr class="separator:a1a14c5a399e4e1c0af604a388976a912"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a865904ecea0a22acefcf275ee365e89b"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#a865904ecea0a22acefcf275ee365e89b">background_t</a></td></tr>
+<tr class="memdesc:a865904ecea0a22acefcf275ee365e89b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura pokoju.  <a href="classroom.html#a865904ecea0a22acefcf275ee365e89b">Więcej...</a><br /></td></tr>
+<tr class="separator:a865904ecea0a22acefcf275ee365e89b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa1cacd5ea1f8fc82765e5438756736e"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#afa1cacd5ea1f8fc82765e5438756736e">background_s</a></td></tr>
+<tr class="memdesc:afa1cacd5ea1f8fc82765e5438756736e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zmienna ułatwiająca manipulowanie teksturą pokoju.  <a href="classroom.html#afa1cacd5ea1f8fc82765e5438756736e">Więcej...</a><br /></td></tr>
+<tr class="separator:afa1cacd5ea1f8fc82765e5438756736e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfc2fa80d89301411938b3ebfbab98e7"><td class="memItemLeft" align="right" valign="top">sf::RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#acfc2fa80d89301411938b3ebfbab98e7">minimap_room</a></td></tr>
+<tr class="memdesc:acfc2fa80d89301411938b3ebfbab98e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prostokąt, który reprezentuje pokój na minimapie.  <a href="classroom.html#acfc2fa80d89301411938b3ebfbab98e7">Więcej...</a><br /></td></tr>
+<tr class="separator:acfc2fa80d89301411938b3ebfbab98e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4a0cb570fb3a1148bc985066b59c05e"><td class="memItemLeft" align="right" valign="top">sf::RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#ae4a0cb570fb3a1148bc985066b59c05e">hero_m</a></td></tr>
+<tr class="memdesc:ae4a0cb570fb3a1148bc985066b59c05e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prostokąt, który pobiera teksturę głowy gracza i określa gdzie aktualnie znajduje się na mapie.  <a href="classroom.html#ae4a0cb570fb3a1148bc985066b59c05e">Więcej...</a><br /></td></tr>
+<tr class="separator:ae4a0cb570fb3a1148bc985066b59c05e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace2cce0b13197da6d76e26ad29727eab"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#ace2cce0b13197da6d76e26ad29727eab">minimap_rt</a></td></tr>
+<tr class="memdesc:ace2cce0b13197da6d76e26ad29727eab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura pokoju na minimapie.  <a href="classroom.html#ace2cce0b13197da6d76e26ad29727eab">Więcej...</a><br /></td></tr>
+<tr class="separator:ace2cce0b13197da6d76e26ad29727eab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90df5bbe76d5f4433257c2338fcfb62b"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#a90df5bbe76d5f4433257c2338fcfb62b">hero_minimap</a></td></tr>
+<tr class="memdesc:a90df5bbe76d5f4433257c2338fcfb62b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura gracza na minimapie.  <a href="classroom.html#a90df5bbe76d5f4433257c2338fcfb62b">Więcej...</a><br /></td></tr>
+<tr class="separator:a90df5bbe76d5f4433257c2338fcfb62b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Atrybuty chronione</h2></td></tr>
+<tr class="memitem:a1b03499d24d7e0a25dba80fe8e87e114"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structroom_1_1room__properties.html">room_properties</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#a1b03499d24d7e0a25dba80fe8e87e114">grid</a> [<a class="el" href="_room_8h.html#a70ed59adcb4159ac551058053e649640">SIZE</a>][<a class="el" href="_room_8h.html#a70ed59adcb4159ac551058053e649640">SIZE</a>]</td></tr>
+<tr class="memdesc:a1b03499d24d7e0a25dba80fe8e87e114"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macierz, na której generowane są pokoje.  <a href="classroom.html#a1b03499d24d7e0a25dba80fe8e87e114">Więcej...</a><br /></td></tr>
+<tr class="separator:a1b03499d24d7e0a25dba80fe8e87e114"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada6ca59e9e9c0c6fde1a7be475843398"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_item.html">Item</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#ada6ca59e9e9c0c6fde1a7be475843398">noValueItems</a></td></tr>
+<tr class="memdesc:ada6ca59e9e9c0c6fde1a7be475843398"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wektor przetrzymujący przedmioty.  <a href="classroom.html#ada6ca59e9e9c0c6fde1a7be475843398">Więcej...</a><br /></td></tr>
+<tr class="separator:ada6ca59e9e9c0c6fde1a7be475843398"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac067f4429b97f1df07343a40fb149022"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_item.html">Item</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#ac067f4429b97f1df07343a40fb149022">valueItems</a></td></tr>
+<tr class="memdesc:ac067f4429b97f1df07343a40fb149022"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wektor przetrzymujący przedmioty do kupienia.  <a href="classroom.html#ac067f4429b97f1df07343a40fb149022">Więcej...</a><br /></td></tr>
+<tr class="separator:ac067f4429b97f1df07343a40fb149022"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e7df5aac8f98868c220fafefe418969"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_item.html">Item</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#a3e7df5aac8f98868c220fafefe418969">shopItems</a></td></tr>
+<tr class="memdesc:a3e7df5aac8f98868c220fafefe418969"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wektor przetrzymujący przemioty, które aktualnie znajdują się w sklepie.  <a href="classroom.html#a3e7df5aac8f98868c220fafefe418969">Więcej...</a><br /></td></tr>
+<tr class="separator:a3e7df5aac8f98868c220fafefe418969"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeaaf788c7c1cc639fa0d8c46f9a75834"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_item.html">Item</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#aeaaf788c7c1cc639fa0d8c46f9a75834">itemRoomVec</a></td></tr>
+<tr class="memdesc:aeaaf788c7c1cc639fa0d8c46f9a75834"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wektor przetrzymnujący przemioty, które aktualnie znajdują się w pokoju.  <a href="classroom.html#aeaaf788c7c1cc639fa0d8c46f9a75834">Więcej...</a><br /></td></tr>
+<tr class="separator:aeaaf788c7c1cc639fa0d8c46f9a75834"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa11622ade3b7ba1dad9f660885c508ed"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#aa11622ade3b7ba1dad9f660885c508ed">doors_t</a></td></tr>
+<tr class="memdesc:aa11622ade3b7ba1dad9f660885c508ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura drzwi.  <a href="classroom.html#aa11622ade3b7ba1dad9f660885c508ed">Więcej...</a><br /></td></tr>
+<tr class="separator:aa11622ade3b7ba1dad9f660885c508ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3335f9861ceb50946e51908e1e7854c"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#ac3335f9861ceb50946e51908e1e7854c">doors_bs_t</a></td></tr>
+<tr class="memdesc:ac3335f9861ceb50946e51908e1e7854c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura drzwi do pokoju z bossem.  <a href="classroom.html#ac3335f9861ceb50946e51908e1e7854c">Więcej...</a><br /></td></tr>
+<tr class="separator:ac3335f9861ceb50946e51908e1e7854c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab93e623e3e7b0b80059461a2fafa03a2"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#ab93e623e3e7b0b80059461a2fafa03a2">doors_sh_t</a></td></tr>
+<tr class="memdesc:ab93e623e3e7b0b80059461a2fafa03a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura drzwi do sklepu.  <a href="classroom.html#ab93e623e3e7b0b80059461a2fafa03a2">Więcej...</a><br /></td></tr>
+<tr class="separator:ab93e623e3e7b0b80059461a2fafa03a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0879f9b82230c98af1c727129049562"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#af0879f9b82230c98af1c727129049562">doors_it_t</a></td></tr>
+<tr class="memdesc:af0879f9b82230c98af1c727129049562"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura drzwi do pokoju z przedmiotem.  <a href="classroom.html#af0879f9b82230c98af1c727129049562">Więcej...</a><br /></td></tr>
+<tr class="separator:af0879f9b82230c98af1c727129049562"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bb4bafb7575a2ba30171c3fa35c0d83"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#a4bb4bafb7575a2ba30171c3fa35c0d83">wizardTexture</a></td></tr>
+<tr class="memdesc:a4bb4bafb7575a2ba30171c3fa35c0d83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura czarodzieja.  <a href="classroom.html#a4bb4bafb7575a2ba30171c3fa35c0d83">Więcej...</a><br /></td></tr>
+<tr class="separator:a4bb4bafb7575a2ba30171c3fa35c0d83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7d4f7bb573adbd9f9964486328c8a27"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#ad7d4f7bb573adbd9f9964486328c8a27">skeletonTexture</a></td></tr>
+<tr class="memdesc:ad7d4f7bb573adbd9f9964486328c8a27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura szkieleta.  <a href="classroom.html#ad7d4f7bb573adbd9f9964486328c8a27">Więcej...</a><br /></td></tr>
+<tr class="separator:ad7d4f7bb573adbd9f9964486328c8a27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a754d15f88f17c1e2fb4bd10fe3e521"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#a4a754d15f88f17c1e2fb4bd10fe3e521">zombieTexture</a></td></tr>
+<tr class="memdesc:a4a754d15f88f17c1e2fb4bd10fe3e521"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura zombie.  <a href="classroom.html#a4a754d15f88f17c1e2fb4bd10fe3e521">Więcej...</a><br /></td></tr>
+<tr class="separator:a4a754d15f88f17c1e2fb4bd10fe3e521"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa02bc986134a990c7223e86240d336b7"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#aa02bc986134a990c7223e86240d336b7">spiderTexture</a></td></tr>
+<tr class="memdesc:aa02bc986134a990c7223e86240d336b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura pająka.  <a href="classroom.html#aa02bc986134a990c7223e86240d336b7">Więcej...</a><br /></td></tr>
+<tr class="separator:aa02bc986134a990c7223e86240d336b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fff8980f283a0780667d70d32928804"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#a0fff8980f283a0780667d70d32928804">elfTexture</a></td></tr>
+<tr class="memdesc:a0fff8980f283a0780667d70d32928804"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura elfa.  <a href="classroom.html#a0fff8980f283a0780667d70d32928804">Więcej...</a><br /></td></tr>
+<tr class="separator:a0fff8980f283a0780667d70d32928804"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f29b344232fc60c1dc11cab1572ac19"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#a7f29b344232fc60c1dc11cab1572ac19">slimeTexture</a></td></tr>
+<tr class="memdesc:a7f29b344232fc60c1dc11cab1572ac19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura glutka.  <a href="classroom.html#a7f29b344232fc60c1dc11cab1572ac19">Więcej...</a><br /></td></tr>
+<tr class="separator:a7f29b344232fc60c1dc11cab1572ac19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a724e16888fda180bad2ea2dbcf0e2a9c"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#a724e16888fda180bad2ea2dbcf0e2a9c">trollTexture</a></td></tr>
+<tr class="memdesc:a724e16888fda180bad2ea2dbcf0e2a9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura trolla.  <a href="classroom.html#a724e16888fda180bad2ea2dbcf0e2a9c">Więcej...</a><br /></td></tr>
+<tr class="separator:a724e16888fda180bad2ea2dbcf0e2a9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d7b020072b5055a257cf011c75616ea"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#a3d7b020072b5055a257cf011c75616ea">towerTexture</a></td></tr>
+<tr class="memdesc:a3d7b020072b5055a257cf011c75616ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura wieżyczki.  <a href="classroom.html#a3d7b020072b5055a257cf011c75616ea">Więcej...</a><br /></td></tr>
+<tr class="separator:a3d7b020072b5055a257cf011c75616ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9a066630a3b7fb06311fb4caefb8bf8"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#ab9a066630a3b7fb06311fb4caefb8bf8">rockTexture</a></td></tr>
+<tr class="memdesc:ab9a066630a3b7fb06311fb4caefb8bf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura kamienia.  <a href="classroom.html#ab9a066630a3b7fb06311fb4caefb8bf8">Więcej...</a><br /></td></tr>
+<tr class="separator:ab9a066630a3b7fb06311fb4caefb8bf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f268700b994ee9f19a7375fc2bc96cd"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#a9f268700b994ee9f19a7375fc2bc96cd">bonesTexture</a></td></tr>
+<tr class="memdesc:a9f268700b994ee9f19a7375fc2bc96cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura kupki kości.  <a href="classroom.html#a9f268700b994ee9f19a7375fc2bc96cd">Więcej...</a><br /></td></tr>
+<tr class="separator:a9f268700b994ee9f19a7375fc2bc96cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a722e96565ad1f79cda23a1b61d137fda"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#a722e96565ad1f79cda23a1b61d137fda">holeTexture</a></td></tr>
+<tr class="memdesc:a722e96565ad1f79cda23a1b61d137fda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura przepaści.  <a href="classroom.html#a722e96565ad1f79cda23a1b61d137fda">Więcej...</a><br /></td></tr>
+<tr class="separator:a722e96565ad1f79cda23a1b61d137fda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5313bce59a45e579ef458cdde6c19f1"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#ab5313bce59a45e579ef458cdde6c19f1">barrelTexture</a></td></tr>
+<tr class="memdesc:ab5313bce59a45e579ef458cdde6c19f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura beczki.  <a href="classroom.html#ab5313bce59a45e579ef458cdde6c19f1">Więcej...</a><br /></td></tr>
+<tr class="separator:ab5313bce59a45e579ef458cdde6c19f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb9b2eaaa916473a3eb6e884ebff2c4f"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#aeb9b2eaaa916473a3eb6e884ebff2c4f">crateTexture</a></td></tr>
+<tr class="memdesc:aeb9b2eaaa916473a3eb6e884ebff2c4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura skrzyni.  <a href="classroom.html#aeb9b2eaaa916473a3eb6e884ebff2c4f">Więcej...</a><br /></td></tr>
+<tr class="separator:aeb9b2eaaa916473a3eb6e884ebff2c4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada21c1d5f56dd1d04f58ef3e1a121d7e"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#ada21c1d5f56dd1d04f58ef3e1a121d7e">ladderTexture</a></td></tr>
+<tr class="memdesc:ada21c1d5f56dd1d04f58ef3e1a121d7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura drabiny.  <a href="classroom.html#ada21c1d5f56dd1d04f58ef3e1a121d7e">Więcej...</a><br /></td></tr>
+<tr class="separator:ada21c1d5f56dd1d04f58ef3e1a121d7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac75e3e4c656a1f0ffc5cfeaaec9aac0d"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#ac75e3e4c656a1f0ffc5cfeaaec9aac0d">necromancerTexture</a></td></tr>
+<tr class="memdesc:ac75e3e4c656a1f0ffc5cfeaaec9aac0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura nekromanty.  <a href="classroom.html#ac75e3e4c656a1f0ffc5cfeaaec9aac0d">Więcej...</a><br /></td></tr>
+<tr class="separator:ac75e3e4c656a1f0ffc5cfeaaec9aac0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2ce5e8bcbdd582b7afaa40a40531b58"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#aa2ce5e8bcbdd582b7afaa40a40531b58">brother1Texture</a></td></tr>
+<tr class="memdesc:aa2ce5e8bcbdd582b7afaa40a40531b58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura 1 z braci.  <a href="classroom.html#aa2ce5e8bcbdd582b7afaa40a40531b58">Więcej...</a><br /></td></tr>
+<tr class="separator:aa2ce5e8bcbdd582b7afaa40a40531b58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9dd4e63c68a62a6cf0f4bc02afb25b1"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#af9dd4e63c68a62a6cf0f4bc02afb25b1">brother2Texture</a></td></tr>
+<tr class="memdesc:af9dd4e63c68a62a6cf0f4bc02afb25b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura 2 z braci.  <a href="classroom.html#af9dd4e63c68a62a6cf0f4bc02afb25b1">Więcej...</a><br /></td></tr>
+<tr class="separator:af9dd4e63c68a62a6cf0f4bc02afb25b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a329f38d81e5ff8caee2b5fbef99d166b"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#a329f38d81e5ff8caee2b5fbef99d166b">devilAnimation</a></td></tr>
+<tr class="memdesc:a329f38d81e5ff8caee2b5fbef99d166b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura demona.  <a href="classroom.html#a329f38d81e5ff8caee2b5fbef99d166b">Więcej...</a><br /></td></tr>
+<tr class="separator:a329f38d81e5ff8caee2b5fbef99d166b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe1194a15678021b753f8f45efa9b79d"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#afe1194a15678021b753f8f45efa9b79d">arrow_texture</a></td></tr>
+<tr class="memdesc:afe1194a15678021b753f8f45efa9b79d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura strzały.  <a href="classroom.html#afe1194a15678021b753f8f45efa9b79d">Więcej...</a><br /></td></tr>
+<tr class="separator:afe1194a15678021b753f8f45efa9b79d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a118345e77ba17488ac4a9349d3e79aaf"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#a118345e77ba17488ac4a9349d3e79aaf">fire_ball_texture</a></td></tr>
+<tr class="memdesc:a118345e77ba17488ac4a9349d3e79aaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura kuli ognia.  <a href="classroom.html#a118345e77ba17488ac4a9349d3e79aaf">Więcej...</a><br /></td></tr>
+<tr class="separator:a118345e77ba17488ac4a9349d3e79aaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5718509be9b537e9603872c38fb8310"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#af5718509be9b537e9603872c38fb8310">skull_texture</a></td></tr>
+<tr class="memdesc:af5718509be9b537e9603872c38fb8310"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura czaszki.  <a href="classroom.html#af5718509be9b537e9603872c38fb8310">Więcej...</a><br /></td></tr>
+<tr class="separator:af5718509be9b537e9603872c38fb8310"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9aea326679ca8b338e7cac006034f524"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#a9aea326679ca8b338e7cac006034f524">slime_ball_texture</a></td></tr>
+<tr class="memdesc:a9aea326679ca8b338e7cac006034f524"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura kuli glutów.  <a href="classroom.html#a9aea326679ca8b338e7cac006034f524">Więcej...</a><br /></td></tr>
+<tr class="separator:a9aea326679ca8b338e7cac006034f524"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94323abb224d4767236656d3388f77e3"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#a94323abb224d4767236656d3388f77e3">bone_texture</a></td></tr>
+<tr class="memdesc:a94323abb224d4767236656d3388f77e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura kości.  <a href="classroom.html#a94323abb224d4767236656d3388f77e3">Więcej...</a><br /></td></tr>
+<tr class="separator:a94323abb224d4767236656d3388f77e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c626a98254ffa05e0e8daf7c648c082"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#a5c626a98254ffa05e0e8daf7c648c082">cannon_ball_texture</a></td></tr>
+<tr class="memdesc:a5c626a98254ffa05e0e8daf7c648c082"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura kuli armatniej.  <a href="classroom.html#a5c626a98254ffa05e0e8daf7c648c082">Więcej...</a><br /></td></tr>
+<tr class="separator:a5c626a98254ffa05e0e8daf7c648c082"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf38b22710a4846fe2c8d10c5aec9c28"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#abf38b22710a4846fe2c8d10c5aec9c28">boots1Texture</a></td></tr>
+<tr class="memdesc:abf38b22710a4846fe2c8d10c5aec9c28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura 1 butów.  <a href="classroom.html#abf38b22710a4846fe2c8d10c5aec9c28">Więcej...</a><br /></td></tr>
+<tr class="separator:abf38b22710a4846fe2c8d10c5aec9c28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6e76329df9053ad38b2a14a46233468"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#af6e76329df9053ad38b2a14a46233468">boots2Texture</a></td></tr>
+<tr class="memdesc:af6e76329df9053ad38b2a14a46233468"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura 2 butów.  <a href="classroom.html#af6e76329df9053ad38b2a14a46233468">Więcej...</a><br /></td></tr>
+<tr class="separator:af6e76329df9053ad38b2a14a46233468"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c6bfbad11e2d44113d2329b950c3ffa"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#a2c6bfbad11e2d44113d2329b950c3ffa">gloves1Texture</a></td></tr>
+<tr class="memdesc:a2c6bfbad11e2d44113d2329b950c3ffa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura 1 rękawic.  <a href="classroom.html#a2c6bfbad11e2d44113d2329b950c3ffa">Więcej...</a><br /></td></tr>
+<tr class="separator:a2c6bfbad11e2d44113d2329b950c3ffa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fbaa9c53e1f60d1a26fcda893e9f94c"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#a5fbaa9c53e1f60d1a26fcda893e9f94c">gloves2Texture</a></td></tr>
+<tr class="memdesc:a5fbaa9c53e1f60d1a26fcda893e9f94c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura 2 rękawic.  <a href="classroom.html#a5fbaa9c53e1f60d1a26fcda893e9f94c">Więcej...</a><br /></td></tr>
+<tr class="separator:a5fbaa9c53e1f60d1a26fcda893e9f94c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee09281e000f7af2cb14827fd31d6c69"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#aee09281e000f7af2cb14827fd31d6c69">helmetTexture</a></td></tr>
+<tr class="memdesc:aee09281e000f7af2cb14827fd31d6c69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura hełmu.  <a href="classroom.html#aee09281e000f7af2cb14827fd31d6c69">Więcej...</a><br /></td></tr>
+<tr class="separator:aee09281e000f7af2cb14827fd31d6c69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a6eda2cd7bb3ba02c37417bf148da3b"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#a5a6eda2cd7bb3ba02c37417bf148da3b">wingsTexture</a></td></tr>
+<tr class="memdesc:a5a6eda2cd7bb3ba02c37417bf148da3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura skrzydeł  <a href="classroom.html#a5a6eda2cd7bb3ba02c37417bf148da3b">Więcej...</a><br /></td></tr>
+<tr class="separator:a5a6eda2cd7bb3ba02c37417bf148da3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acba1f5fd9dfeaf21f3ba1aff5903e3ed"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#acba1f5fd9dfeaf21f3ba1aff5903e3ed">sword1Texture</a></td></tr>
+<tr class="memdesc:acba1f5fd9dfeaf21f3ba1aff5903e3ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura 1 miecza.  <a href="classroom.html#acba1f5fd9dfeaf21f3ba1aff5903e3ed">Więcej...</a><br /></td></tr>
+<tr class="separator:acba1f5fd9dfeaf21f3ba1aff5903e3ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6c294e40e31233531cd616e67ed05df"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#ab6c294e40e31233531cd616e67ed05df">sword2Texture</a></td></tr>
+<tr class="memdesc:ab6c294e40e31233531cd616e67ed05df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura 2 miecza.  <a href="classroom.html#ab6c294e40e31233531cd616e67ed05df">Więcej...</a><br /></td></tr>
+<tr class="separator:ab6c294e40e31233531cd616e67ed05df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b8ac4adb7928c2420942f10f54c6656"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#a8b8ac4adb7928c2420942f10f54c6656">chestplateTexture</a></td></tr>
+<tr class="memdesc:a8b8ac4adb7928c2420942f10f54c6656"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura napierśnika.  <a href="classroom.html#a8b8ac4adb7928c2420942f10f54c6656">Więcej...</a><br /></td></tr>
+<tr class="separator:a8b8ac4adb7928c2420942f10f54c6656"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb11c917bad6f9dfebd7c91bb3448160"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#acb11c917bad6f9dfebd7c91bb3448160">axeTexture</a></td></tr>
+<tr class="memdesc:acb11c917bad6f9dfebd7c91bb3448160"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura toporu.  <a href="classroom.html#acb11c917bad6f9dfebd7c91bb3448160">Więcej...</a><br /></td></tr>
+<tr class="separator:acb11c917bad6f9dfebd7c91bb3448160"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1233f78d0620af438271c3834edc6e05"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#a1233f78d0620af438271c3834edc6e05">grailTexture</a></td></tr>
+<tr class="memdesc:a1233f78d0620af438271c3834edc6e05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura grala.  <a href="classroom.html#a1233f78d0620af438271c3834edc6e05">Więcej...</a><br /></td></tr>
+<tr class="separator:a1233f78d0620af438271c3834edc6e05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1fd66a6a9ca419e180685253fde91e3"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#af1fd66a6a9ca419e180685253fde91e3">ring1Texture</a></td></tr>
+<tr class="memdesc:af1fd66a6a9ca419e180685253fde91e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura 1 pierścienia.  <a href="classroom.html#af1fd66a6a9ca419e180685253fde91e3">Więcej...</a><br /></td></tr>
+<tr class="separator:af1fd66a6a9ca419e180685253fde91e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb13ee898e5690243f50fb04ba3e6a70"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#adb13ee898e5690243f50fb04ba3e6a70">ring2Texture</a></td></tr>
+<tr class="memdesc:adb13ee898e5690243f50fb04ba3e6a70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura 2 pierscienia.  <a href="classroom.html#adb13ee898e5690243f50fb04ba3e6a70">Więcej...</a><br /></td></tr>
+<tr class="separator:adb13ee898e5690243f50fb04ba3e6a70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a554e125fd09c20d5c34c452ec0ba1586"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#a554e125fd09c20d5c34c452ec0ba1586">small_healPotTexture</a></td></tr>
+<tr class="memdesc:a554e125fd09c20d5c34c452ec0ba1586"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura małej mikstury leczenia.  <a href="classroom.html#a554e125fd09c20d5c34c452ec0ba1586">Więcej...</a><br /></td></tr>
+<tr class="separator:a554e125fd09c20d5c34c452ec0ba1586"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22851ad95aad6a42dcf349144ff9b406"><td class="memItemLeft" align="right" valign="top">sf::Texture&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classroom.html#a22851ad95aad6a42dcf349144ff9b406">big_healPotTexture</a></td></tr>
+<tr class="memdesc:a22851ad95aad6a42dcf349144ff9b406"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura dużej mikstury leczenia.  <a href="classroom.html#a22851ad95aad6a42dcf349144ff9b406">Więcej...</a><br /></td></tr>
+<tr class="separator:a22851ad95aad6a42dcf349144ff9b406"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p >Klasa odpowiedzialna za operacje związane z załadowaniem układu pokoju, przechodzenia między pokojami oraz innych związanych z pokojami opcji. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00015">15</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+</div><h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="aed58293378a358795faadcffc6e48697" name="aed58293378a358795faadcffc6e48697"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed58293378a358795faadcffc6e48697">&#9670;&nbsp;</a></span>check_doors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int room::check_doors </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkcja sprawdzająca układ drzwi danego pokoju. </p>
+<p >Funkcja sprawdzająca układ drzwi danego pokoju </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>Parametr i pokoju </td></tr>
+    <tr><td class="paramname">j</td><td>Parametr j pokoju </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>room_doors Liczba zapisana w postaci binarnej, w której każdy bit odpowiada danym drzwiom w pokoju </dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8cpp_source.html#l00115">115</a> pliku <a class="el" href="_room_8cpp_source.html">Room.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ac6cbf5caffffedeff55c38e25a5b1dcd" name="ac6cbf5caffffedeff55c38e25a5b1dcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6cbf5caffffedeff55c38e25a5b1dcd">&#9670;&nbsp;</a></span>Draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void room::Draw </td>
+          <td>(</td>
+          <td class="paramtype">sf::RenderWindow &amp;&#160;</td>
+          <td class="paramname"><em>window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::RectangleShape &amp;&#160;</td>
+          <td class="paramname"><em>door</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkcja wyświetlająca drzwi. </p>
+<p >Funkcja, która wyświetla na podane okno drzwi </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>Wskaźnik na okno, w którym ma zostać wyświetlony obiekt </td></tr>
+    <tr><td class="paramname">door</td><td>Wskaźnik na drzwi </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8cpp_source.html#l00135">135</a> pliku <a class="el" href="_room_8cpp_source.html">Room.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ad83dedaa79adafdb3f3e019c19afc4f9" name="ad83dedaa79adafdb3f3e019c19afc4f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad83dedaa79adafdb3f3e019c19afc4f9">&#9670;&nbsp;</a></span>getRoomType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int room::getRoomType </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classhero.html">hero</a> &amp;&#160;</td>
+          <td class="paramname"><em>player</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkcja zwracająca typ pokoju. </p>
+<p >Funkcja zwraca typ pokoju, w którym znajduje się gracz </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">player</td><td>Wskaźnik na gracza </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8cpp_source.html#l00645">645</a> pliku <a class="el" href="_room_8cpp_source.html">Room.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a53ca1cc8644c6e0b481945f41ca77ac2" name="a53ca1cc8644c6e0b481945f41ca77ac2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53ca1cc8644c6e0b481945f41ca77ac2">&#9670;&nbsp;</a></span>init_Texture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void room::init_Texture </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkcja inicjująca tekstury. </p>
+<p >Funkcja inicjuje tekstury przeciwników, obiektów, przedmiotów itp. które będą umieszczane na mapie </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8cpp_source.html#l00006">6</a> pliku <a class="el" href="_room_8cpp_source.html">Room.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a511afd48176a554e6312d72d24e05563" name="a511afd48176a554e6312d72d24e05563"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a511afd48176a554e6312d72d24e05563">&#9670;&nbsp;</a></span>load_room_layout()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void room::load_room_layout </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classhero.html">hero</a> &amp;&#160;</td>
+          <td class="paramname"><em>player</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_collision.html">Collision</a>&#160;</td>
+          <td class="paramname"><em>kolizja</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::RenderWindow &amp;&#160;</td>
+          <td class="paramname"><em>window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="class_bullet.html">Bullet</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>heroB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="class_bullet.html">Bullet</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>monsterB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classmonster.html">monster</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>monsterVEC</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="class_object.html">Object</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>objectVEC</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classboss.html">boss</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>bossVec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="class_item.html">Item</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>itemVec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>skeleton_count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>level</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkcja Ustawiajaca odpowiednio drzwi w pokoju. </p>
+<p >Funkcja dobiera odpowiednio teksture drzwi (zamkniete badz otwarte) i sprawdza kolizje gracza z nimi </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">player</td><td>Wskaźnik na gracza </td></tr>
+    <tr><td class="paramname">kolizja</td><td>Klasa odpowiadająca za wykrywanie kolizji </td></tr>
+    <tr><td class="paramname">window</td><td>Wskaźnik na okno, w którym mają być aktualizowane pozycje drzwi </td></tr>
+    <tr><td class="paramname">heroB</td><td>Wskaźnik na vector pocisków gracza </td></tr>
+    <tr><td class="paramname">monsterB</td><td>Wskaźnik na vector pocisków przeciwników </td></tr>
+    <tr><td class="paramname">monsterVEC</td><td>Wskaźnik na vector przeciwników </td></tr>
+    <tr><td class="paramname">objectVEC</td><td>Wskaźnik na vector obiektów </td></tr>
+    <tr><td class="paramname">bossVec</td><td>Wskaźnik na vector bossów </td></tr>
+    <tr><td class="paramname">itemVec</td><td>Wskaźnik na vector przedmiotów </td></tr>
+    <tr><td class="paramname">skeleton_count</td><td>Ilość szkieletów na mapie gry </td></tr>
+    <tr><td class="paramname">level</td><td>Poziom na którym aktualnie znajduje się gracz </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8cpp_source.html#l00378">378</a> pliku <a class="el" href="_room_8cpp_source.html">Room.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aa6bdd86c04944956d609612f015ed3d0" name="aa6bdd86c04944956d609612f015ed3d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6bdd86c04944956d609612f015ed3d0">&#9670;&nbsp;</a></span>read_from_file()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void room::read_from_file </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classhero.html">hero</a> &amp;&#160;</td>
+          <td class="paramname"><em>player</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classmonster.html">monster</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>monsterVEC</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="class_object.html">Object</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>objectVEC</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classboss.html">boss</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>bossVec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="class_item.html">Item</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>itemVec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>skeleton_count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>level</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkcja odczytująca układ pokoju z pliku. </p>
+<p >Funkcja, która odczytuje plik, a następnie ustawia odpowiednie przedmioty oraz przeciwników na mapie </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">player</td><td>Wskaźnik na gracza </td></tr>
+    <tr><td class="paramname">monsterVEC</td><td>Wskaźnik na vector potworów </td></tr>
+    <tr><td class="paramname">objectVEC</td><td>Wskaźnik na vector obiektów </td></tr>
+    <tr><td class="paramname">bossVec</td><td>Wskaźnik na vector bossów </td></tr>
+    <tr><td class="paramname">itemVec</td><td>Wskaźnik na vector przedmiotów </td></tr>
+    <tr><td class="paramname">skeleton_count</td><td>Ilość szkieletów na mapie gry </td></tr>
+    <tr><td class="paramname">level</td><td>Poziom na którym aktualnie znajduje się gracz </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8cpp_source.html#l00150">150</a> pliku <a class="el" href="_room_8cpp_source.html">Room.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja atrybutów składowych</h2>
+<a id="afe1194a15678021b753f8f45efa9b79d" name="afe1194a15678021b753f8f45efa9b79d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe1194a15678021b753f8f45efa9b79d">&#9670;&nbsp;</a></span>arrow_texture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::arrow_texture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura strzały. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00068">68</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="acb11c917bad6f9dfebd7c91bb3448160" name="acb11c917bad6f9dfebd7c91bb3448160"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb11c917bad6f9dfebd7c91bb3448160">&#9670;&nbsp;</a></span>axeTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::axeTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura toporu. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00085">85</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="afa1cacd5ea1f8fc82765e5438756736e" name="afa1cacd5ea1f8fc82765e5438756736e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa1cacd5ea1f8fc82765e5438756736e">&#9670;&nbsp;</a></span>background_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Sprite room::background_s</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Zmienna ułatwiająca manipulowanie teksturą pokoju. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00096">96</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="a865904ecea0a22acefcf275ee365e89b" name="a865904ecea0a22acefcf275ee365e89b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a865904ecea0a22acefcf275ee365e89b">&#9670;&nbsp;</a></span>background_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::background_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tekstura pokoju. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00095">95</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="ab5313bce59a45e579ef458cdde6c19f1" name="ab5313bce59a45e579ef458cdde6c19f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5313bce59a45e579ef458cdde6c19f1">&#9670;&nbsp;</a></span>barrelTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::barrelTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura beczki. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00057">57</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="a22851ad95aad6a42dcf349144ff9b406" name="a22851ad95aad6a42dcf349144ff9b406"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22851ad95aad6a42dcf349144ff9b406">&#9670;&nbsp;</a></span>big_healPotTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::big_healPotTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura dużej mikstury leczenia. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00091">91</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="a94323abb224d4767236656d3388f77e3" name="a94323abb224d4767236656d3388f77e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94323abb224d4767236656d3388f77e3">&#9670;&nbsp;</a></span>bone_texture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::bone_texture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura kości. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00072">72</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="a9f268700b994ee9f19a7375fc2bc96cd" name="a9f268700b994ee9f19a7375fc2bc96cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f268700b994ee9f19a7375fc2bc96cd">&#9670;&nbsp;</a></span>bonesTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::bonesTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura kupki kości. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00055">55</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="abf38b22710a4846fe2c8d10c5aec9c28" name="abf38b22710a4846fe2c8d10c5aec9c28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf38b22710a4846fe2c8d10c5aec9c28">&#9670;&nbsp;</a></span>boots1Texture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::boots1Texture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura 1 butów. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00076">76</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="af6e76329df9053ad38b2a14a46233468" name="af6e76329df9053ad38b2a14a46233468"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6e76329df9053ad38b2a14a46233468">&#9670;&nbsp;</a></span>boots2Texture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::boots2Texture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura 2 butów. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00077">77</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="aa2ce5e8bcbdd582b7afaa40a40531b58" name="aa2ce5e8bcbdd582b7afaa40a40531b58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2ce5e8bcbdd582b7afaa40a40531b58">&#9670;&nbsp;</a></span>brother1Texture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::brother1Texture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura 1 z braci. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00063">63</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="af9dd4e63c68a62a6cf0f4bc02afb25b1" name="af9dd4e63c68a62a6cf0f4bc02afb25b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9dd4e63c68a62a6cf0f4bc02afb25b1">&#9670;&nbsp;</a></span>brother2Texture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::brother2Texture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura 2 z braci. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00064">64</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="a5c626a98254ffa05e0e8daf7c648c082" name="a5c626a98254ffa05e0e8daf7c648c082"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c626a98254ffa05e0e8daf7c648c082">&#9670;&nbsp;</a></span>cannon_ball_texture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::cannon_ball_texture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura kuli armatniej. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00073">73</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="a8b8ac4adb7928c2420942f10f54c6656" name="a8b8ac4adb7928c2420942f10f54c6656"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b8ac4adb7928c2420942f10f54c6656">&#9670;&nbsp;</a></span>chestplateTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::chestplateTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura napierśnika. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00084">84</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="aeb9b2eaaa916473a3eb6e884ebff2c4f" name="aeb9b2eaaa916473a3eb6e884ebff2c4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb9b2eaaa916473a3eb6e884ebff2c4f">&#9670;&nbsp;</a></span>crateTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::crateTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura skrzyni. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00058">58</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="a1a14c5a399e4e1c0af604a388976a912" name="a1a14c5a399e4e1c0af604a388976a912"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a14c5a399e4e1c0af604a388976a912">&#9670;&nbsp;</a></span>demonTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::demonTexture</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tekstura chochlika. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00094">94</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="a329f38d81e5ff8caee2b5fbef99d166b" name="a329f38d81e5ff8caee2b5fbef99d166b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a329f38d81e5ff8caee2b5fbef99d166b">&#9670;&nbsp;</a></span>devilAnimation</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::devilAnimation</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura demona. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00065">65</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="ac3335f9861ceb50946e51908e1e7854c" name="ac3335f9861ceb50946e51908e1e7854c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3335f9861ceb50946e51908e1e7854c">&#9670;&nbsp;</a></span>doors_bs_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::doors_bs_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura drzwi do pokoju z bossem. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00040">40</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="af0879f9b82230c98af1c727129049562" name="af0879f9b82230c98af1c727129049562"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0879f9b82230c98af1c727129049562">&#9670;&nbsp;</a></span>doors_it_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::doors_it_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura drzwi do pokoju z przedmiotem. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00042">42</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="ab93e623e3e7b0b80059461a2fafa03a2" name="ab93e623e3e7b0b80059461a2fafa03a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab93e623e3e7b0b80059461a2fafa03a2">&#9670;&nbsp;</a></span>doors_sh_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::doors_sh_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura drzwi do sklepu. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00041">41</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="aa11622ade3b7ba1dad9f660885c508ed" name="aa11622ade3b7ba1dad9f660885c508ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa11622ade3b7ba1dad9f660885c508ed">&#9670;&nbsp;</a></span>doors_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::doors_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura drzwi. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00039">39</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="a0fff8980f283a0780667d70d32928804" name="a0fff8980f283a0780667d70d32928804"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fff8980f283a0780667d70d32928804">&#9670;&nbsp;</a></span>elfTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::elfTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura elfa. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00048">48</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="a118345e77ba17488ac4a9349d3e79aaf" name="a118345e77ba17488ac4a9349d3e79aaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a118345e77ba17488ac4a9349d3e79aaf">&#9670;&nbsp;</a></span>fire_ball_texture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::fire_ball_texture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura kuli ognia. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00069">69</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="ad3ebf8a7af28c784c0dcabf7788d2ed6" name="ad3ebf8a7af28c784c0dcabf7788d2ed6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3ebf8a7af28c784c0dcabf7788d2ed6">&#9670;&nbsp;</a></span>ghostTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::ghostTexture</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tekstura ducha. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00093">93</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="a2c6bfbad11e2d44113d2329b950c3ffa" name="a2c6bfbad11e2d44113d2329b950c3ffa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c6bfbad11e2d44113d2329b950c3ffa">&#9670;&nbsp;</a></span>gloves1Texture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::gloves1Texture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura 1 rękawic. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00078">78</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="a5fbaa9c53e1f60d1a26fcda893e9f94c" name="a5fbaa9c53e1f60d1a26fcda893e9f94c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fbaa9c53e1f60d1a26fcda893e9f94c">&#9670;&nbsp;</a></span>gloves2Texture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::gloves2Texture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura 2 rękawic. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00079">79</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="a1233f78d0620af438271c3834edc6e05" name="a1233f78d0620af438271c3834edc6e05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1233f78d0620af438271c3834edc6e05">&#9670;&nbsp;</a></span>grailTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::grailTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura grala. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00086">86</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="a1b03499d24d7e0a25dba80fe8e87e114" name="a1b03499d24d7e0a25dba80fe8e87e114"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b03499d24d7e0a25dba80fe8e87e114">&#9670;&nbsp;</a></span>grid</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structroom_1_1room__properties.html">room_properties</a> room::grid[<a class="el" href="_room_8h.html#a70ed59adcb4159ac551058053e649640">SIZE</a>][<a class="el" href="_room_8h.html#a70ed59adcb4159ac551058053e649640">SIZE</a>]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Macierz, na której generowane są pokoje. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00032">32</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="aee09281e000f7af2cb14827fd31d6c69" name="aee09281e000f7af2cb14827fd31d6c69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee09281e000f7af2cb14827fd31d6c69">&#9670;&nbsp;</a></span>helmetTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::helmetTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura hełmu. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00080">80</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="ae4a0cb570fb3a1148bc985066b59c05e" name="ae4a0cb570fb3a1148bc985066b59c05e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4a0cb570fb3a1148bc985066b59c05e">&#9670;&nbsp;</a></span>hero_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::RectangleShape room::hero_m</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Prostokąt, który pobiera teksturę głowy gracza i określa gdzie aktualnie znajduje się na mapie. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00098">98</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="a90df5bbe76d5f4433257c2338fcfb62b" name="a90df5bbe76d5f4433257c2338fcfb62b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90df5bbe76d5f4433257c2338fcfb62b">&#9670;&nbsp;</a></span>hero_minimap</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::hero_minimap</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tekstura gracza na minimapie. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00100">100</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="a722e96565ad1f79cda23a1b61d137fda" name="a722e96565ad1f79cda23a1b61d137fda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a722e96565ad1f79cda23a1b61d137fda">&#9670;&nbsp;</a></span>holeTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::holeTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura przepaści. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00056">56</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="aeaaf788c7c1cc639fa0d8c46f9a75834" name="aeaaf788c7c1cc639fa0d8c46f9a75834"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeaaf788c7c1cc639fa0d8c46f9a75834">&#9670;&nbsp;</a></span>itemRoomVec</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="class_item.html">Item</a>&gt; room::itemRoomVec</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wektor przetrzymnujący przemioty, które aktualnie znajdują się w pokoju. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00037">37</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="ada21c1d5f56dd1d04f58ef3e1a121d7e" name="ada21c1d5f56dd1d04f58ef3e1a121d7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada21c1d5f56dd1d04f58ef3e1a121d7e">&#9670;&nbsp;</a></span>ladderTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::ladderTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura drabiny. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00059">59</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="acfc2fa80d89301411938b3ebfbab98e7" name="acfc2fa80d89301411938b3ebfbab98e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfc2fa80d89301411938b3ebfbab98e7">&#9670;&nbsp;</a></span>minimap_room</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::RectangleShape room::minimap_room</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Prostokąt, który reprezentuje pokój na minimapie. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00097">97</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="ace2cce0b13197da6d76e26ad29727eab" name="ace2cce0b13197da6d76e26ad29727eab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace2cce0b13197da6d76e26ad29727eab">&#9670;&nbsp;</a></span>minimap_rt</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::minimap_rt</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tekstura pokoju na minimapie. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00099">99</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="ac75e3e4c656a1f0ffc5cfeaaec9aac0d" name="ac75e3e4c656a1f0ffc5cfeaaec9aac0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac75e3e4c656a1f0ffc5cfeaaec9aac0d">&#9670;&nbsp;</a></span>necromancerTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::necromancerTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura nekromanty. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00062">62</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="ada6ca59e9e9c0c6fde1a7be475843398" name="ada6ca59e9e9c0c6fde1a7be475843398"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada6ca59e9e9c0c6fde1a7be475843398">&#9670;&nbsp;</a></span>noValueItems</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="class_item.html">Item</a>&gt; room::noValueItems</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wektor przetrzymujący przedmioty. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00034">34</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="af1fd66a6a9ca419e180685253fde91e3" name="af1fd66a6a9ca419e180685253fde91e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1fd66a6a9ca419e180685253fde91e3">&#9670;&nbsp;</a></span>ring1Texture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::ring1Texture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura 1 pierścienia. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00087">87</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="adb13ee898e5690243f50fb04ba3e6a70" name="adb13ee898e5690243f50fb04ba3e6a70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb13ee898e5690243f50fb04ba3e6a70">&#9670;&nbsp;</a></span>ring2Texture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::ring2Texture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura 2 pierscienia. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00088">88</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="ab9a066630a3b7fb06311fb4caefb8bf8" name="ab9a066630a3b7fb06311fb4caefb8bf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9a066630a3b7fb06311fb4caefb8bf8">&#9670;&nbsp;</a></span>rockTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::rockTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura kamienia. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00054">54</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="a3e7df5aac8f98868c220fafefe418969" name="a3e7df5aac8f98868c220fafefe418969"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e7df5aac8f98868c220fafefe418969">&#9670;&nbsp;</a></span>shopItems</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="class_item.html">Item</a>&gt; room::shopItems</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wektor przetrzymujący przemioty, które aktualnie znajdują się w sklepie. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00036">36</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="ad7d4f7bb573adbd9f9964486328c8a27" name="ad7d4f7bb573adbd9f9964486328c8a27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7d4f7bb573adbd9f9964486328c8a27">&#9670;&nbsp;</a></span>skeletonTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::skeletonTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura szkieleta. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00045">45</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="af5718509be9b537e9603872c38fb8310" name="af5718509be9b537e9603872c38fb8310"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5718509be9b537e9603872c38fb8310">&#9670;&nbsp;</a></span>skull_texture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::skull_texture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura czaszki. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00070">70</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="a9aea326679ca8b338e7cac006034f524" name="a9aea326679ca8b338e7cac006034f524"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9aea326679ca8b338e7cac006034f524">&#9670;&nbsp;</a></span>slime_ball_texture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::slime_ball_texture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura kuli glutów. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00071">71</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="a7f29b344232fc60c1dc11cab1572ac19" name="a7f29b344232fc60c1dc11cab1572ac19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f29b344232fc60c1dc11cab1572ac19">&#9670;&nbsp;</a></span>slimeTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::slimeTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura glutka. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00049">49</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="a554e125fd09c20d5c34c452ec0ba1586" name="a554e125fd09c20d5c34c452ec0ba1586"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a554e125fd09c20d5c34c452ec0ba1586">&#9670;&nbsp;</a></span>small_healPotTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::small_healPotTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura małej mikstury leczenia. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00090">90</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="aa02bc986134a990c7223e86240d336b7" name="aa02bc986134a990c7223e86240d336b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa02bc986134a990c7223e86240d336b7">&#9670;&nbsp;</a></span>spiderTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::spiderTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura pająka. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00047">47</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="acba1f5fd9dfeaf21f3ba1aff5903e3ed" name="acba1f5fd9dfeaf21f3ba1aff5903e3ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acba1f5fd9dfeaf21f3ba1aff5903e3ed">&#9670;&nbsp;</a></span>sword1Texture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::sword1Texture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura 1 miecza. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00082">82</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="ab6c294e40e31233531cd616e67ed05df" name="ab6c294e40e31233531cd616e67ed05df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6c294e40e31233531cd616e67ed05df">&#9670;&nbsp;</a></span>sword2Texture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::sword2Texture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura 2 miecza. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00083">83</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="a3d7b020072b5055a257cf011c75616ea" name="a3d7b020072b5055a257cf011c75616ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d7b020072b5055a257cf011c75616ea">&#9670;&nbsp;</a></span>towerTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::towerTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura wieżyczki. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00051">51</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="a724e16888fda180bad2ea2dbcf0e2a9c" name="a724e16888fda180bad2ea2dbcf0e2a9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a724e16888fda180bad2ea2dbcf0e2a9c">&#9670;&nbsp;</a></span>trollTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::trollTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura trolla. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00050">50</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="ac067f4429b97f1df07343a40fb149022" name="ac067f4429b97f1df07343a40fb149022"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac067f4429b97f1df07343a40fb149022">&#9670;&nbsp;</a></span>valueItems</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="class_item.html">Item</a>&gt; room::valueItems</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wektor przetrzymujący przedmioty do kupienia. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00035">35</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="a5a6eda2cd7bb3ba02c37417bf148da3b" name="a5a6eda2cd7bb3ba02c37417bf148da3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a6eda2cd7bb3ba02c37417bf148da3b">&#9670;&nbsp;</a></span>wingsTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::wingsTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura skrzydeł </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00081">81</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="a4bb4bafb7575a2ba30171c3fa35c0d83" name="a4bb4bafb7575a2ba30171c3fa35c0d83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bb4bafb7575a2ba30171c3fa35c0d83">&#9670;&nbsp;</a></span>wizardTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::wizardTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura czarodzieja. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00044">44</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<a id="a4a754d15f88f17c1e2fb4bd10fe3e521" name="a4a754d15f88f17c1e2fb4bd10fe3e521"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a754d15f88f17c1e2fb4bd10fe3e521">&#9670;&nbsp;</a></span>zombieTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture room::zombieTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura zombie. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_room_8h_source.html#l00046">46</a> pliku <a class="el" href="_room_8h_source.html">Room.h</a>.</p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li>C:/Users/Radouan Battoui/source/repos/Piotralke/RogueLike_Projekt/RogueLike_Projekt/<a class="el" href="_room_8h_source.html">Room.h</a></li>
+<li>C:/Users/Radouan Battoui/source/repos/Piotralke/RogueLike_Projekt/RogueLike_Projekt/<a class="el" href="_room_8cpp_source.html">Room.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classroom.html">room</a></li>
+    <li class="footer">Wygenerowano przez <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+  </ul>
+</div>
+</body>
+</html>

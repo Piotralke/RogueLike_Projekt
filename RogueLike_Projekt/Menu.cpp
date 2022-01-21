@@ -1,9 +1,9 @@
-#include "Menu.h"
+ï»¿#include "Menu.h"
 
-/** \brief Konstruktor dla menu
+/** \brief  Konstruktor dla menu
  *
  * Konstruktor 
- * @param font WskaŸnik na czcionkê u¿ywan¹ w programie
+ * @param font WskaÅºnik na czcionkÄ™ uÅ¼ywanÄ… w programie
  */
 
 menu::menu(sf::Font& font)
@@ -52,10 +52,10 @@ menu::menu(sf::Font& font)
 	exit_text.setPosition({ 330.0f,260.0f });
 }
 
-/** \brief Funkcja wyœwietlaj¹ca menu
+/** \brief  Funkcja wyÅ›wietlajÄ…ca menu
  *
- * Funkcja u³atwiaj¹ca wyœwietlanie wszystkich potrzebnych elementów menu
- * @param window WskaŸnik na okno, w którym ma wyœwietliæ przedmiot
+ * Funkcja uÅ‚atwiajÄ…ca wyÅ›wietlanie wszystkich potrzebnych elementÃ³w menu
+ * @param window WskaÅºnik na okno, w ktÃ³rym ma wyÅ›wietliÄ‡ przedmiot
  */
 
 void menu::Draw(sf::RenderWindow& window)
@@ -69,12 +69,12 @@ void menu::Draw(sf::RenderWindow& window)
 	window.draw(sound_mark);
 }
 
-/** \brief Funkcja 
+/** \brief  Funkcja aktualizujÄ…ca menu
  *
- * Funkcja 
- * @param window WskaŸnik na okno, w którym ma wyœwietliæ przedmiot
- * @param mainMusic WskaŸnik na g³ówn¹ muzykê gry
- * @param bossMusic WskaŸnik na muzykê odtwarzan¹ podczas walki z Bossem
+ * Funkcja aktualizujaca menu pod wpÅ‚ywem wyboru gracza
+ * @param window WskaÅºnik na okno, w ktÃ³rym ma wyÅ›wietliÄ‡ przedmiot
+ * @param mainMusic WskaÅºnik na gÅ‚Ã³wnÄ… muzykÄ™ gry
+ * @param bossMusic WskaÅºnik na muzykÄ™ odtwarzanÄ… podczas walki z Bossem
  */
  
 bool menu::update(sf::RenderWindow& window, sf::Music& mainMusic, sf::Music& bossMusic)
@@ -172,7 +172,7 @@ bool menu::update(sf::RenderWindow& window, sf::Music& mainMusic, sf::Music& bos
 	return true;
 }
 
-/** \brief Funkcja zwracaj¹ca teksture guzika
+/** \brief  Funkcja zwracajÄ…ca teksture guzika
  *
  * @return button_s zwraca teksture guzika
  */

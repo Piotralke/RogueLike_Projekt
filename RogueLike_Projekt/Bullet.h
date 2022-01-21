@@ -1,18 +1,18 @@
-#pragma once
+Ôªø#pragma once
 #include "Collision.h"
 #include <SFML/Graphics.hpp>
-/** Klasa reprezentuje obiekt, ktÛry jest pociskiem wystzrliwanym przez gracza, bπdü przeciwnika
+/** \brief Klasa reprezentuje obiekt, kt√≥ry jest pociskiem wystzrliwanym przez gracza, bƒÖd≈∫ przeciwnika
 * 
 */
 class Bullet
 {
 	private:
-		float shot_speed; /**< SzybkoúÊ poruszania siÍ pocisku*/
-		float damage;	/**< Obraøenia pocisku*/
-		sf::Vector2f direction; /**< Wektor, w ktÛrym kikerunku pocisk ma lecieÊ */
-		sf::Vector2f directionNormalized;	/**<Znormalizowany wektor kierunku strza≥u*/
+		float shot_speed; /**<\brief  Szybko≈õƒá poruszania siƒô pocisku*/
+		float damage;	/**<\brief  Obra≈ºenia pocisku*/
+		sf::Vector2f direction; /**< \brief Wektor, w kt√≥rym kikerunku pocisk ma lecieƒá */
+		sf::Vector2f directionNormalized;	/**<\brief Znormalizowany wektor kierunku strza≈Çu*/
 	public:
-		sf::RectangleShape bullet;	/**< Prostokπt bÍdπcy obszarem do wykrywania kolizji oraz do pobrania tekstury i wyúwietlania pocisku w grze*/
+		sf::RectangleShape bullet;	/**< \brief ProstokƒÖt bƒôdƒÖcy obszarem do wykrywania kolizji oraz do pobrania tekstury i wy≈õwietlania pocisku w grze*/
 		Bullet(sf::Vector2f size, sf::Vector2f position, float shot_speed, float rate_of_fire, sf::Vector2f direction, sf::Texture *texture, float rotation);
 		void fire(float deltaTime);
 		void Draw(sf::RenderWindow& window);

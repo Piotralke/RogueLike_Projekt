@@ -1,20 +1,20 @@
-#include "Item.h"
+ï»¿#include "Item.h"
 
-/** \brief Konstruktor dla przedmiotu
+/** \brief  Konstruktor dla przedmiotu
  *
- * Przechowuje parametry, które s¹ niezbêdne do dzia³ania przedmiotów
- * @param itemTexture WskaŸnik na teksturê przedmiotu
- * @param position Miejsce na ekranie, w którym ma znajdowaæ siê przedmiot
+ * Przechowuje parametry, ktÃ³re sÄ… niezbÄ™dne do dziaÅ‚ania przedmiotÃ³w
+ * @param itemTexture WskaÅºnik na teksturÄ™ przedmiotu
+ * @param position Miejsce na ekranie, w ktÃ³rym ma znajdowaÄ‡ siÄ™ przedmiot
  * @param size Rozmiar tekstury 
- * @param damage Parametr okreœlaj¹cy ile obra¿eñ ma dodaæ do naszej postaci
- * @param health Parametr okreœlaj¹cy ile ¿ycia ma dodaæ do naszej postaci
- * @param maxHealth Parametr okreœlaj¹cy ile maksymalnego ¿ycia ma dodaæ do naszej postaci
- * @param fire_delay Parametr okreœlaj¹cy ile szybkostrzelnoœci ma dodaæ do naszej postaci
- * @param shot_speed Parametr okreœlaj¹cy ile predkoœci naboju ma dodaæ do naszej postaci
- * @param speed Parametr okreœlaj¹cy ile prêdkoœci ma dodaæ do naszej postaci
- * @param money Parametr okreœlaj¹cy ile monet ma dodaæ do naszej postaci
- * @param value Parametr okreœlaj¹cy ile kosztuje przedmiot(u¿ywany w sklepie)
- * @param flying Parametr okreœlaj¹cy czy ma dodaæ do postaci przechodzenie przez przeszkody
+ * @param damage Parametr okreÅ›lajÄ…cy ile obraÅ¼eÃ± ma dodaÄ‡ do naszej postaci
+ * @param health Parametr okreÅ›lajÄ…cy ile Å¼ycia ma dodaÄ‡ do naszej postaci
+ * @param maxHealth Parametr okreÅ›lajÄ…cy ile maksymalnego Å¼ycia ma dodaÄ‡ do naszej postaci
+ * @param fire_delay Parametr okreÅ›lajÄ…cy ile szybkostrzelnoÅ›ci ma dodaÄ‡ do naszej postaci
+ * @param shot_speed Parametr okreÅ›lajÄ…cy ile predkoÅ›ci naboju ma dodaÄ‡ do naszej postaci
+ * @param speed Parametr okreÅ›lajÄ…cy ile prÄ™dkoÅ›ci ma dodaÄ‡ do naszej postaci
+ * @param money Parametr okreÅ›lajÄ…cy ile monet ma dodaÄ‡ do naszej postaci
+ * @param value Parametr okreÅ›lajÄ…cy ile kosztuje przedmiot(uÅ¼ywany w sklepie)
+ * @param flying Parametr okreÅ›lajÄ…cy czy ma dodaÄ‡ do postaci przechodzenie przez przeszkody
  */
 
 Item::Item(sf::Texture* itemTexture, sf::Vector2f position, sf::Vector2f size, float damage, float health,float maxHealth, float fire_delay, float shot_speed, float speed, int money, int value, bool flying)
@@ -34,20 +34,20 @@ Item::Item(sf::Texture* itemTexture, sf::Vector2f position, sf::Vector2f size, f
 	this->flying = flying;
 }
 
-/** \brief Funkcja daj¹ca przedmiot graczowi
+/** \brief  Funkcja dajÄ…ca przedmiot graczowi
  *
- * @param WskaŸnik na gracza
+ * @param WskaÅºnik na gracza
  */
 void Item::giveItem(hero* player)
 {
 	player->setStatistics(damage, health,maxHealth, fire_delay, shot_speed, speed, money,flying);
 }
 
-/** \brief Funkcja wyœwietlaj¹ca przedmiot
+/** \brief  Funkcja wyÅ›wietlajÄ…ca przedmiot
  *
- * Funkcja, która wyœwietla na podane okno przedmiot, u³atwia nam wyœwietlanie tego przedmiotu
- * @param window WskaŸnik na okno, w którym ma wyœwietliæ przedmiot
- * @param font WskaŸnik na czcionkê u¿ywan¹ w programie
+ * Funkcja, ktÃ³ra wyÅ›wietla na podane okno przedmiot, uÅ‚atwia nam wyÅ›wietlanie tego przedmiotu
+ * @param window WskaÅºnik na okno, w ktÃ³rym ma wyÅ›wietliÄ‡ przedmiot
+ * @param font WskaÅºnik na czcionkÄ™ uÅ¼ywanÄ… w programie
  */
 
 void Item::Draw(sf::RenderWindow& window, sf::Font& font)
@@ -67,9 +67,9 @@ void Item::Draw(sf::RenderWindow& window, sf::Font& font)
 	}
 }
 
-/** \brief Funkcja zwracaj¹ca iloœæ monet otrzymywanych z danego przedmiotu
+/** \brief  Funkcja zwracajÄ…ca iloÅ›Ä‡ monet otrzymywanych z danego przedmiotu
  *
- * @return money Zwraca iloœæ monet 
+ * @return money Zwraca iloÅ›Ä‡ monet 
  */
 
 int Item::getMoney()
@@ -77,9 +77,9 @@ int Item::getMoney()
 	return money;
 }
 
-/** \brief Funkcja zwracaj¹ca cenê przedmiotu
+/** \brief  Funkcja zwracajÄ…ca cenÄ™ przedmiotu
  *
- * @return value Zwraca cenê przedmiotu
+ * @return value Zwraca cenÄ™ przedmiotu
  */
 
 int Item::getValue()

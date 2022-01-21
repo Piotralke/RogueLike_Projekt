@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include <SFML/Graphics.hpp>
 #include <fstream>
 #include <iostream>
@@ -10,17 +10,17 @@
 #include "Item.h"
 #define SIZE 11
 /**
-* Klasa odpowiedzialna za operacje zwi¹zane z za³adowaniem uk³adu pokoju, przechodzenia miêdzy pokojami oraz innych zwi¹zanych z pokojami opcji
+* \brief Klasa odpowiedzialna za operacje zwiÄ…zane z zaÅ‚adowaniem ukÅ‚adu pokoju, przechodzenia miÄ™dzy pokojami oraz innych zwiÄ…zanych z pokojami opcji
 */
 class room
 {
 protected:
     /**
-    * @brief Struktura zawieraj¹ca parametry pokoju
-    * @param room_properties::exist Zmienna okreœlaj¹ca, czy w danym polu macierzy istnieje pokój
-    * @param room_properties::type Typ pokoju
-    * @param room_properties::visited Zmienna okreœlaj¹ca, czy pokój zosta³ ju¿ odwiedzony
-    * @param room_properties::sciezka Zmienna okreœlaj¹ca œcie¿kê do pliku tekstowego zawieraj¹cego uk³ad danego pokoju
+    * @brief  Struktura zawierajÄ…ca parametry pokoju
+    * @param exist Zmienna okreÅ›lajÄ…ca, czy w danym polu macierzy istnieje pokÃ³j
+    * @param type Typ pokoju
+    * @param visited Zmienna okreÅ›lajÄ…ca, czy pokÃ³j zostaÅ‚ juÅ¼ odwiedzony
+    * @param sciezka Zmienna okreÅ›lajÄ…ca Å›cieÅ¼kÄ™ do pliku tekstowego zawierajÄ…cego ukÅ‚ad danego pokoju
     */
     struct room_properties
     {
@@ -29,77 +29,80 @@ protected:
         bool visited; 
         std::string sciezka; 
     };
-    room_properties grid[SIZE][SIZE]; /**<Macierz, na której generowane s¹ pokoje*/
+    room_properties grid[SIZE][SIZE]; /**<\brief Macierz, na ktÃ³rej generowane sÄ… pokoje*/
 
-    std::vector<Item> noValueItems;  /**<Wektor przetrzymuj¹cy przedmioty*/
-    std::vector<Item> valueItems;   /**<Wektor przetrzymuj¹cy przedmioty do kupienia*/
-    std::vector<Item> shopItems; /**<Wektor przetrzymuj¹cy przemioty, które aktualnie znajduj¹ siê w sklepie*/
-    std::vector<Item> itemRoomVec; /**<Wektor przetrzymnuj¹cy przemioty, które aktualnie znajduj¹ siê w pokoju*/
+    std::vector<Item> noValueItems;  /**<\brief Wektor przetrzymujÄ…cy przedmioty*/
+    std::vector<Item> valueItems;   /**<\brief Wektor przetrzymujÄ…cy przedmioty do kupienia*/
+    std::vector<Item> shopItems; /**<\brief Wektor przetrzymujÄ…cy przemioty, ktÃ³re aktualnie znajdujÄ… siÄ™ w sklepie*/
+    std::vector<Item> itemRoomVec; /**<\brief Wektor przetrzymnujÄ…cy przemioty, ktÃ³re aktualnie znajdujÄ… siÄ™ w pokoju*/
 
-    sf::Texture doors_t;    /**<Tekstura drzwi*/
-    sf::Texture doors_bs_t; /**<Tekstura drzwi do pokoju z bossem*/
-    sf::Texture doors_sh_t; /**<Tekstura drzwi do sklepu*/
-    sf::Texture doors_it_t; /**<Tekstura drzwi do pokoju z przedmiotem*/
+    sf::Texture doors_t;    /**<\brief Tekstura drzwi*/
+    sf::Texture doors_bs_t; /**<\brief Tekstura drzwi do pokoju z bossem*/
+    sf::Texture doors_sh_t; /**<\brief Tekstura drzwi do sklepu*/
+    sf::Texture doors_it_t; /**<\brief Tekstura drzwi do pokoju z przedmiotem*/
     //monster textures
-    sf::Texture wizardTexture; /**<Tekstura czarodzieja*/
-    sf::Texture skeletonTexture; /**<Tekstura szkieleta*/
-    sf::Texture zombieTexture; /**<Tekstura zombie*/
-    sf::Texture spiderTexture; /**<Tekstura paj¹ka*/
-    sf::Texture elfTexture; /**<Tekstura elfa*/
-    sf::Texture slimeTexture; /**<Tekstura glutka*/
-    sf::Texture trollTexture; /**<Tekstura trolla*/
-    sf::Texture towerTexture; /**<Tekstura wie¿yczki*/
+    sf::Texture wizardTexture; /**<\brief Tekstura czarodzieja*/
+    sf::Texture skeletonTexture; /**<\brief Tekstura szkieleta*/
+    sf::Texture zombieTexture; /**<\brief Tekstura zombie*/
+    sf::Texture spiderTexture; /**<\brief Tekstura pajÄ…ka*/
+    sf::Texture elfTexture; /**<\brief Tekstura elfa*/
+    sf::Texture slimeTexture; /**<\brief Tekstura glutka*/
+    sf::Texture trollTexture; /**<\brief Tekstura trolla*/
+    sf::Texture towerTexture; /**<\brief Tekstura wieÅ¼yczki*/
     
     //object textures
-    sf::Texture rockTexture; /**<Tekstura kamienia*/
-    sf::Texture bonesTexture; /**<Tekstura kupki koœci*/
-    sf::Texture holeTexture; /**<Tekstura przepaœci*/
-    sf::Texture barrelTexture; /**<Tekstura beczki*/
-    sf::Texture crateTexture; /**<Tekstura skrzyni*/
-    sf::Texture ladderTexture; /**<Tekstura drabiny*/
+    sf::Texture rockTexture; /**<\brief Tekstura kamienia*/
+    sf::Texture bonesTexture; /**<\brief Tekstura kupki koÅ›ci*/
+    sf::Texture holeTexture; /**<\brief Tekstura przepaÅ›ci*/
+    sf::Texture barrelTexture; /**<\brief Tekstura beczki*/
+    sf::Texture crateTexture; /**<\brief Tekstura skrzyni*/
+    sf::Texture ladderTexture; /**<\brief Tekstura drabiny*/
     //boss texture
-    sf::Texture necromancerTexture; /**<Tekstura nekromanty*/
-    sf::Texture brother1Texture; /**<Tekstura 1 z braci*/
-    sf::Texture brother2Texture; /**<Tekstura 2 z braci*/
-    sf::Texture devilAnimation; /**<Tekstura demona*/
-    //aroows textures
-    sf::Texture arrow_texture; /**<Tekstura strza³y*/
-    sf::Texture fire_ball_texture; /**<Tekstura kuli ognia*/
-    sf::Texture skull_texture; /**<Tekstura czaszki*/
-    sf::Texture slime_ball_texture; /**<Tekstura kuli glutów*/
-    sf::Texture bone_texture; /**<Tekstura koœci*/
-    sf::Texture cannon_ball_texture; /**<Tekstura kuli armatniej*/
-    //item textures
-    sf::Texture boots1Texture; /**<Tekstura 1 butów*/
-    sf::Texture boots2Texture; /**<Tekstura 2 butów*/
-    sf::Texture gloves1Texture; /**<Tekstura 1 rêkawic*/
-    sf::Texture gloves2Texture; /**<Tekstura 2 rêkawic*/
-    sf::Texture helmetTexture;  /**<Tekstura he³mu*/
-    sf::Texture wingsTexture; /**<Tekstura skrzyde³*/
-    sf::Texture sword1Texture; /**<Tekstura 1 miecza*/
-    sf::Texture sword2Texture; /**<Tekstura 2 miecza*/
-    sf::Texture chestplateTexture; /**<Tekstura napierœnika*/
-    sf::Texture axeTexture; /**<Tekstura toporu*/
-    sf::Texture grailTexture; /**<Tekstura grala*/
-    sf::Texture ring1Texture; /**<Tekstura 1 pierœcienia*/
-    sf::Texture ring2Texture; /**<Tekstura 2 pierscienia*/
 
-    sf::Texture small_healPotTexture; /**<Tekstura ma³ej mikstury leczenia*/
-    sf::Texture big_healPotTexture; /**<Tekstura du¿ej mikstury leczenia*/
+    sf::Texture necromancerTexture; /**<\brief Tekstura nekromanty*/
+    sf::Texture brother1Texture; /**<\brief Tekstura 1 z braci*/
+    sf::Texture brother2Texture; /**<\brief Tekstura 2 z braci*/
+    sf::Texture devilAnimation; /**<\brief Tekstura demona*/
+
+    //aroows textures
+    sf::Texture arrow_texture; /**<\brief Tekstura strzaÅ‚y*/
+    sf::Texture fire_ball_texture; /**<\brief Tekstura kuli ognia*/
+    sf::Texture skull_texture; /**<\brief Tekstura czaszki*/
+    sf::Texture slime_ball_texture; /**<\brief Tekstura kuli glutÃ³w*/
+    sf::Texture bone_texture; /**<\brief Tekstura koÅ›ci*/
+    sf::Texture cannon_ball_texture; /**<\brief Tekstura kuli armatniej*/
+
+    //item textures
+    sf::Texture boots1Texture; /**<\brief Tekstura 1 butÃ³w*/
+    sf::Texture boots2Texture; /**<\brief Tekstura 2 butÃ³w*/
+    sf::Texture gloves1Texture; /**<\brief Tekstura 1 rÄ™kawic*/
+    sf::Texture gloves2Texture; /**<\brief Tekstura 2 rÄ™kawic*/
+    sf::Texture helmetTexture;  /**<\brief Tekstura heÅ‚mu*/
+    sf::Texture wingsTexture; /**<\brief Tekstura skrzydeÅ‚*/
+    sf::Texture sword1Texture; /**<\brief Tekstura 1 miecza*/
+    sf::Texture sword2Texture; /**<\brief Tekstura 2 miecza*/
+    sf::Texture chestplateTexture; /**<\brief Tekstura napierÅ›nika*/
+    sf::Texture axeTexture; /**<\brief Tekstura toporu*/
+    sf::Texture grailTexture; /**<\brief Tekstura grala*/
+    sf::Texture ring1Texture; /**<\brief Tekstura 1 pierÅ›cienia*/
+    sf::Texture ring2Texture; /**<\brief Tekstura 2 pierscienia*/
+
+    sf::Texture small_healPotTexture; /**<\brief Tekstura maÅ‚ej mikstury leczenia*/
+    sf::Texture big_healPotTexture; /**<\brief Tekstura duÅ¼ej mikstury leczenia*/
 public:
-    sf::Texture ghostTexture; /**<Tekstura ducha*/
-    sf::Texture demonTexture; /**<Tekstura chochlika*/
-    sf::Texture background_t; /**<Tekstura pokoju*/
-    sf::Sprite background_s; /**<Zmienna u³atwiaj¹ca manipulowanie tekstur¹ pokoju*/
-    sf::RectangleShape minimap_room; /**<Prostok¹t, który reprezentuje pokój na minimapie*/
-    sf::RectangleShape hero_m; /**<Prostok¹t, który pobiera teksturê g³owy gracza i okreœla gdzie aktualnie znajduje siê na mapie*/
-    sf::Texture minimap_rt; /**<Tekstura pokoju na minimapie*/
-    sf::Texture hero_minimap; /**<Tekstura gracza na minimapie*/
+    sf::Texture ghostTexture; /**<\brief Tekstura ducha*/
+    sf::Texture demonTexture; /**<\brief Tekstura chochlika*/
+    sf::Texture background_t; /**<\brief Tekstura pokoju*/
+    sf::Sprite background_s; /**<\brief Zmienna uÅ‚atwiajÄ…ca manipulowanie teksturÄ… pokoju*/
+    sf::RectangleShape minimap_room; /**<\brief ProstokÄ…t, ktÃ³ry reprezentuje pokÃ³j na minimapie*/
+    sf::RectangleShape hero_m; /**<\brief ProstokÄ…t, ktÃ³ry pobiera teksturÄ™ gÅ‚owy gracza i okreÅ›la gdzie aktualnie znajduje siÄ™ na mapie*/
+    sf::Texture minimap_rt; /**<\brief Tekstura pokoju na minimapie*/
+    sf::Texture hero_minimap; /**<\brief Tekstura gracza na minimapie*/
     void init_Texture();
     int check_doors(int i, int j);
     void Draw(sf::RenderWindow& window, sf::RectangleShape& door);
-    void read_from_file(hero& player, std::vector<monster>& monsterVEC, std::vector<Object>& objectVEC, std::vector<boss>& bossVec, std::vector<Item>& itemVec, int& skeleton_count);
+    void read_from_file(hero& player, std::vector<monster>& monsterVEC, std::vector<Object>& objectVEC, std::vector<boss>& bossVec, std::vector<Item>& itemVec, int& skeleton_count, int level);
     void load_room_layout(hero& player, Collision kolizja, sf::RenderWindow& window, std::vector<Bullet>& heroB, std::vector<Bullet>& monsterB,
-        std::vector<monster>& monsterVEC, std::vector<Object>& objectVEC, std::vector<boss>& bossVec, std::vector<Item>& itemVec, int& skeleton_count);
+        std::vector<monster>& monsterVEC, std::vector<Object>& objectVEC, std::vector<boss>& bossVec, std::vector<Item>& itemVec, int& skeleton_count, int level);
     int getRoomType(hero& player);
 };

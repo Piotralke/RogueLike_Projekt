@@ -1,0 +1,648 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>RogueLike Game: Dokumentacja klasy Item</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="icon.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">RogueLike Game<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Gra na projekt z PJC2</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Szukaj','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('class_item.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Metody publiczne</a> &#124;
+<a href="#pub-attribs">Atrybuty publiczne</a> &#124;
+<a href="#pri-attribs">Atrybuty prywatne</a> &#124;
+<a href="class_item-members.html">Lista wszystkich składowych</a>  </div>
+  <div class="headertitle"><div class="title">Dokumentacja klasy Item</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Klasa reprezentująca przedmioty w grze Statystyki przedmiotów są dodawane do statystyk gracza przy podniesieniu go.  
+ <a href="class_item.html#details">Więcej...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_item_8h_source.html">Item.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:a22e1b8f174710a8e5978b35a18d27dfe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#a22e1b8f174710a8e5978b35a18d27dfe">Item</a> (sf::Texture *itemTexture, sf::Vector2f position, sf::Vector2f size, float <a class="el" href="class_item.html#aeb711b4d939a122160277a4791dffafd">damage</a>, float <a class="el" href="class_item.html#ab7844a402379d05dbf022739e4c0a7a3">health</a>, float <a class="el" href="class_item.html#a51910cbe700f2e3fa4caeaaf18422783">maxHealth</a>, float <a class="el" href="class_item.html#ae684fc072b08e1181384db1af978d743">fire_delay</a>, float <a class="el" href="class_item.html#a7128fef0138c71f63c68010ab3692a64">shot_speed</a>, float <a class="el" href="class_item.html#a051aba8eaf16bfbbbae9684c17d19a82">speed</a>, int <a class="el" href="class_item.html#a5b01a39a247d58dab83d3d3ec7b894ad">money</a>, int <a class="el" href="class_item.html#abee19400000e69cbd7aecadb6e93fa7b">value</a>=0, bool <a class="el" href="class_item.html#ac959b82102038d8807a0f0ef80c29843">flying</a>=false)</td></tr>
+<tr class="memdesc:a22e1b8f174710a8e5978b35a18d27dfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor dla przedmiotu.  <a href="class_item.html#a22e1b8f174710a8e5978b35a18d27dfe">Więcej...</a><br /></td></tr>
+<tr class="separator:a22e1b8f174710a8e5978b35a18d27dfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad955233f791e15c1c96c4caf8c003b32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#ad955233f791e15c1c96c4caf8c003b32">giveItem</a> (<a class="el" href="classhero.html">hero</a> *player)</td></tr>
+<tr class="memdesc:ad955233f791e15c1c96c4caf8c003b32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja dająca przedmiot graczowi.  <a href="class_item.html#ad955233f791e15c1c96c4caf8c003b32">Więcej...</a><br /></td></tr>
+<tr class="separator:ad955233f791e15c1c96c4caf8c003b32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a735b7411efcdf1a5aac6e2140327ea22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#a735b7411efcdf1a5aac6e2140327ea22">Draw</a> (sf::RenderWindow &amp;window, sf::Font &amp;font)</td></tr>
+<tr class="memdesc:a735b7411efcdf1a5aac6e2140327ea22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja wyświetlająca przedmiot.  <a href="class_item.html#a735b7411efcdf1a5aac6e2140327ea22">Więcej...</a><br /></td></tr>
+<tr class="separator:a735b7411efcdf1a5aac6e2140327ea22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adba2c2a8aa5e936dca5340cdb8305ed2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#adba2c2a8aa5e936dca5340cdb8305ed2">getMoney</a> ()</td></tr>
+<tr class="memdesc:adba2c2a8aa5e936dca5340cdb8305ed2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja zwracająca ilość monet otrzymywanych z danego przedmiotu.  <a href="class_item.html#adba2c2a8aa5e936dca5340cdb8305ed2">Więcej...</a><br /></td></tr>
+<tr class="separator:adba2c2a8aa5e936dca5340cdb8305ed2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ceb9a0df0efe18d23e347471f908be7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#a9ceb9a0df0efe18d23e347471f908be7">getValue</a> ()</td></tr>
+<tr class="memdesc:a9ceb9a0df0efe18d23e347471f908be7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja zwracająca cenę przedmiotu.  <a href="class_item.html#a9ceb9a0df0efe18d23e347471f908be7">Więcej...</a><br /></td></tr>
+<tr class="separator:a9ceb9a0df0efe18d23e347471f908be7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Atrybuty publiczne</h2></td></tr>
+<tr class="memitem:af6539f5a0575c3254416508eb29b4653"><td class="memItemLeft" align="right" valign="top">sf::RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#af6539f5a0575c3254416508eb29b4653">item</a></td></tr>
+<tr class="memdesc:af6539f5a0575c3254416508eb29b4653"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prostokąt odpowiedzialny za wykrycie kolizji oraz nadanie teksturki.  <a href="class_item.html#af6539f5a0575c3254416508eb29b4653">Więcej...</a><br /></td></tr>
+<tr class="separator:af6539f5a0575c3254416508eb29b4653"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Atrybuty prywatne</h2></td></tr>
+<tr class="memitem:aeb711b4d939a122160277a4791dffafd"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#aeb711b4d939a122160277a4791dffafd">damage</a></td></tr>
+<tr class="memdesc:aeb711b4d939a122160277a4791dffafd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obrażenia.  <a href="class_item.html#aeb711b4d939a122160277a4791dffafd">Więcej...</a><br /></td></tr>
+<tr class="separator:aeb711b4d939a122160277a4791dffafd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7844a402379d05dbf022739e4c0a7a3"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#ab7844a402379d05dbf022739e4c0a7a3">health</a></td></tr>
+<tr class="memdesc:ab7844a402379d05dbf022739e4c0a7a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">¯ycie  <a href="class_item.html#ab7844a402379d05dbf022739e4c0a7a3">Więcej...</a><br /></td></tr>
+<tr class="separator:ab7844a402379d05dbf022739e4c0a7a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51910cbe700f2e3fa4caeaaf18422783"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#a51910cbe700f2e3fa4caeaaf18422783">maxHealth</a></td></tr>
+<tr class="memdesc:a51910cbe700f2e3fa4caeaaf18422783"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maksymalne życie.  <a href="class_item.html#a51910cbe700f2e3fa4caeaaf18422783">Więcej...</a><br /></td></tr>
+<tr class="separator:a51910cbe700f2e3fa4caeaaf18422783"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae684fc072b08e1181384db1af978d743"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#ae684fc072b08e1181384db1af978d743">fire_delay</a></td></tr>
+<tr class="memdesc:ae684fc072b08e1181384db1af978d743"><td class="mdescLeft">&#160;</td><td class="mdescRight">Odstęp między strzałem.  <a href="class_item.html#ae684fc072b08e1181384db1af978d743">Więcej...</a><br /></td></tr>
+<tr class="separator:ae684fc072b08e1181384db1af978d743"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7128fef0138c71f63c68010ab3692a64"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#a7128fef0138c71f63c68010ab3692a64">shot_speed</a></td></tr>
+<tr class="memdesc:a7128fef0138c71f63c68010ab3692a64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prędkość pocisków.  <a href="class_item.html#a7128fef0138c71f63c68010ab3692a64">Więcej...</a><br /></td></tr>
+<tr class="separator:a7128fef0138c71f63c68010ab3692a64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a051aba8eaf16bfbbbae9684c17d19a82"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#a051aba8eaf16bfbbbae9684c17d19a82">speed</a></td></tr>
+<tr class="memdesc:a051aba8eaf16bfbbbae9684c17d19a82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Szybkość  <a href="class_item.html#a051aba8eaf16bfbbbae9684c17d19a82">Więcej...</a><br /></td></tr>
+<tr class="separator:a051aba8eaf16bfbbbae9684c17d19a82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b01a39a247d58dab83d3d3ec7b894ad"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#a5b01a39a247d58dab83d3d3ec7b894ad">money</a></td></tr>
+<tr class="memdesc:a5b01a39a247d58dab83d3d3ec7b894ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ilość monet.  <a href="class_item.html#a5b01a39a247d58dab83d3d3ec7b894ad">Więcej...</a><br /></td></tr>
+<tr class="separator:a5b01a39a247d58dab83d3d3ec7b894ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abee19400000e69cbd7aecadb6e93fa7b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#abee19400000e69cbd7aecadb6e93fa7b">value</a></td></tr>
+<tr class="memdesc:abee19400000e69cbd7aecadb6e93fa7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wartość przedmiotu w sklepie.  <a href="class_item.html#abee19400000e69cbd7aecadb6e93fa7b">Więcej...</a><br /></td></tr>
+<tr class="separator:abee19400000e69cbd7aecadb6e93fa7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac959b82102038d8807a0f0ef80c29843"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#ac959b82102038d8807a0f0ef80c29843">flying</a></td></tr>
+<tr class="memdesc:ac959b82102038d8807a0f0ef80c29843"><td class="mdescLeft">&#160;</td><td class="mdescRight">Możliwość latania.  <a href="class_item.html#ac959b82102038d8807a0f0ef80c29843">Więcej...</a><br /></td></tr>
+<tr class="separator:ac959b82102038d8807a0f0ef80c29843"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p >Klasa reprezentująca przedmioty w grze Statystyki przedmiotów są dodawane do statystyk gracza przy podniesieniu go. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_item_8h_source.html#l00008">8</a> pliku <a class="el" href="_item_8h_source.html">Item.h</a>.</p>
+</div><h2 class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a id="a22e1b8f174710a8e5978b35a18d27dfe" name="a22e1b8f174710a8e5978b35a18d27dfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22e1b8f174710a8e5978b35a18d27dfe">&#9670;&nbsp;</a></span>Item()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Item::Item </td>
+          <td>(</td>
+          <td class="paramtype">sf::Texture *&#160;</td>
+          <td class="paramname"><em>itemTexture</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Vector2f&#160;</td>
+          <td class="paramname"><em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Vector2f&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>damage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>health</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>maxHealth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>fire_delay</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>shot_speed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>speed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>money</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>flying</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Konstruktor dla przedmiotu. </p>
+<p >Przechowuje parametry, które są niezbędne do działania przedmiotów </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">itemTexture</td><td>Wskaźnik na teksturę przedmiotu </td></tr>
+    <tr><td class="paramname">position</td><td>Miejsce na ekranie, w którym ma znajdować się przedmiot </td></tr>
+    <tr><td class="paramname">size</td><td>Rozmiar tekstury </td></tr>
+    <tr><td class="paramname">damage</td><td>Parametr określający ile obrażeñ ma dodać do naszej postaci </td></tr>
+    <tr><td class="paramname">health</td><td>Parametr określający ile życia ma dodać do naszej postaci </td></tr>
+    <tr><td class="paramname">maxHealth</td><td>Parametr określający ile maksymalnego życia ma dodać do naszej postaci </td></tr>
+    <tr><td class="paramname">fire_delay</td><td>Parametr określający ile szybkostrzelności ma dodać do naszej postaci </td></tr>
+    <tr><td class="paramname">shot_speed</td><td>Parametr określający ile predkości naboju ma dodać do naszej postaci </td></tr>
+    <tr><td class="paramname">speed</td><td>Parametr określający ile prędkości ma dodać do naszej postaci </td></tr>
+    <tr><td class="paramname">money</td><td>Parametr określający ile monet ma dodać do naszej postaci </td></tr>
+    <tr><td class="paramname">value</td><td>Parametr określający ile kosztuje przedmiot(używany w sklepie) </td></tr>
+    <tr><td class="paramname">flying</td><td>Parametr określający czy ma dodać do postaci przechodzenie przez przeszkody </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_item_8cpp_source.html#l00020">20</a> pliku <a class="el" href="_item_8cpp_source.html">Item.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="a735b7411efcdf1a5aac6e2140327ea22" name="a735b7411efcdf1a5aac6e2140327ea22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a735b7411efcdf1a5aac6e2140327ea22">&#9670;&nbsp;</a></span>Draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Item::Draw </td>
+          <td>(</td>
+          <td class="paramtype">sf::RenderWindow &amp;&#160;</td>
+          <td class="paramname"><em>window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Font &amp;&#160;</td>
+          <td class="paramname"><em>font</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkcja wyświetlająca przedmiot. </p>
+<p >Funkcja, która wyświetla na podane okno przedmiot, ułatwia nam wyświetlanie tego przedmiotu </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>Wskaźnik na okno, w którym ma wyświetlić przedmiot </td></tr>
+    <tr><td class="paramname">font</td><td>Wskaźnik na czcionkę używaną w programie </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_item_8cpp_source.html#l00053">53</a> pliku <a class="el" href="_item_8cpp_source.html">Item.cpp</a>.</p>
+
+</div>
+</div>
+<a id="adba2c2a8aa5e936dca5340cdb8305ed2" name="adba2c2a8aa5e936dca5340cdb8305ed2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adba2c2a8aa5e936dca5340cdb8305ed2">&#9670;&nbsp;</a></span>getMoney()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Item::getMoney </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkcja zwracająca ilość monet otrzymywanych z danego przedmiotu. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>money Zwraca ilość monet </dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_item_8cpp_source.html#l00075">75</a> pliku <a class="el" href="_item_8cpp_source.html">Item.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a9ceb9a0df0efe18d23e347471f908be7" name="a9ceb9a0df0efe18d23e347471f908be7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ceb9a0df0efe18d23e347471f908be7">&#9670;&nbsp;</a></span>getValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Item::getValue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkcja zwracająca cenę przedmiotu. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>value Zwraca cenę przedmiotu </dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_item_8cpp_source.html#l00085">85</a> pliku <a class="el" href="_item_8cpp_source.html">Item.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ad955233f791e15c1c96c4caf8c003b32" name="ad955233f791e15c1c96c4caf8c003b32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad955233f791e15c1c96c4caf8c003b32">&#9670;&nbsp;</a></span>giveItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Item::giveItem </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classhero.html">hero</a> *&#160;</td>
+          <td class="paramname"><em>player</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkcja dająca przedmiot graczowi. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Wskaźnik</td><td>na gracza </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_item_8cpp_source.html#l00041">41</a> pliku <a class="el" href="_item_8cpp_source.html">Item.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja atrybutów składowych</h2>
+<a id="aeb711b4d939a122160277a4791dffafd" name="aeb711b4d939a122160277a4791dffafd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb711b4d939a122160277a4791dffafd">&#9670;&nbsp;</a></span>damage</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Item::damage</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obrażenia. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_item_8h_source.html#l00011">11</a> pliku <a class="el" href="_item_8h_source.html">Item.h</a>.</p>
+
+</div>
+</div>
+<a id="ae684fc072b08e1181384db1af978d743" name="ae684fc072b08e1181384db1af978d743"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae684fc072b08e1181384db1af978d743">&#9670;&nbsp;</a></span>fire_delay</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Item::fire_delay</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Odstęp między strzałem. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_item_8h_source.html#l00014">14</a> pliku <a class="el" href="_item_8h_source.html">Item.h</a>.</p>
+
+</div>
+</div>
+<a id="ac959b82102038d8807a0f0ef80c29843" name="ac959b82102038d8807a0f0ef80c29843"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac959b82102038d8807a0f0ef80c29843">&#9670;&nbsp;</a></span>flying</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Item::flying</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Możliwość latania. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_item_8h_source.html#l00019">19</a> pliku <a class="el" href="_item_8h_source.html">Item.h</a>.</p>
+
+</div>
+</div>
+<a id="ab7844a402379d05dbf022739e4c0a7a3" name="ab7844a402379d05dbf022739e4c0a7a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7844a402379d05dbf022739e4c0a7a3">&#9670;&nbsp;</a></span>health</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Item::health</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>¯ycie </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_item_8h_source.html#l00012">12</a> pliku <a class="el" href="_item_8h_source.html">Item.h</a>.</p>
+
+</div>
+</div>
+<a id="af6539f5a0575c3254416508eb29b4653" name="af6539f5a0575c3254416508eb29b4653"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6539f5a0575c3254416508eb29b4653">&#9670;&nbsp;</a></span>item</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::RectangleShape Item::item</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Prostokąt odpowiedzialny za wykrycie kolizji oraz nadanie teksturki. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_item_8h_source.html#l00021">21</a> pliku <a class="el" href="_item_8h_source.html">Item.h</a>.</p>
+
+</div>
+</div>
+<a id="a51910cbe700f2e3fa4caeaaf18422783" name="a51910cbe700f2e3fa4caeaaf18422783"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51910cbe700f2e3fa4caeaaf18422783">&#9670;&nbsp;</a></span>maxHealth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Item::maxHealth</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Maksymalne życie. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_item_8h_source.html#l00013">13</a> pliku <a class="el" href="_item_8h_source.html">Item.h</a>.</p>
+
+</div>
+</div>
+<a id="a5b01a39a247d58dab83d3d3ec7b894ad" name="a5b01a39a247d58dab83d3d3ec7b894ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b01a39a247d58dab83d3d3ec7b894ad">&#9670;&nbsp;</a></span>money</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Item::money</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ilość monet. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_item_8h_source.html#l00017">17</a> pliku <a class="el" href="_item_8h_source.html">Item.h</a>.</p>
+
+</div>
+</div>
+<a id="a7128fef0138c71f63c68010ab3692a64" name="a7128fef0138c71f63c68010ab3692a64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7128fef0138c71f63c68010ab3692a64">&#9670;&nbsp;</a></span>shot_speed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Item::shot_speed</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Prędkość pocisków. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_item_8h_source.html#l00015">15</a> pliku <a class="el" href="_item_8h_source.html">Item.h</a>.</p>
+
+</div>
+</div>
+<a id="a051aba8eaf16bfbbbae9684c17d19a82" name="a051aba8eaf16bfbbbae9684c17d19a82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a051aba8eaf16bfbbbae9684c17d19a82">&#9670;&nbsp;</a></span>speed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Item::speed</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Szybkość </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_item_8h_source.html#l00016">16</a> pliku <a class="el" href="_item_8h_source.html">Item.h</a>.</p>
+
+</div>
+</div>
+<a id="abee19400000e69cbd7aecadb6e93fa7b" name="abee19400000e69cbd7aecadb6e93fa7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abee19400000e69cbd7aecadb6e93fa7b">&#9670;&nbsp;</a></span>value</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Item::value</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wartość przedmiotu w sklepie. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_item_8h_source.html#l00018">18</a> pliku <a class="el" href="_item_8h_source.html">Item.h</a>.</p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li>C:/Users/Radouan Battoui/source/repos/Piotralke/RogueLike_Projekt/RogueLike_Projekt/<a class="el" href="_item_8h_source.html">Item.h</a></li>
+<li>C:/Users/Radouan Battoui/source/repos/Piotralke/RogueLike_Projekt/RogueLike_Projekt/<a class="el" href="_item_8cpp_source.html">Item.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_item.html">Item</a></li>
+    <li class="footer">Wygenerowano przez <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+  </ul>
+</div>
+</body>
+</html>

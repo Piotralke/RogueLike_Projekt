@@ -1,12 +1,12 @@
-#include "Objects.h"
-/** \brief Konstruktor dla obiektów
+ï»¿#include "Objects.h"
+/** \brief  Konstruktor dla obiektÃ³w
  *
- * Konstruktor zapisuje podane mu parametry do pól obiektu
+ * Konstruktor zapisuje podane mu parametry do pÃ³l obiektu
  * @param itemTexture Tekstura obiektu
- * @param position Pozycja, na której obiekt ma byæ umieszczony
+ * @param position Pozycja, na ktÃ³rej obiekt ma byÄ‡ umieszczony
  * @param size Rozmiar obiektu
- * @param shootable Okreœla, czy przez dany obiekt mo¿e przelecieæ pocisk
- * @param shootable Okreœla, czy wejœcie w kolizjê z obiektem spowoduje przejœcie na kolejny poziom
+ * @param shootable OkreÅ›la, czy przez dany obiekt moÅ¼e przelecieÄ‡ pocisk
+ * @param shootable OkreÅ›la, czy wejÅ›cie w kolizjÄ™ z obiektem spowoduje przejÅ›cie na kolejny poziom
  */
 Object::Object(sf::Texture* itemTexture, sf::Vector2f position, sf::Vector2f size, bool shootable, bool go_down)
 {
@@ -17,10 +17,10 @@ Object::Object(sf::Texture* itemTexture, sf::Vector2f position, sf::Vector2f siz
 	this->shootable = shootable;
 	this->go_down = go_down;
 }
-/** \brief Funkcja wyœwietlaj¹ca obiekty
+/** \brief  Funkcja wyÅ›wietlajÄ…ca obiekty
  *
- * Funkcja, która wyœwietla na podane okno obiekt
- * @param window WskaŸnik na okno, w którym ma zostaæ wyœwietlony obiekt
+ * Funkcja, ktÃ³ra wyÅ›wietla na podane okno obiekt
+ * @param window WskaÅºnik na okno, w ktÃ³rym ma zostaÄ‡ wyÅ›wietlony obiekt
  */
 void Object::Draw(sf::RenderWindow& window)
 {

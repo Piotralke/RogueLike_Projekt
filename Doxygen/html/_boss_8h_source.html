@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>RogueLike Game: Plik źródłowy C:/Users/Radouan Battoui/source/repos/Piotralke/RogueLike_Projekt/RogueLike_Projekt/Boss.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="icon.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">RogueLike Game<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Gra na projekt z PJC2</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Szukaj','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('_boss_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Boss.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_boss_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include&lt;SFML/Graphics.hpp&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include&quot;<a class="code" href="_monster_8h.html">Monster.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="_collision_8h.html">Collision.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="_objects_8h.html">Objects.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="classboss.html">    9</a></span><span class="keyword">class </span><a class="code hl_class" href="classboss.html">boss</a> : <span class="keyword">public</span> <a class="code hl_class" href="classmonster.html">monster</a></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classboss.html#afe0b87537475fd796f6bf3a9d4a12c46">   12</a></span>    sf::Clock <a class="code hl_variable" href="classboss.html#afe0b87537475fd796f6bf3a9d4a12c46">spawn_delay_clock</a>; </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="classboss.html#a1a83d314c978133aecf8224452e32553">   13</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="classboss.html#a1a83d314c978133aecf8224452e32553">triple_shot</a>;   </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="classboss.html#afa28109c1f9aa33944d2467804cbd95a">   14</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="classboss.html#afa28109c1f9aa33944d2467804cbd95a">spawn</a>; </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classboss.html#a6746a10cb4307ba0e8596ac1fa1d9f33">   15</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="classboss.html#a6746a10cb4307ba0e8596ac1fa1d9f33">special_movement</a>;  </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classboss.html#a26eb68495d5c0409ec86ead4919b73eb">   16</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="classboss.html#a26eb68495d5c0409ec86ead4919b73eb">can_shot</a>=<span class="keyword">true</span>; </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="classboss.html#aec3652705bcc6f814d662bde1987f68f">   17</a></span>    sf::Vector2f <a class="code hl_variable" href="classboss.html#aec3652705bcc6f814d662bde1987f68f">randomDir</a> = {1.0f,0.0f};   </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classboss.html#a5b753fc26788fb41c3ae31d1295463b7">   18</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="classboss.html#a5b753fc26788fb41c3ae31d1295463b7">running</a>=<span class="keyword">false</span>; </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classboss.html#a9941ba63fe0e8ccf49a44af1e99c2871">   20</a></span>    <a class="code hl_function" href="classboss.html#a9941ba63fe0e8ccf49a44af1e99c2871">boss</a>(sf::Texture* texture, sf::Vector2u imageCount, <span class="keywordtype">float</span> switchTime, <span class="keywordtype">float</span> <a class="code hl_variable" href="classhero.html#a411f38ef99d0048854e6fa92c0efbcf3">speed</a>, <span class="keywordtype">float</span> <a class="code hl_variable" href="classhero.html#a92cc4f33815208a1a8157e9cf5181e49">fire_rate</a>, <span class="keywordtype">float</span> <a class="code hl_variable" href="classhero.html#aeb6daa9af19c67fba829162d60c32214">shot_speed</a>, <span class="keywordtype">float</span> <a class="code hl_variable" href="classhero.html#a4b3c3c501cb1506fe5ef7580044238f8">health</a>,</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordtype">float</span> <a class="code hl_variable" href="classhero.html#a7094ef3563753ea8f13bc34a2da6adfb">damage</a>, sf::Vector2f size, sf::Vector2f position, <span class="keywordtype">bool</span> <a class="code hl_variable" href="classmonster.html#afd6a56d4bc4cfd4f6e24f932c5b32e0b">shooting</a>, <span class="keywordtype">bool</span> <a class="code hl_variable" href="classhero.html#a653f4d958a60a0a78e4a31adde064014">flying</a>, <span class="keywordtype">bool</span> <a class="code hl_variable" href="classmonster.html#a276c879419ca359356c9595c6b83e343">resurection</a>,<span class="keywordtype">bool</span> <a class="code hl_variable" href="classboss.html#a1a83d314c978133aecf8224452e32553">triple_shot</a>, <span class="keywordtype">bool</span> <a class="code hl_variable" href="classboss.html#afa28109c1f9aa33944d2467804cbd95a">spawn</a>, <span class="keywordtype">bool</span> <a class="code hl_variable" href="classboss.html#a6746a10cb4307ba0e8596ac1fa1d9f33">special_movement</a>, sf::Texture* <a class="code hl_variable" href="classhero.html#a4df4fde8402385b88cd35b03aa676730">arrow</a>, sf::Vector2i <a class="code hl_variable" href="classmonster.html#a92b36bf35729a4971d1fa5d014a641c2">bullet_size</a>)</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        :<a class="code hl_class" href="classmonster.html">monster</a>(texture, imageCount,switchTime, <a class="code hl_variable" href="classhero.html#a411f38ef99d0048854e6fa92c0efbcf3">speed</a>, <a class="code hl_variable" href="classhero.html#a92cc4f33815208a1a8157e9cf5181e49">fire_rate</a>, <a class="code hl_variable" href="classhero.html#aeb6daa9af19c67fba829162d60c32214">shot_speed</a>, <a class="code hl_variable" href="classhero.html#a4b3c3c501cb1506fe5ef7580044238f8">health</a>,</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            <a class="code hl_variable" href="classhero.html#a7094ef3563753ea8f13bc34a2da6adfb">damage</a>, size, position, <a class="code hl_variable" href="classmonster.html#afd6a56d4bc4cfd4f6e24f932c5b32e0b">shooting</a>, <a class="code hl_variable" href="classhero.html#a653f4d958a60a0a78e4a31adde064014">flying</a>, <a class="code hl_variable" href="classmonster.html#a276c879419ca359356c9595c6b83e343">resurection</a>, <a class="code hl_variable" href="classhero.html#a4df4fde8402385b88cd35b03aa676730">arrow</a>, <a class="code hl_variable" href="classmonster.html#a92b36bf35729a4971d1fa5d014a641c2">bullet_size</a>), <a class="code hl_variable" href="classboss.html#a1a83d314c978133aecf8224452e32553">triple_shot</a>(<a class="code hl_variable" href="classboss.html#a1a83d314c978133aecf8224452e32553">triple_shot</a>),<a class="code hl_variable" href="classboss.html#afa28109c1f9aa33944d2467804cbd95a">spawn</a>(<a class="code hl_variable" href="classboss.html#afa28109c1f9aa33944d2467804cbd95a">spawn</a>), <a class="code hl_variable" href="classboss.html#a6746a10cb4307ba0e8596ac1fa1d9f33">special_movement</a>(<a class="code hl_variable" href="classboss.html#a6746a10cb4307ba0e8596ac1fa1d9f33">special_movement</a>){}</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classboss.html#a7c3c3b1ee1d7254fbcff550f06d7bb19">Update</a>(<span class="keywordtype">float</span> deltaTime, std::vector&lt;Bullet&gt;&amp; bulletVec, std::vector&lt;monster&gt;&amp; monsterVec, <a class="code hl_class" href="classhero.html">hero</a> player, sf::Texture* ghostTexture, sf::Texture* demonTexture, std::vector&lt;Object&gt;&amp; objectVec, std::vector&lt;sf::RectangleShape&gt;&amp; wallVec);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>};</div>
+<div class="ttc" id="a_collision_8h_html"><div class="ttname"><a href="_collision_8h.html">Collision.h</a></div></div>
+<div class="ttc" id="a_monster_8h_html"><div class="ttname"><a href="_monster_8h.html">Monster.h</a></div></div>
+<div class="ttc" id="a_objects_8h_html"><div class="ttname"><a href="_objects_8h.html">Objects.h</a></div></div>
+<div class="ttc" id="aclassboss_html"><div class="ttname"><a href="classboss.html">boss</a></div><div class="ttdoc">Klasa reprezentująca bossów.</div><div class="ttdef"><b>Definition:</b> <a href="_boss_8h_source.html#l00009">Boss.h:10</a></div></div>
+<div class="ttc" id="aclassboss_html_a1a83d314c978133aecf8224452e32553"><div class="ttname"><a href="classboss.html#a1a83d314c978133aecf8224452e32553">boss::triple_shot</a></div><div class="ttdeci">bool triple_shot</div><div class="ttdoc">Zmienna określająca, czy przeciwnik strzela potrójnym strzałem.</div><div class="ttdef"><b>Definition:</b> <a href="_boss_8h_source.html#l00013">Boss.h:13</a></div></div>
+<div class="ttc" id="aclassboss_html_a26eb68495d5c0409ec86ead4919b73eb"><div class="ttname"><a href="classboss.html#a26eb68495d5c0409ec86ead4919b73eb">boss::can_shot</a></div><div class="ttdeci">bool can_shot</div><div class="ttdoc">Zmienna określająca, czy przeciwnik może strzelać w danej chwili.</div><div class="ttdef"><b>Definition:</b> <a href="_boss_8h_source.html#l00016">Boss.h:16</a></div></div>
+<div class="ttc" id="aclassboss_html_a5b753fc26788fb41c3ae31d1295463b7"><div class="ttname"><a href="classboss.html#a5b753fc26788fb41c3ae31d1295463b7">boss::running</a></div><div class="ttdeci">bool running</div><div class="ttdoc">Zmienna określająca, czy przeciwnik szarżuje w stronę gracza.</div><div class="ttdef"><b>Definition:</b> <a href="_boss_8h_source.html#l00018">Boss.h:18</a></div></div>
+<div class="ttc" id="aclassboss_html_a6746a10cb4307ba0e8596ac1fa1d9f33"><div class="ttname"><a href="classboss.html#a6746a10cb4307ba0e8596ac1fa1d9f33">boss::special_movement</a></div><div class="ttdeci">bool special_movement</div><div class="ttdoc">Zmienna określająca, czy przeciwnik posiada specjalny sposób poruszania się</div><div class="ttdef"><b>Definition:</b> <a href="_boss_8h_source.html#l00015">Boss.h:15</a></div></div>
+<div class="ttc" id="aclassboss_html_a7c3c3b1ee1d7254fbcff550f06d7bb19"><div class="ttname"><a href="classboss.html#a7c3c3b1ee1d7254fbcff550f06d7bb19">boss::Update</a></div><div class="ttdeci">void Update(float deltaTime, std::vector&lt; Bullet &gt; &amp;bulletVec, std::vector&lt; monster &gt; &amp;monsterVec, hero player, sf::Texture *ghostTexture, sf::Texture *demonTexture, std::vector&lt; Object &gt; &amp;objectVec, std::vector&lt; sf::RectangleShape &gt; &amp;wallVec)</div><div class="ttdoc">Funkcja aktualizująca pozycje bossów oraz określająca ich specjalne umiejętności.</div><div class="ttdef"><b>Definition:</b> <a href="_boss_8cpp_source.html#l00015">Boss.cpp:15</a></div></div>
+<div class="ttc" id="aclassboss_html_a9941ba63fe0e8ccf49a44af1e99c2871"><div class="ttname"><a href="classboss.html#a9941ba63fe0e8ccf49a44af1e99c2871">boss::boss</a></div><div class="ttdeci">boss(sf::Texture *texture, sf::Vector2u imageCount, float switchTime, float speed, float fire_rate, float shot_speed, float health, float damage, sf::Vector2f size, sf::Vector2f position, bool shooting, bool flying, bool resurection, bool triple_shot, bool spawn, bool special_movement, sf::Texture *arrow, sf::Vector2i bullet_size)</div><div class="ttdef"><b>Definition:</b> <a href="_boss_8h_source.html#l00020">Boss.h:20</a></div></div>
+<div class="ttc" id="aclassboss_html_aec3652705bcc6f814d662bde1987f68f"><div class="ttname"><a href="classboss.html#aec3652705bcc6f814d662bde1987f68f">boss::randomDir</a></div><div class="ttdeci">sf::Vector2f randomDir</div><div class="ttdoc">Zmienna określająca losowy kierunek poruszania się</div><div class="ttdef"><b>Definition:</b> <a href="_boss_8h_source.html#l00017">Boss.h:17</a></div></div>
+<div class="ttc" id="aclassboss_html_afa28109c1f9aa33944d2467804cbd95a"><div class="ttname"><a href="classboss.html#afa28109c1f9aa33944d2467804cbd95a">boss::spawn</a></div><div class="ttdeci">bool spawn</div><div class="ttdoc">Zmienna określająca, czy przeciwnik może przyzywać pomocników.</div><div class="ttdef"><b>Definition:</b> <a href="_boss_8h_source.html#l00014">Boss.h:14</a></div></div>
+<div class="ttc" id="aclassboss_html_afe0b87537475fd796f6bf3a9d4a12c46"><div class="ttname"><a href="classboss.html#afe0b87537475fd796f6bf3a9d4a12c46">boss::spawn_delay_clock</a></div><div class="ttdeci">sf::Clock spawn_delay_clock</div><div class="ttdoc">Zegar odmierzający czas między możliwością przyzywania przeciwników.</div><div class="ttdef"><b>Definition:</b> <a href="_boss_8h_source.html#l00012">Boss.h:12</a></div></div>
+<div class="ttc" id="aclasshero_html"><div class="ttname"><a href="classhero.html">hero</a></div><div class="ttdoc">Klasa reprezentująca gracza.</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8h_source.html#l00009">Hero.h:10</a></div></div>
+<div class="ttc" id="aclasshero_html_a411f38ef99d0048854e6fa92c0efbcf3"><div class="ttname"><a href="classhero.html#a411f38ef99d0048854e6fa92c0efbcf3">hero::speed</a></div><div class="ttdeci">float speed</div><div class="ttdoc">Prędkość poruszania się</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8h_source.html#l00012">Hero.h:12</a></div></div>
+<div class="ttc" id="aclasshero_html_a4b3c3c501cb1506fe5ef7580044238f8"><div class="ttname"><a href="classhero.html#a4b3c3c501cb1506fe5ef7580044238f8">hero::health</a></div><div class="ttdeci">float health</div><div class="ttdoc">Aktualne życie.</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8h_source.html#l00014">Hero.h:14</a></div></div>
+<div class="ttc" id="aclasshero_html_a4df4fde8402385b88cd35b03aa676730"><div class="ttname"><a href="classhero.html#a4df4fde8402385b88cd35b03aa676730">hero::arrow</a></div><div class="ttdeci">sf::Texture * arrow</div><div class="ttdoc">Tekstura pocisku.</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8h_source.html#l00023">Hero.h:23</a></div></div>
+<div class="ttc" id="aclasshero_html_a653f4d958a60a0a78e4a31adde064014"><div class="ttname"><a href="classhero.html#a653f4d958a60a0a78e4a31adde064014">hero::flying</a></div><div class="ttdeci">bool flying</div><div class="ttdoc">Zmienna określająca możliwość latania.</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8h_source.html#l00022">Hero.h:22</a></div></div>
+<div class="ttc" id="aclasshero_html_a7094ef3563753ea8f13bc34a2da6adfb"><div class="ttname"><a href="classhero.html#a7094ef3563753ea8f13bc34a2da6adfb">hero::damage</a></div><div class="ttdeci">float damage</div><div class="ttdoc">Obrażenia.</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8h_source.html#l00015">Hero.h:15</a></div></div>
+<div class="ttc" id="aclasshero_html_a92cc4f33815208a1a8157e9cf5181e49"><div class="ttname"><a href="classhero.html#a92cc4f33815208a1a8157e9cf5181e49">hero::fire_rate</a></div><div class="ttdeci">float fire_rate</div><div class="ttdoc">Odstęp pomiędzy możliwośćią strzału.</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8h_source.html#l00019">Hero.h:19</a></div></div>
+<div class="ttc" id="aclasshero_html_aeb6daa9af19c67fba829162d60c32214"><div class="ttname"><a href="classhero.html#aeb6daa9af19c67fba829162d60c32214">hero::shot_speed</a></div><div class="ttdeci">float shot_speed</div><div class="ttdoc">Szybkość pocisków.</div><div class="ttdef"><b>Definition:</b> <a href="_hero_8h_source.html#l00020">Hero.h:20</a></div></div>
+<div class="ttc" id="aclassmonster_html"><div class="ttname"><a href="classmonster.html">monster</a></div><div class="ttdoc">Klasa reprezentująca przeciwników.</div><div class="ttdef"><b>Definition:</b> <a href="_monster_8h_source.html#l00010">Monster.h:11</a></div></div>
+<div class="ttc" id="aclassmonster_html_a276c879419ca359356c9595c6b83e343"><div class="ttname"><a href="classmonster.html#a276c879419ca359356c9595c6b83e343">monster::resurection</a></div><div class="ttdeci">bool resurection</div><div class="ttdoc">Zmienna określająca, czy przeciwnik, może się odrodzić</div><div class="ttdef"><b>Definition:</b> <a href="_monster_8h_source.html#l00025">Monster.h:25</a></div></div>
+<div class="ttc" id="aclassmonster_html_a92b36bf35729a4971d1fa5d014a641c2"><div class="ttname"><a href="classmonster.html#a92b36bf35729a4971d1fa5d014a641c2">monster::bullet_size</a></div><div class="ttdeci">sf::Vector2f bullet_size</div><div class="ttdoc">Zmienna określająca wymniary tekstury pocisku.</div><div class="ttdef"><b>Definition:</b> <a href="_monster_8h_source.html#l00022">Monster.h:22</a></div></div>
+<div class="ttc" id="aclassmonster_html_afd6a56d4bc4cfd4f6e24f932c5b32e0b"><div class="ttname"><a href="classmonster.html#afd6a56d4bc4cfd4f6e24f932c5b32e0b">monster::shooting</a></div><div class="ttdeci">bool shooting</div><div class="ttdoc">Zmienna określająca, czy przeciwnik może strzelać</div><div class="ttdef"><b>Definition:</b> <a href="_monster_8h_source.html#l00013">Monster.h:13</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ea6415965c179a977ca772ba5200736a.html">RogueLike_Projekt</a></li><li class="navelem"><a class="el" href="_boss_8h.html">Boss.h</a></li>
+    <li class="footer">Wygenerowano przez <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+  </ul>
+</div>
+</body>
+</html>

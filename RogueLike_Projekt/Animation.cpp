@@ -1,10 +1,10 @@
-#include "Animation.h"
+ï»¿#include "Animation.h"
 
-/** \brief Konstruktor dla animacji
+/** \brief  Konstruktor dla animacji
  *
- * @param texture WskaŸnik na teksture
- * @param imageCount Kontener przechowuj¹cy informacje o iloœci teskstur zawartych w pliku graficznym animacji postaci (dla bohatera 4,2 - 4oznacza 4 ró¿ne tekstury dla animacji, a 2 iloœæ ró¿nych aninmacji)
- * @param switchTime Czas po jakim ma siê zmieniæ tekstura(wykorzystywana w animacji)
+ * @param texture WskaÅºnik na teksture
+ * @param imageCount Kontener przechowujÄ…cy informacje o iloÅ›ci teskstur zawartych w pliku graficznym animacji postaci (dla bohatera 4,2 - 4oznacza 4 rÃ³Å¼ne tekstury dla animacji, a 2 iloÅ›Ä‡ rÃ³Å¼nych aninmacji)
+ * @param switchTime Czas po jakim ma siÄ™ zmieniÄ‡ tekstura(wykorzystywana w animacji)
  */
 
 Animation::Animation(sf::Texture* texture, sf::Vector2u imageCount, float switchTime)
@@ -18,11 +18,11 @@ Animation::Animation(sf::Texture* texture, sf::Vector2u imageCount, float switch
         uvRect.height = texture->getSize().y / float(imageCount.y);
     }
 
-/** \brief Funkcja ma za zadanie przemieszczanie siê po ca³ej teksturze
+/** \brief  Funkcja ma za zadanie przemieszczanie siÄ™ po caÅ‚ej teksturze
  *
- * @param row Zmienna okreœlaj¹ca który wiersz animacji ma zostaæ wykonywany (w pliku graficznym ka¿da animacja jest w osobnym wierszu). Zale¿nie od wykonywanej czynnoœci mo¿e byæ odtwarzana inna animacja
- * @param deltaTime Zmienna okreœlaj¹ca ile czasu minê³o pomiêdzy klatkami gry (umo¿liwia ona p³ynniejsze dzia³anie gry, poniewa¿ niezale¿nie od wykorzystanie zasobów komputera gra nie powinna przyspieszaæ, ani zwalniaæ)
- * @param faceRight Parametr okreœlaj¹cy w któr¹ stronê ma byæ skierowana postaæ(w lewo lub w prawo)
+ * @param row Zmienna okreÅ›lajÄ…ca ktÃ³ry wiersz animacji ma zostaÄ‡ wykonywany (w pliku graficznym kaÅ¼da animacja jest w osobnym wierszu). ZaleÅ¼nie od wykonywanej czynnoÅ›ci moÅ¼e byÄ‡ odtwarzana inna animacja
+ * @param deltaTime Zmienna okreÅ›lajÄ…ca ile czasu minÄ™Å‚o pomiÄ™dzy klatkami gry (umoÅ¼liwia ona pÅ‚ynniejsze dziaÅ‚anie gry, poniewaÅ¼ niezaleÅ¼nie od wykorzystanie zasobÃ³w komputera gra nie powinna przyspieszaÄ‡, ani zwalniaÄ‡)
+ * @param faceRight Parametr okreÅ›lajÄ…cy w ktÃ³rÄ… stronÄ™ ma byÄ‡ skierowana postaÄ‡(w lewo lub w prawo)
  */
 
 void Animation::Update(int row, float deltaTime, bool faceRight)

@@ -1,12 +1,12 @@
-#include "Collision.h"
+ï»¿#include "Collision.h"
 
-/** \brief Funkcja sprawdzaj¹ca kolizjê
+/** \brief  Funkcja sprawdzajÄ…ca kolizjÄ™
  *
- * Funckja, dziêki której sprawdzamy kolizjê miêdzy wszystkimi przeszkodami, potworami i nabojami oraz je¿eli to potrzebne to obs³ugujemy kolizjê przed odbicie od krawêdzi sprawdzanych miêdzy sob¹ obiektami
- * @param ob1 WskaŸnik na pierwszy obiekt
- * @param ob2 WskaŸnik na drugi obiekt
- * @return true Je¿eli kolizja zosta³a wykryta
- * @return false Je¿eli kolizja nie zosta³a wykryta
+ * Funckja, dziÄ™ki ktÃ³rej sprawdzamy kolizjÄ™ miÄ™dzy wszystkimi przeszkodami, potworami i nabojami oraz jeÅ¼eli to potrzebne to obsÅ‚ugujemy kolizjÄ™ przed odbicie od krawÄ™dzi sprawdzanych miÄ™dzy sobÄ… obiektami
+ * @param ob1 WskaÅºnik na pierwszy obiekt
+ * @param ob2 WskaÅºnik na drugi obiekt
+ * @return true JeÅ¼eli kolizja zostaÅ‚a wykryta
+ * @return false JeÅ¼eli kolizja nie zostaÅ‚a wykryta
  */
 
 bool Collision::check_Collision(sf::RectangleShape& ob1, sf::RectangleShape& ob2)

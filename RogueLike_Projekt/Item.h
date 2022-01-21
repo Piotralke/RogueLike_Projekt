@@ -1,24 +1,24 @@
-#pragma once
+ï»¿#pragma once
 #include <SFML/Graphics.hpp>
 #include "Hero.h"
 /**
-* Klasa reprezentuj¹ca przedmioty w grze
-* Statystyki przedmiotów s¹ dodawane do statystyk gracza przy podniesieniu go
+* \brief  Klasa reprezentujÄ…ca przedmioty w grze
+* Statystyki przedmiotÃ³w sÄ… dodawane do statystyk gracza przy podniesieniu go
 */
 class Item
 {
 	private:
-		float damage; /**<Obra¿enia */
-		float health; /**<¯ycie*/
-		float maxHealth; /**<Maksymalne ¿ycie*/
-		float fire_delay; /**<Odstêp miêdzy strza³em*/
-		float shot_speed; /**<Prêdkoœæ pocisków*/
-		float speed; /**<Szybkoœæ*/
-		int money; /**<Iloœæ monet*/
-		int value; /**<Wartoœæ przedmiotu w sklepie*/
-		bool flying; /**<Mo¿liwoœæ latania*/
+		float damage; /**<\brief ObraÅ¼enia */
+		float health; /**<\brief Â¯ycie*/
+		float maxHealth; /**<\brief Maksymalne Å¼ycie*/
+		float fire_delay; /**<\brief OdstÄ™p miÄ™dzy strzaÅ‚em*/
+		float shot_speed; /**<\brief PrÄ™dkoÅ›Ä‡ pociskÃ³w*/
+		float speed; /**<\brief SzybkoÅ›Ä‡*/
+		int money; /**<\brief IloÅ›Ä‡ monet*/
+		int value; /**<\brief WartoÅ›Ä‡ przedmiotu w sklepie*/
+		bool flying; /**<\brief MoÅ¼liwoÅ›Ä‡ latania*/
 	public:
-		sf::RectangleShape item; /**<Prostok¹t odpowiedzialny za wykrycie kolizji oraz nadanie teksturki*/
+		sf::RectangleShape item; /**<\brief ProstokÄ…t odpowiedzialny za wykrycie kolizji oraz nadanie teksturki*/
 		Item(sf::Texture* itemTexture, sf::Vector2f position, sf::Vector2f size, float damage, float health,float maxHealth, float fire_delay, float shot_speed, float speed, int money, int value=0, bool flying=false);
 		void giveItem(hero* player);
 		void Draw(sf::RenderWindow& window, sf::Font& font);

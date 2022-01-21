@@ -1,0 +1,713 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>RogueLike Game: Dokumentacja klasy boss</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="icon.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">RogueLike Game<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Gra na projekt z PJC2</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Szukaj','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classboss.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Metody publiczne</a> &#124;
+<a href="#pri-attribs">Atrybuty prywatne</a> &#124;
+<a href="classboss-members.html">Lista wszystkich składowych</a>  </div>
+  <div class="headertitle"><div class="title">Dokumentacja klasy boss</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Klasa reprezentująca bossów.  
+ <a href="classboss.html#details">Więcej...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_boss_8h_source.html">Boss.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagram dziedziczenia dla boss</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classboss.png" usemap="#boss_map" alt=""/>
+  <map id="boss_map" name="boss_map">
+<area href="classmonster.html" title="Klasa reprezentująca przeciwników." alt="monster" shape="rect" coords="0,56,56,80"/>
+<area href="classhero.html" title="Klasa reprezentująca gracza." alt="hero" shape="rect" coords="0,0,56,24"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:a9941ba63fe0e8ccf49a44af1e99c2871"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboss.html#a9941ba63fe0e8ccf49a44af1e99c2871">boss</a> (sf::Texture *texture, sf::Vector2u imageCount, float switchTime, float <a class="el" href="classhero.html#a411f38ef99d0048854e6fa92c0efbcf3">speed</a>, float <a class="el" href="classhero.html#a92cc4f33815208a1a8157e9cf5181e49">fire_rate</a>, float <a class="el" href="classhero.html#aeb6daa9af19c67fba829162d60c32214">shot_speed</a>, float <a class="el" href="classhero.html#a4b3c3c501cb1506fe5ef7580044238f8">health</a>, float <a class="el" href="classhero.html#a7094ef3563753ea8f13bc34a2da6adfb">damage</a>, sf::Vector2f size, sf::Vector2f position, bool <a class="el" href="classmonster.html#afd6a56d4bc4cfd4f6e24f932c5b32e0b">shooting</a>, bool <a class="el" href="classhero.html#a653f4d958a60a0a78e4a31adde064014">flying</a>, bool <a class="el" href="classmonster.html#a276c879419ca359356c9595c6b83e343">resurection</a>, bool <a class="el" href="classboss.html#a1a83d314c978133aecf8224452e32553">triple_shot</a>, bool <a class="el" href="classboss.html#afa28109c1f9aa33944d2467804cbd95a">spawn</a>, bool <a class="el" href="classboss.html#a6746a10cb4307ba0e8596ac1fa1d9f33">special_movement</a>, sf::Texture *<a class="el" href="classhero.html#a4df4fde8402385b88cd35b03aa676730">arrow</a>, sf::Vector2i <a class="el" href="classmonster.html#a92b36bf35729a4971d1fa5d014a641c2">bullet_size</a>)</td></tr>
+<tr class="separator:a9941ba63fe0e8ccf49a44af1e99c2871"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c3c3b1ee1d7254fbcff550f06d7bb19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboss.html#a7c3c3b1ee1d7254fbcff550f06d7bb19">Update</a> (float deltaTime, std::vector&lt; <a class="el" href="class_bullet.html">Bullet</a> &gt; &amp;bulletVec, std::vector&lt; <a class="el" href="classmonster.html">monster</a> &gt; &amp;monsterVec, <a class="el" href="classhero.html">hero</a> player, sf::Texture *ghostTexture, sf::Texture *demonTexture, std::vector&lt; <a class="el" href="class_object.html">Object</a> &gt; &amp;objectVec, std::vector&lt; sf::RectangleShape &gt; &amp;wallVec)</td></tr>
+<tr class="memdesc:a7c3c3b1ee1d7254fbcff550f06d7bb19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja aktualizująca pozycje bossów oraz określająca ich specjalne umiejętności.  <a href="classboss.html#a7c3c3b1ee1d7254fbcff550f06d7bb19">Więcej...</a><br /></td></tr>
+<tr class="separator:a7c3c3b1ee1d7254fbcff550f06d7bb19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classmonster"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classmonster')"><img src="closed.png" alt="-"/>&#160;Metody publiczne dziedziczone z <a class="el" href="classmonster.html">monster</a></td></tr>
+<tr class="memitem:ac55320a29f99e6db44f37cc56dab3f33 inherit pub_methods_classmonster"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmonster.html#ac55320a29f99e6db44f37cc56dab3f33">monster</a> (sf::Texture *texture, sf::Vector2u imageCount, float switchTime, float <a class="el" href="classhero.html#a411f38ef99d0048854e6fa92c0efbcf3">speed</a>, float <a class="el" href="classhero.html#a92cc4f33815208a1a8157e9cf5181e49">fire_rate</a>, float <a class="el" href="classhero.html#aeb6daa9af19c67fba829162d60c32214">shot_speed</a>, float <a class="el" href="classhero.html#a4b3c3c501cb1506fe5ef7580044238f8">health</a>, float <a class="el" href="classhero.html#a7094ef3563753ea8f13bc34a2da6adfb">damage</a>, sf::Vector2f size, sf::Vector2f position, bool <a class="el" href="classmonster.html#afd6a56d4bc4cfd4f6e24f932c5b32e0b">shooting</a>, bool <a class="el" href="classhero.html#a653f4d958a60a0a78e4a31adde064014">flying</a>, bool <a class="el" href="classmonster.html#a276c879419ca359356c9595c6b83e343">resurection</a>, sf::Texture *<a class="el" href="classhero.html#a4df4fde8402385b88cd35b03aa676730">arrow</a>, sf::Vector2i <a class="el" href="classmonster.html#a92b36bf35729a4971d1fa5d014a641c2">bullet_size</a>, bool <a class="el" href="classmonster.html#a58cb7d1954b646e2f5e92092746b51eb">teleport</a>=false)</td></tr>
+<tr class="separator:ac55320a29f99e6db44f37cc56dab3f33 inherit pub_methods_classmonster"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2cf0fbb84381be976fedfd04e184acb inherit pub_methods_classmonster"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmonster.html#ae2cf0fbb84381be976fedfd04e184acb">getDirVec</a> (<a class="el" href="classhero.html">hero</a> player)</td></tr>
+<tr class="memdesc:ae2cf0fbb84381be976fedfd04e184acb inherit pub_methods_classmonster"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja zwracająca wektor od przeciwnika do gracza.  <a href="classmonster.html#ae2cf0fbb84381be976fedfd04e184acb">Więcej...</a><br /></td></tr>
+<tr class="separator:ae2cf0fbb84381be976fedfd04e184acb inherit pub_methods_classmonster"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73413c79fb844b90166552f5637ce263 inherit pub_methods_classmonster"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmonster.html#a73413c79fb844b90166552f5637ce263">getDirDeg</a> (sf::Vector2f)</td></tr>
+<tr class="memdesc:a73413c79fb844b90166552f5637ce263 inherit pub_methods_classmonster"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja zwracająca kąt pod jakim jest dany wektor.  <a href="classmonster.html#a73413c79fb844b90166552f5637ce263">Więcej...</a><br /></td></tr>
+<tr class="separator:a73413c79fb844b90166552f5637ce263 inherit pub_methods_classmonster"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b8882b9004568991ac7e519df0e617c inherit pub_methods_classmonster"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmonster.html#a8b8882b9004568991ac7e519df0e617c">Update</a> (float deltaTime, std::vector&lt; <a class="el" href="class_bullet.html">Bullet</a> &gt; &amp;bulletVec, std::vector&lt; <a class="el" href="classmonster.html">monster</a> &gt; &amp;monsterVec, <a class="el" href="classhero.html">hero</a> player, int &amp;skeleton_count, int &amp;dead_skeleton)</td></tr>
+<tr class="memdesc:a8b8882b9004568991ac7e519df0e617c inherit pub_methods_classmonster"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja aktualizująca pozycje przeciwników oraz określająca ich specjalne umiejętności.  <a href="classmonster.html#a8b8882b9004568991ac7e519df0e617c">Więcej...</a><br /></td></tr>
+<tr class="separator:a8b8882b9004568991ac7e519df0e617c inherit pub_methods_classmonster"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4707c7525e9136eb895ac2a361914b4d inherit pub_methods_classmonster"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmonster.html#a4707c7525e9136eb895ac2a361914b4d">Draw</a> (sf::RenderWindow &amp;window)</td></tr>
+<tr class="memdesc:a4707c7525e9136eb895ac2a361914b4d inherit pub_methods_classmonster"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja wyświetlająca przeciwnika.  <a href="classmonster.html#a4707c7525e9136eb895ac2a361914b4d">Więcej...</a><br /></td></tr>
+<tr class="separator:a4707c7525e9136eb895ac2a361914b4d inherit pub_methods_classmonster"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classhero"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classhero')"><img src="closed.png" alt="-"/>&#160;Metody publiczne dziedziczone z <a class="el" href="classhero.html">hero</a></td></tr>
+<tr class="memitem:ab110d7070b02e44feb1523167ded66e3 inherit pub_methods_classhero"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#ab110d7070b02e44feb1523167ded66e3">hero</a> (sf::Texture *texture, sf::Vector2u imageCount, float switchTime, float <a class="el" href="classhero.html#a411f38ef99d0048854e6fa92c0efbcf3">speed</a>, float <a class="el" href="classhero.html#a92cc4f33815208a1a8157e9cf5181e49">fire_rate</a>, float <a class="el" href="classhero.html#aeb6daa9af19c67fba829162d60c32214">shot_speed</a>, float <a class="el" href="classhero.html#a4b3c3c501cb1506fe5ef7580044238f8">health</a>, float <a class="el" href="classhero.html#a7094ef3563753ea8f13bc34a2da6adfb">damage</a>, sf::Vector2f size, sf::Vector2f position, bool <a class="el" href="classhero.html#a653f4d958a60a0a78e4a31adde064014">flying</a>, sf::Texture *<a class="el" href="classhero.html#a4df4fde8402385b88cd35b03aa676730">arrow</a>, sf::Texture *wings_t=NULL)</td></tr>
+<tr class="memdesc:ab110d7070b02e44feb1523167ded66e3 inherit pub_methods_classhero"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor dla postaci.  <a href="classhero.html#ab110d7070b02e44feb1523167ded66e3">Więcej...</a><br /></td></tr>
+<tr class="separator:ab110d7070b02e44feb1523167ded66e3 inherit pub_methods_classhero"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4109e06cfc0ed1d182f8d38e08a23ce inherit pub_methods_classhero"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#af4109e06cfc0ed1d182f8d38e08a23ce">DrawStats</a> (sf::RenderWindow &amp;window, sf::Font &amp;font)</td></tr>
+<tr class="memdesc:af4109e06cfc0ed1d182f8d38e08a23ce inherit pub_methods_classhero"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja wypisująca statystyki.  <a href="classhero.html#af4109e06cfc0ed1d182f8d38e08a23ce">Więcej...</a><br /></td></tr>
+<tr class="separator:af4109e06cfc0ed1d182f8d38e08a23ce inherit pub_methods_classhero"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d84dad985324b86102c2cadf0863ef6 inherit pub_methods_classhero"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#a3d84dad985324b86102c2cadf0863ef6">Draw</a> (sf::RenderWindow &amp;window)</td></tr>
+<tr class="memdesc:a3d84dad985324b86102c2cadf0863ef6 inherit pub_methods_classhero"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja wyświetlająca postać  <a href="classhero.html#a3d84dad985324b86102c2cadf0863ef6">Więcej...</a><br /></td></tr>
+<tr class="separator:a3d84dad985324b86102c2cadf0863ef6 inherit pub_methods_classhero"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa6c9a234f77f560607c9cca7f5ba2e7 inherit pub_methods_classhero"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#afa6c9a234f77f560607c9cca7f5ba2e7">DrawMenu</a> (sf::RenderWindow &amp;window, float deltaTime)</td></tr>
+<tr class="memdesc:afa6c9a234f77f560607c9cca7f5ba2e7 inherit pub_methods_classhero"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja od wyświetlania postaci w menu.  <a href="classhero.html#afa6c9a234f77f560607c9cca7f5ba2e7">Więcej...</a><br /></td></tr>
+<tr class="separator:afa6c9a234f77f560607c9cca7f5ba2e7 inherit pub_methods_classhero"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe462a3fc37afb1527cd34ed96cd5fef inherit pub_methods_classhero"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#abe462a3fc37afb1527cd34ed96cd5fef">Update</a> (float deltaTime, std::vector&lt; <a class="el" href="class_bullet.html">Bullet</a> &gt; &amp;bulletVec)</td></tr>
+<tr class="memdesc:abe462a3fc37afb1527cd34ed96cd5fef inherit pub_methods_classhero"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja aktualizująca pozycje postaci.  <a href="classhero.html#abe462a3fc37afb1527cd34ed96cd5fef">Więcej...</a><br /></td></tr>
+<tr class="separator:abe462a3fc37afb1527cd34ed96cd5fef inherit pub_methods_classhero"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a63d301b05b4bb2450541e3ba399ff9 inherit pub_methods_classhero"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#a2a63d301b05b4bb2450541e3ba399ff9">GetPosition</a> ()</td></tr>
+<tr class="memdesc:a2a63d301b05b4bb2450541e3ba399ff9 inherit pub_methods_classhero"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja zwracająca pozycje postaci.  <a href="classhero.html#a2a63d301b05b4bb2450541e3ba399ff9">Więcej...</a><br /></td></tr>
+<tr class="separator:a2a63d301b05b4bb2450541e3ba399ff9 inherit pub_methods_classhero"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc016029672da959045036b6c0f1f880 inherit pub_methods_classhero"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#adc016029672da959045036b6c0f1f880">getDamage</a> ()</td></tr>
+<tr class="memdesc:adc016029672da959045036b6c0f1f880 inherit pub_methods_classhero"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja zwracająca obrażenia postaci.  <a href="classhero.html#adc016029672da959045036b6c0f1f880">Więcej...</a><br /></td></tr>
+<tr class="separator:adc016029672da959045036b6c0f1f880 inherit pub_methods_classhero"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5c6d724fd25db6419faed6abf38f0f5 inherit pub_methods_classhero"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#aa5c6d724fd25db6419faed6abf38f0f5">getHealth</a> ()</td></tr>
+<tr class="memdesc:aa5c6d724fd25db6419faed6abf38f0f5 inherit pub_methods_classhero"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja zwracająca życie postaci.  <a href="classhero.html#aa5c6d724fd25db6419faed6abf38f0f5">Więcej...</a><br /></td></tr>
+<tr class="separator:aa5c6d724fd25db6419faed6abf38f0f5 inherit pub_methods_classhero"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7575e1d92c07645bc1dc5b6536c9249 inherit pub_methods_classhero"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#ad7575e1d92c07645bc1dc5b6536c9249">getSpeed</a> ()</td></tr>
+<tr class="memdesc:ad7575e1d92c07645bc1dc5b6536c9249 inherit pub_methods_classhero"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja zwracająca prędkość postaci.  <a href="classhero.html#ad7575e1d92c07645bc1dc5b6536c9249">Więcej...</a><br /></td></tr>
+<tr class="separator:ad7575e1d92c07645bc1dc5b6536c9249 inherit pub_methods_classhero"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade2e3d8c35e3c2cadc8dcc2e8c7e0194 inherit pub_methods_classhero"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#ade2e3d8c35e3c2cadc8dcc2e8c7e0194">getShotSpeed</a> ()</td></tr>
+<tr class="memdesc:ade2e3d8c35e3c2cadc8dcc2e8c7e0194 inherit pub_methods_classhero"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja zwracająca prędkość naboju postaci.  <a href="classhero.html#ade2e3d8c35e3c2cadc8dcc2e8c7e0194">Więcej...</a><br /></td></tr>
+<tr class="separator:ade2e3d8c35e3c2cadc8dcc2e8c7e0194 inherit pub_methods_classhero"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09e1317036453b3ca1400167d9a893ee inherit pub_methods_classhero"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#a09e1317036453b3ca1400167d9a893ee">getFireDelay</a> ()</td></tr>
+<tr class="memdesc:a09e1317036453b3ca1400167d9a893ee inherit pub_methods_classhero"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja zwracająca szybkostrzelność postaci.  <a href="classhero.html#a09e1317036453b3ca1400167d9a893ee">Więcej...</a><br /></td></tr>
+<tr class="separator:a09e1317036453b3ca1400167d9a893ee inherit pub_methods_classhero"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e81382ce4b77106626ae24651728560 inherit pub_methods_classhero"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#a1e81382ce4b77106626ae24651728560">getMoney</a> ()</td></tr>
+<tr class="memdesc:a1e81382ce4b77106626ae24651728560 inherit pub_methods_classhero"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja zwracająca ilość monetek postaci.  <a href="classhero.html#a1e81382ce4b77106626ae24651728560">Więcej...</a><br /></td></tr>
+<tr class="separator:a1e81382ce4b77106626ae24651728560 inherit pub_methods_classhero"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a690ca38d939f00791712414c801da14e inherit pub_methods_classhero"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#a690ca38d939f00791712414c801da14e">getFlying</a> ()</td></tr>
+<tr class="memdesc:a690ca38d939f00791712414c801da14e inherit pub_methods_classhero"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja zwracająca czy postać może latac.  <a href="classhero.html#a690ca38d939f00791712414c801da14e">Więcej...</a><br /></td></tr>
+<tr class="separator:a690ca38d939f00791712414c801da14e inherit pub_methods_classhero"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e16eb948cb76bb82fab9b4b71f4e844 inherit pub_methods_classhero"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#a6e16eb948cb76bb82fab9b4b71f4e844">getHit</a> (float <a class="el" href="classhero.html#a7094ef3563753ea8f13bc34a2da6adfb">damage</a>)</td></tr>
+<tr class="memdesc:a6e16eb948cb76bb82fab9b4b71f4e844 inherit pub_methods_classhero"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja zadająca obrażenia postaci.  <a href="classhero.html#a6e16eb948cb76bb82fab9b4b71f4e844">Więcej...</a><br /></td></tr>
+<tr class="separator:a6e16eb948cb76bb82fab9b4b71f4e844 inherit pub_methods_classhero"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa57fba5727988cae193f083eaa290fbb inherit pub_methods_classhero"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#aa57fba5727988cae193f083eaa290fbb">setStatistics</a> (float <a class="el" href="classhero.html#a7094ef3563753ea8f13bc34a2da6adfb">damage</a>, float <a class="el" href="classhero.html#a4b3c3c501cb1506fe5ef7580044238f8">health</a>, float <a class="el" href="classhero.html#a8729ef5a2fce0c91759c21ae48d14ade">maxHealth</a>, float fire_delay, float <a class="el" href="classhero.html#aeb6daa9af19c67fba829162d60c32214">shot_speed</a>, float <a class="el" href="classhero.html#a411f38ef99d0048854e6fa92c0efbcf3">speed</a>, int <a class="el" href="classhero.html#ab036d8e694b585af6c2b3e91e633ed3e">money</a>, bool <a class="el" href="classhero.html#a653f4d958a60a0a78e4a31adde064014">flying</a>)</td></tr>
+<tr class="memdesc:aa57fba5727988cae193f083eaa290fbb inherit pub_methods_classhero"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja dodająca statystyki.  <a href="classhero.html#aa57fba5727988cae193f083eaa290fbb">Więcej...</a><br /></td></tr>
+<tr class="separator:aa57fba5727988cae193f083eaa290fbb inherit pub_methods_classhero"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Atrybuty prywatne</h2></td></tr>
+<tr class="memitem:afe0b87537475fd796f6bf3a9d4a12c46"><td class="memItemLeft" align="right" valign="top">sf::Clock&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboss.html#afe0b87537475fd796f6bf3a9d4a12c46">spawn_delay_clock</a></td></tr>
+<tr class="memdesc:afe0b87537475fd796f6bf3a9d4a12c46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zegar odmierzający czas między możliwością przyzywania przeciwników.  <a href="classboss.html#afe0b87537475fd796f6bf3a9d4a12c46">Więcej...</a><br /></td></tr>
+<tr class="separator:afe0b87537475fd796f6bf3a9d4a12c46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a83d314c978133aecf8224452e32553"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboss.html#a1a83d314c978133aecf8224452e32553">triple_shot</a></td></tr>
+<tr class="memdesc:a1a83d314c978133aecf8224452e32553"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zmienna określająca, czy przeciwnik strzela potrójnym strzałem.  <a href="classboss.html#a1a83d314c978133aecf8224452e32553">Więcej...</a><br /></td></tr>
+<tr class="separator:a1a83d314c978133aecf8224452e32553"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa28109c1f9aa33944d2467804cbd95a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboss.html#afa28109c1f9aa33944d2467804cbd95a">spawn</a></td></tr>
+<tr class="memdesc:afa28109c1f9aa33944d2467804cbd95a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zmienna określająca, czy przeciwnik może przyzywać pomocników.  <a href="classboss.html#afa28109c1f9aa33944d2467804cbd95a">Więcej...</a><br /></td></tr>
+<tr class="separator:afa28109c1f9aa33944d2467804cbd95a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6746a10cb4307ba0e8596ac1fa1d9f33"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboss.html#a6746a10cb4307ba0e8596ac1fa1d9f33">special_movement</a></td></tr>
+<tr class="memdesc:a6746a10cb4307ba0e8596ac1fa1d9f33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zmienna określająca, czy przeciwnik posiada specjalny sposób poruszania się  <a href="classboss.html#a6746a10cb4307ba0e8596ac1fa1d9f33">Więcej...</a><br /></td></tr>
+<tr class="separator:a6746a10cb4307ba0e8596ac1fa1d9f33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26eb68495d5c0409ec86ead4919b73eb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboss.html#a26eb68495d5c0409ec86ead4919b73eb">can_shot</a> =true</td></tr>
+<tr class="memdesc:a26eb68495d5c0409ec86ead4919b73eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zmienna określająca, czy przeciwnik może strzelać w danej chwili.  <a href="classboss.html#a26eb68495d5c0409ec86ead4919b73eb">Więcej...</a><br /></td></tr>
+<tr class="separator:a26eb68495d5c0409ec86ead4919b73eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec3652705bcc6f814d662bde1987f68f"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboss.html#aec3652705bcc6f814d662bde1987f68f">randomDir</a> = {1.0f,0.0f}</td></tr>
+<tr class="memdesc:aec3652705bcc6f814d662bde1987f68f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zmienna określająca losowy kierunek poruszania się  <a href="classboss.html#aec3652705bcc6f814d662bde1987f68f">Więcej...</a><br /></td></tr>
+<tr class="separator:aec3652705bcc6f814d662bde1987f68f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b753fc26788fb41c3ae31d1295463b7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboss.html#a5b753fc26788fb41c3ae31d1295463b7">running</a> =false</td></tr>
+<tr class="memdesc:a5b753fc26788fb41c3ae31d1295463b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zmienna określająca, czy przeciwnik szarżuje w stronę gracza.  <a href="classboss.html#a5b753fc26788fb41c3ae31d1295463b7">Więcej...</a><br /></td></tr>
+<tr class="separator:a5b753fc26788fb41c3ae31d1295463b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Dodatkowe Dziedziczone Składowe</h2></td></tr>
+<tr class="inherit_header pub_attribs_classmonster"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classmonster')"><img src="closed.png" alt="-"/>&#160;Atrybuty publiczne dziedziczone z <a class="el" href="classmonster.html">monster</a></td></tr>
+<tr class="memitem:a276c879419ca359356c9595c6b83e343 inherit pub_attribs_classmonster"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmonster.html#a276c879419ca359356c9595c6b83e343">resurection</a></td></tr>
+<tr class="memdesc:a276c879419ca359356c9595c6b83e343 inherit pub_attribs_classmonster"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zmienna określająca, czy przeciwnik, może się odrodzić  <a href="classmonster.html#a276c879419ca359356c9595c6b83e343">Więcej...</a><br /></td></tr>
+<tr class="separator:a276c879419ca359356c9595c6b83e343 inherit pub_attribs_classmonster"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_classhero"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classhero')"><img src="closed.png" alt="-"/>&#160;Atrybuty publiczne dziedziczone z <a class="el" href="classhero.html">hero</a></td></tr>
+<tr class="memitem:a0ffdd4635502f2d7ae2bd8dccd3f41dc inherit pub_attribs_classhero"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#a0ffdd4635502f2d7ae2bd8dccd3f41dc">x</a> = 5</td></tr>
+<tr class="separator:a0ffdd4635502f2d7ae2bd8dccd3f41dc inherit pub_attribs_classhero"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d7ad24533be9a327c99dce6473b9352 inherit pub_attribs_classhero"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#a2d7ad24533be9a327c99dce6473b9352">y</a> = 5</td></tr>
+<tr class="memdesc:a2d7ad24533be9a327c99dce6473b9352 inherit pub_attribs_classhero"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pozycja pokoju, w którym znajduje się gracz.  <a href="classhero.html#a2d7ad24533be9a327c99dce6473b9352">Więcej...</a><br /></td></tr>
+<tr class="separator:a2d7ad24533be9a327c99dce6473b9352 inherit pub_attribs_classhero"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bd01104af1be9944221dec33d180b35 inherit pub_attribs_classhero"><td class="memItemLeft" align="right" valign="top">sf::RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#a6bd01104af1be9944221dec33d180b35">body</a></td></tr>
+<tr class="memdesc:a6bd01104af1be9944221dec33d180b35 inherit pub_attribs_classhero"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prostokąt odpowiedzialny za wykrywanie kolizji gracza oraz wyświetlanie jego tekstury.  <a href="classhero.html#a6bd01104af1be9944221dec33d180b35">Więcej...</a><br /></td></tr>
+<tr class="separator:a6bd01104af1be9944221dec33d180b35 inherit pub_attribs_classhero"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af97bcb6bd8217eb21417bda1a19c3f8e inherit pub_attribs_classhero"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_animation.html">Animation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#af97bcb6bd8217eb21417bda1a19c3f8e">animation</a></td></tr>
+<tr class="memdesc:af97bcb6bd8217eb21417bda1a19c3f8e inherit pub_attribs_classhero"><td class="mdescLeft">&#160;</td><td class="mdescRight">Animacja postaci.  <a href="classhero.html#af97bcb6bd8217eb21417bda1a19c3f8e">Więcej...</a><br /></td></tr>
+<tr class="separator:af97bcb6bd8217eb21417bda1a19c3f8e inherit pub_attribs_classhero"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classmonster"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classmonster')"><img src="closed.png" alt="-"/>&#160;Atrybuty chronione dziedziczone z <a class="el" href="classmonster.html">monster</a></td></tr>
+<tr class="memitem:afd6a56d4bc4cfd4f6e24f932c5b32e0b inherit pro_attribs_classmonster"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmonster.html#afd6a56d4bc4cfd4f6e24f932c5b32e0b">shooting</a></td></tr>
+<tr class="memdesc:afd6a56d4bc4cfd4f6e24f932c5b32e0b inherit pro_attribs_classmonster"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zmienna określająca, czy przeciwnik może strzelać  <a href="classmonster.html#afd6a56d4bc4cfd4f6e24f932c5b32e0b">Więcej...</a><br /></td></tr>
+<tr class="separator:afd6a56d4bc4cfd4f6e24f932c5b32e0b inherit pro_attribs_classmonster"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae37eecd6d945557a114c630f1f7f2de3 inherit pro_attribs_classmonster"><td class="memItemLeft" align="right" valign="top">sf::Clock&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmonster.html#ae37eecd6d945557a114c630f1f7f2de3">animation_clock</a></td></tr>
+<tr class="memdesc:ae37eecd6d945557a114c630f1f7f2de3 inherit pro_attribs_classmonster"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zegar odmieżający czas do zmianu animacji.  <a href="classmonster.html#ae37eecd6d945557a114c630f1f7f2de3">Więcej...</a><br /></td></tr>
+<tr class="separator:ae37eecd6d945557a114c630f1f7f2de3 inherit pro_attribs_classmonster"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c19d8db56a6c299bac19637f8482a8a inherit pro_attribs_classmonster"><td class="memItemLeft" align="right" valign="top">sf::Clock&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmonster.html#a7c19d8db56a6c299bac19637f8482a8a">jump_clock</a></td></tr>
+<tr class="memdesc:a7c19d8db56a6c299bac19637f8482a8a inherit pro_attribs_classmonster"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zegar odmieżający czas co jaki potwór wykona specjalny ruch.  <a href="classmonster.html#a7c19d8db56a6c299bac19637f8482a8a">Więcej...</a><br /></td></tr>
+<tr class="separator:a7c19d8db56a6c299bac19637f8482a8a inherit pro_attribs_classmonster"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53498715deb38e92224ba3ef508afe47 inherit pro_attribs_classmonster"><td class="memItemLeft" align="right" valign="top">sf::Clock&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmonster.html#a53498715deb38e92224ba3ef508afe47">rotate_clock</a></td></tr>
+<tr class="memdesc:a53498715deb38e92224ba3ef508afe47 inherit pro_attribs_classmonster"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zegar odmieżający czas zmieny kierunku poruszania się  <a href="classmonster.html#a53498715deb38e92224ba3ef508afe47">Więcej...</a><br /></td></tr>
+<tr class="separator:a53498715deb38e92224ba3ef508afe47 inherit pro_attribs_classmonster"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48bf31bcbf6d862d29575e3d3f15ca2e inherit pro_attribs_classmonster"><td class="memItemLeft" align="right" valign="top">sf::Clock&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmonster.html#a48bf31bcbf6d862d29575e3d3f15ca2e">shot_clock</a></td></tr>
+<tr class="memdesc:a48bf31bcbf6d862d29575e3d3f15ca2e inherit pro_attribs_classmonster"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zegar oidmieżający czas od wystrzelenia pocisku.  <a href="classmonster.html#a48bf31bcbf6d862d29575e3d3f15ca2e">Więcej...</a><br /></td></tr>
+<tr class="separator:a48bf31bcbf6d862d29575e3d3f15ca2e inherit pro_attribs_classmonster"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a260a4c2f1fbd8135e604ab112edfb0d7 inherit pro_attribs_classmonster"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmonster.html#a260a4c2f1fbd8135e604ab112edfb0d7">memSpeed</a></td></tr>
+<tr class="memdesc:a260a4c2f1fbd8135e604ab112edfb0d7 inherit pro_attribs_classmonster"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zmienna zapamiętująca poczatkową wartość szybkości poruszania się  <a href="classmonster.html#a260a4c2f1fbd8135e604ab112edfb0d7">Więcej...</a><br /></td></tr>
+<tr class="separator:a260a4c2f1fbd8135e604ab112edfb0d7 inherit pro_attribs_classmonster"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac9ce92e7121011e0074be11ba348059 inherit pro_attribs_classmonster"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmonster.html#aac9ce92e7121011e0074be11ba348059">memHealth</a></td></tr>
+<tr class="memdesc:aac9ce92e7121011e0074be11ba348059 inherit pro_attribs_classmonster"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zmienna zapamiętująca początkową wartość życia.  <a href="classmonster.html#aac9ce92e7121011e0074be11ba348059">Więcej...</a><br /></td></tr>
+<tr class="separator:aac9ce92e7121011e0074be11ba348059 inherit pro_attribs_classmonster"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2dfdd8d67d988b02c1bba9410df7f79 inherit pro_attribs_classmonster"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmonster.html#aa2dfdd8d67d988b02c1bba9410df7f79">dead</a> = false</td></tr>
+<tr class="memdesc:aa2dfdd8d67d988b02c1bba9410df7f79 inherit pro_attribs_classmonster"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zmienna okreslajaca, czy dany przeciwnik został pokonany (używane dla szkieletów, które odradzają się, jeśli w pokoju jest więcej przeciwników)  <a href="classmonster.html#aa2dfdd8d67d988b02c1bba9410df7f79">Więcej...</a><br /></td></tr>
+<tr class="separator:aa2dfdd8d67d988b02c1bba9410df7f79 inherit pro_attribs_classmonster"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58cb7d1954b646e2f5e92092746b51eb inherit pro_attribs_classmonster"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmonster.html#a58cb7d1954b646e2f5e92092746b51eb">teleport</a></td></tr>
+<tr class="memdesc:a58cb7d1954b646e2f5e92092746b51eb inherit pro_attribs_classmonster"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zmienna określająca, czy dany przeciwnik może sie teleportować  <a href="classmonster.html#a58cb7d1954b646e2f5e92092746b51eb">Więcej...</a><br /></td></tr>
+<tr class="separator:a58cb7d1954b646e2f5e92092746b51eb inherit pro_attribs_classmonster"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92b36bf35729a4971d1fa5d014a641c2 inherit pro_attribs_classmonster"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmonster.html#a92b36bf35729a4971d1fa5d014a641c2">bullet_size</a></td></tr>
+<tr class="memdesc:a92b36bf35729a4971d1fa5d014a641c2 inherit pro_attribs_classmonster"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zmienna określająca wymniary tekstury pocisku.  <a href="classmonster.html#a92b36bf35729a4971d1fa5d014a641c2">Więcej...</a><br /></td></tr>
+<tr class="separator:a92b36bf35729a4971d1fa5d014a641c2 inherit pro_attribs_classmonster"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeea194f1cbbf70b9620577d4daa5f253 inherit pro_attribs_classmonster"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmonster.html#aeea194f1cbbf70b9620577d4daa5f253">test</a> =0</td></tr>
+<tr class="memdesc:aeea194f1cbbf70b9620577d4daa5f253 inherit pro_attribs_classmonster"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zmienna używana do określania stanu w jakim aktualnie jest przeciwnik, by można było określić kolejną czynność jaką może wykonać  <a href="classmonster.html#aeea194f1cbbf70b9620577d4daa5f253">Więcej...</a><br /></td></tr>
+<tr class="separator:aeea194f1cbbf70b9620577d4daa5f253 inherit pro_attribs_classmonster"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classhero"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classhero')"><img src="closed.png" alt="-"/>&#160;Atrybuty chronione dziedziczone z <a class="el" href="classhero.html">hero</a></td></tr>
+<tr class="memitem:a411f38ef99d0048854e6fa92c0efbcf3 inherit pro_attribs_classhero"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#a411f38ef99d0048854e6fa92c0efbcf3">speed</a></td></tr>
+<tr class="memdesc:a411f38ef99d0048854e6fa92c0efbcf3 inherit pro_attribs_classhero"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prędkość poruszania się  <a href="classhero.html#a411f38ef99d0048854e6fa92c0efbcf3">Więcej...</a><br /></td></tr>
+<tr class="separator:a411f38ef99d0048854e6fa92c0efbcf3 inherit pro_attribs_classhero"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8729ef5a2fce0c91759c21ae48d14ade inherit pro_attribs_classhero"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#a8729ef5a2fce0c91759c21ae48d14ade">maxHealth</a></td></tr>
+<tr class="memdesc:a8729ef5a2fce0c91759c21ae48d14ade inherit pro_attribs_classhero"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maksymalne życie.  <a href="classhero.html#a8729ef5a2fce0c91759c21ae48d14ade">Więcej...</a><br /></td></tr>
+<tr class="separator:a8729ef5a2fce0c91759c21ae48d14ade inherit pro_attribs_classhero"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b3c3c501cb1506fe5ef7580044238f8 inherit pro_attribs_classhero"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#a4b3c3c501cb1506fe5ef7580044238f8">health</a></td></tr>
+<tr class="memdesc:a4b3c3c501cb1506fe5ef7580044238f8 inherit pro_attribs_classhero"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualne życie.  <a href="classhero.html#a4b3c3c501cb1506fe5ef7580044238f8">Więcej...</a><br /></td></tr>
+<tr class="separator:a4b3c3c501cb1506fe5ef7580044238f8 inherit pro_attribs_classhero"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7094ef3563753ea8f13bc34a2da6adfb inherit pro_attribs_classhero"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#a7094ef3563753ea8f13bc34a2da6adfb">damage</a></td></tr>
+<tr class="memdesc:a7094ef3563753ea8f13bc34a2da6adfb inherit pro_attribs_classhero"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obrażenia.  <a href="classhero.html#a7094ef3563753ea8f13bc34a2da6adfb">Więcej...</a><br /></td></tr>
+<tr class="separator:a7094ef3563753ea8f13bc34a2da6adfb inherit pro_attribs_classhero"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab036d8e694b585af6c2b3e91e633ed3e inherit pro_attribs_classhero"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#ab036d8e694b585af6c2b3e91e633ed3e">money</a> =0</td></tr>
+<tr class="memdesc:ab036d8e694b585af6c2b3e91e633ed3e inherit pro_attribs_classhero"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ilość monet.  <a href="classhero.html#ab036d8e694b585af6c2b3e91e633ed3e">Więcej...</a><br /></td></tr>
+<tr class="separator:ab036d8e694b585af6c2b3e91e633ed3e inherit pro_attribs_classhero"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a259f31988f0b966dac02ed9c9934a111 inherit pro_attribs_classhero"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#a259f31988f0b966dac02ed9c9934a111">faceRight</a></td></tr>
+<tr class="memdesc:a259f31988f0b966dac02ed9c9934a111 inherit pro_attribs_classhero"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zmienna określające, w którym kierunku patrzy się gracz.  <a href="classhero.html#a259f31988f0b966dac02ed9c9934a111">Więcej...</a><br /></td></tr>
+<tr class="separator:a259f31988f0b966dac02ed9c9934a111 inherit pro_attribs_classhero"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1cd1051bb00ea423c6249281de7e6b7 inherit pro_attribs_classhero"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#ad1cd1051bb00ea423c6249281de7e6b7">row</a> =0</td></tr>
+<tr class="memdesc:ad1cd1051bb00ea423c6249281de7e6b7 inherit pro_attribs_classhero"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zmienna określająca, który wiersz animacji ma być wykonywany.  <a href="classhero.html#ad1cd1051bb00ea423c6249281de7e6b7">Więcej...</a><br /></td></tr>
+<tr class="separator:ad1cd1051bb00ea423c6249281de7e6b7 inherit pro_attribs_classhero"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92cc4f33815208a1a8157e9cf5181e49 inherit pro_attribs_classhero"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#a92cc4f33815208a1a8157e9cf5181e49">fire_rate</a></td></tr>
+<tr class="memdesc:a92cc4f33815208a1a8157e9cf5181e49 inherit pro_attribs_classhero"><td class="mdescLeft">&#160;</td><td class="mdescRight">Odstęp pomiędzy możliwośćią strzału.  <a href="classhero.html#a92cc4f33815208a1a8157e9cf5181e49">Więcej...</a><br /></td></tr>
+<tr class="separator:a92cc4f33815208a1a8157e9cf5181e49 inherit pro_attribs_classhero"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb6daa9af19c67fba829162d60c32214 inherit pro_attribs_classhero"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#aeb6daa9af19c67fba829162d60c32214">shot_speed</a></td></tr>
+<tr class="memdesc:aeb6daa9af19c67fba829162d60c32214 inherit pro_attribs_classhero"><td class="mdescLeft">&#160;</td><td class="mdescRight">Szybkość pocisków.  <a href="classhero.html#aeb6daa9af19c67fba829162d60c32214">Więcej...</a><br /></td></tr>
+<tr class="separator:aeb6daa9af19c67fba829162d60c32214 inherit pro_attribs_classhero"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31d76fc92c93125ea75241da537b3aca inherit pro_attribs_classhero"><td class="memItemLeft" align="right" valign="top">sf::Clock&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#a31d76fc92c93125ea75241da537b3aca">fire_delay_clock</a></td></tr>
+<tr class="memdesc:a31d76fc92c93125ea75241da537b3aca inherit pro_attribs_classhero"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zegar odmieżający czas pomiędzy wystrzałem pocisku.  <a href="classhero.html#a31d76fc92c93125ea75241da537b3aca">Więcej...</a><br /></td></tr>
+<tr class="separator:a31d76fc92c93125ea75241da537b3aca inherit pro_attribs_classhero"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a653f4d958a60a0a78e4a31adde064014 inherit pro_attribs_classhero"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#a653f4d958a60a0a78e4a31adde064014">flying</a></td></tr>
+<tr class="memdesc:a653f4d958a60a0a78e4a31adde064014 inherit pro_attribs_classhero"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zmienna określająca możliwość latania.  <a href="classhero.html#a653f4d958a60a0a78e4a31adde064014">Więcej...</a><br /></td></tr>
+<tr class="separator:a653f4d958a60a0a78e4a31adde064014 inherit pro_attribs_classhero"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4df4fde8402385b88cd35b03aa676730 inherit pro_attribs_classhero"><td class="memItemLeft" align="right" valign="top">sf::Texture *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#a4df4fde8402385b88cd35b03aa676730">arrow</a></td></tr>
+<tr class="memdesc:a4df4fde8402385b88cd35b03aa676730 inherit pro_attribs_classhero"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura pocisku.  <a href="classhero.html#a4df4fde8402385b88cd35b03aa676730">Więcej...</a><br /></td></tr>
+<tr class="separator:a4df4fde8402385b88cd35b03aa676730 inherit pro_attribs_classhero"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af27c43fd42231f7cc16d568d218d2ceb inherit pro_attribs_classhero"><td class="memItemLeft" align="right" valign="top">sf::RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#af27c43fd42231f7cc16d568d218d2ceb">wings</a></td></tr>
+<tr class="memdesc:af27c43fd42231f7cc16d568d218d2ceb inherit pro_attribs_classhero"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prostokąt pobierający teksturę skrzydeł, która pojawia się, gdy gracz może latać  <a href="classhero.html#af27c43fd42231f7cc16d568d218d2ceb">Więcej...</a><br /></td></tr>
+<tr class="separator:af27c43fd42231f7cc16d568d218d2ceb inherit pro_attribs_classhero"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p >Klasa reprezentująca bossów. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_boss_8h_source.html#l00009">9</a> pliku <a class="el" href="_boss_8h_source.html">Boss.h</a>.</p>
+</div><h2 class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a id="a9941ba63fe0e8ccf49a44af1e99c2871" name="a9941ba63fe0e8ccf49a44af1e99c2871"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9941ba63fe0e8ccf49a44af1e99c2871">&#9670;&nbsp;</a></span>boss()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boss::boss </td>
+          <td>(</td>
+          <td class="paramtype">sf::Texture *&#160;</td>
+          <td class="paramname"><em>texture</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Vector2u&#160;</td>
+          <td class="paramname"><em>imageCount</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>switchTime</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>speed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>fire_rate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>shot_speed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>health</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>damage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Vector2f&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Vector2f&#160;</td>
+          <td class="paramname"><em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>shooting</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>flying</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>resurection</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>triple_shot</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>spawn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>special_movement</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Texture *&#160;</td>
+          <td class="paramname"><em>arrow</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Vector2i&#160;</td>
+          <td class="paramname"><em>bullet_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_boss_8h_source.html#l00020">20</a> pliku <a class="el" href="_boss_8h_source.html">Boss.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="a7c3c3b1ee1d7254fbcff550f06d7bb19" name="a7c3c3b1ee1d7254fbcff550f06d7bb19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c3c3b1ee1d7254fbcff550f06d7bb19">&#9670;&nbsp;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void boss::Update </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>deltaTime</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="class_bullet.html">Bullet</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>bulletVec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classmonster.html">monster</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>monsterVec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classhero.html">hero</a>&#160;</td>
+          <td class="paramname"><em>player</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Texture *&#160;</td>
+          <td class="paramname"><em>ghostTexture</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Texture *&#160;</td>
+          <td class="paramname"><em>demonTexture</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="class_object.html">Object</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>objectVec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; sf::RectangleShape &gt; &amp;&#160;</td>
+          <td class="paramname"><em>wallVec</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkcja aktualizująca pozycje bossów oraz określająca ich specjalne umiejętności. </p>
+<p >Główna funkcja dla naszych bossów, w niej są sprecyzowane unikalne zachowania dla każdego bossa </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">deltaTime</td><td>Zmienna określająca ile czasu minęło pomiędzy klatkami gry (umożliwia ona płynniejsze działanie gry, ponieważ niezależnie od wykorzystanie zasobów komputera gra nie powinna przyspieszać, ani zwalniać) </td></tr>
+    <tr><td class="paramname">bulletVec</td><td>Wskaźnik na vector naboi potworów </td></tr>
+    <tr><td class="paramname">monsterVec</td><td>Wskaźnik na vector potworów </td></tr>
+    <tr><td class="paramname">player</td><td>Wysłana cała nasza główna postać </td></tr>
+    <tr><td class="paramname">ghostTexture</td><td>Wskaźnik na teksture ducha </td></tr>
+    <tr><td class="paramname">objectVec</td><td>Wskaźnik na vector obiektów </td></tr>
+    <tr><td class="paramname">wallVec</td><td>Wskaźnik na vector ścian pokoju </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_boss_8cpp_source.html#l00015">15</a> pliku <a class="el" href="_boss_8cpp_source.html">Boss.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja atrybutów składowych</h2>
+<a id="a26eb68495d5c0409ec86ead4919b73eb" name="a26eb68495d5c0409ec86ead4919b73eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26eb68495d5c0409ec86ead4919b73eb">&#9670;&nbsp;</a></span>can_shot</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool boss::can_shot =true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Zmienna określająca, czy przeciwnik może strzelać w danej chwili. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_boss_8h_source.html#l00016">16</a> pliku <a class="el" href="_boss_8h_source.html">Boss.h</a>.</p>
+
+</div>
+</div>
+<a id="aec3652705bcc6f814d662bde1987f68f" name="aec3652705bcc6f814d662bde1987f68f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec3652705bcc6f814d662bde1987f68f">&#9670;&nbsp;</a></span>randomDir</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Vector2f boss::randomDir = {1.0f,0.0f}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Zmienna określająca losowy kierunek poruszania się </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_boss_8h_source.html#l00017">17</a> pliku <a class="el" href="_boss_8h_source.html">Boss.h</a>.</p>
+
+</div>
+</div>
+<a id="a5b753fc26788fb41c3ae31d1295463b7" name="a5b753fc26788fb41c3ae31d1295463b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b753fc26788fb41c3ae31d1295463b7">&#9670;&nbsp;</a></span>running</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool boss::running =false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Zmienna określająca, czy przeciwnik szarżuje w stronę gracza. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_boss_8h_source.html#l00018">18</a> pliku <a class="el" href="_boss_8h_source.html">Boss.h</a>.</p>
+
+</div>
+</div>
+<a id="afa28109c1f9aa33944d2467804cbd95a" name="afa28109c1f9aa33944d2467804cbd95a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa28109c1f9aa33944d2467804cbd95a">&#9670;&nbsp;</a></span>spawn</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool boss::spawn</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Zmienna określająca, czy przeciwnik może przyzywać pomocników. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_boss_8h_source.html#l00014">14</a> pliku <a class="el" href="_boss_8h_source.html">Boss.h</a>.</p>
+
+</div>
+</div>
+<a id="afe0b87537475fd796f6bf3a9d4a12c46" name="afe0b87537475fd796f6bf3a9d4a12c46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe0b87537475fd796f6bf3a9d4a12c46">&#9670;&nbsp;</a></span>spawn_delay_clock</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Clock boss::spawn_delay_clock</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Zegar odmierzający czas między możliwością przyzywania przeciwników. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_boss_8h_source.html#l00012">12</a> pliku <a class="el" href="_boss_8h_source.html">Boss.h</a>.</p>
+
+</div>
+</div>
+<a id="a6746a10cb4307ba0e8596ac1fa1d9f33" name="a6746a10cb4307ba0e8596ac1fa1d9f33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6746a10cb4307ba0e8596ac1fa1d9f33">&#9670;&nbsp;</a></span>special_movement</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool boss::special_movement</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Zmienna określająca, czy przeciwnik posiada specjalny sposób poruszania się </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_boss_8h_source.html#l00015">15</a> pliku <a class="el" href="_boss_8h_source.html">Boss.h</a>.</p>
+
+</div>
+</div>
+<a id="a1a83d314c978133aecf8224452e32553" name="a1a83d314c978133aecf8224452e32553"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a83d314c978133aecf8224452e32553">&#9670;&nbsp;</a></span>triple_shot</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool boss::triple_shot</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Zmienna określająca, czy przeciwnik strzela potrójnym strzałem. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_boss_8h_source.html#l00013">13</a> pliku <a class="el" href="_boss_8h_source.html">Boss.h</a>.</p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li>C:/Users/Radouan Battoui/source/repos/Piotralke/RogueLike_Projekt/RogueLike_Projekt/<a class="el" href="_boss_8h_source.html">Boss.h</a></li>
+<li>C:/Users/Radouan Battoui/source/repos/Piotralke/RogueLike_Projekt/RogueLike_Projekt/<a class="el" href="_boss_8cpp_source.html">Boss.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classboss.html">boss</a></li>
+    <li class="footer">Wygenerowano przez <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+  </ul>
+</div>
+</body>
+</html>

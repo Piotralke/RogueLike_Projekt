@@ -1,15 +1,15 @@
-#include"Boss.h"
+ï»¿#include"Boss.h"
 #include <iostream>
-/** \brief Funkcja aktualizuj¹ca pozycje bossów oraz okreœlaj¹ca ich specjalne umiejêtnoœci
+/** \brief  Funkcja aktualizujÄ…ca pozycje bossÃ³w oraz okreÅ›lajÄ…ca ich specjalne umiejÄ™tnoÅ›ci
  *
- * G³ówna funkcja dla naszych bossów, w niej s¹ sprecyzowane unikalne zachowania dla ka¿dego bossa
- * @param deltaTime Zmienna okreœlaj¹ca ile czasu minê³o pomiêdzy klatkami gry (umo¿liwia ona p³ynniejsze dzia³anie gry, poniewa¿ niezale¿nie od wykorzystanie zasobów komputera gra nie powinna przyspieszaæ, ani zwalniaæ)
- * @param bulletVec WskaŸnik na vector naboi potworów
- * @param monsterVec WskaŸnik na vector potworów
- * @param player Wys³ana ca³a nasza g³ówna postaæ
- * @param ghostTexture WskaŸnik na teksture ducha
- * @param objectVec WkaŸnik na vector obiektów
- * @param wallVec WskaŸnik na vector œcian pokoju
+ * GÅ‚Ã³wna funkcja dla naszych bossÃ³w, w niej sÄ… sprecyzowane unikalne zachowania dla kaÅ¼dego bossa
+ * @param deltaTime Zmienna okreÅ›lajÄ…ca ile czasu minÄ™Å‚o pomiÄ™dzy klatkami gry (umoÅ¼liwia ona pÅ‚ynniejsze dziaÅ‚anie gry, poniewaÅ¼ niezaleÅ¼nie od wykorzystanie zasobÃ³w komputera gra nie powinna przyspieszaÄ‡, ani zwalniaÄ‡)
+ * @param bulletVec WskaÅºnik na vector naboi potworÃ³w
+ * @param monsterVec WskaÅºnik na vector potworÃ³w
+ * @param player WysÅ‚ana caÅ‚a nasza gÅ‚Ã³wna postaÄ‡
+ * @param ghostTexture WskaÅºnik na teksture ducha
+ * @param objectVec WskaÅºnik na vector obiektÃ³w
+ * @param wallVec WskaÅºnik na vector Å›cian pokoju
  */
 
 void boss::Update(float deltaTime, std::vector<Bullet>& bulletVec, std::vector<monster>& monsterVec, hero player, sf::Texture* ghostTexture, sf::Texture* demonTexture, std::vector<Object>& objectVec, std::vector<sf::RectangleShape>& wallVec)
@@ -77,7 +77,6 @@ void boss::Update(float deltaTime, std::vector<Bullet>& bulletVec, std::vector<m
 			row = 0;
 			randomDir.x = (rand() % 21 - 10) / 10;
 			randomDir.y = (rand() % 21 - 10) / 10;
-			//randomDir = { -1.0f,0.0f };
 		}
 		if ((abs(getDirVec(player).x) <= 5.0f && running == true) || (abs(getDirVec(player).y) <= 5.0f && running == true))
 		{

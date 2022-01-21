@@ -1,28 +1,28 @@
-#pragma once
+ï»¿#pragma once
 #include <SFML/Graphics.hpp>
 #include "Hero.h"
 #include "Bullet.h"
 #include "Animation.h"
 #define PI 3.141592;
 /**
-* Klasa reprezentuj¹ca przeciwników
+* \brief Klasa reprezentujÄ…ca przeciwnikÃ³w
 */
 class monster : public hero
 {
     protected:
-        bool shooting; /**<Zmienna okreœlaj¹ca, czy przeciwnik mo¿e strzelaæ*/
-        sf::Clock animation_clock; /**<Zegar odmie¿aj¹cy czas do zmianu animacji*/
-        sf::Clock jump_clock;   /**<Zegar odmie¿aj¹cy czas co jaki potwór wykona specjalny ruch*/
-        sf::Clock rotate_clock; /**<Zegar odmie¿aj¹cy czas zmieny kierunku poruszania siê*/
-        sf::Clock shot_clock; /**< Zegar oidmie¿aj¹cy czas od wystrzelenia pocisku*/
-        float memSpeed; /**<Zmienna zapamiêtuj¹ca poczatkow¹ wartoœæ szybkoœci poruszania siê*/
-        float memHealth; /**<Zmienna zapamiêtuj¹ca pocz¹tkow¹ wartoœæ ¿ycia*/
-        bool dead = false;  /**<Zmienna okreslajaca, czy dany przeciwnik zosta³ pokonany (u¿ywane dla szkieletów, które odradzaj¹ siê, jeœli w pokoju jest wiêcej przeciwników)*/
-        bool teleport;  /**<Zmienna okreœlaj¹ca, czy dany przeciwnik mo¿e sie teleportowaæ*/
-        sf::Vector2f bullet_size;   /**<Zmienna okreœlaj¹ca wymniary tekstury pocisku*/
-        int test=0; /**<Zmienna u¿ywana do okreœlania stanu w jakim aktualnie jest przeciwnik, by mo¿na by³o okreœliæ kolejn¹ czynnoœæ jak¹ mo¿e wykonaæ*/
+        bool shooting; /**<\brief Zmienna okreÅ›lajÄ…ca, czy przeciwnik moÅ¼e strzelaÄ‡*/
+        sf::Clock animation_clock; /**<\brief Zegar odmieÅ¼ajÄ…cy czas do zmianu animacji*/
+        sf::Clock jump_clock;   /**<\brief Zegar odmieÅ¼ajÄ…cy czas co jaki potwÃ³r wykona specjalny ruch*/
+        sf::Clock rotate_clock; /**<\brief Zegar odmieÅ¼ajÄ…cy czas zmieny kierunku poruszania siÄ™*/
+        sf::Clock shot_clock; /**< \brief Zegar oidmieÅ¼ajÄ…cy czas od wystrzelenia pocisku*/
+        float memSpeed; /**<\brief Zmienna zapamiÄ™tujÄ…ca poczatkowÄ… wartoÅ›Ä‡ szybkoÅ›ci poruszania siÄ™*/
+        float memHealth; /**<\brief Zmienna zapamiÄ™tujÄ…ca poczÄ…tkowÄ… wartoÅ›Ä‡ Å¼ycia*/
+        bool dead = false;  /**<\brief Zmienna okreslajaca, czy dany przeciwnik zostaÅ‚ pokonany (uÅ¼ywane dla szkieletÃ³w, ktÃ³re odradzajÄ… siÄ™, jeÅ›li w pokoju jest wiÄ™cej przeciwnikÃ³w)*/
+        bool teleport;  /**<\brief Zmienna okreÅ›lajÄ…ca, czy dany przeciwnik moÅ¼e sie teleportowaÄ‡*/
+        sf::Vector2f bullet_size;   /**<\brief Zmienna okreÅ›lajÄ…ca wymniary tekstury pocisku*/
+        int test=0; /**<\brief Zmienna uÅ¼ywana do okreÅ›lania stanu w jakim aktualnie jest przeciwnik, by moÅ¼na byÅ‚o okreÅ›liÄ‡ kolejnÄ… czynnoÅ›Ä‡ jakÄ… moÅ¼e wykonaÄ‡*/
     public:
-        bool resurection;   /**<Zmienna okreœlaj¹ca, czy przeciwnik, mo¿e siê odrodziæ*/
+        bool resurection;   /**<\brief Zmienna okreÅ›lajÄ…ca, czy przeciwnik, moÅ¼e siÄ™ odrodziÄ‡*/
         monster(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed, float fire_rate, float shot_speed, float health, 
             float damage, sf::Vector2f size, sf::Vector2f position, bool shooting, bool flying, bool resurection, sf::Texture* arrow, sf::Vector2i bullet_size, bool teleport = false)
             :hero(texture, imageCount, switchTime, speed, fire_rate, shot_speed, health,damage, size, position,flying, arrow),

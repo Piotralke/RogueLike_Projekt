@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['sciezka_0',['sciezka',['../structroom_1_1room__properties.html#ab9a649941312e4d6927ad8d506eb4c2d',1,'room::room_properties']]],
+  ['shape_1',['shape',['../class_object.html#a64c0bb4737f1d3eec9db8819b4423ab8',1,'Object']]],
+  ['shootable_2',['shootable',['../class_object.html#a5386d16628ef233359b8f84195dc3ea3',1,'Object']]],
+  ['shooting_3',['shooting',['../classmonster.html#afd6a56d4bc4cfd4f6e24f932c5b32e0b',1,'monster']]],
+  ['shopitems_4',['shopItems',['../classroom.html#a3e7df5aac8f98868c220fafefe418969',1,'room']]],
+  ['shot_5fclock_5',['shot_clock',['../classmonster.html#a48bf31bcbf6d862d29575e3d3f15ca2e',1,'monster']]],
+  ['shot_5fspeed_6',['shot_speed',['../class_bullet.html#a2969fab3453d46306577fcbeb511899e',1,'Bullet::shot_speed()'],['../classhero.html#aeb6daa9af19c67fba829162d60c32214',1,'hero::shot_speed()'],['../class_item.html#a7128fef0138c71f63c68010ab3692a64',1,'Item::shot_speed()']]],
+  ['skeletontexture_7',['skeletonTexture',['../classroom.html#ad7d4f7bb573adbd9f9964486328c8a27',1,'room']]],
+  ['skull_5ftexture_8',['skull_texture',['../classroom.html#af5718509be9b537e9603872c38fb8310',1,'room']]],
+  ['slime_5fball_5ftexture_9',['slime_ball_texture',['../classroom.html#a9aea326679ca8b338e7cac006034f524',1,'room']]],
+  ['slimetexture_10',['slimeTexture',['../classroom.html#a7f29b344232fc60c1dc11cab1572ac19',1,'room']]],
+  ['small_5fhealpottexture_11',['small_healPotTexture',['../classroom.html#a554e125fd09c20d5c34c452ec0ba1586',1,'room']]],
+  ['sound_12',['sound',['../classmenu.html#ae802fe65dc28488a58355006fd346fcf',1,'menu']]],
+  ['sound_5fmark_13',['sound_mark',['../classmenu.html#ab96632077ff1bcc4b425d00ce2456da6',1,'menu']]],
+  ['sound_5ftext_14',['sound_text',['../classmenu.html#aa26a6bf8230a893ea2e891177ccea920',1,'menu']]],
+  ['spawn_15',['spawn',['../classboss.html#afa28109c1f9aa33944d2467804cbd95a',1,'boss']]],
+  ['spawn_5fdelay_5fclock_16',['spawn_delay_clock',['../classboss.html#afe0b87537475fd796f6bf3a9d4a12c46',1,'boss']]],
+  ['special_5fmovement_17',['special_movement',['../classboss.html#a6746a10cb4307ba0e8596ac1fa1d9f33',1,'boss']]],
+  ['speed_18',['speed',['../classhero.html#a411f38ef99d0048854e6fa92c0efbcf3',1,'hero::speed()'],['../class_item.html#a051aba8eaf16bfbbbae9684c17d19a82',1,'Item::speed()']]],
+  ['spidertexture_19',['spiderTexture',['../classroom.html#aa02bc986134a990c7223e86240d336b7',1,'room']]],
+  ['switchtime_20',['switchTime',['../class_animation.html#a7b2fb4577ab94e863b88ec6cf96cc8b6',1,'Animation']]],
+  ['sword1texture_21',['sword1Texture',['../classroom.html#acba1f5fd9dfeaf21f3ba1aff5903e3ed',1,'room']]],
+  ['sword2texture_22',['sword2Texture',['../classroom.html#ab6c294e40e31233531cd616e67ed05df',1,'room']]]
+];

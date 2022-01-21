@@ -1,0 +1,1190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>RogueLike Game: Dokumentacja klasy hero</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="icon.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">RogueLike Game<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Gra na projekt z PJC2</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Szukaj','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classhero.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Metody publiczne</a> &#124;
+<a href="#pub-attribs">Atrybuty publiczne</a> &#124;
+<a href="#pro-attribs">Atrybuty chronione</a> &#124;
+<a href="classhero-members.html">Lista wszystkich składowych</a>  </div>
+  <div class="headertitle"><div class="title">Dokumentacja klasy hero</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Klasa reprezentująca gracza.  
+ <a href="classhero.html#details">Więcej...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_hero_8h_source.html">Hero.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagram dziedziczenia dla hero</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classhero.png" usemap="#hero_map" alt=""/>
+  <map id="hero_map" name="hero_map">
+<area href="classmonster.html" title="Klasa reprezentująca przeciwników." alt="monster" shape="rect" coords="0,56,56,80"/>
+<area href="classboss.html" title="Klasa reprezentująca bossów." alt="boss" shape="rect" coords="0,112,56,136"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:ab110d7070b02e44feb1523167ded66e3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#ab110d7070b02e44feb1523167ded66e3">hero</a> (sf::Texture *texture, sf::Vector2u imageCount, float switchTime, float <a class="el" href="classhero.html#a411f38ef99d0048854e6fa92c0efbcf3">speed</a>, float <a class="el" href="classhero.html#a92cc4f33815208a1a8157e9cf5181e49">fire_rate</a>, float <a class="el" href="classhero.html#aeb6daa9af19c67fba829162d60c32214">shot_speed</a>, float <a class="el" href="classhero.html#a4b3c3c501cb1506fe5ef7580044238f8">health</a>, float <a class="el" href="classhero.html#a7094ef3563753ea8f13bc34a2da6adfb">damage</a>, sf::Vector2f size, sf::Vector2f position, bool <a class="el" href="classhero.html#a653f4d958a60a0a78e4a31adde064014">flying</a>, sf::Texture *<a class="el" href="classhero.html#a4df4fde8402385b88cd35b03aa676730">arrow</a>, sf::Texture *wings_t=NULL)</td></tr>
+<tr class="memdesc:ab110d7070b02e44feb1523167ded66e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor dla postaci.  <a href="classhero.html#ab110d7070b02e44feb1523167ded66e3">Więcej...</a><br /></td></tr>
+<tr class="separator:ab110d7070b02e44feb1523167ded66e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4109e06cfc0ed1d182f8d38e08a23ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#af4109e06cfc0ed1d182f8d38e08a23ce">DrawStats</a> (sf::RenderWindow &amp;window, sf::Font &amp;font)</td></tr>
+<tr class="memdesc:af4109e06cfc0ed1d182f8d38e08a23ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja wypisująca statystyki.  <a href="classhero.html#af4109e06cfc0ed1d182f8d38e08a23ce">Więcej...</a><br /></td></tr>
+<tr class="separator:af4109e06cfc0ed1d182f8d38e08a23ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d84dad985324b86102c2cadf0863ef6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#a3d84dad985324b86102c2cadf0863ef6">Draw</a> (sf::RenderWindow &amp;window)</td></tr>
+<tr class="memdesc:a3d84dad985324b86102c2cadf0863ef6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja wyświetlająca postać  <a href="classhero.html#a3d84dad985324b86102c2cadf0863ef6">Więcej...</a><br /></td></tr>
+<tr class="separator:a3d84dad985324b86102c2cadf0863ef6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa6c9a234f77f560607c9cca7f5ba2e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#afa6c9a234f77f560607c9cca7f5ba2e7">DrawMenu</a> (sf::RenderWindow &amp;window, float deltaTime)</td></tr>
+<tr class="memdesc:afa6c9a234f77f560607c9cca7f5ba2e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja od wyświetlania postaci w menu.  <a href="classhero.html#afa6c9a234f77f560607c9cca7f5ba2e7">Więcej...</a><br /></td></tr>
+<tr class="separator:afa6c9a234f77f560607c9cca7f5ba2e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe462a3fc37afb1527cd34ed96cd5fef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#abe462a3fc37afb1527cd34ed96cd5fef">Update</a> (float deltaTime, std::vector&lt; <a class="el" href="class_bullet.html">Bullet</a> &gt; &amp;bulletVec)</td></tr>
+<tr class="memdesc:abe462a3fc37afb1527cd34ed96cd5fef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja aktualizująca pozycje postaci.  <a href="classhero.html#abe462a3fc37afb1527cd34ed96cd5fef">Więcej...</a><br /></td></tr>
+<tr class="separator:abe462a3fc37afb1527cd34ed96cd5fef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a63d301b05b4bb2450541e3ba399ff9"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#a2a63d301b05b4bb2450541e3ba399ff9">GetPosition</a> ()</td></tr>
+<tr class="memdesc:a2a63d301b05b4bb2450541e3ba399ff9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja zwracająca pozycje postaci.  <a href="classhero.html#a2a63d301b05b4bb2450541e3ba399ff9">Więcej...</a><br /></td></tr>
+<tr class="separator:a2a63d301b05b4bb2450541e3ba399ff9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc016029672da959045036b6c0f1f880"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#adc016029672da959045036b6c0f1f880">getDamage</a> ()</td></tr>
+<tr class="memdesc:adc016029672da959045036b6c0f1f880"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja zwracająca obrażenia postaci.  <a href="classhero.html#adc016029672da959045036b6c0f1f880">Więcej...</a><br /></td></tr>
+<tr class="separator:adc016029672da959045036b6c0f1f880"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5c6d724fd25db6419faed6abf38f0f5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#aa5c6d724fd25db6419faed6abf38f0f5">getHealth</a> ()</td></tr>
+<tr class="memdesc:aa5c6d724fd25db6419faed6abf38f0f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja zwracająca życie postaci.  <a href="classhero.html#aa5c6d724fd25db6419faed6abf38f0f5">Więcej...</a><br /></td></tr>
+<tr class="separator:aa5c6d724fd25db6419faed6abf38f0f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7575e1d92c07645bc1dc5b6536c9249"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#ad7575e1d92c07645bc1dc5b6536c9249">getSpeed</a> ()</td></tr>
+<tr class="memdesc:ad7575e1d92c07645bc1dc5b6536c9249"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja zwracająca prędkość postaci.  <a href="classhero.html#ad7575e1d92c07645bc1dc5b6536c9249">Więcej...</a><br /></td></tr>
+<tr class="separator:ad7575e1d92c07645bc1dc5b6536c9249"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade2e3d8c35e3c2cadc8dcc2e8c7e0194"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#ade2e3d8c35e3c2cadc8dcc2e8c7e0194">getShotSpeed</a> ()</td></tr>
+<tr class="memdesc:ade2e3d8c35e3c2cadc8dcc2e8c7e0194"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja zwracająca prędkość naboju postaci.  <a href="classhero.html#ade2e3d8c35e3c2cadc8dcc2e8c7e0194">Więcej...</a><br /></td></tr>
+<tr class="separator:ade2e3d8c35e3c2cadc8dcc2e8c7e0194"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09e1317036453b3ca1400167d9a893ee"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#a09e1317036453b3ca1400167d9a893ee">getFireDelay</a> ()</td></tr>
+<tr class="memdesc:a09e1317036453b3ca1400167d9a893ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja zwracająca szybkostrzelność postaci.  <a href="classhero.html#a09e1317036453b3ca1400167d9a893ee">Więcej...</a><br /></td></tr>
+<tr class="separator:a09e1317036453b3ca1400167d9a893ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e81382ce4b77106626ae24651728560"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#a1e81382ce4b77106626ae24651728560">getMoney</a> ()</td></tr>
+<tr class="memdesc:a1e81382ce4b77106626ae24651728560"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja zwracająca ilość monetek postaci.  <a href="classhero.html#a1e81382ce4b77106626ae24651728560">Więcej...</a><br /></td></tr>
+<tr class="separator:a1e81382ce4b77106626ae24651728560"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a690ca38d939f00791712414c801da14e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#a690ca38d939f00791712414c801da14e">getFlying</a> ()</td></tr>
+<tr class="memdesc:a690ca38d939f00791712414c801da14e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja zwracająca czy postać może latac.  <a href="classhero.html#a690ca38d939f00791712414c801da14e">Więcej...</a><br /></td></tr>
+<tr class="separator:a690ca38d939f00791712414c801da14e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e16eb948cb76bb82fab9b4b71f4e844"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#a6e16eb948cb76bb82fab9b4b71f4e844">getHit</a> (float <a class="el" href="classhero.html#a7094ef3563753ea8f13bc34a2da6adfb">damage</a>)</td></tr>
+<tr class="memdesc:a6e16eb948cb76bb82fab9b4b71f4e844"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja zadająca obrażenia postaci.  <a href="classhero.html#a6e16eb948cb76bb82fab9b4b71f4e844">Więcej...</a><br /></td></tr>
+<tr class="separator:a6e16eb948cb76bb82fab9b4b71f4e844"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa57fba5727988cae193f083eaa290fbb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#aa57fba5727988cae193f083eaa290fbb">setStatistics</a> (float <a class="el" href="classhero.html#a7094ef3563753ea8f13bc34a2da6adfb">damage</a>, float <a class="el" href="classhero.html#a4b3c3c501cb1506fe5ef7580044238f8">health</a>, float <a class="el" href="classhero.html#a8729ef5a2fce0c91759c21ae48d14ade">maxHealth</a>, float fire_delay, float <a class="el" href="classhero.html#aeb6daa9af19c67fba829162d60c32214">shot_speed</a>, float <a class="el" href="classhero.html#a411f38ef99d0048854e6fa92c0efbcf3">speed</a>, int <a class="el" href="classhero.html#ab036d8e694b585af6c2b3e91e633ed3e">money</a>, bool <a class="el" href="classhero.html#a653f4d958a60a0a78e4a31adde064014">flying</a>)</td></tr>
+<tr class="memdesc:aa57fba5727988cae193f083eaa290fbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja dodająca statystyki.  <a href="classhero.html#aa57fba5727988cae193f083eaa290fbb">Więcej...</a><br /></td></tr>
+<tr class="separator:aa57fba5727988cae193f083eaa290fbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Atrybuty publiczne</h2></td></tr>
+<tr class="memitem:a0ffdd4635502f2d7ae2bd8dccd3f41dc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#a0ffdd4635502f2d7ae2bd8dccd3f41dc">x</a> = 5</td></tr>
+<tr class="separator:a0ffdd4635502f2d7ae2bd8dccd3f41dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d7ad24533be9a327c99dce6473b9352"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#a2d7ad24533be9a327c99dce6473b9352">y</a> = 5</td></tr>
+<tr class="memdesc:a2d7ad24533be9a327c99dce6473b9352"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pozycja pokoju, w którym znajduje się gracz.  <a href="classhero.html#a2d7ad24533be9a327c99dce6473b9352">Więcej...</a><br /></td></tr>
+<tr class="separator:a2d7ad24533be9a327c99dce6473b9352"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bd01104af1be9944221dec33d180b35"><td class="memItemLeft" align="right" valign="top">sf::RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#a6bd01104af1be9944221dec33d180b35">body</a></td></tr>
+<tr class="memdesc:a6bd01104af1be9944221dec33d180b35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prostokąt odpowiedzialny za wykrywanie kolizji gracza oraz wyświetlanie jego tekstury.  <a href="classhero.html#a6bd01104af1be9944221dec33d180b35">Więcej...</a><br /></td></tr>
+<tr class="separator:a6bd01104af1be9944221dec33d180b35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af97bcb6bd8217eb21417bda1a19c3f8e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_animation.html">Animation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#af97bcb6bd8217eb21417bda1a19c3f8e">animation</a></td></tr>
+<tr class="memdesc:af97bcb6bd8217eb21417bda1a19c3f8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Animacja postaci.  <a href="classhero.html#af97bcb6bd8217eb21417bda1a19c3f8e">Więcej...</a><br /></td></tr>
+<tr class="separator:af97bcb6bd8217eb21417bda1a19c3f8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Atrybuty chronione</h2></td></tr>
+<tr class="memitem:a411f38ef99d0048854e6fa92c0efbcf3"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#a411f38ef99d0048854e6fa92c0efbcf3">speed</a></td></tr>
+<tr class="memdesc:a411f38ef99d0048854e6fa92c0efbcf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prędkość poruszania się  <a href="classhero.html#a411f38ef99d0048854e6fa92c0efbcf3">Więcej...</a><br /></td></tr>
+<tr class="separator:a411f38ef99d0048854e6fa92c0efbcf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8729ef5a2fce0c91759c21ae48d14ade"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#a8729ef5a2fce0c91759c21ae48d14ade">maxHealth</a></td></tr>
+<tr class="memdesc:a8729ef5a2fce0c91759c21ae48d14ade"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maksymalne życie.  <a href="classhero.html#a8729ef5a2fce0c91759c21ae48d14ade">Więcej...</a><br /></td></tr>
+<tr class="separator:a8729ef5a2fce0c91759c21ae48d14ade"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b3c3c501cb1506fe5ef7580044238f8"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#a4b3c3c501cb1506fe5ef7580044238f8">health</a></td></tr>
+<tr class="memdesc:a4b3c3c501cb1506fe5ef7580044238f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aktualne życie.  <a href="classhero.html#a4b3c3c501cb1506fe5ef7580044238f8">Więcej...</a><br /></td></tr>
+<tr class="separator:a4b3c3c501cb1506fe5ef7580044238f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7094ef3563753ea8f13bc34a2da6adfb"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#a7094ef3563753ea8f13bc34a2da6adfb">damage</a></td></tr>
+<tr class="memdesc:a7094ef3563753ea8f13bc34a2da6adfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obrażenia.  <a href="classhero.html#a7094ef3563753ea8f13bc34a2da6adfb">Więcej...</a><br /></td></tr>
+<tr class="separator:a7094ef3563753ea8f13bc34a2da6adfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab036d8e694b585af6c2b3e91e633ed3e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#ab036d8e694b585af6c2b3e91e633ed3e">money</a> =0</td></tr>
+<tr class="memdesc:ab036d8e694b585af6c2b3e91e633ed3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ilość monet.  <a href="classhero.html#ab036d8e694b585af6c2b3e91e633ed3e">Więcej...</a><br /></td></tr>
+<tr class="separator:ab036d8e694b585af6c2b3e91e633ed3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a259f31988f0b966dac02ed9c9934a111"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#a259f31988f0b966dac02ed9c9934a111">faceRight</a></td></tr>
+<tr class="memdesc:a259f31988f0b966dac02ed9c9934a111"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zmienna określające, w którym kierunku patrzy się gracz.  <a href="classhero.html#a259f31988f0b966dac02ed9c9934a111">Więcej...</a><br /></td></tr>
+<tr class="separator:a259f31988f0b966dac02ed9c9934a111"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1cd1051bb00ea423c6249281de7e6b7"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#ad1cd1051bb00ea423c6249281de7e6b7">row</a> =0</td></tr>
+<tr class="memdesc:ad1cd1051bb00ea423c6249281de7e6b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zmienna określająca, który wiersz animacji ma być wykonywany.  <a href="classhero.html#ad1cd1051bb00ea423c6249281de7e6b7">Więcej...</a><br /></td></tr>
+<tr class="separator:ad1cd1051bb00ea423c6249281de7e6b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92cc4f33815208a1a8157e9cf5181e49"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#a92cc4f33815208a1a8157e9cf5181e49">fire_rate</a></td></tr>
+<tr class="memdesc:a92cc4f33815208a1a8157e9cf5181e49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Odstęp pomiędzy możliwośćią strzału.  <a href="classhero.html#a92cc4f33815208a1a8157e9cf5181e49">Więcej...</a><br /></td></tr>
+<tr class="separator:a92cc4f33815208a1a8157e9cf5181e49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb6daa9af19c67fba829162d60c32214"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#aeb6daa9af19c67fba829162d60c32214">shot_speed</a></td></tr>
+<tr class="memdesc:aeb6daa9af19c67fba829162d60c32214"><td class="mdescLeft">&#160;</td><td class="mdescRight">Szybkość pocisków.  <a href="classhero.html#aeb6daa9af19c67fba829162d60c32214">Więcej...</a><br /></td></tr>
+<tr class="separator:aeb6daa9af19c67fba829162d60c32214"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31d76fc92c93125ea75241da537b3aca"><td class="memItemLeft" align="right" valign="top">sf::Clock&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#a31d76fc92c93125ea75241da537b3aca">fire_delay_clock</a></td></tr>
+<tr class="memdesc:a31d76fc92c93125ea75241da537b3aca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zegar odmieżający czas pomiędzy wystrzałem pocisku.  <a href="classhero.html#a31d76fc92c93125ea75241da537b3aca">Więcej...</a><br /></td></tr>
+<tr class="separator:a31d76fc92c93125ea75241da537b3aca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a653f4d958a60a0a78e4a31adde064014"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#a653f4d958a60a0a78e4a31adde064014">flying</a></td></tr>
+<tr class="memdesc:a653f4d958a60a0a78e4a31adde064014"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zmienna określająca możliwość latania.  <a href="classhero.html#a653f4d958a60a0a78e4a31adde064014">Więcej...</a><br /></td></tr>
+<tr class="separator:a653f4d958a60a0a78e4a31adde064014"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4df4fde8402385b88cd35b03aa676730"><td class="memItemLeft" align="right" valign="top">sf::Texture *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#a4df4fde8402385b88cd35b03aa676730">arrow</a></td></tr>
+<tr class="memdesc:a4df4fde8402385b88cd35b03aa676730"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tekstura pocisku.  <a href="classhero.html#a4df4fde8402385b88cd35b03aa676730">Więcej...</a><br /></td></tr>
+<tr class="separator:a4df4fde8402385b88cd35b03aa676730"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af27c43fd42231f7cc16d568d218d2ceb"><td class="memItemLeft" align="right" valign="top">sf::RectangleShape&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhero.html#af27c43fd42231f7cc16d568d218d2ceb">wings</a></td></tr>
+<tr class="memdesc:af27c43fd42231f7cc16d568d218d2ceb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prostokąt pobierający teksturę skrzydeł, która pojawia się, gdy gracz może latać  <a href="classhero.html#af27c43fd42231f7cc16d568d218d2ceb">Więcej...</a><br /></td></tr>
+<tr class="separator:af27c43fd42231f7cc16d568d218d2ceb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p >Klasa reprezentująca gracza. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_hero_8h_source.html#l00009">9</a> pliku <a class="el" href="_hero_8h_source.html">Hero.h</a>.</p>
+</div><h2 class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a id="ab110d7070b02e44feb1523167ded66e3" name="ab110d7070b02e44feb1523167ded66e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab110d7070b02e44feb1523167ded66e3">&#9670;&nbsp;</a></span>hero()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">hero::hero </td>
+          <td>(</td>
+          <td class="paramtype">sf::Texture *&#160;</td>
+          <td class="paramname"><em>texture</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Vector2u&#160;</td>
+          <td class="paramname"><em>imageCount</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>switchTime</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>speed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>fire_rate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>shot_speed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>health</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>damage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Vector2f&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Vector2f&#160;</td>
+          <td class="paramname"><em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>flying</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Texture *&#160;</td>
+          <td class="paramname"><em>arrow</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Texture *&#160;</td>
+          <td class="paramname"><em>wings_t</em> = <code>NULL</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Konstruktor dla postaci. </p>
+<p >Konstruktor zapisuje parametry podane jako parametry do danego obiektu </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">texture</td><td>Wskaźnik na teksture dla postaci </td></tr>
+    <tr><td class="paramname">imageCount</td><td>Kontener przechowujący informacje o ilości teskstur zawartych w pliku graficznym animacji postaci (dla bohatera 4,2 - 4oznacza 4 różne tekstury dla animacji, a 2 ilość różnych aninmacji) </td></tr>
+    <tr><td class="paramname">switchTime</td><td>Czas po jakim ma się zmienić tekstura(wykorzystywana w animacji) </td></tr>
+    <tr><td class="paramname">speed</td><td>Parametr określający prędkość postaci </td></tr>
+    <tr><td class="paramname">fire_rate</td><td>Parametr określający szybkostrzelność postaci </td></tr>
+    <tr><td class="paramname">shot_speed</td><td>Parametr określający prędkość pocisku wystrzelonego przez daną postać </td></tr>
+    <tr><td class="paramname">health</td><td>Parametr określający podstawową ilość życia postaci </td></tr>
+    <tr><td class="paramname">damage</td><td>Parametr określający obrażenia jakie zadaje postać </td></tr>
+    <tr><td class="paramname">size</td><td>Rozmiar pojedynczej tekstury postaci </td></tr>
+    <tr><td class="paramname">position</td><td>Pozycja na której postać ma zostać postawiona </td></tr>
+    <tr><td class="paramname">flying</td><td>Parametr określający czy postać może przechodzić przez przeszkody </td></tr>
+    <tr><td class="paramname">arrow</td><td>Wskaźnik na teksture dla naboju postaci </td></tr>
+    <tr><td class="paramname">wings_t</td><td>Wskaźnik na teksture skrzydeł </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_hero_8cpp_source.html#l00022">22</a> pliku <a class="el" href="_hero_8cpp_source.html">Hero.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="a3d84dad985324b86102c2cadf0863ef6" name="a3d84dad985324b86102c2cadf0863ef6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d84dad985324b86102c2cadf0863ef6">&#9670;&nbsp;</a></span>Draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hero::Draw </td>
+          <td>(</td>
+          <td class="paramtype">sf::RenderWindow &amp;&#160;</td>
+          <td class="paramname"><em>window</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkcja wyświetlająca postać </p>
+<p >Funkcja, która wyświetla na podane okno postać, ułatwia nam wyświetlanie tej postaci </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>Wskaźnik na okno, w którym ma wyświetlić postać </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_hero_8cpp_source.html#l00133">133</a> pliku <a class="el" href="_hero_8cpp_source.html">Hero.cpp</a>.</p>
+
+</div>
+</div>
+<a id="afa6c9a234f77f560607c9cca7f5ba2e7" name="afa6c9a234f77f560607c9cca7f5ba2e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa6c9a234f77f560607c9cca7f5ba2e7">&#9670;&nbsp;</a></span>DrawMenu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hero::DrawMenu </td>
+          <td>(</td>
+          <td class="paramtype">sf::RenderWindow &amp;&#160;</td>
+          <td class="paramname"><em>window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>deltaTime</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkcja od wyświetlania postaci w menu. </p>
+<p >Funkcja ułatwia wyświetlanie postaci animowanych w menu, używana tylko w menu </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>Wskaźnik na okno, w którym ma wyświetlić postać </td></tr>
+    <tr><td class="paramname">deltaTime</td><td>Zmienna określająca ile czasu minęło pomiędzy klatkami gry (umożliwia ona płynniejsze działanie gry, ponieważ niezależnie od wykorzystanie zasobów komputera gra nie powinna przyspieszać, ani zwalniać) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_hero_8cpp_source.html#l00151">151</a> pliku <a class="el" href="_hero_8cpp_source.html">Hero.cpp</a>.</p>
+
+</div>
+</div>
+<a id="af4109e06cfc0ed1d182f8d38e08a23ce" name="af4109e06cfc0ed1d182f8d38e08a23ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4109e06cfc0ed1d182f8d38e08a23ce">&#9670;&nbsp;</a></span>DrawStats()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hero::DrawStats </td>
+          <td>(</td>
+          <td class="paramtype">sf::RenderWindow &amp;&#160;</td>
+          <td class="paramname"><em>window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Font &amp;&#160;</td>
+          <td class="paramname"><em>font</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkcja wypisująca statystyki. </p>
+<p >Funkcja wypisująca statystyki w określonym miejscu na HUDzie gry, używana tylko dla postaci głównej </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>Wskaźnik na okno, w którym ma wypisać statystyki </td></tr>
+    <tr><td class="paramname">font</td><td>Wskaźnik na czcionkę używaną w programie </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_hero_8cpp_source.html#l00052">52</a> pliku <a class="el" href="_hero_8cpp_source.html">Hero.cpp</a>.</p>
+
+</div>
+</div>
+<a id="adc016029672da959045036b6c0f1f880" name="adc016029672da959045036b6c0f1f880"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc016029672da959045036b6c0f1f880">&#9670;&nbsp;</a></span>getDamage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float hero::getDamage </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkcja zwracająca obrażenia postaci. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>body.getPosition() Zwraca obrażenia postaci </dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_hero_8cpp_source.html#l00261">261</a> pliku <a class="el" href="_hero_8cpp_source.html">Hero.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a09e1317036453b3ca1400167d9a893ee" name="a09e1317036453b3ca1400167d9a893ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09e1317036453b3ca1400167d9a893ee">&#9670;&nbsp;</a></span>getFireDelay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float hero::getFireDelay </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkcja zwracająca szybkostrzelność postaci. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>body.getPosition() Zwraca szybkostrzelność postaci </dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_hero_8cpp_source.html#l00301">301</a> pliku <a class="el" href="_hero_8cpp_source.html">Hero.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a690ca38d939f00791712414c801da14e" name="a690ca38d939f00791712414c801da14e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a690ca38d939f00791712414c801da14e">&#9670;&nbsp;</a></span>getFlying()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool hero::getFlying </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkcja zwracająca czy postać może latac. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>body.getPosition() Zwraca czy postać może latać </dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_hero_8cpp_source.html#l00311">311</a> pliku <a class="el" href="_hero_8cpp_source.html">Hero.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aa5c6d724fd25db6419faed6abf38f0f5" name="aa5c6d724fd25db6419faed6abf38f0f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5c6d724fd25db6419faed6abf38f0f5">&#9670;&nbsp;</a></span>getHealth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float hero::getHealth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkcja zwracająca życie postaci. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>body.getPosition() Zwraca życie postaci </dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_hero_8cpp_source.html#l00271">271</a> pliku <a class="el" href="_hero_8cpp_source.html">Hero.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a6e16eb948cb76bb82fab9b4b71f4e844" name="a6e16eb948cb76bb82fab9b4b71f4e844"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e16eb948cb76bb82fab9b4b71f4e844">&#9670;&nbsp;</a></span>getHit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hero::getHit </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>damage</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkcja zadająca obrażenia postaci. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">damage</td><td>Parametr o ile ma obniżyc życie postaci </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_hero_8cpp_source.html#l00331">331</a> pliku <a class="el" href="_hero_8cpp_source.html">Hero.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a1e81382ce4b77106626ae24651728560" name="a1e81382ce4b77106626ae24651728560"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e81382ce4b77106626ae24651728560">&#9670;&nbsp;</a></span>getMoney()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hero::getMoney </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkcja zwracająca ilość monetek postaci. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>body.getPosition() Zwraca ilość monetek postaci </dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_hero_8cpp_source.html#l00321">321</a> pliku <a class="el" href="_hero_8cpp_source.html">Hero.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a2a63d301b05b4bb2450541e3ba399ff9" name="a2a63d301b05b4bb2450541e3ba399ff9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a63d301b05b4bb2450541e3ba399ff9">&#9670;&nbsp;</a></span>GetPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Vector2f hero::GetPosition </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkcja zwracająca pozycje postaci. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>body.getPosition() Zwraca pozycję postaci </dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_hero_8cpp_source.html#l00251">251</a> pliku <a class="el" href="_hero_8cpp_source.html">Hero.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ade2e3d8c35e3c2cadc8dcc2e8c7e0194" name="ade2e3d8c35e3c2cadc8dcc2e8c7e0194"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade2e3d8c35e3c2cadc8dcc2e8c7e0194">&#9670;&nbsp;</a></span>getShotSpeed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float hero::getShotSpeed </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkcja zwracająca prędkość naboju postaci. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>body.getPosition() Zwraca prędkość naboju postaci </dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_hero_8cpp_source.html#l00291">291</a> pliku <a class="el" href="_hero_8cpp_source.html">Hero.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ad7575e1d92c07645bc1dc5b6536c9249" name="ad7575e1d92c07645bc1dc5b6536c9249"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7575e1d92c07645bc1dc5b6536c9249">&#9670;&nbsp;</a></span>getSpeed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float hero::getSpeed </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkcja zwracająca prędkość postaci. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>body.getPosition() Zwraca prędkość postaci </dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_hero_8cpp_source.html#l00281">281</a> pliku <a class="el" href="_hero_8cpp_source.html">Hero.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aa57fba5727988cae193f083eaa290fbb" name="aa57fba5727988cae193f083eaa290fbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa57fba5727988cae193f083eaa290fbb">&#9670;&nbsp;</a></span>setStatistics()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hero::setStatistics </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>damage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>health</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>maxHealth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>fire_delay</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>shot_speed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>speed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>money</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>flying</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkcja dodająca statystyki. </p>
+<p >Funkcja wywołująca się przy podnoszeniu przedmiotów, która dodaje parametry tych przedmiotów do naszej postaci </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">damage</td><td>Parametr określający ile obrażeñ ma dodać do naszej postaci </td></tr>
+    <tr><td class="paramname">health</td><td>Parametr określający ile życia ma dodać do naszej postaci </td></tr>
+    <tr><td class="paramname">maxHealth</td><td>Parametr określający ile maksymalnego życia ma dodać do naszej postaci </td></tr>
+    <tr><td class="paramname">fire_delay</td><td>Parametr określający ile szybkostrzelności ma dodać do naszej postaci </td></tr>
+    <tr><td class="paramname">shot_speed</td><td>Parametr określający ile predkości naboju ma dodać do naszej postaci </td></tr>
+    <tr><td class="paramname">speed</td><td>Parametr określający ile prędkości ma dodać do naszej postaci </td></tr>
+    <tr><td class="paramname">money</td><td>Parametr określający ile monet ma dodać do naszej postaci </td></tr>
+    <tr><td class="paramname">flying</td><td>Parametr określający czy ma dodać do postaci przechodzenie przez przeszkody </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_hero_8cpp_source.html#l00349">349</a> pliku <a class="el" href="_hero_8cpp_source.html">Hero.cpp</a>.</p>
+
+</div>
+</div>
+<a id="abe462a3fc37afb1527cd34ed96cd5fef" name="abe462a3fc37afb1527cd34ed96cd5fef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe462a3fc37afb1527cd34ed96cd5fef">&#9670;&nbsp;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hero::Update </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>deltaTime</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="class_bullet.html">Bullet</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>bulletVec</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funkcja aktualizująca pozycje postaci. </p>
+<p >Główna funkcja dla naszej postaci, w niej obsługiwane są klawisze odpowiadające za poruszanie się postaci oraz strzelanie </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">deltaTime</td><td>Zmienna określająca ile czasu minęło pomiędzy klatkami gry (umożliwia ona płynniejsze działanie gry, ponieważ niezależnie od wykorzystanie zasobów komputera gra nie powinna przyspieszać, ani zwalniać) </td></tr>
+    <tr><td class="paramname">bulletVec</td><td>Wskaźnik na vector naboi postaci głównej </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_hero_8cpp_source.html#l00167">167</a> pliku <a class="el" href="_hero_8cpp_source.html">Hero.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja atrybutów składowych</h2>
+<a id="af97bcb6bd8217eb21417bda1a19c3f8e" name="af97bcb6bd8217eb21417bda1a19c3f8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af97bcb6bd8217eb21417bda1a19c3f8e">&#9670;&nbsp;</a></span>animation</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_animation.html">Animation</a> hero::animation</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Animacja postaci. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_hero_8h_source.html#l00028">28</a> pliku <a class="el" href="_hero_8h_source.html">Hero.h</a>.</p>
+
+</div>
+</div>
+<a id="a4df4fde8402385b88cd35b03aa676730" name="a4df4fde8402385b88cd35b03aa676730"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4df4fde8402385b88cd35b03aa676730">&#9670;&nbsp;</a></span>arrow</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Texture* hero::arrow</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tekstura pocisku. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_hero_8h_source.html#l00023">23</a> pliku <a class="el" href="_hero_8h_source.html">Hero.h</a>.</p>
+
+</div>
+</div>
+<a id="a6bd01104af1be9944221dec33d180b35" name="a6bd01104af1be9944221dec33d180b35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bd01104af1be9944221dec33d180b35">&#9670;&nbsp;</a></span>body</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::RectangleShape hero::body</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Prostokąt odpowiedzialny za wykrywanie kolizji gracza oraz wyświetlanie jego tekstury. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_hero_8h_source.html#l00027">27</a> pliku <a class="el" href="_hero_8h_source.html">Hero.h</a>.</p>
+
+</div>
+</div>
+<a id="a7094ef3563753ea8f13bc34a2da6adfb" name="a7094ef3563753ea8f13bc34a2da6adfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7094ef3563753ea8f13bc34a2da6adfb">&#9670;&nbsp;</a></span>damage</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float hero::damage</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obrażenia. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_hero_8h_source.html#l00015">15</a> pliku <a class="el" href="_hero_8h_source.html">Hero.h</a>.</p>
+
+</div>
+</div>
+<a id="a259f31988f0b966dac02ed9c9934a111" name="a259f31988f0b966dac02ed9c9934a111"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a259f31988f0b966dac02ed9c9934a111">&#9670;&nbsp;</a></span>faceRight</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool hero::faceRight</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Zmienna określające, w którym kierunku patrzy się gracz. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_hero_8h_source.html#l00017">17</a> pliku <a class="el" href="_hero_8h_source.html">Hero.h</a>.</p>
+
+</div>
+</div>
+<a id="a31d76fc92c93125ea75241da537b3aca" name="a31d76fc92c93125ea75241da537b3aca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31d76fc92c93125ea75241da537b3aca">&#9670;&nbsp;</a></span>fire_delay_clock</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Clock hero::fire_delay_clock</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Zegar odmieżający czas pomiędzy wystrzałem pocisku. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_hero_8h_source.html#l00021">21</a> pliku <a class="el" href="_hero_8h_source.html">Hero.h</a>.</p>
+
+</div>
+</div>
+<a id="a92cc4f33815208a1a8157e9cf5181e49" name="a92cc4f33815208a1a8157e9cf5181e49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92cc4f33815208a1a8157e9cf5181e49">&#9670;&nbsp;</a></span>fire_rate</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float hero::fire_rate</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Odstęp pomiędzy możliwośćią strzału. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_hero_8h_source.html#l00019">19</a> pliku <a class="el" href="_hero_8h_source.html">Hero.h</a>.</p>
+
+</div>
+</div>
+<a id="a653f4d958a60a0a78e4a31adde064014" name="a653f4d958a60a0a78e4a31adde064014"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a653f4d958a60a0a78e4a31adde064014">&#9670;&nbsp;</a></span>flying</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool hero::flying</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Zmienna określająca możliwość latania. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_hero_8h_source.html#l00022">22</a> pliku <a class="el" href="_hero_8h_source.html">Hero.h</a>.</p>
+
+</div>
+</div>
+<a id="a4b3c3c501cb1506fe5ef7580044238f8" name="a4b3c3c501cb1506fe5ef7580044238f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b3c3c501cb1506fe5ef7580044238f8">&#9670;&nbsp;</a></span>health</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float hero::health</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Aktualne życie. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_hero_8h_source.html#l00014">14</a> pliku <a class="el" href="_hero_8h_source.html">Hero.h</a>.</p>
+
+</div>
+</div>
+<a id="a8729ef5a2fce0c91759c21ae48d14ade" name="a8729ef5a2fce0c91759c21ae48d14ade"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8729ef5a2fce0c91759c21ae48d14ade">&#9670;&nbsp;</a></span>maxHealth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float hero::maxHealth</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Maksymalne życie. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_hero_8h_source.html#l00013">13</a> pliku <a class="el" href="_hero_8h_source.html">Hero.h</a>.</p>
+
+</div>
+</div>
+<a id="ab036d8e694b585af6c2b3e91e633ed3e" name="ab036d8e694b585af6c2b3e91e633ed3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab036d8e694b585af6c2b3e91e633ed3e">&#9670;&nbsp;</a></span>money</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hero::money =0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ilość monet. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_hero_8h_source.html#l00016">16</a> pliku <a class="el" href="_hero_8h_source.html">Hero.h</a>.</p>
+
+</div>
+</div>
+<a id="ad1cd1051bb00ea423c6249281de7e6b7" name="ad1cd1051bb00ea423c6249281de7e6b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1cd1051bb00ea423c6249281de7e6b7">&#9670;&nbsp;</a></span>row</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int hero::row =0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Zmienna określająca, który wiersz animacji ma być wykonywany. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_hero_8h_source.html#l00018">18</a> pliku <a class="el" href="_hero_8h_source.html">Hero.h</a>.</p>
+
+</div>
+</div>
+<a id="aeb6daa9af19c67fba829162d60c32214" name="aeb6daa9af19c67fba829162d60c32214"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb6daa9af19c67fba829162d60c32214">&#9670;&nbsp;</a></span>shot_speed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float hero::shot_speed</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Szybkość pocisków. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_hero_8h_source.html#l00020">20</a> pliku <a class="el" href="_hero_8h_source.html">Hero.h</a>.</p>
+
+</div>
+</div>
+<a id="a411f38ef99d0048854e6fa92c0efbcf3" name="a411f38ef99d0048854e6fa92c0efbcf3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a411f38ef99d0048854e6fa92c0efbcf3">&#9670;&nbsp;</a></span>speed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float hero::speed</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Prędkość poruszania się </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_hero_8h_source.html#l00012">12</a> pliku <a class="el" href="_hero_8h_source.html">Hero.h</a>.</p>
+
+</div>
+</div>
+<a id="af27c43fd42231f7cc16d568d218d2ceb" name="af27c43fd42231f7cc16d568d218d2ceb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af27c43fd42231f7cc16d568d218d2ceb">&#9670;&nbsp;</a></span>wings</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::RectangleShape hero::wings</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Prostokąt pobierający teksturę skrzydeł, która pojawia się, gdy gracz może latać </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_hero_8h_source.html#l00024">24</a> pliku <a class="el" href="_hero_8h_source.html">Hero.h</a>.</p>
+
+</div>
+</div>
+<a id="a0ffdd4635502f2d7ae2bd8dccd3f41dc" name="a0ffdd4635502f2d7ae2bd8dccd3f41dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ffdd4635502f2d7ae2bd8dccd3f41dc">&#9670;&nbsp;</a></span>x</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hero::x = 5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_hero_8h_source.html#l00026">26</a> pliku <a class="el" href="_hero_8h_source.html">Hero.h</a>.</p>
+
+</div>
+</div>
+<a id="a2d7ad24533be9a327c99dce6473b9352" name="a2d7ad24533be9a327c99dce6473b9352"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d7ad24533be9a327c99dce6473b9352">&#9670;&nbsp;</a></span>y</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hero::y = 5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pozycja pokoju, w którym znajduje się gracz. </p>
+
+<p class="definition">Definicja w linii <a class="el" href="_hero_8h_source.html#l00026">26</a> pliku <a class="el" href="_hero_8h_source.html">Hero.h</a>.</p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li>C:/Users/Radouan Battoui/source/repos/Piotralke/RogueLike_Projekt/RogueLike_Projekt/<a class="el" href="_hero_8h_source.html">Hero.h</a></li>
+<li>C:/Users/Radouan Battoui/source/repos/Piotralke/RogueLike_Projekt/RogueLike_Projekt/<a class="el" href="_hero_8cpp_source.html">Hero.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classhero.html">hero</a></li>
+    <li class="footer">Wygenerowano przez <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+  </ul>
+</div>
+</body>
+</html>

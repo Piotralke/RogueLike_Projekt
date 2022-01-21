@@ -1,6 +1,6 @@
 #pragma once
 #include "SFML/Graphics.hpp"
-/** Klasa odpowiedzialna za wykrywanie kolizji
+/** \brief Klasa odpowiedzialna za wykrywanie kolizji
 * 
 */
 class Collision

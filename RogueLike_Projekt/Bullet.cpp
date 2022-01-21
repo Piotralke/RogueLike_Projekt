@@ -1,15 +1,15 @@
-#include "Bullet.h"
+ï»¿#include "Bullet.h"
 
-/** \brief Konstruktor dla naboju
+/** \brief  Konstruktor dla naboju
  *
  * Konstruktor zapisuje parametry podane jako parametry do danego obiektu
  * @param size Rozmiar tekstury naboju
  * @param position Pozycja startowa naszego naboju
- * @param shot_speed Parametr okreœlaj¹cy prêdkoœæ pocisku 
- * @param damage Parametr okreœlaj¹cy obra¿enia
- * @param shooting_direction Wektor wskazuj¹cy kierunek, w którym pocisk ma przemierzaæ
- * @param texture WskaŸnik na teksture naboju
- * @param rotation K¹t pod jakim obrucona jest tekstura pocisku 
+ * @param shot_speed Parametr okreÅ›lajÄ…cy prÄ™dkoÅ›Ä‡ pocisku 
+ * @param damage Parametr okreÅ›lajÄ…cy obraÅ¼enia
+ * @param shooting_direction Wektor wskazujÄ…cy kierunek, w ktÃ³rym pocisk ma przemierzaÄ‡
+ * @param texture WskaÅºnik na teksture naboju
+ * @param rotation KÄ…t pod jakim obrucona jest tekstura pocisku 
  */
 
 Bullet::Bullet(sf::Vector2f size, sf::Vector2f position, float shot_speed, float damage, sf::Vector2f shotting_direction, sf::Texture *texture, float rotation)
@@ -25,9 +25,9 @@ Bullet::Bullet(sf::Vector2f size, sf::Vector2f position, float shot_speed, float
 	directionNormalized = { direction.x / (float)sqrt(pow(direction.x, 2) + pow(direction.y, 2)), direction.y / (float)sqrt(pow(direction.x, 2) + pow(direction.y, 2)) };
 }
 
-/** \brief Funkcja przemieszczaj¹ca nabój
+/** \brief  Funkcja przemieszczajÄ…ca nabÃ³j
  *
- * @param deltaTime Zmienna okreœlaj¹ca ile czasu minê³o pomiêdzy klatkami gry (umo¿liwia ona p³ynniejsze dzia³anie gry, poniewa¿ niezale¿nie od wykorzystanie zasobów komputera gra nie powinna przyspieszaæ, ani zwalniaæ)
+ * @param deltaTime Zmienna okreÅ›lajÄ…ca ile czasu minÄ™Å‚o pomiÄ™dzy klatkami gry (umoÅ¼liwia ona pÅ‚ynniejsze dziaÅ‚anie gry, poniewaÅ¼ niezaleÅ¼nie od wykorzystanie zasobÃ³w komputera gra nie powinna przyspieszaÄ‡, ani zwalniaÄ‡)
  */
 
 void Bullet::fire(float deltaTime)
@@ -35,10 +35,10 @@ void Bullet::fire(float deltaTime)
 	bullet.move({ directionNormalized.x * shot_speed * deltaTime, directionNormalized.y * shot_speed * deltaTime });	
 }
 
-/** \brief Funkcja wyœwietlaj¹ca nabój
+/** \brief  Funkcja wyÅ›wietlajÄ…ca nabÃ³j
  *
- * Funkcja, która wyœwietla na podane okno nabój, u³atwia nam wyœwietlanie naboju
- * @param window WskaŸnik na okno, w którym ma wypisaæ statystyki
+ * Funkcja, ktÃ³ra wyÅ›wietla na podane okno nabÃ³j, uÅ‚atwia nam wyÅ›wietlanie naboju
+ * @param window WskaÅºnik na okno, w ktÃ³rym ma wypisaÄ‡ statystyki
  */
 
 void Bullet::Draw(sf::RenderWindow& window)
@@ -46,9 +46,9 @@ void Bullet::Draw(sf::RenderWindow& window)
 	window.draw(bullet);
 }
 
-/** \brief Funkcja zwracaj¹ca obra¿enia naboju
+/** \brief  Funkcja zwracajÄ…ca obraÅ¼enia naboju
  *
- * @return body.getPosition() Zwraca obra¿enia naboju
+ * @return body.getPosition() Zwraca obraÅ¼enia naboju
  */
 
 float Bullet::getDamage()

@@ -1,4 +1,4 @@
-#include <SFML/Graphics.hpp>
+﻿#include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <vector>
 #include <iostream>
@@ -12,6 +12,9 @@
 #include "Boss.h"
 #include "Menu.h"
 
+/**
+* \brief  Funkcja main zawiera wywołania w odpowiedniej kolejności funkcji odpowiadających za grę, czyli można go nazwać silnikiem gry
+*/
 int main()
 {
     Collision kolizja;
@@ -193,7 +196,7 @@ int main()
                 level->visit(5, 5);
                 level->generate_layout();
                 level->wypiszkons();
-                level->read_from_file(player, monsterVec, objectVec, bossVec, itemVec, skeleton_count);
+                level->read_from_file(player, monsterVec, objectVec, bossVec, itemVec, skeleton_count, levels);
                 created = false;
                 new_game = false;
             }
@@ -286,7 +289,7 @@ int main()
                         monsterVec = std::vector<monster>();
                         bossVec.clear();
                         bossVec = std::vector<boss>();
-                        level->read_from_file(player, monsterVec, objectVec, bossVec, itemVec, skeleton_count);
+                        level->read_from_file(player, monsterVec, objectVec, bossVec, itemVec, skeleton_count, levels);
                         created = false;
                     }
 
@@ -516,7 +519,7 @@ int main()
 
                 window.clear();
                 window.draw(level->background_s);
-                level->load_room_layout(player, kolizja, window, bulletVec, monsterBulletVec, monsterVec, objectVec, bossVec, itemVec, skeleton_count);
+                level->load_room_layout(player, kolizja, window, bulletVec, monsterBulletVec, monsterVec, objectVec, bossVec, itemVec, skeleton_count, levels);
 
                 /*Wyswietlanie wszystkiego*/
 

@@ -1,28 +1,28 @@
-#pragma once
+ï»¿#pragma once
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 /**
-* Klasa reprezentujkaca menu gry
+* \brief  Klasa reprezentujÄ…ca menu gry
 */
 class menu {
 	private:
-		sf::Texture background; /**< Tekstura t³a menu*/
-		sf::Sprite background_s; /**< Zmienna u³¹twiaj¹ca manipulacjê tekstur¹ t³a menu*/
-		sf::Texture button; /**<Tekstura przycisku*/
-		sf::Sprite button_s; /**<Zmienna u³atwiaj¹ca manipulacjê tekstur¹ przycisku*/
-		sf::Texture bestiary; /**<Tekstura bestiariusza*/
-		sf::Sprite bestiary_s; /**<Zmienna u³atwiaj¹ca manipulacjê tekstur¹ bestiariusza*/
-		sf::Font font; /**<Czcionka u¿ywana w grze*/
-		int position; /**<Opcja w menu, która jest aktualnie wybrana*/
-		sf::Text play_text; /**<Tekst na przycisku od uruchomienia gry*/
-		sf::Text sound_text; /**<Tekst przy opcji w³¹czenia/wy³¹czenia dŸwiêku*/
-		sf::Text sound_mark; /**<"X" stawiany w okienku, które okreœla, czy muzyka jest w³¹czona, czy nie*/
-		sf::Text bestiary_text; /**<Tekst przy opcji zobaczenia bestiariusza*/
-		sf::Text exit_text; /**<Tekst przy opcji wyjœcia z gry*/
-		sf::Clock click_delay; /**<Zegar odmierzaj¹cy czas, miêdzy mo¿liwosci¹ zmiany przycisku*/
-		bool bestiary_b=false;/**<Zmienna okreœlaj¹ca, czy znajdujemy siê w widoku bestiariusza*/
+		sf::Texture background; /**<\brief  Tekstura tÅ‚a menu*/
+		sf::Sprite background_s; /**<\brief  Zmienna uÅ‚Ä…twiajÄ…ca manipulacjÄ™ teksturÄ… tÅ‚a menu*/
+		sf::Texture button; /**<\brief  Tekstura przycisku*/
+		sf::Sprite button_s; /**<\brief  Zmienna uÅ‚atwiajÄ…ca manipulacjÄ™ teksturÄ… przycisku*/
+		sf::Texture bestiary; /**<\brief  Tekstura bestiariusza*/
+		sf::Sprite bestiary_s; /**<\brief  Zmienna uÅ‚atwiajÄ…ca manipulacjÄ™ teksturÄ… bestiariusza*/
+		sf::Font font; /**<\brief  Czcionka uÅ¼ywana w grze*/
+		int position; /**<\brief  Opcja w menu, ktÃ³ra jest aktualnie wybrana*/
+		sf::Text play_text; /**<\brief  Tekst na przycisku od uruchomienia gry*/
+		sf::Text sound_text; /**<\brief  Tekst przy opcji wÅ‚Ä…czenia/wyÅ‚Ä…czenia dÅºwiÄ™ku*/
+		sf::Text sound_mark; /**<\brief  "X" stawiany w okienku, ktÃ³re okreÅ›la, czy muzyka jest wÅ‚Ä…czona, czy nie*/
+		sf::Text bestiary_text; /**<\brief  Tekst przy opcji zobaczenia bestiariusza*/
+		sf::Text exit_text; /**<\brief  Tekst przy opcji wyjÅ›cia z gry*/
+		sf::Clock click_delay; /**<\brief  Zegar odmierzajÄ…cy czas, miÄ™dzy moÅ¼liwosciÄ… zmiany przycisku*/
+		bool bestiary_b=false;/**<\brief  Zmienna okreÅ›lajÄ…ca, czy znajdujemy siÄ™ w widoku bestiariusza*/
 	public:
-		bool sound; /**<Zmienna okreœlaj¹ca, czy odtwarzany jest dŸwiêk*/
+		bool sound; /**<\brief  Zmienna okreÅ›lajÄ…ca, czy odtwarzany jest dÅºwiÄ™k*/
 		menu(sf::Font& font);
 		bool update(sf::RenderWindow& window, sf::Music& mainMusic, sf::Music& bossMusic);
 		void Draw(sf::RenderWindow& window);
