@@ -334,7 +334,7 @@ void generate_map::generate_layout()
                      {
                          std::string liczba;
                          grid[i][j].sciezka = "layouts/boss/";
-                         liczba = std::to_string(std::rand() % 2 +1);  //5 albo 10 po 1 albo 2 na kazdego bossa
+                         liczba = std::to_string(std::rand() % 3); 
                          grid[i][j].sciezka += liczba;
                          grid[i][j].sciezka += ".txt";
                      }
@@ -342,24 +342,21 @@ void generate_map::generate_layout()
                      {
                          std::string liczba;
                          grid[i][j].sciezka = "layouts/shop/";
-                       //  liczba = std::to_string(std::rand() % 9);  //mozliwe ze bedzie jeden layout
                          liczba = std::to_string(1);
-                         grid[i][j].sciezka += liczba;              //albo kilka ale z 2-3 max
-                         grid[i][j].sciezka += ".txt";              //to samo do item roomu
+                         grid[i][j].sciezka += liczba;              
+                         grid[i][j].sciezka += ".txt";              
                      }
                      else if (grid[i][j].type == 4)
                      {
                          std::string liczba;
                          grid[i][j].sciezka = "layouts/item/";
                          liczba = std::to_string(1);
-                      //   liczba = std::to_string(std::rand() % 9);
                          grid[i][j].sciezka += liczba;
                          grid[i][j].sciezka += ".txt";
                      }
                      else
                      {
                          grid[i][j].sciezka = random_layout(i, j);
-                        // std::cout << grid[i][j].sciezka << std::endl;
                      } 
                  }  
              }
