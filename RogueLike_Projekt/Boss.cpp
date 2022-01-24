@@ -1,5 +1,5 @@
 ﻿#include"Boss.h"
-#include <iostream>
+
 /** \brief  Funkcja aktualizująca pozycje bossów oraz określająca ich specjalne umiejętności
  *
  * Główna funkcja dla naszych bossów, w niej są sprecyzowane unikalne zachowania dla każdego bossa
@@ -71,7 +71,6 @@ void boss::Update(float deltaTime, std::vector<Bullet>& bulletVec, std::vector<m
 	{
 		if (80>= body.getPosition().x || body.getPosition().x >= 620 || 80 >= body.getPosition().y || body.getPosition().y >= 320 )
 		{
-			std::cout << "dupa" << std::endl;
 			running = true;
 			speed = memSpeed;
 			row = 0;
@@ -80,7 +79,6 @@ void boss::Update(float deltaTime, std::vector<Bullet>& bulletVec, std::vector<m
 		}
 		if ((abs(getDirVec(player).x) <= 5.0f && running == true) || (abs(getDirVec(player).y) <= 5.0f && running == true))
 		{
-			std::cout << "jebac figursona" << std::endl;
 			randomDir = -getDirVec(player);
 			randomDir = { randomDir.x / (float)sqrt(pow(randomDir.x, 2) + pow(randomDir.y, 2)), randomDir.y / (float)sqrt(pow(randomDir.x, 2) + pow(randomDir.y, 2)) };
 			speed = 250.0f;
